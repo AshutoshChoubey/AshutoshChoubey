@@ -5,7 +5,7 @@ This is the source for AshutoshChoubey/AshutoshChoubey, a GitHub profile README,
 - Read profile.config.json and docs/research-audit.md before changing claims. The user's explicit instructions take precedence.
 - Frontend engineering is the established identity. AI and agentic systems are exploration unless an inspectable implementation supports a stronger classification.
 - Edit content in profile.config.json and vector compositions in scripts/generate-profile.mjs. Regenerate; do not hand-edit generated README or assets.
-- Keep the public profile concise. Never include private repository information, credentials, fabricated metrics, portraits, external font resources, raster images inside SVG, or activity widgets.
+- Keep the public profile concise. Never include private repository information, credentials, fabricated metrics, portraits, external font resources, raster images inside SVG except the user-requested embedded original WorldGyan logo in the hero, or activity widgets.
 - Maintain desktop, mobile, static, alternative-text and ordinary clickable-link equivalents.
 - Motion is decorative, runs once for at most four seconds, and respects prefers-reduced-motion. The static image must communicate the full identity.
 - Run npm run generate, npm run validate, npm run validate:links and npm run preview. Inspect real browser output at 320, 375, 768, 1024 and 1440 pixels in light and dark surroundings. Record actual results, including unavailable checks.
