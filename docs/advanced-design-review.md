@@ -39,3 +39,11 @@ The final current-head check and captures are local delivery artifacts in `repor
 ### GitHub raw-image cache correction
 
 Hosted inspection showed that GitHub raw redirects can serve an earlier cached SVG despite a changed query string. README image sources now use content-versioned directory paths under `assets/rendered/`, keeping the required editable base asset filenames intact. Render copies are byte-for-byte identical to their originals; validation verifies hashes, XML and manifest entries. The generator prunes only obsolete files listed in its own manifest and rejects unsafe paths. This makes new dimensions and artwork request a new path without relying on redirect query preservation.
+
+## Additional motion and signature refinement — 17 October 2026
+
+The full verified name now appears on one line in both desktop and mobile compositions. A white signature panel contains a separate navy role box, with the role also on one line. Gyan changes from light amber to deeper saffron `#C65A0A`; World stays black and the supplied circular logo stays unchanged.
+
+Motion now includes a 150-degree monogram ring rotation, staggered 32px architectural layer assembly, four staggered capability-card entrances, a separate role entrance, AI-node pulses and additional workflow/feedback signals. These are decorative finite sequences, not perpetual loops: all finish within four seconds, with static equivalents and reduced-motion support.
+
+Chrome local checks passed all five widths in both themes, all eight images loaded, and all twelve composition text-bound checks passed. The browser animation inspector confirmed one iteration and duration plus delay at most 4000ms. Evidence is in `reports/motion-responsive.json` and `reports/motion-geometry.json`; the link check remains 12/12 reachable. PR #2 was found already merged during publication. This refinement is therefore reviewed separately in PR #3: https://github.com/AshutoshChoubey/AshutoshChoubey/pull/3 . Actual GitHub branch inspection confirmed all eight updated assets load with content-versioned paths and no horizontal overflow. The merged PR #2 is historical; PR #3 is the current approval gate.
