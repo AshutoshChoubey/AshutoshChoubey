@@ -55,3 +55,7 @@ The user requested the supplied WorldGyan logo in place of AC and the exact role
 Engineering Systems now has a second rotating orbital track and satellite, stronger 85-degree main orbit movement, signal pulses on frontend and AI connectors, pulsing AI nodes, and staggered whole-card entrances including their labels. Mobile gains the same whole-card choreography and connector signals. All sequences run once within four seconds and have static/reduced-motion equivalents.
 
 Chrome passed all five widths in both themes, nine images loaded, and all twelve composition text-bound checks passed. Engineering sections expose 28 desktop and 18 mobile animation tracks, each with one iteration and duration plus delay at most 4000ms. Generation, SVG/config validation and 12/12 link reachability checks pass. Evidence: reports/brand-checks.json. The previous motion PR #3 was already merged by the user; these subsequent changes require their own review.
+
+## User-selected architecture headline
+
+The user explicitly selected: Software Architect | Frontend & Full-Stack Product Architecture | System Design | Agentic AI. This replaces Senior UI Engineer throughout generated identity text and alternatives. The hero gives Software Architect the primary line, with the remaining specializations below inside an expanded role panel; the full name remains on one line. This is user-selected public positioning, not newly verified employment history. Existing source audit dates and exploration classifications remain intact.

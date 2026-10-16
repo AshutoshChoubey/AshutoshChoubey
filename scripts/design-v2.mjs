@@ -6,7 +6,7 @@ export function advancedCompositions(c,{text:t,label:l,line,rect:r,dot,trace,sec
   const atmosphere=(w,h)=>`<ellipse class="aurora" cx="${w*.65}" cy="${h*.4}" rx="${w*.35}" ry="${h*.6}" fill="url(#cyan-halo)"/><rect width="${w}" height="${h}" fill="url(#blueprint)" opacity=".16"/>`;
   const stream=d=>path(d,'#64DAFF','class="signal" stroke-width="2.4" stroke-linecap="round"');
   function hero(m) {
-    const w=m?420:960,h=480,x=w/2,deck=m?290:330;
+    const w=m?420:960,h=m?570:560,x=w/2,deck=m?380:410;
     let b=`<ellipse cx="${w*.8}" cy="170" rx="${m?170:300}" ry="230" fill="url(#paper-light)"/>`;
     b+=path(`M${m?24:40} 49H${m?115:290}M${w-(m?24:40)} 49H${w-(m?115:290)}`,'#DCE5F1');
     b+=l(x,53,'FRONTEND / ARCHITECTURE / AI','#526179','text-anchor="middle"');
@@ -16,27 +16,38 @@ export function advancedCompositions(c,{text:t,label:l,line,rect:r,dot,trace,sec
       b+=path('M814 177h49v49h49v70h-49v40','#B5C7DF');
       b+=dot(863,226,'#1E40AF',3)+dot(912,296,'#F59E0B',3);
     } else b+=path('M27 157v64h25M393 161v65h-25','#DCE5F1');
-    b+=r(m?18:154,m?153:159,m?384:652,m?159:200,'#FFFFFF',20,'stroke="#DCE5F1"');
+    b+=r(m?18:154,m?153:159,m?384:652,m?240:268,'#FFFFFF',20,'stroke="#DCE5F1"');
     b+=path(`M${m?38:178} ${m?154:160}H${m?382:782}`,'#9BB7D8','class="trace" stroke-width="1.5"');
     b+=t(x,m?207:236,c.identity.name,m?28:51,'url(#ink)','class="rise" font-weight="700" letter-spacing="-.8" text-anchor="middle"');
-    b+=r(x-(m?165:235),m?236:272,m?330:470,m?48:54,'#0B1225',12,'stroke="#3D5878"');
-    b+=path(`M${x-(m?152:220)} ${m?237:273}H${x+(m?152:220)}`,'#73DEFF','class="trace" stroke-width="1.2"');
-    b+=t(x,m?266:306,c.identity.headline,m?19:24,'#FFFFFF','class="role-enter" font-weight="500" letter-spacing=".2" text-anchor="middle"');
-    b+=line(x-31,m?331:374,x+31,m?331:374,'#C65A0A','stroke-width="2"');
+    b+=r(x-(m?178:310),m?236:272,m?356:620,m?136:116,'#0B1225',12,'stroke="#3D5878"');
+    b+=path(`M${x-(m?165:295)} ${m?237:273}H${x+(m?165:295)}`,'#73DEFF','class="trace" stroke-width="1.2"');
+    const headlineParts=c.identity.headline.split(' | ');
+    b+=`<g class="role-enter">`;
+    b+=t(x,m?266:306,headlineParts[0],m?24:28,'#FFFFFF','font-weight="600" text-anchor="middle"');
+    if(m) {
+      b+=t(x,296,'Frontend & Full-Stack',21,'#D8EEFA','text-anchor="middle"');
+      b+=t(x,323,'Product Architecture',21,'#D8EEFA','text-anchor="middle"');
+      b+=t(x,350,headlineParts.slice(2).join(' | '),19,'#73DEFF','text-anchor="middle"');
+    } else {
+      b+=t(x,337,headlineParts[1],22,'#D8EEFA','text-anchor="middle"');
+      b+=t(x,367,headlineParts.slice(2).join(' | '),21,'#73DEFF','text-anchor="middle"');
+    }
+    b+=`</g>`;
+    b+=line(x-31,m?421:454,x+31,m?421:454,'#C65A0A','stroke-width="2"');
     b+=`</g>`;
     b+=r(0,deck,w,h-deck,'#0B1225',0);
     b+=`<ellipse class="aurora" cx="${x}" cy="${h+70}" rx="${w*.55}" ry="200" fill="url(#cyan-halo)"/>`;
     b+=trace(`M0 ${deck}H${w}`);
     b+=stream(`M0 ${deck}H${w}`);
     if(m) {
-      b+=t(x,331,'Frontend Architecture',22,'#FFFFFF','font-weight="600" text-anchor="middle"');
-      b+=t(x,363,'System Design',22,'#FFFFFF','font-weight="600" text-anchor="middle"');
-      b+=l(x,402,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
-      b+=t(x,437,'Agentic AI · AI Orchestration',18,'#73DEFF','text-anchor="middle"');
+      b+=t(x,421,'Frontend Architecture',22,'#FFFFFF','font-weight="600" text-anchor="middle"');
+      b+=t(x,453,'System Design',22,'#FFFFFF','font-weight="600" text-anchor="middle"');
+      b+=l(x,492,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
+      b+=t(x,527,'Agentic AI · AI Orchestration',18,'#73DEFF','text-anchor="middle"');
     } else {
-      b+=t(x,375,'Frontend Architecture · System Design',25,'#FFFFFF','font-weight="600" text-anchor="middle"');
-      b+=l(x,410,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
-      b+=t(x,445,'AI Architecture · Agentic AI · AI Orchestration',21,'#73DEFF','text-anchor="middle"');
+      b+=t(x,455,'Frontend Architecture · System Design',25,'#FFFFFF','font-weight="600" text-anchor="middle"');
+      b+=l(x,490,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
+      b+=t(x,525,'AI Architecture · Agentic AI · AI Orchestration',21,'#73DEFF','text-anchor="middle"');
     }
     return{w,h,b,light:true};
   }
