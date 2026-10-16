@@ -5,7 +5,7 @@ const root=fileURLToPath(new URL('../',import.meta.url));
 const md=await readFile(path.join(root,'README.md'),'utf8');
 const inline=s=>s.replace(/\[\*\*([^\]]+)\*\*\]\((https:[^\s)]+)\)/g,'<a href="$2"><strong>$1</strong></a>').replace(/\[([^\]]+)\]\((https:[^\s)]+)\)/g,'<a href="$2">$1</a>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
 const blocks=md.split(/\n\s*\n/).map(s=>{
-  if(s.startsWith('<!--')||s.startsWith('<picture>')||s.startsWith('<p align='))return s;
+  if(s.startsWith('<!--')||s.startsWith('<picture>')||s.startsWith('<p'))return s;
   if(s.startsWith('### '))return `<h3>${inline(s.slice(4))}</h3>`;
   if(s.startsWith('# '))return `<h1>${inline(s.slice(2))}</h1>`;
   if(s.startsWith('- '))return `<ul>${s.split('\n').map(i=>`<li>${inline(i.slice(2))}</li>`).join('')}</ul>`;
