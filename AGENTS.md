@@ -12,3 +12,5 @@ This is the source for AshutoshChoubey/AshutoshChoubey, a GitHub profile README,
 - The content review date changes only after actual source research. Scheduled review proposals must never alter professional claims or that date automatically.
 - Publishing requires the user's design/publishing approval; creating the special public repository, merging the PR and changing account-level fields have separate explicit approval requirements. Never force-push. Preserve existing history if the repository later exists.
 - Do not report the profile as live until the approved default branch and public profile have been checked in a browser.
+
+- Advanced compositions live in scripts/design-v2.mjs. assets/rendered and its manifest are generated content-versioned render copies; edit the source and regenerate. Never hand-edit cache copies or delete unrelated files.

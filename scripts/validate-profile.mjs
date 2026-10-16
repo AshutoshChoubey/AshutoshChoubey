@@ -47,14 +47,14 @@ required(!/<(?:script|iframe|object|embed)\b|javascript:|data:image\//i.test(rea
 const pictures = [...readme.matchAll(/<picture\b[^>]*>([\s\S]*?)<\/picture>/gi)];
 required(pictures.length === names.length, 'Expected six primary picture sections');
 for (const name of names) {
-  const picture = pictures.find(match => new RegExp(`assets/${name}\\.svg`).test(match[1]));
+  const picture = pictures.find(match => new RegExp(`/${name}\\.svg`).test(match[1]));
   required(Boolean(picture), `Missing picture for ${name}`);
   if (!picture) continue;
   const images = [...picture[1].matchAll(/<img\b([^>]+)>/gi)].map(match => attributes(match[1]));
   const sources = [...picture[1].matchAll(/<source\b([^>]+)>/gi)].map(match => attributes(match[1]));
   required(images.length === 1 && images[0].alt?.trim().length >= 16, `${name} needs one image with meaningful alternative text`);
   required(sources.some(source => new RegExp(`max-width:\\s*${config.presentation.mobileBreakpoint}px`).test(source.media || '') && source.srcset?.includes(`${name}-mobile.svg`)), `${name} needs its configured mobile source`);
-  required(sources.some(source => /prefers-reduced-motion:\s*reduce/.test(source.media || '') && source.srcset?.includes('assets/static/')), `${name} needs a reduced-motion static source`);
+  required(sources.some(source => /prefers-reduced-motion:\s*reduce/.test(source.media || '') && source.srcset?.includes('/static/')), `${name} needs a reduced-motion static source`);
 }
 const refs = new Set([
   ...[...readme.matchAll(/(?:src|href|srcset)\s*=\s*(["'])(.*?)\1/gi)].map(match => match[2]),

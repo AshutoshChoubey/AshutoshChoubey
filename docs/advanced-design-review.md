@@ -18,7 +18,7 @@ Angular, TypeScript, JavaScript, RxJS and NgRx keep the established core hierarc
 
 ## Local checks
 
-- Generation and SVG/README validation pass: 26 deterministic files, comprising README and 25 SVGs. The original PNG logo is separate.
+- Generation and SVG/README validation pass: 52 deterministic files: README, 25 source SVGs, 25 identical content-versioned render copies, and their manifest. The original PNG logo is separate.
 - Actual browser text bounds have no overflow in any of the twelve primary desktop/mobile compositions.
 - Actual Chrome profile-column previews at 320, 375, 768, 1024 and 1440px pass in both light and dark surroundings: all eight images load, no horizontal overflow, branding stays aligned, and the intended responsive composition is selected.
 - All motion is decorative, runs once and finishes within four seconds. Reduced-motion sources and final animation behavior are checked before delivery.
@@ -35,3 +35,7 @@ Rendered review branch: https://github.com/AshutoshChoubey/AshutoshChoubey/tree/
 The actual branch was checked at all five widths in light and dark mode: all eight images loaded, no horizontal overflow, and the 900px responsive sources selected as intended. All six reduced-motion static variants loaded on both 320px and 1440px. Direct hosted SVG inspection confirmed finite orbit/light/trace animations and three assembling vector planes, with one iteration and a maximum duration of 4000ms. A final brand refinement gives the unchanged logo and vector wordmark equal 64px display heights, preserving a compact single-row lockup.
 
 The final current-head check and captures are local delivery artifacts in `reports/v2-github-responsive.json`, `reports/v2-github-reduced.json`, `reports/v2-motion.json` and `previews/v2-github-*`. PR #2 remains the explicit approval gate for this subsequent revision. No account profile fields or pins were modified.
+
+### GitHub raw-image cache correction
+
+Hosted inspection showed that GitHub raw redirects can serve an earlier cached SVG despite a changed query string. README image sources now use content-versioned directory paths under `assets/rendered/`, keeping the required editable base asset filenames intact. Render copies are byte-for-byte identical to their originals; validation verifies hashes, XML and manifest entries. The generator prunes only obsolete files listed in its own manifest and rejects unsafe paths. This makes new dimensions and artwork request a new path without relying on redirect query preservation.

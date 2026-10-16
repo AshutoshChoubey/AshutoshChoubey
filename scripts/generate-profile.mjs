@@ -1,4 +1,4 @@
-import {readFile, writeFile, mkdir} from 'node:fs/promises';
+import {readFile, writeFile, mkdir, rm} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
@@ -111,7 +111,14 @@ for(const [name,draw] of Object.entries(compositions)) for(const mobile of [fals
   outputs.set(`assets/static/${filename}`,svg(name,w,h,b,{light,staticAsset:true}));
 }
 outputs.set('assets/worldgyan-wordmark.svg',`<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="360" height="144" viewBox="0 0 360 144" role="img" aria-labelledby="title desc"><title id="title">WorldGyan</title><desc id="desc">World in black, Gyan in saffron. Next-Gen AI and Engineering.</desc><rect width="360" height="144" rx="12" fill="#FFFFFF"/><text x="180" y="79" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="700" text-anchor="middle"><tspan fill="${esc(c.worldgyan.wordmark.world)}">World</tspan><tspan fill="${esc(c.worldgyan.wordmark.gyan)}">Gyan</tspan></text><text x="180" y="108" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#334155" text-anchor="middle">Next-Gen AI &amp; Engineering</text></svg>\n`);
-const assetUrl=file=>`./${file}?v=${createHash('sha256').update(outputs.get(file)).digest('hex').slice(0,12)}`;
+// GitHub's raw redirect can drop query strings. Version the path, not just the URL query.
+const assetUrl=file=>{
+  const content=outputs.get(file);
+  const hash=createHash('sha256').update(content).digest('hex').slice(0,12);
+  const rendered=`assets/rendered/${file.includes('/static/')?'static/':''}${hash}/${path.basename(file)}`;
+  outputs.set(rendered,content);
+  return `./${rendered}`;
+};
 const picture = name => `<p>\n<picture>\n  <source media="(prefers-reduced-motion: reduce) and (max-width: ${c.presentation.mobileBreakpoint}px)" srcset="${assetUrl(`assets/static/${name}-mobile.svg`)}">\n  <source media="(prefers-reduced-motion: reduce)" srcset="${assetUrl(`assets/static/${name}.svg`)}">\n  <source media="(max-width: ${c.presentation.mobileBreakpoint}px)" srcset="${assetUrl(`assets/${name}-mobile.svg`)}">\n  <img src="${assetUrl(`assets/${name}.svg`)}" width="100%" alt="${esc(titles[name]+'. '+descriptions[name])}">\n</picture>\n</p>`;
 const readme=`<!-- Generated from profile.config.json. Edit the source, then run npm run generate. -->
 ${picture('hero')}
@@ -149,6 +156,16 @@ ${picture('connect')}
 [GitHub](${c.links.github}) · [LinkedIn](${c.links.linkedin}) · [Professional Portfolio](${c.links.portfolio}) · [WorldGyan](${c.links.worldgyan}) · [YouTube](${c.links.youtube})
 `;
 outputs.set('README.md',readme);
+const renderedFiles=[...outputs.keys()].filter(file=>file.startsWith('assets/rendered/')).sort();
+const manifest='assets/rendered/manifest.json';
+outputs.set(manifest,JSON.stringify({version:1,files:renderedFiles},null,2)+'\n');
+if(!check){
+  const old=JSON.parse(await readFile(path.join(root,manifest),'utf8').catch(()=>'{}'));
+  for(const file of old.files||[]){
+    if(!/^assets\/rendered\/(?:static\/)?[a-f0-9]{12}\/[a-z-]+\.svg$/.test(file))throw Error('Unsafe generated manifest path');
+    if(!outputs.has(file))await rm(path.join(root,file),{force:true});
+  }
+}
 let stale=[];
 for(const [file,value] of outputs) {
   const dest=path.join(root,file);
