@@ -1,0 +1,33 @@
+name: Validate profile
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1, verified 2026-10-16
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0, verified 2026-10-16
+        with:
+          node-version: '22'
+          package-manager-cache: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0, verified 2026-10-16
+        with:
+          python-version: '3.13'
+      - name: Validate deterministic source, vectors and README
+        run: npm run validate
+      - name: Check external link reachability
+        run: npm run validate:links
+      - name: Summarize restricted links honestly
+        if: always()
+        run: |
+          node --input-type=module -e "import fs from 'node:fs'; const p='reports/link-report.json'; if(fs.existsSync(p)){const r=JSON.parse(fs.readFileSync(p));const pending=r.results.filter(x=>x.status!=='reachable');fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'External links: '+r.results.filter(x=>x.status==='reachable').length+'/'+r.results.length+' HTTP reachable.\\n\\n'+pending.map(x=>'- '+x.status+': '+x.url).join('\\n')+'\\n');}"
