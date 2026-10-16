@@ -1,53 +1,38 @@
 // Original vector compositions. Static variants share these exact drawing bodies.
-export function advancedCompositions(c,{text:t,label:l,line,rect:r,dot,trace,sectionHeader}) {
+export function advancedCompositions(c,{text:t,label:l,line,rect:r,dot,trace,sectionHeader,logoUri}) {
   const card=(x,y,w,h)=>r(x,y+3,w,h,'#050D1C',14,'opacity=".2"')+r(x,y,w,h,'url(#card)',14,'stroke="#3D5878" stroke-opacity=".65"')+`<path d="M${x+15} ${y+1}H${x+w-15}" stroke="#D0E8FF" stroke-opacity=".12"/>`;
   const path=(d,color='#51799F',extra='')=>`<path d="${d}" fill="none" stroke="${color}" ${extra}/>`;
   const plane=(x,y,w=90,phase=0)=>`<g transform="translate(${x} ${y})"><g class="assemble layer-${phase}"><path d="M0 0l${w/2} -24L${w} 0 ${w/2} 24z" fill="#193453" stroke="#5E94C0"/><path d="M0 0v10l${w/2} 24v-10M${w} 0v10l-${w/2} 24" fill="#0F2038" stroke="#355D81"/></g></g>`;
   const atmosphere=(w,h)=>`<ellipse class="aurora" cx="${w*.65}" cy="${h*.4}" rx="${w*.35}" ry="${h*.6}" fill="url(#cyan-halo)"/><rect width="${w}" height="${h}" fill="url(#blueprint)" opacity=".16"/>`;
   const stream=d=>path(d,'#64DAFF','class="signal" stroke-width="2.4" stroke-linecap="round"');
   function hero(m) {
-    const w=m?420:960,h=m?570:560,x=w/2,deck=m?380:410;
+    const w=m?420:960,h=m?420:460,x=w/2,deck=m?265:310;
     let b=`<ellipse cx="${w*.8}" cy="170" rx="${m?170:300}" ry="230" fill="url(#paper-light)"/>`;
-    b+=path(`M${m?24:40} 49H${m?115:290}M${w-(m?24:40)} 49H${w-(m?115:290)}`,'#DCE5F1');
-    b+=l(x,53,'FRONTEND / ARCHITECTURE / AI','#526179','text-anchor="middle"');
-    b+=`<g transform="translate(0 -60)">`;
-    if(!m) {
-      b+=`<g opacity=".22">${plane(42,222,104,0)}${plane(42,247,104,1)}${plane(42,272,104,2)}</g>`;
-      b+=path('M814 177h49v49h49v70h-49v40','#B5C7DF');
-      b+=dot(863,226,'#1E40AF',3)+dot(912,296,'#F59E0B',3);
-    } else b+=path('M27 157v64h25M393 161v65h-25','#DCE5F1');
-    b+=r(m?18:154,m?153:159,m?384:652,m?240:268,'#FFFFFF',20,'stroke="#DCE5F1"');
-    b+=path(`M${m?38:178} ${m?154:160}H${m?382:782}`,'#9BB7D8','class="trace" stroke-width="1.5"');
-    b+=t(x,m?207:236,c.identity.name,m?28:51,'url(#ink)','class="rise" font-weight="700" letter-spacing="-.8" text-anchor="middle"');
-    b+=r(x-(m?178:310),m?236:272,m?356:620,m?136:116,'#0B1225',12,'stroke="#3D5878"');
-    b+=path(`M${x-(m?165:295)} ${m?237:273}H${x+(m?165:295)}`,'#73DEFF','class="trace" stroke-width="1.2"');
-    const headlineParts=c.identity.headline.split(' | ');
-    b+=`<g class="role-enter">`;
-    b+=t(x,m?266:306,headlineParts[0],m?24:28,'#FFFFFF','font-weight="600" text-anchor="middle"');
-    if(m) {
-      b+=t(x,296,'Frontend & Full-Stack',21,'#D8EEFA','text-anchor="middle"');
-      b+=t(x,323,'Product Architecture',21,'#D8EEFA','text-anchor="middle"');
-      b+=t(x,350,headlineParts.slice(2).join(' | '),19,'#73DEFF','text-anchor="middle"');
-    } else {
-      b+=t(x,337,headlineParts[1],22,'#D8EEFA','text-anchor="middle"');
-      b+=t(x,367,headlineParts.slice(2).join(' | '),21,'#73DEFF','text-anchor="middle"');
-    }
-    b+=`</g>`;
-    b+=line(x-31,m?421:454,x+31,m?421:454,'#C65A0A','stroke-width="2"');
-    b+=`</g>`;
+    b+=`<image x="${m?24:40}" y="20" width="48" height="48" href="${logoUri}"/>`;
+    b+=l(m?94:110,48,'FRONTEND / ARCHITECTURE / AI','#526179');
+    b+=path(`M${m?24:40} 82H${w-(m?24:40)}`,'#DCE5F1','class="trace"');
+    if(!m) b+=`<g opacity=".22">${plane(42,161,86,0)}${plane(42,186,86,1)}${plane(42,211,86,2)}</g>`;
+    b+=t(x,m?144:170,c.identity.name,m?28:51,'url(#ink)','class="rise" font-weight="700" letter-spacing="-.8" text-anchor="middle"');
+    const left=m?18:110,rw=w-left*2,ry=m?174:205,rh=m?52:58;
+    b+=r(left,ry,rw,rh,'#0B1225',12,'stroke="#3D5878"');
+    b+=path(`M${left+13} ${ry+1}H${w-left-13}`,'#73DEFF','class="trace"');
+    b+=`<text x="${x}" y="${ry+(m?31:35)}" font-size="${m?10.4:18.5}" fill="#FFFFFF" text-anchor="middle" class="role-enter" font-weight="500">`;
+    const split=c.identity.headline.lastIndexOf(' | ')+3;
+    const escape=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;');
+    b+=`<tspan>${escape(c.identity.headline.slice(0,split))}</tspan><tspan class="ai-glow" fill="#73DEFF">${escape(c.identity.headline.slice(split))}</tspan></text>`;
+    b+=stream(`M${left+16} ${ry+rh-5}H${w-left-16}`);
+    b+=line(x-25,deck-16,x+25,deck-16,'#C65A0A','stroke-width="2"');
     b+=r(0,deck,w,h-deck,'#0B1225',0);
     b+=`<ellipse class="aurora" cx="${x}" cy="${h+70}" rx="${w*.55}" ry="200" fill="url(#cyan-halo)"/>`;
-    b+=trace(`M0 ${deck}H${w}`);
-    b+=stream(`M0 ${deck}H${w}`);
+    b+=trace(`M0 ${deck}H${w}`)+stream(`M0 ${deck}H${w}`);
     if(m) {
-      b+=t(x,421,'Frontend Architecture',22,'#FFFFFF','font-weight="600" text-anchor="middle"');
-      b+=t(x,453,'System Design',22,'#FFFFFF','font-weight="600" text-anchor="middle"');
-      b+=l(x,492,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
-      b+=t(x,527,'Agentic AI · AI Orchestration',18,'#73DEFF','text-anchor="middle"');
+      b+=t(x,302,'Frontend Architecture · System Design',19,'#FFFFFF','class="architecture-drift" font-weight="600" text-anchor="middle"');
+      b+=l(x,342,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
+      b+=t(x,381,'Agentic AI · AI Orchestration',20,'#73DEFF','class="ai-glow" text-anchor="middle"');
     } else {
-      b+=t(x,455,'Frontend Architecture · System Design',25,'#FFFFFF','font-weight="600" text-anchor="middle"');
-      b+=l(x,490,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
-      b+=t(x,525,'AI Architecture · Agentic AI · AI Orchestration',21,'#73DEFF','text-anchor="middle"');
+      b+=t(x,354,'Frontend Architecture · System Design',25,'#FFFFFF','class="architecture-drift" font-weight="600" text-anchor="middle"');
+      b+=l(x,392,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
+      b+=t(x,429,'AI Architecture · Agentic AI · AI Orchestration',21,'#73DEFF','class="ai-glow" text-anchor="middle"');
     }
     return{w,h,b,light:true};
   }
@@ -82,7 +67,7 @@ export function advancedCompositions(c,{text:t,label:l,line,rect:r,dot,trace,sec
       b+=`<ellipse cx="480" cy="213" rx="150" ry="140" fill="url(#cyan-halo)"/>`;
       b+=`<g class="system-orbit" fill="none" stroke="#3F6C96" stroke-opacity=".6"><ellipse cx="480" cy="215" rx="98" ry="122" transform="rotate(35 480 215)"/><ellipse cx="480" cy="215" rx="122" ry="42" transform="rotate(-35 480 215)"/></g>`;
       b+=`<g transform="translate(480 215)"><g class="halo-orbit" fill="none" stroke="#73DEFF" stroke-opacity=".7"><circle r="111" stroke-dasharray="28 21 6 21"/><circle cx="111" r="4" fill="#73DEFF"/></g></g>`;
-      b+=plane(436,177,88,0)+plane(436,206,88,1)+plane(436,235,88,2);
+      b+=`<g class="architecture-drift">`+plane(436,177,88,0)+plane(436,206,88,1)+plane(436,235,88,2)+`</g>`;
       b+=t(480,296,'Architecture',15,'#C5D3E4','text-anchor="middle"');
       [[42,100],[613,100],[42,228],[613,228]].forEach(([x,y],i)=>{
         const v=c.capabilities[i];
@@ -98,7 +83,7 @@ export function advancedCompositions(c,{text:t,label:l,line,rect:r,dot,trace,sec
         const x=42+i*302;
         b+=`<g class="card-enter step-${i+1}">`+card(x,400,272,73);
         b+=dot(x+19,423,'#F59E0B',3);
-        b+=t(x+19,447,v.title,22,'#FFFFFF','font-weight="600"')+`</g>`;
+        b+=t(x+19,447,v.title,22,'#FFFFFF',`class="${v.title==='Agentic AI'?'ai-glow':''}" font-weight="600"`)+`</g>`;
         b+=`<g transform="translate(${x+247} 422)"><circle class="beacon" r="10" fill="none" stroke="#73DEFF"/><circle r="3" fill="#73DEFF"/></g>`;
         if(i<2)b+=trace(`M${x+272} 436H${x+302}`)+stream(`M${x+272} 436H${x+302}`);
       });

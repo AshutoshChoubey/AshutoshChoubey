@@ -6,7 +6,7 @@ Ashutosh Kumar Choubey is the primary brand. Frontend architecture and system de
 
 The composition pairs a centered white signature hero with midnight technical panels. Generous space, large name typography, aligned architectural geometry, and thin cyan connections create the visual hierarchy. A restrained saffron globe belongs to the WorldGyan signature. It does not replace the professional name.
 
-All primary artwork is original vector geometry and SVG text. Do not introduce photographs, fictional faces, silhouettes, embedded bitmaps, remote imagery, external fonts, large badge collections, visitor counters, contribution animations, or numerical claims without evidence. The Ug0510 reference informed scale and panel consistency; its assets and exact layouts were not reused. See [the reference review](technology-review.md).
+All primary artwork is original vector geometry and SVG text. Do not introduce photographs, fictional faces, silhouettes, embedded bitmaps except the user-approved original WorldGyan hero logo, remote imagery, external fonts, large badge collections, visitor counters, contribution animations, or numerical claims without evidence. The Ug0510 reference informed scale and panel consistency; its assets and exact layouts were not reused. See [the reference review](technology-review.md).
 
 ## Color tokens
 
@@ -58,7 +58,7 @@ Local previews establish the local layout only. After the user approves publicat
 
 ### Supplied WorldGyan branding
 
-The later user-provided brand direction takes precedence over the initial saffron-only founder text. Set World to black and Gyan to saffron on white panels, including the founder signature. Preserve the supplied circular PNG logo unchanged as a separate linked Markdown/HTML image; never disguise it as original vector art or embed it into the SVG panels. AI architecture is explicitly labeled exploration.
+The later user-provided brand direction takes precedence over the initial saffron-only founder text. Set World to black and Gyan to saffron on white panels, including the founder signature. Preserve the supplied circular PNG logo artwork. The latest user request moves a 128px optimized copy inside the white hero as an embedded PNG; this is a narrow exception to the vector-only rule, not original vector art. The full-resolution original stays unchanged and remains linked in the WorldGyan section. AI architecture is explicitly labeled exploration.
 
 ## Advanced visual revision
 

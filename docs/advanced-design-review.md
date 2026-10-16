@@ -59,3 +59,11 @@ Chrome passed all five widths in both themes, nine images loaded, and all twelve
 ## User-selected architecture headline
 
 The user explicitly selected: Software Architect | Frontend & Full-Stack Product Architecture | System Design | Agentic AI. This replaces Senior UI Engineer throughout generated identity text and alternatives. The hero gives Software Architect the primary line, with the remaining specializations below inside an expanded role panel; the full name remains on one line. This is user-selected public positioning, not newly verified employment history. Existing source audit dates and exploration classifications remain intact.
+
+## Compact single-line signature and in-panel logo
+
+The latest user request supersedes the separate logo header and multi-line role layout. The supplied logo is now inside the white hero at 48px, using a 128px optimized PNG copy (26,753 bytes) of the unchanged original. This is a narrow user-requested exception to vector-only hero art; validation permits only those exact embedded bytes in hero variants and still rejects arbitrary images or external resources. The original logo stays linked in the WorldGyan section.
+
+The shortened headline is Software Architect | Frontend & Full-Stack | System Design | Agentic AI, on one line. Hero height falls from 560 to 460 desktop units and 570 to 420 mobile units, and the separate logo row is removed. Agentic AI gains a finite cyan/white/saffron highlight sequence; architecture labels and central planes gain a larger floating assembly sequence alongside existing orbits, card entrances, node pulses and signals. Static/reduced-motion alternatives remain fully readable.
+
+Previous headline PR #5 was already merged; this is a subsequent review revision.
