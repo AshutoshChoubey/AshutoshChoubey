@@ -5,7 +5,7 @@ Reviewed 16 October 2026. This document is the durable content brief for the gen
 ## Identity
 
 **Ashutosh Kumar Choubey**  
-**Senior Software Engineer**  
+**Senior Frontend UI Engineer**  
 **Frontend Architecture · System Design**
 
 Positioning: **Building scalable frontend systems. Exploring intelligent, agent-powered software.**
@@ -53,3 +53,7 @@ WorldGyan is a secondary founder and education identity, with broader engineerin
 Edit personal content in `profile.config.json` and original vector compositions in `scripts/generate-profile.mjs`. Regenerate with `npm run generate`. Run the validation and preview commands in `package.json`, inspect all required widths and record actual results. Do not hand-edit generated SVG or README output.
 
 Update the review date only after real source review. Add a project only after reading its public implementation. Promote an AI subject from exploration only when specific implementation or professional evidence supports the change. Scheduled research reviews may propose changes for review; they must not publish claims, update the review date or merge automatically. Follow the separate authorization gates in [publishing-checklist.md](publishing-checklist.md).
+
+## Later user-selected visual identity
+
+On 17 October 2026, after reviewing the live profile, the user requested title-case name typography and the descriptive headline Senior Frontend UI Engineer, with AI architecture, Agentic AI and AI orchestration visible in the engineering direction. See [advanced-design-review.md](advanced-design-review.md). Established frontend work and exploration remain visibly distinct. The earlier research audit remains the historical evidence record.

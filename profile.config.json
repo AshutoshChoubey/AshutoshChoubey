@@ -1,16 +1,16 @@
 {
   "identity": {
     "name": "Ashutosh Kumar Choubey",
-    "givenName": "ASHUTOSH",
-    "familyName": "KUMAR CHOUBEY",
-    "headline": "SENIOR SOFTWARE ENGINEER",
+    "givenName": "Ashutosh",
+    "familyName": "Kumar Choubey",
+    "headline": "Senior Frontend UI Engineer",
     "specializations": "FRONTEND ARCHITECTURE · SYSTEM DESIGN",
     "positioning": "Building scalable frontend systems. Exploring intelligent, agent-powered software."
   },
   "classifications": {
     "established": "Frontend architecture, Angular, TypeScript, RxJS and NgRx; enterprise UI engineering, component systems and automated testing.",
     "building": "Public engineering studies and teaching examples in Angular, reactive workflows, state management and TypeScript.",
-    "exploring": "AI architecture, AI-powered applications, LLM integration and agent orchestration; evaluated workflows with human review."
+    "exploring": "AI architecture, Agentic AI, AI orchestration and LLM-powered applications; tool integration, evaluations and human review."
   },
   "capabilities": [
     {
@@ -150,5 +150,22 @@
   "review": {
     "date": "2026-10-16",
     "basis": "Official public portfolio, public repository source audit and current primary documentation. See docs/research-audit.md."
-  }
+  },
+  "presentation": {
+    "mobileBreakpoint": 900
+  },
+  "engineeringDirection": [
+    {
+      "title": "AI Architecture",
+      "detail": "Context · retrieval"
+    },
+    {
+      "title": "Agentic AI",
+      "detail": "Tools · reasoning"
+    },
+    {
+      "title": "AI Orchestration",
+      "detail": "State · coordination"
+    }
+  ]
 }

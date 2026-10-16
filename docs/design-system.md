@@ -59,3 +59,7 @@ Local previews establish the local layout only. After the user approves publicat
 ### Supplied WorldGyan branding
 
 The later user-provided brand direction takes precedence over the initial saffron-only founder text. Set World to black and Gyan to saffron on white panels, including the founder signature. Preserve the supplied circular PNG logo unchanged as a separate linked Markdown/HTML image; never disguise it as original vector art or embed it into the SVG panels. AI architecture is explicitly labeled exploration.
+
+## Advanced visual revision
+
+The later title-case hero and original isometric/orchestration compositions are maintained in `scripts/design-v2.mjs`, using shared vector primitives and configuration. Surfaces use restrained blueprint grids, graduated cards and small inner highlights. Finite reveal, assembly, orbit, light-field and signal animations finish within four seconds. The responsive media breakpoint is configurable and currently 900px, reflecting GitHub profile column widths. The compact brand wordmark is 160px beside the unchanged 64px supplied logo. See `advanced-design-review.md` for evidence and the approval state.

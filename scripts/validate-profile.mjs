@@ -17,9 +17,10 @@ const readme = await readFile(path.join(root, 'README.md'), 'utf8');
 const required = (condition, message) => { if (!condition) problems.push(message); };
 const attributes = text => Object.fromEntries([...text.matchAll(/([\w-]+)\s*=\s*(["'])(.*?)\2/gs)].map(match => [match[1].toLowerCase(), match[3]]));
 required(config.identity?.name === 'Ashutosh Kumar Choubey', 'Use the official full name');
-required(readme.includes('**Ashutosh Kumar Choubey · Senior Software Engineer**'), 'README must expose the full name as ordinary Markdown');
+required(readme.includes(`**${config.identity.name} · ${config.identity.headline}**`), 'README must expose the full name as ordinary Markdown');
 required(readme.includes(config.identity?.positioning), 'Positioning must have an ordinary-text equivalent');
 required(/frontend/i.test(config.identity?.specializations || ''), 'Frontend must be a primary specialization');
+required(Number.isInteger(config.presentation?.mobileBreakpoint) && config.presentation.mobileBreakpoint >= 600 && config.presentation.mobileBreakpoint <= 1100, 'Choose a deliberate responsive breakpoint between 600 and 1100px');
 required(config.capabilities?.length === 4, 'Keep four principal engineering capabilities');
 required(config.technology?.primary?.includes('Angular') && config.technology?.primary?.includes('TypeScript'), 'Angular and TypeScript must remain primary technologies');
 for (const category of ['established', 'building', 'exploring']) required(Boolean(config.classifications?.[category]?.trim()), `Missing experience classification: ${category}`);
@@ -52,7 +53,7 @@ for (const name of names) {
   const images = [...picture[1].matchAll(/<img\b([^>]+)>/gi)].map(match => attributes(match[1]));
   const sources = [...picture[1].matchAll(/<source\b([^>]+)>/gi)].map(match => attributes(match[1]));
   required(images.length === 1 && images[0].alt?.trim().length >= 16, `${name} needs one image with meaningful alternative text`);
-  required(sources.some(source => /max-width:\s*600px/.test(source.media || '') && source.srcset?.includes(`${name}-mobile.svg`)), `${name} needs a 600px mobile source`);
+  required(sources.some(source => new RegExp(`max-width:\\s*${config.presentation.mobileBreakpoint}px`).test(source.media || '') && source.srcset?.includes(`${name}-mobile.svg`)), `${name} needs its configured mobile source`);
   required(sources.some(source => /prefers-reduced-motion:\s*reduce/.test(source.media || '') && source.srcset?.includes('assets/static/')), `${name} needs a reduced-motion static source`);
 }
 const refs = new Set([

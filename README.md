@@ -1,32 +1,32 @@
 <!-- Generated from profile.config.json. Edit the source, then run npm run generate. -->
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/static/hero-mobile.svg?v=af7f5a32aee7">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/static/hero.svg?v=fbd86b3034bf">
-  <source media="(max-width: 600px)" srcset="./assets/hero-mobile.svg?v=ef2028e35871">
-  <img src="./assets/hero.svg?v=fc995c6b4857" width="100%" alt="Ashutosh Kumar Choubey — SENIOR SOFTWARE ENGINEER. FRONTEND ARCHITECTURE · SYSTEM DESIGN. Building scalable frontend systems. Exploring intelligent, agent-powered software. AI engineering and agentic systems are exploration interests.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/static/hero-mobile.svg?v=10c23ebce860">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/static/hero.svg?v=f5850b852c96">
+  <source media="(max-width: 900px)" srcset="./assets/hero-mobile.svg?v=188c50991b05">
+  <img src="./assets/hero.svg?v=a0ebf663d65a" width="100%" alt="Ashutosh Kumar Choubey — Senior Frontend UI Engineer. FRONTEND ARCHITECTURE · SYSTEM DESIGN. Building scalable frontend systems. Exploring intelligent, agent-powered software. AI engineering and agentic systems are exploration interests.">
 </picture>
 </p>
 
-**Ashutosh Kumar Choubey · Senior Software Engineer**
+**Ashutosh Kumar Choubey · Senior Frontend UI Engineer**
 
 Building scalable frontend systems. Exploring intelligent, agent-powered software.
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/static/expertise-mobile.svg?v=14087612296d">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/static/expertise.svg?v=fdb3e1b56a10">
-  <source media="(max-width: 600px)" srcset="./assets/expertise-mobile.svg?v=b5dd31debec9">
-  <img src="./assets/expertise.svg?v=e0bca1882fb6" width="100%" alt="Engineering expertise: frontend architecture, enterprise engineering, system design, performance and scalability. Frontend Architecture: Components · design systems. Enterprise Engineering: Integration · quality. System Design: Boundaries · state · delivery. Performance &amp; Scalability: Rendering · modular delivery">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/static/expertise-mobile.svg?v=3045cba603b6">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/static/expertise.svg?v=9036ec3c3168">
+  <source media="(max-width: 900px)" srcset="./assets/expertise-mobile.svg?v=e83b84ba076d">
+  <img src="./assets/expertise.svg?v=0d243a63a9a1" width="100%" alt="Engineering expertise: frontend architecture, enterprise engineering, system design, performance and scalability. Frontend Architecture: Components · design systems. Enterprise Engineering: Integration · quality. System Design: Boundaries · state · delivery. Performance &amp; Scalability: Rendering · modular delivery. Exploring AI Architecture, Agentic AI, AI Orchestration, LLM Integration, MCP, evaluations and human review.">
 </picture>
 </p>
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/static/technology-mobile.svg?v=00e9e2f365fd">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/static/technology.svg?v=505dabe90abc">
-  <source media="(max-width: 600px)" srcset="./assets/technology-mobile.svg?v=b302aed5e56e">
-  <img src="./assets/technology.svg?v=6d59e20a0a02" width="100%" alt="Core technologies: Angular, TypeScript, JavaScript, RxJS, NgRx. HTML5 · CSS3 / SCSS · Component Architecture. Supporting: Node.js / REST APIs, Jasmine / Jest, Git / CI/CD. Accessibility · Security · Automated Testing.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/static/technology-mobile.svg?v=3003b33ba3dd">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/static/technology.svg?v=5cd8a5784b7e">
+  <source media="(max-width: 900px)" srcset="./assets/technology-mobile.svg?v=f29b0dfb4c8c">
+  <img src="./assets/technology.svg?v=657c75c19709" width="100%" alt="Core technologies: Angular, TypeScript, JavaScript, RxJS, NgRx. HTML5 · CSS3 / SCSS · Component Architecture. Supporting: Node.js / REST APIs, Jasmine / Jest, Git / CI/CD. Accessibility · Security · Automated Testing.">
 </picture>
 </p>
 
@@ -36,14 +36,14 @@ Building scalable frontend systems. Exploring intelligent, agent-powered softwar
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/static/ai-systems-mobile.svg?v=aa0e3ae67e03">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/static/ai-systems.svg?v=16f168ae3d62">
-  <source media="(max-width: 600px)" srcset="./assets/ai-systems-mobile.svg?v=d2b37d9789d2">
-  <img src="./assets/ai-systems.svg?v=48e216e5f375" width="100%" alt="Exploring and researching AI architecture, AI-powered applications, LLMs and agent orchestration. Conceptual research architecture, not a production deployment. AI architecture. Tool-using LLMs &amp; MCP. Agent orchestration. Evaluation &amp; human review. Exploring the next generation of intelligent software.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/static/ai-systems-mobile.svg?v=df1f0a22b95a">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/static/ai-systems.svg?v=0baa1e17b53f">
+  <source media="(max-width: 900px)" srcset="./assets/ai-systems-mobile.svg?v=2cf3c0d8efba">
+  <img src="./assets/ai-systems.svg?v=02267fdc01e1" width="100%" alt="Exploring and researching AI architecture, AI-powered applications, LLMs and agent orchestration. Conceptual research architecture, not a production deployment. AI architecture. Tool-using LLMs &amp; MCP. Agent orchestration. Evaluation &amp; human review. Exploring the next generation of intelligent software.">
 </picture>
 </p>
 
-**Exploring and researching:** AI architecture, AI-powered applications, LLM integration and agent orchestration; evaluated workflows with human review.
+**Exploring and researching:** AI architecture, Agentic AI, AI orchestration and LLM-powered applications; tool integration, evaluations and human review.
 
 ### Selected engineering projects
 
@@ -54,14 +54,14 @@ Public learning projects and code references, selected after reviewing their imp
 - [**NgRx effects demo**](https://github.com/AshutoshChoubey/ngrxeffects) — An Angular PokéAPI example connecting store actions, reducers and HTTP side effects to list and detail views.
 - [**TypeScript type-system examples**](https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com) — Focused examples of generics, unions, mapped types and utility types, alongside a type-system study reference.
 
-<p align="center"><a href="https://worldgyan.com/"><img src="./assets/worldgyan-logo.png" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="https://worldgyan.com/"><img src="./assets/worldgyan-wordmark.svg?v=741d5da705e6" width="180" height="56" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
+<p align="center"><a href="https://worldgyan.com/"><img src="./assets/worldgyan-logo.png" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="https://worldgyan.com/"><img src="./assets/worldgyan-wordmark.svg?v=741d5da705e6" width="160" height="50" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/static/research-mobile.svg?v=7b1f57e4d7d3">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/static/research.svg?v=e85a0df1ae87">
-  <source media="(max-width: 600px)" srcset="./assets/research-mobile.svg?v=48d602f6ce1e">
-  <img src="./assets/research.svg?v=e7771afdc486" width="100%" alt="WorldGyan: technical research and education across software engineering and intelligent systems. Published research in frontend system design and AI architecture, with practical Angular testing tutorials. Clickable resources are provided in the README.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/static/research-mobile.svg?v=56d69706f545">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/static/research.svg?v=28a25a9d8999">
+  <source media="(max-width: 900px)" srcset="./assets/research-mobile.svg?v=8f78ed357ef8">
+  <img src="./assets/research.svg?v=613fd9bffb5c" width="100%" alt="WorldGyan: technical research and education across software engineering and intelligent systems. Published research in frontend system design and AI architecture, with practical Angular testing tutorials. Clickable resources are provided in the README.">
 </picture>
 </p>
 
@@ -71,10 +71,10 @@ Public learning projects and code references, selected after reviewing their imp
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="./assets/static/connect-mobile.svg?v=29d9d1ab343a">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/static/connect.svg?v=3769b2c5611a">
-  <source media="(max-width: 600px)" srcset="./assets/connect-mobile.svg?v=64bf0e80aaa8">
-  <img src="./assets/connect.svg?v=523548aa2f41" width="100%" alt="Ashutosh Kumar Choubey — Founder, WorldGyan. Engineer. Architect. Explore. Build. GitHub, LinkedIn, professional portfolio, WorldGyan and YouTube links are provided in the README.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/static/connect-mobile.svg?v=428eeb2bb51c">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/static/connect.svg?v=5e5f76cf2c32">
+  <source media="(max-width: 900px)" srcset="./assets/connect-mobile.svg?v=7bda686081f8">
+  <img src="./assets/connect.svg?v=0418c9edc08f" width="100%" alt="Ashutosh Kumar Choubey — Founder, WorldGyan. Engineer. Architect. Explore. Build. GitHub, LinkedIn, professional portfolio, WorldGyan and YouTube links are provided in the README.">
 </picture>
 </p>
 
