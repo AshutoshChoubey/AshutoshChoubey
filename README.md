@@ -3,14 +3,14 @@
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/26430a4d6392/hero-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/e9a82703e68a/hero.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/c83c4cc1ef99/hero-mobile.svg">
-  <img src="./assets/rendered/552c67f5e241/hero.svg" width="100%" alt="Ashutosh Kumar Choubey — Senior UI Engineer. FRONTEND ARCHITECTURE · SYSTEM DESIGN. Building scalable frontend systems. Exploring intelligent, agent-powered software. AI engineering and agentic systems are exploration interests.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/62106a1e5760/hero-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/09bf9780a0a2/hero.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/c0592ac41673/hero-mobile.svg">
+  <img src="./assets/rendered/4ef13c41c533/hero.svg" width="100%" alt="Ashutosh Kumar Choubey — Software Architect | Frontend &amp; Full-Stack Product Architecture | System Design | Agentic AI. FRONTEND ARCHITECTURE · SYSTEM DESIGN. Building scalable frontend systems. Exploring intelligent, agent-powered software. AI engineering and agentic systems are exploration interests.">
 </picture>
 </p>
 
-**Ashutosh Kumar Choubey · Senior UI Engineer**
+**Ashutosh Kumar Choubey · Software Architect | Frontend & Full-Stack Product Architecture | System Design | Agentic AI**
 
 Building scalable frontend systems. Exploring intelligent, agent-powered software.
 
