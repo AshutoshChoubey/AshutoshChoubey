@@ -233,7 +233,7 @@ Public learning projects and code references, selected after reviewing their imp
 
 ${c.projects.map(p=>`- [**${p.name}**](${p.url}) — ${p.description}`).join('\n')}
 
-<p align="center"><a href="${c.links.worldgyan}"><img src="./${c.worldgyan.logo}" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="${c.links.worldgyan}"><img src="${assetUrl('assets/worldgyan-wordmark.svg')}" width="200" height="62" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
+<p align="center"><a href="${c.links.worldgyan}"><img src="./${c.worldgyan.logo}" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="${c.links.worldgyan}"><img src="${assetUrl('assets/worldgyan-wordmark.svg')}" width="180" height="56" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
 
 ${picture('research')}
 
