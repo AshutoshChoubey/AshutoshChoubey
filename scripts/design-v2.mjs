@@ -6,12 +6,11 @@ export function advancedCompositions(c,{text:t,label:l,line,rect:r,dot,trace,sec
   const atmosphere=(w,h)=>`<ellipse class="aurora" cx="${w*.65}" cy="${h*.4}" rx="${w*.35}" ry="${h*.6}" fill="url(#cyan-halo)"/><rect width="${w}" height="${h}" fill="url(#blueprint)" opacity=".16"/>`;
   const stream=d=>path(d,'#64DAFF','class="signal" stroke-width="2.4" stroke-linecap="round"');
   function hero(m) {
-    const w=m?420:960,h=m?540:540,x=w/2,deck=m?350:390;
+    const w=m?420:960,h=480,x=w/2,deck=m?290:330;
     let b=`<ellipse cx="${w*.8}" cy="170" rx="${m?170:300}" ry="230" fill="url(#paper-light)"/>`;
     b+=path(`M${m?24:40} 49H${m?115:290}M${w-(m?24:40)} 49H${w-(m?115:290)}`,'#DCE5F1');
-    b+=l(x,53,'INTERFACES / SYSTEMS / INTELLIGENCE','#526179','text-anchor="middle"');
-    b+=r(x-23,77,46,46,'#0B1225',12);
-    b+=t(x,107,'AC',20,'#FFFFFF','font-weight="700" letter-spacing="-1" text-anchor="middle"');
+    b+=l(x,53,'FRONTEND / ARCHITECTURE / AI','#526179','text-anchor="middle"');
+    b+=`<g transform="translate(0 -60)">`;
     if(!m) {
       b+=`<g opacity=".22">${plane(42,222,104,0)}${plane(42,247,104,1)}${plane(42,272,104,2)}</g>`;
       b+=path('M814 177h49v49h49v70h-49v40','#B5C7DF');
@@ -24,20 +23,20 @@ export function advancedCompositions(c,{text:t,label:l,line,rect:r,dot,trace,sec
     b+=path(`M${x-(m?152:220)} ${m?237:273}H${x+(m?152:220)}`,'#73DEFF','class="trace" stroke-width="1.2"');
     b+=t(x,m?266:306,c.identity.headline,m?19:24,'#FFFFFF','class="role-enter" font-weight="500" letter-spacing=".2" text-anchor="middle"');
     b+=line(x-31,m?331:374,x+31,m?331:374,'#C65A0A','stroke-width="2"');
-    b+=`<g transform="translate(${x} 100)"><g class="halo-orbit" fill="none" stroke="#49769C" stroke-opacity=".45"><circle r="34" stroke-dasharray="31 18 8 25"/><circle r="39" stroke-dasharray="3 16"/></g></g>`;
+    b+=`</g>`;
     b+=r(0,deck,w,h-deck,'#0B1225',0);
     b+=`<ellipse class="aurora" cx="${x}" cy="${h+70}" rx="${w*.55}" ry="200" fill="url(#cyan-halo)"/>`;
     b+=trace(`M0 ${deck}H${w}`);
     b+=stream(`M0 ${deck}H${w}`);
     if(m) {
-      b+=t(x,391,'Frontend Architecture',22,'#FFFFFF','font-weight="600" text-anchor="middle"');
-      b+=t(x,423,'System Design',22,'#FFFFFF','font-weight="600" text-anchor="middle"');
-      b+=l(x,462,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
-      b+=t(x,497,'Agentic AI · AI Orchestration',18,'#73DEFF','text-anchor="middle"');
+      b+=t(x,331,'Frontend Architecture',22,'#FFFFFF','font-weight="600" text-anchor="middle"');
+      b+=t(x,363,'System Design',22,'#FFFFFF','font-weight="600" text-anchor="middle"');
+      b+=l(x,402,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
+      b+=t(x,437,'Agentic AI · AI Orchestration',18,'#73DEFF','text-anchor="middle"');
     } else {
-      b+=t(x,435,'Frontend Architecture · System Design',25,'#FFFFFF','font-weight="600" text-anchor="middle"');
-      b+=l(x,470,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
-      b+=t(x,505,'AI Architecture · Agentic AI · AI Orchestration',21,'#73DEFF','text-anchor="middle"');
+      b+=t(x,375,'Frontend Architecture · System Design',25,'#FFFFFF','font-weight="600" text-anchor="middle"');
+      b+=l(x,410,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
+      b+=t(x,445,'AI Architecture · Agentic AI · AI Orchestration',21,'#73DEFF','text-anchor="middle"');
     }
     return{w,h,b,light:true};
   }
@@ -49,45 +48,48 @@ export function advancedCompositions(c,{text:t,label:l,line,rect:r,dot,trace,sec
       b+=path('M43 119V430','#345170');
       c.capabilities.forEach((v,i)=>{
         const y=96+i*91;
-        b+=card(66,y,326,73)+dot(43,y+35,i===0?'#F59E0B':'#73DEFF',4);
+        b+=`<g class="card-enter step-${i}">`+card(66,y,326,73)+dot(43,y+35,i===0?'#F59E0B':'#73DEFF',4);
         b+=line(47,y+35,66,y+35,'#4E88BF');
         b+=t(83,y+30,v.title,v.title.length>23?21:23,'#FFFFFF','font-weight="600"');
-        b+=t(83,y+55,v.detail,17,'#B7C9DE');
+        b+=t(83,y+55,v.detail,17,'#B7C9DE')+`</g>`;
+        b+=stream(`M43 ${y+35}H66`);
       });
-      b+=trace('M43 131V404');
+      b+=trace('M43 131V404')+stream('M43 131V404');
       b+=line(28,465,392,465,'#345170');
       b+=l(28,495,'EXPLORING / AI ENGINEERING','#73DEFF');
       c.engineeringDirection.forEach((v,i)=>{
         const y=518+i*72;
-        b+=card(66,y,326,57)+dot(43,y+28,'#F59E0B',3);
+        b+=`<g class="card-enter step-${i+1}">`+card(66,y,326,57)+dot(43,y+28,'#F59E0B',3);
         b+=t(83,y+25,v.title,23,'#FFFFFF','font-weight="600"');
-        b+=t(83,y+46,v.detail,17,'#B7C9DE');
-        if(i<2)b+=trace(`M43 ${y+28}V${y+100}`);
+        b+=t(83,y+46,v.detail,17,'#B7C9DE')+`</g>`;
+        if(i<2)b+=trace(`M43 ${y+28}V${y+100}`)+stream(`M43 ${y+28}V${y+100}`);
       });
       b+=t(28,757,'LLM Integration · MCP · Evaluations',17,'#C5D3E4');
       b+=t(28,780,'Human review · Reliable AI workflows',15,'#A8B7CC');
     } else {
       b+=l(42,81,'ESTABLISHED / FRONTEND ENGINEERING');
       b+=`<ellipse cx="480" cy="213" rx="150" ry="140" fill="url(#cyan-halo)"/>`;
-      b+=`<g class="orbit" fill="none" stroke="#3F6C96" stroke-opacity=".6"><ellipse cx="480" cy="215" rx="98" ry="122" transform="rotate(35 480 215)"/><ellipse cx="480" cy="215" rx="122" ry="42" transform="rotate(-35 480 215)"/></g>`;
+      b+=`<g class="system-orbit" fill="none" stroke="#3F6C96" stroke-opacity=".6"><ellipse cx="480" cy="215" rx="98" ry="122" transform="rotate(35 480 215)"/><ellipse cx="480" cy="215" rx="122" ry="42" transform="rotate(-35 480 215)"/></g>`;
+      b+=`<g transform="translate(480 215)"><g class="halo-orbit" fill="none" stroke="#73DEFF" stroke-opacity=".7"><circle r="111" stroke-dasharray="28 21 6 21"/><circle cx="111" r="4" fill="#73DEFF"/></g></g>`;
       b+=plane(436,177,88,0)+plane(436,206,88,1)+plane(436,235,88,2);
       b+=t(480,296,'Architecture',15,'#C5D3E4','text-anchor="middle"');
       [[42,100],[613,100],[42,228],[613,228]].forEach(([x,y],i)=>{
         const v=c.capabilities[i];
-        b+=`<g class="card-enter step-${i}">${card(x,y,305,90)}</g>`;
+        b+=`<g class="card-enter step-${i}">${card(x,y,305,90)}`;
         b+=l(x+18,y+23,`0${i+1}`,i===0?'#F8BF5C':'#73DEFF');
         b+=t(x+18,y+49,v.title,21,'#FFFFFF','font-weight="600"');
-        b+=t(x+18,y+73,v.detail,16,'#B7C9DE');
-        b+=trace(`M${i%2===0?347:613} ${y+45}H${i%2===0?405:555}V215`);
+        b+=t(x+18,y+73,v.detail,16,'#B7C9DE')+`</g>`;
+        b+=trace(`M${i%2===0?347:613} ${y+45}H${i%2===0?405:555}V215`)+stream(`M${i%2===0?347:613} ${y+45}H${i%2===0?405:555}V215`);
       });
       b+=line(42,345,918,345,'#345170');
       b+=l(42,375,'EXPLORING / AI ENGINEERING','#73DEFF');
       c.engineeringDirection.forEach((v,i)=>{
         const x=42+i*302;
-        b+=card(x,400,272,73);
+        b+=`<g class="card-enter step-${i+1}">`+card(x,400,272,73);
         b+=dot(x+19,423,'#F59E0B',3);
-        b+=t(x+19,447,v.title,22,'#FFFFFF','font-weight="600"');
-        if(i<2)b+=trace(`M${x+272} 436H${x+302}`);
+        b+=t(x+19,447,v.title,22,'#FFFFFF','font-weight="600"')+`</g>`;
+        b+=`<g transform="translate(${x+247} 422)"><circle class="beacon" r="10" fill="none" stroke="#73DEFF"/><circle r="3" fill="#73DEFF"/></g>`;
+        if(i<2)b+=trace(`M${x+272} 436H${x+302}`)+stream(`M${x+272} 436H${x+302}`);
       });
       b+=t(42,505,'LLM Integration · MCP · Evaluations · Human Review',18,'#C5D3E4');
     }
