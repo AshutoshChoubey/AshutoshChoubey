@@ -1,7 +1,8 @@
-import {readFile, writeFile, mkdir} from 'node:fs/promises';
+import {readFile, writeFile, mkdir, rm} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
+import {advancedCompositions} from './design-v2.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const c = JSON.parse(await readFile(path.join(root, 'profile.config.json'), 'utf8'));
@@ -25,77 +26,19 @@ const titles = {
 };
 const descriptions = {
   hero: `${c.identity.specializations}. ${c.identity.positioning} AI engineering and agentic systems are exploration interests.`,
-  expertise: c.capabilities.map(v=>`${v.title}: ${v.detail}`).join('. '),
+  expertise: c.capabilities.map(v=>`${v.title}: ${v.detail}`).join('. ')+'. Exploring AI Architecture, Agentic AI, AI Orchestration, LLM Integration, MCP, evaluations and human review.',
   technology: `${c.technology.web}. Supporting: ${c.technology.supporting.join(', ')}. ${c.technology.quality}.`,
   'ai-systems': `Conceptual research architecture, not a production deployment. ${c.exploring.join('. ')}. Exploring the next generation of intelligent software.`,
   research: 'Published research in frontend system design and AI architecture, with practical Angular testing tutorials. Clickable resources are provided in the README.',
   connect: 'Engineer. Architect. Explore. Build. GitHub, LinkedIn, professional portfolio, WorldGyan and YouTube links are provided in the README.'
 };
 function svg(name,w,h,body,{light=false,staticAsset=false}={}) {
-  const style = `text{font-family:Arial,Helvetica,sans-serif} .trace{stroke-dasharray:1100;stroke-dashoffset:0;animation:trace 4s ease-out 1} .orbit{transform-box:fill-box;transform-origin:center;animation:orbit 4s ease-in-out 1} @keyframes trace{from{stroke-dashoffset:1100}to{stroke-dashoffset:0}} @keyframes orbit{from{transform:rotate(-14deg)}to{transform:rotate(0)}} @media(prefers-reduced-motion:reduce){.trace,.orbit{animation:none!important}}`;
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title desc">\n<title id="title">${esc(titles[name])}</title>\n<desc id="desc">${esc(descriptions[name])}</desc>\n<defs><clipPath id="frame-clip"><rect width="${w}" height="${h}" rx="18"/></clipPath><linearGradient id="surface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0B1225"/><stop offset="1" stop-color="#122742"/></linearGradient><linearGradient id="signal"><stop stop-color="#1E40AF"/><stop offset=".52" stop-color="#00C9FF"/><stop offset="1" stop-color="#73DEFF"/></linearGradient><radialGradient id="ambient"><stop stop-color="#1E40AF" stop-opacity=".28"/><stop offset="1" stop-color="#1E40AF" stop-opacity="0"/></radialGradient><linearGradient id="ink"><stop stop-color="#0B1225"/><stop offset="1" stop-color="#1E40AF"/></linearGradient></defs>\n${staticAsset ? '<style>text{font-family:Arial,Helvetica,sans-serif}</style>' : `<style>${style}</style>`}\n${rect(0,0,w,h,light?'#FFFFFF':'url(#surface)',18)}\n<g clip-path="url(#frame-clip)">${body}</g>\n${border(w,h)}\n</svg>\n`;
+  const style = `text{font-family:Arial,Helvetica,sans-serif}.trace{stroke-dasharray:1100;stroke-dashoffset:0;animation:trace 3.2s ease-out 1}.orbit{transform-box:fill-box;transform-origin:center;animation:orbit 4s ease-in-out 1}.assemble{animation:assemble 1.8s ease-out 1}.rise{animation:rise 1.1s ease-out .15s 1}.aurora{transform-box:fill-box;transform-origin:center;animation:aurora 3.4s ease-out 1}.signal{stroke-dasharray:12 540;animation:signal 3.8s ease-out 1}@keyframes assemble{from{transform:translateY(9px);opacity:.6}to{transform:translateY(0);opacity:1}}@keyframes trace{from{stroke-dashoffset:1100}to{stroke-dashoffset:0}}@keyframes orbit{from{transform:rotate(-14deg)}to{transform:rotate(0)}}@keyframes rise{from{transform:translateY(8px);opacity:.78}to{transform:translateY(0);opacity:1}}@keyframes aurora{from{transform:scale(.97);opacity:.55}to{transform:scale(1);opacity:1}}@keyframes signal{from{stroke-dashoffset:552}to{stroke-dashoffset:0}}@media(prefers-reduced-motion:reduce){.trace,.orbit,.rise,.aurora,.signal,.assemble{animation:none!important}}`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title desc">\n<title id="title">${esc(titles[name])}</title>\n<desc id="desc">${esc(descriptions[name])}</desc>\n<defs><clipPath id="frame-clip"><rect width="${w}" height="${h}" rx="18"/></clipPath><linearGradient id="surface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0B1225"/><stop offset="1" stop-color="#122742"/></linearGradient><linearGradient id="signal"><stop stop-color="#1E40AF"/><stop offset=".52" stop-color="#00C9FF"/><stop offset="1" stop-color="#73DEFF"/></linearGradient><radialGradient id="ambient"><stop stop-color="#1E40AF" stop-opacity=".28"/><stop offset="1" stop-color="#1E40AF" stop-opacity="0"/></radialGradient><linearGradient id="ink"><stop stop-color="#0B1225"/><stop offset="1" stop-color="#1E40AF"/></linearGradient><linearGradient id="card" x2=".7" y2="1"><stop stop-color="#1A304C"/><stop offset="1" stop-color="#101E34"/></linearGradient><linearGradient id="orchestrator" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#194578"/><stop offset=".55" stop-color="#173957"/><stop offset="1" stop-color="#14243D"/></linearGradient><radialGradient id="cyan-halo"><stop stop-color="#00C9FF" stop-opacity=".19"/><stop offset="1" stop-color="#00C9FF" stop-opacity="0"/></radialGradient><radialGradient id="paper-light"><stop stop-color="#DCEBFA" stop-opacity=".65"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient><pattern id="blueprint" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#345170" stroke-width=".5"/></pattern></defs>\n${staticAsset ? '<style>text{font-family:Arial,Helvetica,sans-serif}</style>' : `<style>${style}</style>`}\n${rect(0,0,w,h,light?'#FFFFFF':'url(#surface)',18)}\n<g clip-path="url(#frame-clip)">${body}</g>\n${border(w,h)}\n</svg>\n`;
 }
 function sectionHeader(n,title,w,mobile,light=false) {
   const x=mobile?28:42;
   return label(x,35,n+' / '+title,light?'#526179':'#A8B7CC') + line(x,52,w-x,52,light?'#DEE5EE':'#283950') + dot(w-x,34,'#F59E0B',3);
-}
-function hero(m) {
-  const w=m?420:960,h=m?500:490,center=w/2;
-  let b = `<circle cx="${m?380:915}" cy="${m?95:170}" r="${m?115:220}" fill="none" stroke="#1E40AF" stroke-opacity=".07"/><circle cx="${m?380:915}" cy="${m?95:170}" r="${m?80:175}" fill="none" stroke="#1E40AF" stroke-opacity=".09"/><path d="M${m?16:35} ${m?72:114}h${m?45:115}m-${m?25:65} -20v40" fill="none" stroke="#DCE6F2"/>`;
-  b += label(center,40,'ENGINEERING / WITH INTENT','#526179','text-anchor="middle"');
-  b += globe(center,m?86:83,17);
-  b += text(center,m?165:194,c.identity.givenName,m?52:101,'#0B1225','font-weight="800" letter-spacing="-2.5" text-anchor="middle"');
-  b += text(center,m?215:281,c.identity.familyName,m?38:80,'url(#ink)','font-weight="800" letter-spacing="-1.8" text-anchor="middle"');
-  b += text(center,m?258:325,c.identity.headline,m?17:21,'#334155','font-weight="600" letter-spacing="2.6" text-anchor="middle"');
-  b += line(center-33,m?281:350,center+33,m?281:350,'#F59E0B','stroke-width="2"');
-  const deck=m?310:377;
-  b += rect(1,deck,w-2,h-deck-1,'#0B1225',0);
-  b += trace(`M${m?28:42} ${deck}H${w-(m?28:42)}`);
-  if(m) {
-    b += text(center,352,'FRONTEND ARCHITECTURE',18,'#FFFFFF','font-weight="600" text-anchor="middle"');
-    b += text(center,380,'SYSTEM DESIGN',18,'#FFFFFF','font-weight="600" text-anchor="middle"');
-    b += label(center,420,'EXPLORING','#A8B7CC','text-anchor="middle"');
-    b += text(center,449,'AI ENGINEERING · AGENTIC SYSTEMS',15,'#73DEFF','text-anchor="middle"');
-  } else {
-    b += text(center,420,c.identity.specializations,22,'#FFFFFF','font-weight="600" letter-spacing="1.1" text-anchor="middle"');
-    b += label(center,458,'EXPLORING / AI ENGINEERING · AGENTIC SYSTEMS','#73DEFF','text-anchor="middle"');
-  }
-  return {w,h,b,light:true};
-}
-function expertise(m) {
-  const w=m?420:960,h=m?514:354;
-  let b=sectionHeader('01','ENGINEERING EXPERTISE',w,m);
-  if(m) {
-    b+=line(48,108,48,455,'#345170');
-    c.capabilities.forEach((cap,i)=>{
-      const y=89+i*100;
-      b+=rect(69,y,323,78,'#122039',12,'stroke="#2A405D"');
-      b+=dot(48,y+38,i===0?'#F59E0B':'#00C9FF',5);
-      b+=line(53,y+38,69,y+38,'#00C9FF');
-      b+=text(87,y+30,cap.title,cap.title.length>22?19:21,'#FFFFFF','font-weight="600"');
-      b+=text(87,y+56,cap.detail,15,'#B4C2D5');
-    });
-    b+=trace('M48 108V427');
-  } else {
-    b+=`<ellipse cx="480" cy="208" rx="178" ry="135" fill="url(#ambient)"/>`;
-    b+=`<g class="orbit" fill="none" stroke="#345170"><circle cx="480" cy="207" r="70"/><ellipse cx="480" cy="207" rx="102" ry="39" transform="rotate(-32 480 207)"/></g>`;
-    const cards=[[42,93],[603,93],[42,223],[603,223]];
-    cards.forEach(([x,y],i)=>{
-      const cap=c.capabilities[i];
-      b+=rect(x,y,315,90,'#122039',12,'stroke="#2A405D"');
-      b+=label(x+18,y+25,`0${i+1}`,i===0?'#F59E0B':'#73DEFF');
-      b+=text(x+18,y+51,cap.title,22,'#FFFFFF','font-weight="600"');
-      b+=text(x+18,y+73,cap.detail,16,'#B4C2D5');
-      const start=i%2===0?x+315:x;
-      const end=i%2===0?410:550;
-      b+=trace(`M${start} ${y+45}H${end}V207`);
-    });
-    b+=rect(413,180,134,54,'#0B1225',10,'stroke="#4E88BF"');
-    b+=text(480,213,'FRONTEND',18,'#FFFFFF','font-weight="600" letter-spacing="1" text-anchor="middle"');
-    b+=dot(480,137,'#F59E0B');
-    b+=dot(480,277);
-  }
-  return {w,h,b};
 }
 function technology(m) {
   const w=m?420:960,h=m?492:298;
@@ -132,44 +75,6 @@ function technology(m) {
   }
   return {w,h,b};
 }
-function ai(m) {
-  const w=m?420:960,h=m?552:394;
-  let b=sectionHeader('03','EXPLORING & RESEARCHING',w,m);
-  if(m) {
-    b+=text(28,97,'AI architecture.',26,'#FFFFFF','font-weight="600"');
-    b+=text(28,127,'Thoughtful autonomy.',26,'#73DEFF','font-weight="600"');
-    b+=label(28,158,'CONCEPTUAL AGENT ARCHITECTURE');
-    const nodes=[['AI-powered applications','Human goals & context'],['LLMs + tool use','Typed boundaries · MCP'],['Agent orchestration','Coordinate · evaluate · review']];
-    nodes.forEach(([a,d],i)=>{
-      const y=187+i*97;
-      b+=rect(28,y,364,73,'#122039',12,'stroke="#345170"');
-      b+=dot(50,y+27,i===2?'#F59E0B':'#00C9FF');
-      b+=text(66,y+32,a,21,'#FFFFFF','font-weight="600"');
-      b+=text(48,y+57,d,15,'#B4C2D5');
-      if(i<2)b+=trace(`M210 ${y+73}V${y+97}`);
-    });
-    b+=text(28,498,'Next-generation engineering',19,'#FFFFFF');
-    b+=text(28,526,'Research direction · learning in progress',15,'#B4C2D5');
-  } else {
-    b+=text(42,102,'AI architecture. Intelligent applications.',29,'#FFFFFF','font-weight="600"');
-    b+=label(42,132,'CONCEPTUAL ARCHITECTURE / LEARNING IN PROGRESS');
-    const nodes=[['AI-powered','applications','Human goals & context'],['LLMs +','tool use','Typed boundaries · MCP'],['Agent','orchestration','Evaluate · human review']];
-    nodes.forEach(([a,a2,d],i)=>{
-      const x=42+i*302;
-      b+=rect(x,164,272,114,'#122039',12,'stroke="#345170"');
-      b+=dot(x+22,187,i===2?'#F59E0B':'#00C9FF');
-      b+=text(x+20,218,a+' '+a2,21,'#FFFFFF','font-weight="600"');
-      b+=text(x+20,253,d,16,'#B4C2D5');
-      if(i<2)b+=trace(`M${x+272} 221H${x+302}`);
-    });
-    b+=`<path d="M782 278V308H178V278" fill="none" stroke="#4E88BF" stroke-dasharray="4 5"/>`;
-    b+=rect(360,296,240,24,'#102039',4);
-    b+=label(480,312,'HUMAN REVIEW & FEEDBACK','#A8B7CC','text-anchor="middle"');
-    b+=text(42,357,'Exploring the next generation of intelligent software.',20,'#CFD9E7');
-    b+=label(918,357,'RESEARCH DIRECTION','#73DEFF','text-anchor="end"');
-  }
-  return {w,h,b};
-}
 function research(m) {
   const w=m?420:960,h=m?255:222;
   let b=sectionHeader('04','RESEARCH & KNOWLEDGE',w,m,true);
@@ -197,7 +102,7 @@ function connect(m) {
   } else b+=text(mid,205,'ENGINEER. ARCHITECT. EXPLORE. BUILD.',25,'#0B1225','font-weight="700" letter-spacing="2.3" text-anchor="middle"');
   return {w,h,b,light:true};
 }
-const compositions={hero,expertise,technology,'ai-systems':ai,research,connect};
+const compositions={technology,research,connect,...advancedCompositions(c,{text,label,line,rect,dot,trace,sectionHeader})};
 const outputs=new Map();
 for(const [name,draw] of Object.entries(compositions)) for(const mobile of [false,true]) {
   const {w,h,b,light}=draw(mobile);
@@ -205,13 +110,20 @@ for(const [name,draw] of Object.entries(compositions)) for(const mobile of [fals
   outputs.set(`assets/${filename}`,svg(name,w,h,b,{light}));
   outputs.set(`assets/static/${filename}`,svg(name,w,h,b,{light,staticAsset:true}));
 }
-outputs.set('assets/worldgyan-wordmark.svg',`<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="360" height="112" viewBox="0 0 360 112" role="img" aria-labelledby="title desc"><title id="title">WorldGyan</title><desc id="desc">World in black, Gyan in saffron. Next-Gen AI and Engineering.</desc><rect width="360" height="112" rx="12" fill="#FFFFFF"/><text x="180" y="63" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="700" text-anchor="middle"><tspan fill="${esc(c.worldgyan.wordmark.world)}">World</tspan><tspan fill="${esc(c.worldgyan.wordmark.gyan)}">Gyan</tspan></text><text x="180" y="92" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#334155" text-anchor="middle">Next-Gen AI &amp; Engineering</text></svg>\n`);
-const assetUrl=file=>`./${file}?v=${createHash('sha256').update(outputs.get(file)).digest('hex').slice(0,12)}`;
-const picture = name => `<p>\n<picture>\n  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="${assetUrl(`assets/static/${name}-mobile.svg`)}">\n  <source media="(prefers-reduced-motion: reduce)" srcset="${assetUrl(`assets/static/${name}.svg`)}">\n  <source media="(max-width: 600px)" srcset="${assetUrl(`assets/${name}-mobile.svg`)}">\n  <img src="${assetUrl(`assets/${name}.svg`)}" width="100%" alt="${esc(titles[name]+'. '+descriptions[name])}">\n</picture>\n</p>`;
+outputs.set('assets/worldgyan-wordmark.svg',`<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="360" height="144" viewBox="0 0 360 144" role="img" aria-labelledby="title desc"><title id="title">WorldGyan</title><desc id="desc">World in black, Gyan in saffron. Next-Gen AI and Engineering.</desc><rect width="360" height="144" rx="12" fill="#FFFFFF"/><text x="180" y="79" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="700" text-anchor="middle"><tspan fill="${esc(c.worldgyan.wordmark.world)}">World</tspan><tspan fill="${esc(c.worldgyan.wordmark.gyan)}">Gyan</tspan></text><text x="180" y="108" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#334155" text-anchor="middle">Next-Gen AI &amp; Engineering</text></svg>\n`);
+// GitHub's raw redirect can drop query strings. Version the path, not just the URL query.
+const assetUrl=file=>{
+  const content=outputs.get(file);
+  const hash=createHash('sha256').update(content).digest('hex').slice(0,12);
+  const rendered=`assets/rendered/${file.includes('/static/')?'static/':''}${hash}/${path.basename(file)}`;
+  outputs.set(rendered,content);
+  return `./${rendered}`;
+};
+const picture = name => `<p>\n<picture>\n  <source media="(prefers-reduced-motion: reduce) and (max-width: ${c.presentation.mobileBreakpoint}px)" srcset="${assetUrl(`assets/static/${name}-mobile.svg`)}">\n  <source media="(prefers-reduced-motion: reduce)" srcset="${assetUrl(`assets/static/${name}.svg`)}">\n  <source media="(max-width: ${c.presentation.mobileBreakpoint}px)" srcset="${assetUrl(`assets/${name}-mobile.svg`)}">\n  <img src="${assetUrl(`assets/${name}.svg`)}" width="100%" alt="${esc(titles[name]+'. '+descriptions[name])}">\n</picture>\n</p>`;
 const readme=`<!-- Generated from profile.config.json. Edit the source, then run npm run generate. -->
 ${picture('hero')}
 
-**${c.identity.name} · ${c.identity.headline.replaceAll(/\b\w+/g,s=>s.charAt(0)+s.slice(1).toLowerCase())}**
+**${c.identity.name} · ${c.identity.headline}**
 
 ${c.identity.positioning}
 
@@ -233,7 +145,7 @@ Public learning projects and code references, selected after reviewing their imp
 
 ${c.projects.map(p=>`- [**${p.name}**](${p.url}) — ${p.description}`).join('\n')}
 
-<p align="center"><a href="${c.links.worldgyan}"><img src="./${c.worldgyan.logo}" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="${c.links.worldgyan}"><img src="${assetUrl('assets/worldgyan-wordmark.svg')}" width="180" height="56" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
+<p align="center"><a href="${c.links.worldgyan}"><img src="./${c.worldgyan.logo}" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="${c.links.worldgyan}"><img src="${assetUrl('assets/worldgyan-wordmark.svg')}" width="160" height="64" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
 
 ${picture('research')}
 
@@ -244,6 +156,16 @@ ${picture('connect')}
 [GitHub](${c.links.github}) · [LinkedIn](${c.links.linkedin}) · [Professional Portfolio](${c.links.portfolio}) · [WorldGyan](${c.links.worldgyan}) · [YouTube](${c.links.youtube})
 `;
 outputs.set('README.md',readme);
+const renderedFiles=[...outputs.keys()].filter(file=>file.startsWith('assets/rendered/')).sort();
+const manifest='assets/rendered/manifest.json';
+outputs.set(manifest,JSON.stringify({version:1,files:renderedFiles},null,2)+'\n');
+if(!check){
+  const old=JSON.parse(await readFile(path.join(root,manifest),'utf8').catch(()=>'{}'));
+  for(const file of old.files||[]){
+    if(!/^assets\/rendered\/(?:static\/)?[a-f0-9]{12}\/[a-z-]+\.svg$/.test(file))throw Error('Unsafe generated manifest path');
+    if(!outputs.has(file))await rm(path.join(root,file),{force:true});
+  }
+}
 let stale=[];
 for(const [file,value] of outputs) {
   const dest=path.join(root,file);

@@ -60,3 +60,7 @@ A reviewer performs the research, records evidence, makes any justified content/
 ## Recovering from a problem
 
 Fix generated output by changing config or generator source, then regenerate. If a public change needs reversal, prepare a normal revert commit on a feature branch and follow the approval process. Do not rewrite public history. If a monthly workflow fails due to permissions, record the failed run and perform the same review manually; do not add a broader credential to bypass account policy.
+
+For the advanced design revision, edit the hero, engineering and intelligent-systems compositions in `scripts/design-v2.mjs`. Shared definitions and unchanged core/research/signature compositions remain in `scripts/generate-profile.mjs`. Name case, headline, AI engineering direction and responsive breakpoint are configured in `profile.config.json`. Do not restore an old hardcoded headline or 600px assumption in validation.
+
+Generated `assets/rendered/` copies use content hashes in their paths for GitHub raw-image cache compatibility. Do not hand-edit them or their manifest. Regeneration updates paths and removes only obsolete manifest-listed copies, preserving unrelated files. The original supplied logo stays separate; use a new filename if the actual logo artwork changes.
