@@ -50,3 +50,7 @@ Added AI architecture explicitly to the exploration classification, diagram titl
 WorldGyan wordmarks now use a black `World` and saffron `Gyan` (`#F59E0B`) on white research/signature panels. The original user-supplied circular logo is copied unchanged to `assets/worldgyan-logo.png`, rendered as an ordinary linked README image. It is deliberately separate from the original SVG compositions, which remain vector-only. The second supplied image was a visual brand reference, not a replacement asset.
 
 Regenerated and passed SVG/README validation. Rechecked actual Chrome layouts at 320, 375, 768, 1024 and 1440px in both themes: no horizontal overflow and all seven images (six SVG sections plus logo) loaded. Updated SVG text geometry has no text outside its boundaries. Refreshed desktop/mobile captures and source archive. The current screenshots replace earlier visual evidence; hosted verification still requires publication approval.
+
+## GitHub-specific design refinement and verification
+
+See [github-review.md](github-review.md) for actual hosted branch results on 17 October 2026. The latest source has 25 SVGs (24 primary desktop/mobile/static variants plus the brand wordmark), one unchanged supplied PNG, and eight images in the rendered README. Rounded clipping, compact identity text, aligned logo/wordmark and GitHub paragraph spacing were refined against the actual hosted result. All required widths/themes and hosted reduced-motion sources passed. The profile homepage remains pending approved merge.

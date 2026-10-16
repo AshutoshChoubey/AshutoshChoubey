@@ -1,6 +1,6 @@
 # Execution and publishing checklist
 
-Prepared 16 October 2026. This checklist tracks the full master instruction. **The profile has not been published or verified live.** Local research completion is distinct from implementation validation and public publication.
+Prepared 16 October 2026. This checklist tracks the full master instruction. **The finished design is published to a GitHub review branch and PR #1. Merge and verification of the profile homepage remain pending.** Local research completion is distinct from implementation validation and public publication.
 
 Status meanings: **DONE(local)** means the named local work has actual evidence; **PENDING_APPROVAL** means the master instruction reserves a human decision; **PENDING_LIVE** requires approved GitHub publication and browser inspection. A mixed status identifies separate parts of one requirement.
 
@@ -18,9 +18,9 @@ Status meanings: **DONE(local)** means the named local work has actual evidence;
 | 7 | Seven-section content hierarchy | DONE(local). Generated README includes every requested section, four inspected projects, three research resources and five exact contact links. |
 | 8 | Exact clickable links | DONE(local). Generated link checker: 11/12 HTTP reachable; LinkedIn rate-limited automated HEAD, public content reviewed earlier. PENDING_LIVE for actual profile clicks. Ordinary links must accompany graphical labels. |
 | 9 | Dedicated maintainable local project | DONE(local setup). Existing unrelated repositories preserved; configuration and scripts separate content from generated output. Portable export is a local delivery step. |
-| 10 | Special public profile repository | PENDING_APPROVAL. `AshutoshChoubey/AshutoshChoubey` returned 404 publicly and through authenticated connector. Recheck, then create only after explicit approval. |
+| 10 | Special public profile repository | DONE(GitHub). Created public after the user requested GitHub publication. Review branch and PR #1 exist; see [github-review.md](github-review.md). |
 | 11 | Tools, browser and authentication strategy | DONE(local inspection). Git exists; GitHub CLI is unavailable. Connected GitHub access and authorized Chrome session are available. No credentials/cookies extracted; official authentication if needed. |
-| 12 | Audit → build → validate → review → publish → merge → live | DONE(local research, build, validation and screenshots); PENDING_APPROVAL for repository/branch/PR and merge; PENDING_LIVE for hosted verification. |
+| 12 | Audit → build → validate → review → publish → merge → live | DONE(local research, build, validation and screenshots); DONE(GitHub repository/branch/PR and hosted branch checks); PENDING_APPROVAL for merge and PENDING_LIVE for the profile homepage. |
 | 13 | Account-level improvements | DONE(local concrete proposal) in [account-proposal.md](account-proposal.md); PENDING_APPROVAL for any field, pin, description or topic mutation. |
 | 14 | Visual QA at five widths and both themes | DONE(local). Actual Chrome captures at all five widths in both themes, no horizontal overflow, all six images loaded; PENDING_LIVE for GitHub equivalents. |
 | 15 | Three refinement passes | DONE(local). Composition, sophistication and production passes recorded in [visual-qa.md](visual-qa.md), with actual changes and screenshot evidence. |
@@ -60,3 +60,7 @@ The master instruction explicitly reserves these decisions to the user. Complete
 Open https://github.com/AshutoshChoubey and verify the default-branch profile README appears. Inspect all six primary SVG sections, fonts, gradients, motion/static behavior, mobile source selection, spacing, alt text and ordinary links. Check desktop and narrow mobile layouts, dark/light environments, image proxy rendering and broken assets. Capture a final browser screenshot. A successful push or merge alone is not live verification.
 
 If a hosted defect appears, repair it through an approved branch workflow and verify again. Report completed local work, pending approvals, unavailable checks and remaining live tasks separately. Do not describe the mission as complete until required approval-dependent work and public verification are actually finished.
+
+## GitHub review-stage update
+
+On 17 October 2026, the user requested design fixes and GitHub publication. The public repository, review branch and PR #1 are created. GitHub-hosted branch checks passed at every required width in both themes, including the supplied logo lockup, image loading and reduced-motion sources. See [github-review.md](github-review.md). Only merge approval and final homepage verification remain in the publication stage; account changes still have their separate gate. Earlier pending entries refer to the initial local-only review.
