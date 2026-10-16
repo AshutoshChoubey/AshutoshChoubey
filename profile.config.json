@@ -1,0 +1,154 @@
+{
+  "identity": {
+    "name": "Ashutosh Kumar Choubey",
+    "givenName": "ASHUTOSH",
+    "familyName": "KUMAR CHOUBEY",
+    "headline": "SENIOR SOFTWARE ENGINEER",
+    "specializations": "FRONTEND ARCHITECTURE · SYSTEM DESIGN",
+    "positioning": "Building scalable frontend systems. Exploring intelligent, agent-powered software."
+  },
+  "classifications": {
+    "established": "Frontend architecture, Angular, TypeScript, RxJS and NgRx; enterprise UI engineering, component systems and automated testing.",
+    "building": "Public engineering studies and teaching examples in Angular, reactive workflows, state management and TypeScript.",
+    "exploring": "AI architecture, AI-powered applications, LLM integration and agent orchestration; evaluated workflows with human review."
+  },
+  "capabilities": [
+    {
+      "title": "Frontend Architecture",
+      "detail": "Components · design systems"
+    },
+    {
+      "title": "Enterprise Engineering",
+      "detail": "Integration · quality"
+    },
+    {
+      "title": "System Design",
+      "detail": "Boundaries · state · delivery"
+    },
+    {
+      "title": "Performance & Scalability",
+      "detail": "Rendering · modular delivery"
+    }
+  ],
+  "technology": {
+    "primary": [
+      "Angular",
+      "TypeScript",
+      "JavaScript",
+      "RxJS",
+      "NgRx"
+    ],
+    "web": "HTML5 · CSS3 / SCSS · Component Architecture",
+    "supporting": [
+      "Node.js / REST APIs",
+      "Jasmine / Jest",
+      "Git / CI/CD"
+    ],
+    "quality": "Accessibility · Security · Automated Testing"
+  },
+  "exploring": [
+    "AI architecture",
+    "Tool-using LLMs & MCP",
+    "Agent orchestration",
+    "Evaluation & human review"
+  ],
+  "projects": [
+    {
+      "name": "Angular architecture study",
+      "repository": "angular-interview-worldgyan.com",
+      "url": "https://github.com/AshutoshChoubey/angular-interview-worldgyan.com",
+      "description": "Study guides and TypeScript examples for Angular signals, HTTP interceptors, authentication flows and application architecture.",
+      "classification": "Educational reference and code examples",
+      "evidence": [
+        "signals/examples/computed-and-dynamic-deps.ts",
+        "signals/examples/rxjs-signal-interop.ts",
+        "interceptors/examples/caching.interceptor.ts",
+        "interceptors/examples/refresh-token-mutex.interceptor.ts",
+        "architecture/examples/app.config.ts"
+      ],
+      "limitations": "Snippet collection, not a complete runnable application; missing referenced service implementations and automated tests. Framework version and security claims require independent verification."
+    },
+    {
+      "name": "RxJS operator lab",
+      "repository": "rxjs-interview-worldgyan.com",
+      "url": "https://github.com/AshutoshChoubey/rxjs-interview-worldgyan.com",
+      "description": "Angular demonstrations comparing switchMap, mergeMap, concatMap and exhaustMap, with a reactive search example.",
+      "classification": "Interactive educational implementation",
+      "evidence": [
+        "src/app/hoo/hoo.ts",
+        "src/app/app.ts",
+        "src/app/app.html",
+        "package.json"
+      ],
+      "limitations": "Simulated asynchronous requests, console-oriented demonstration and scaffold-level tests; subscription cleanup and deterministic operator tests need improvement. No production deployment verified."
+    },
+    {
+      "name": "NgRx effects demo",
+      "repository": "ngrxeffects",
+      "url": "https://github.com/AshutoshChoubey/ngrxeffects",
+      "description": "An Angular PokéAPI example connecting store actions, reducers and HTTP side effects to list and detail views.",
+      "classification": "Educational application example",
+      "evidence": [
+        "src/app/card.effects.ts",
+        "src/app/action/card.action.ts",
+        "src/app/reducer/card.reducers.ts",
+        "src/app/cart/card/card.component.ts",
+        "src/app/cart/card-details/card-details.component.ts"
+      ],
+      "limitations": "Angular 11 / NgRx 12 example with loose typing, no effect error handling and scaffold-level tests; should be described as a learning demo, not enterprise architecture."
+    },
+    {
+      "name": "TypeScript type-system examples",
+      "repository": "typescript-interview-worldgyan.com",
+      "url": "https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com",
+      "description": "Focused examples of generics, unions, mapped types and utility types, alongside a type-system study reference.",
+      "classification": "Educational language examples",
+      "evidence": [
+        "src/generic.ts",
+        "src/union.ts",
+        "src/mappedType.ts",
+        "src/utility.ts",
+        "scripts/run-all.js",
+        "Complete TypeScript Type System Reference.md"
+      ],
+      "limitations": "No automated test suite; the test script deliberately exits with an error. Lint and formatting commands reference packages absent from the manifest."
+    }
+  ],
+  "resources": [
+    {
+      "title": "Frontend system design",
+      "url": "https://worldgyan.com/technology/frontend-system-design/",
+      "description": "Micro-frontends, integration boundaries and enterprise scaling tradeoffs."
+    },
+    {
+      "title": "AI engineering research",
+      "url": "https://worldgyan.com/technology/production-ai-engineering/",
+      "description": "Published research on architecture, retrieval, serving and evaluation."
+    },
+    {
+      "title": "Angular Testing — WorldGyan",
+      "url": "https://www.youtube.com/playlist?list=PLqQyE6QNucSfUIpucL_nx7vDuwAa1A_VH",
+      "description": "Practical testing tutorials on the official YouTube channel."
+    }
+  ],
+  "links": {
+    "github": "https://github.com/AshutoshChoubey",
+    "linkedin": "https://www.linkedin.com/in/ashutosh-kumar-choubey",
+    "portfolio": "https://me.worldgyan.com/",
+    "worldgyan": "https://worldgyan.com/",
+    "youtube": "https://www.youtube.com/@WorldGyan"
+  },
+  "worldgyan": {
+    "role": "Founder, WorldGyan",
+    "scope": "Technical research & education",
+    "logo": "assets/worldgyan-logo.png",
+    "wordmark": {
+      "world": "#000000",
+      "gyan": "#F59E0B"
+    }
+  },
+  "review": {
+    "date": "2026-10-16",
+    "basis": "Official public portfolio, public repository source audit and current primary documentation. See docs/research-audit.md."
+  }
+}

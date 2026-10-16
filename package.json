@@ -1,0 +1,13 @@
+{
+  "name": "github-profile-ashutosh",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "generate": "node scripts/generate-profile.mjs",
+    "validate": "node scripts/generate-profile.mjs --check && node scripts/validate-svg.mjs && node scripts/validate-profile.mjs",
+    "validate:links": "node scripts/validate-links.mjs",
+    "preview": "node scripts/render-preview.mjs"
+  }
+}

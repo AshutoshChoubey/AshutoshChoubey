@@ -1,0 +1,137 @@
+name: Monthly profile review proposal
+
+on:
+  workflow_dispatch:
+  schedule:
+    # First of each month at 09:30 Asia/Kolkata. Request date is not review date.
+    - cron: '0 4 1 * *'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: monthly-profile-review
+  cancel-in-progress: false
+
+jobs:
+  propose-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Create one checklist proposal for the current month
+        env:
+          REVIEW_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REVIEW_REPOSITORY: ${{ github.repository }}
+          REVIEW_SERVER: ${{ github.server_url }}
+          REVIEW_RUN_ID: ${{ github.run_id }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import datetime
+          import json
+          import os
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+          from zoneinfo import ZoneInfo
+
+          repository = os.environ['REVIEW_REPOSITORY']
+          if repository.lower() != 'ashutoshchoubey/ashutoshchoubey':
+              raise SystemExit('Review proposals run only in the intended profile repository.')
+          token = os.environ['REVIEW_TOKEN']
+          prefix = '/repos/' + repository
+
+          def api(method, path, payload=None, missing_ok=False):
+              data = None if payload is None else json.dumps(payload).encode('utf-8')
+              request = urllib.request.Request(
+                  'https://api.github.com' + prefix + path,
+                  data=data,
+                  method=method,
+                  headers={
+                      'Authorization': 'Bearer ' + token,
+                      'Accept': 'application/vnd.github+json',
+                      'Content-Type': 'application/json',
+                      'X-GitHub-Api-Version': '2026-03-10',
+                      'User-Agent': 'profile-review-checklist',
+                  },
+              )
+              try:
+                  with urllib.request.urlopen(request, timeout=30) as response:
+                      return json.load(response)
+              except urllib.error.HTTPError as error:
+                  if missing_ok and error.code == 404:
+                      return None
+                  # Do not print headers, credentials, or raw error bodies.
+                  raise SystemExit(f'GitHub API {method} failed with HTTP {error.code}.') from None
+
+          requested_at = datetime.datetime.now(ZoneInfo('Asia/Kolkata'))
+          month = requested_at.strftime('%Y-%m')
+          requested_date = requested_at.date().isoformat()
+          branch = 'profile-review/' + month
+          owner = repository.split('/')[0]
+          query = urllib.parse.urlencode({'state': 'all', 'head': owner + ':' + branch, 'per_page': 100})
+          existing = api('GET', '/pulls?' + query)
+          if existing:
+              print('Monthly review already has a PR; preserving its state and reviewer edits: ' + existing[0]['html_url'])
+              raise SystemExit(0)
+
+          repo = api('GET', '')
+          default_branch = repo['default_branch']
+          ref_path = '/git/ref/heads/' + urllib.parse.quote(branch, safe='/')
+          ref = api('GET', ref_path, missing_ok=True)
+          if ref is None:
+              default_ref = api('GET', '/git/ref/heads/' + urllib.parse.quote(default_branch, safe='/'))
+              ref = api('POST', '/git/refs', {'ref': 'refs/heads/' + branch, 'sha': default_ref['object']['sha']})
+
+          checklist_path = 'docs/reviews/' + month + '.md'
+          contents_query = urllib.parse.urlencode({'ref': branch})
+          existing_file = api('GET', '/contents/' + checklist_path + '?' + contents_query, missing_ok=True)
+          if existing_file is None:
+              checklist = f'''# Profile review requested: {month}
+
+          Requested on {requested_date} (Asia/Kolkata). This is a request, not a completed content review.
+
+          - [ ] Recheck public biography/title and record source evidence.
+          - [ ] Review established, building, and exploration classifications.
+          - [ ] Inspect any new featured project implementation before adding it.
+          - [ ] Verify published research and all official professional links.
+          - [ ] Review relevant official technology/security documentation.
+          - [ ] Record findings and limitations in the research documents.
+          - [ ] Update config only where evidence justifies a change.
+          - [ ] Change review.date only after actual source review is complete.
+          - [ ] Regenerate and run validation, links, previews, and visual checks.
+          - [ ] Obtain required publishing/merge approvals before public changes.
+
+          ## Findings and actual review date
+
+          Pending human or agent source research. No claims or review dates were updated automatically.
+          '''
+              commit = api('GET', '/git/commits/' + ref['object']['sha'])
+              tree = api('POST', '/git/trees', {
+                  'base_tree': commit['tree']['sha'],
+                  'tree': [{'path': checklist_path, 'mode': '100644', 'type': 'blob', 'content': checklist}],
+              })
+              new_commit = api('POST', '/git/commits', {
+                  'message': 'docs: request profile review for ' + month,
+                  'tree': tree['sha'],
+                  'parents': [ref['object']['sha']],
+              })
+              api('PATCH', '/git/refs/heads/' + urllib.parse.quote(branch, safe='/'), {'sha': new_commit['sha'], 'force': False})
+
+          comparison = urllib.parse.quote(default_branch, safe='') + '...' + urllib.parse.quote(branch, safe='')
+          changes = api('GET', '/compare/' + comparison)
+          changed_files = changes.get('files', [])
+          if len(changed_files) != 1 or changed_files[0]['filename'] != checklist_path:
+              raise SystemExit('Review branch includes unexpected changes; no PR was created.')
+
+          run_url = os.environ['REVIEW_SERVER'] + '/' + repository + '/actions/runs/' + os.environ['REVIEW_RUN_ID']
+          proposal = api('POST', '/pulls', {
+              'title': 'Review profile research and evidence — ' + month,
+              'head': branch,
+              'base': default_branch,
+              'body': 'This monthly proposal adds only a review checklist. It does not update professional claims, generated assets, or the completed content-review date.\n\nFollow docs/maintenance.md, record actual evidence, and obtain approval before publishing content changes or merging.\n\nRequested by [the review workflow](' + run_url + ').',
+              'draft': True,
+          })
+          print('Created monthly review proposal: ' + proposal['html_url'])
+          PY
