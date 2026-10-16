@@ -110,7 +110,7 @@ for(const [name,draw] of Object.entries(compositions)) for(const mobile of [fals
   outputs.set(`assets/${filename}`,svg(name,w,h,b,{light}));
   outputs.set(`assets/static/${filename}`,svg(name,w,h,b,{light,staticAsset:true}));
 }
-outputs.set('assets/worldgyan-wordmark.svg',`<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="360" height="112" viewBox="0 0 360 112" role="img" aria-labelledby="title desc"><title id="title">WorldGyan</title><desc id="desc">World in black, Gyan in saffron. Next-Gen AI and Engineering.</desc><rect width="360" height="112" rx="12" fill="#FFFFFF"/><text x="180" y="63" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="700" text-anchor="middle"><tspan fill="${esc(c.worldgyan.wordmark.world)}">World</tspan><tspan fill="${esc(c.worldgyan.wordmark.gyan)}">Gyan</tspan></text><text x="180" y="92" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#334155" text-anchor="middle">Next-Gen AI &amp; Engineering</text></svg>\n`);
+outputs.set('assets/worldgyan-wordmark.svg',`<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="360" height="144" viewBox="0 0 360 144" role="img" aria-labelledby="title desc"><title id="title">WorldGyan</title><desc id="desc">World in black, Gyan in saffron. Next-Gen AI and Engineering.</desc><rect width="360" height="144" rx="12" fill="#FFFFFF"/><text x="180" y="79" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="700" text-anchor="middle"><tspan fill="${esc(c.worldgyan.wordmark.world)}">World</tspan><tspan fill="${esc(c.worldgyan.wordmark.gyan)}">Gyan</tspan></text><text x="180" y="108" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#334155" text-anchor="middle">Next-Gen AI &amp; Engineering</text></svg>\n`);
 const assetUrl=file=>`./${file}?v=${createHash('sha256').update(outputs.get(file)).digest('hex').slice(0,12)}`;
 const picture = name => `<p>\n<picture>\n  <source media="(prefers-reduced-motion: reduce) and (max-width: ${c.presentation.mobileBreakpoint}px)" srcset="${assetUrl(`assets/static/${name}-mobile.svg`)}">\n  <source media="(prefers-reduced-motion: reduce)" srcset="${assetUrl(`assets/static/${name}.svg`)}">\n  <source media="(max-width: ${c.presentation.mobileBreakpoint}px)" srcset="${assetUrl(`assets/${name}-mobile.svg`)}">\n  <img src="${assetUrl(`assets/${name}.svg`)}" width="100%" alt="${esc(titles[name]+'. '+descriptions[name])}">\n</picture>\n</p>`;
 const readme=`<!-- Generated from profile.config.json. Edit the source, then run npm run generate. -->
@@ -138,7 +138,7 @@ Public learning projects and code references, selected after reviewing their imp
 
 ${c.projects.map(p=>`- [**${p.name}**](${p.url}) — ${p.description}`).join('\n')}
 
-<p align="center"><a href="${c.links.worldgyan}"><img src="./${c.worldgyan.logo}" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="${c.links.worldgyan}"><img src="${assetUrl('assets/worldgyan-wordmark.svg')}" width="160" height="50" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
+<p align="center"><a href="${c.links.worldgyan}"><img src="./${c.worldgyan.logo}" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="${c.links.worldgyan}"><img src="${assetUrl('assets/worldgyan-wordmark.svg')}" width="160" height="64" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
 
 ${picture('research')}
 

@@ -54,7 +54,7 @@ Public learning projects and code references, selected after reviewing their imp
 - [**NgRx effects demo**](https://github.com/AshutoshChoubey/ngrxeffects) — An Angular PokéAPI example connecting store actions, reducers and HTTP side effects to list and detail views.
 - [**TypeScript type-system examples**](https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com) — Focused examples of generics, unions, mapped types and utility types, alongside a type-system study reference.
 
-<p align="center"><a href="https://worldgyan.com/"><img src="./assets/worldgyan-logo.png" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="https://worldgyan.com/"><img src="./assets/worldgyan-wordmark.svg?v=741d5da705e6" width="160" height="50" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
+<p align="center"><a href="https://worldgyan.com/"><img src="./assets/worldgyan-logo.png" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="https://worldgyan.com/"><img src="./assets/worldgyan-wordmark.svg?v=7647321917b3" width="160" height="64" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
 
 <p>
 <picture>
