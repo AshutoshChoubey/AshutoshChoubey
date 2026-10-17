@@ -1,23 +1,23 @@
 <!-- Generated from profile.config.json. Edit the source, then run npm run generate. -->
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/6cc4edc0cd67/hero-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/446de51b0870/hero.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/51024f9e6236/hero-mobile.svg">
-  <img src="./assets/rendered/d34a019ec8d2/hero.svg" width="100%" alt="Ashutosh Kumar Choubey — Software Architect | Frontend &amp; Full-Stack | System Design | Agentic AI. FRONTEND ARCHITECTURE · SYSTEM DESIGN. Building scalable frontend systems. Exploring intelligent, agent-powered software. AI engineering and agentic systems are exploration interests.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/030be2560688/hero-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/a500390188f4/hero.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/0989e0b3c23e/hero-mobile.svg">
+  <img src="./assets/rendered/e75832e6446b/hero.svg" width="100%" alt="Ashutosh Kumar Choubey — Principal Software Architect | Frontend &amp; Full-Stack | System Design | Agentic AI. PRINCIPAL SOFTWARE ARCHITECTURE · FRONTEND &amp; SYSTEM DESIGN. Building scalable frontend systems. Exploring intelligent, agent-powered software. AI engineering and agentic systems are exploration interests.">
 </picture>
 </p>
 
-**Ashutosh Kumar Choubey · Software Architect | Frontend & Full-Stack | System Design | Agentic AI**
+**Ashutosh Kumar Choubey · Principal Software Architect | Frontend & Full-Stack | System Design | Agentic AI**
 
 Building scalable frontend systems. Exploring intelligent, agent-powered software.
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/cce821112ced/expertise-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/2b4b139111b8/expertise.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/81659348a649/expertise-mobile.svg">
-  <img src="./assets/rendered/7f2a31c730c5/expertise.svg" width="100%" alt="Engineering expertise: frontend architecture, enterprise engineering, system design, performance and scalability. Frontend Architecture: Components · design systems. Enterprise Engineering: Integration · quality. System Design: Boundaries · state · delivery. Performance &amp; Scalability: Rendering · modular delivery. Exploring AI Architecture, Agentic AI, AI Orchestration, LLM Integration, MCP, evaluations and human review.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/5cab602de10c/expertise-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/09e812692ce0/expertise.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/e2d92a6416bd/expertise-mobile.svg">
+  <img src="./assets/rendered/34a8888d1945/expertise.svg" width="100%" alt="Engineering expertise: frontend architecture, enterprise engineering, system design, performance and scalability. Principal Software Architecture: Components · design systems. Enterprise Engineering: Integration · quality. System Design: Boundaries · state · delivery. Performance &amp; Scalability: Rendering · modular delivery. Exploring AI Architecture, Agentic AI, AI Orchestration, LLM Integration, MCP, evaluations and human review.">
 </picture>
 </p>
 
@@ -30,7 +30,7 @@ Building scalable frontend systems. Exploring intelligent, agent-powered softwar
 </picture>
 </p>
 
-**Established expertise:** Frontend architecture, Angular, TypeScript, RxJS and NgRx; enterprise UI engineering, component systems and automated testing.
+**Established expertise:** Principal software architecture, Angular, TypeScript, RxJS and NgRx; enterprise UI engineering, component systems and automated testing.
 
 **Currently building:** Public engineering studies and teaching examples in Angular, reactive workflows, state management and TypeScript.
 

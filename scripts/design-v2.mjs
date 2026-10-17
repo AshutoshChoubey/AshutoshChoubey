@@ -13,10 +13,10 @@ export function advancedCompositions(c,{text:t,label:l,line,rect:r,dot,trace,sec
     b+=path(`M${m?24:40} 82H${w-(m?24:40)}`,'#DCE5F1','class="trace"');
     if(!m) b+=`<g opacity=".22">${plane(42,161,86,0)}${plane(42,186,86,1)}${plane(42,211,86,2)}</g>`;
     b+=t(x,m?144:170,c.identity.name,m?28:51,'url(#ink)','class="rise" font-weight="700" letter-spacing="-.8" text-anchor="middle"');
-    const left=m?18:110,rw=w-left*2,ry=m?174:205,rh=m?52:58;
+    const left=m?12:75,rw=w-left*2,ry=m?174:205,rh=m?52:58;
     b+=r(left,ry,rw,rh,'#0B1225',12,'stroke="#3D5878"');
     b+=path(`M${left+13} ${ry+1}H${w-left-13}`,'#73DEFF','class="trace"');
-    b+=`<text x="${x}" y="${ry+(m?31:35)}" font-size="${m?10.4:18.5}" fill="#FFFFFF" text-anchor="middle" class="role-enter" font-weight="500">`;
+    b+=`<text x="${x}" y="${ry+(m?31:35)}" font-size="${m?9.2:16.5}" fill="#FFFFFF" text-anchor="middle" class="role-enter" font-weight="500">`;
     const split=c.identity.headline.lastIndexOf(' | ')+3;
     const escape=s=>s.replaceAll('&','&amp;').replaceAll('<','&lt;');
     b+=`<tspan>${escape(c.identity.headline.slice(0,split))}</tspan><tspan class="ai-glow" fill="#73DEFF">${escape(c.identity.headline.slice(split))}</tspan></text>`;
@@ -26,11 +26,11 @@ export function advancedCompositions(c,{text:t,label:l,line,rect:r,dot,trace,sec
     b+=`<ellipse class="aurora" cx="${x}" cy="${h+70}" rx="${w*.55}" ry="200" fill="url(#cyan-halo)"/>`;
     b+=trace(`M0 ${deck}H${w}`)+stream(`M0 ${deck}H${w}`);
     if(m) {
-      b+=t(x,302,'Frontend Architecture · System Design',19,'#FFFFFF','class="architecture-drift" font-weight="600" text-anchor="middle"');
+      b+=t(x,302,'Principal Software Architecture · System Design',18,'#FFFFFF','class="architecture-drift" font-weight="600" text-anchor="middle"');
       b+=l(x,342,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
       b+=t(x,381,'Agentic AI · AI Orchestration',20,'#73DEFF','class="ai-glow" text-anchor="middle"');
     } else {
-      b+=t(x,354,'Frontend Architecture · System Design',25,'#FFFFFF','class="architecture-drift" font-weight="600" text-anchor="middle"');
+      b+=t(x,354,'Principal Software Architecture · System Design',24,'#FFFFFF','class="architecture-drift" font-weight="600" text-anchor="middle"');
       b+=l(x,392,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
       b+=t(x,429,'AI Architecture · Agentic AI · AI Orchestration',21,'#73DEFF','class="ai-glow" text-anchor="middle"');
     }
