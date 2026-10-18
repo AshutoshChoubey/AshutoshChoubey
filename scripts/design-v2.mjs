@@ -26,11 +26,11 @@ export function advancedCompositions(c,{text:t,label:l,line,rect:r,dot,trace,sec
     b+=`<ellipse class="aurora" cx="${x}" cy="${h+70}" rx="${w*.55}" ry="200" fill="url(#cyan-halo)"/>`;
     b+=trace(`M0 ${deck}H${w}`)+stream(`M0 ${deck}H${w}`);
     if(m) {
-      b+=t(x,302,'Principal Software Architecture · System Design',18,'#FFFFFF','class="architecture-drift" font-weight="600" text-anchor="middle"');
+      b+=t(x,302,'Frontend Architecture · System Design',18,'#FFFFFF','class="architecture-drift" font-weight="600" text-anchor="middle"');
       b+=l(x,342,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
       b+=t(x,381,'Agentic AI · AI Orchestration',20,'#73DEFF','class="ai-glow" text-anchor="middle"');
     } else {
-      b+=t(x,354,'Principal Software Architecture · System Design',24,'#FFFFFF','class="architecture-drift" font-weight="600" text-anchor="middle"');
+      b+=t(x,354,'Frontend Architecture · System Design',24,'#FFFFFF','class="architecture-drift" font-weight="600" text-anchor="middle"');
       b+=l(x,392,'EXPLORING INTELLIGENT SYSTEMS','#B7C9DE','text-anchor="middle"');
       b+=t(x,429,'AI Architecture · Agentic AI · AI Orchestration',21,'#73DEFF','class="ai-glow" text-anchor="middle"');
     }
