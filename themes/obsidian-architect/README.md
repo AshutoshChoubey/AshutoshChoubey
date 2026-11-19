@@ -10,7 +10,7 @@
   <a href="https://www.youtube.com/@WorldGyan"><img src="https://img.shields.io/badge/YouTube-@WorldGyan-701A3D?style=for-the-badge&labelColor=190B12&logoColor=F8F0F3&logo=youtube" alt="YouTube Channel WorldGyan"></a>
 </p>
 
-<img src="assets/title-about.svg" width="100%" alt="01 About — Hello, I'm Ashutosh.">
+<img src="assets/title-about.svg" width="100%" alt="01 About — Hello, I am Ashutosh Kumar Chaubey.">
 <img src="assets/about-intro.svg" width="100%" alt="About: Frontend Architect, System Designer and AI Orchestrator. Founder of WorldGyan. Building scalable frontend systems, reactive Angular architectures, and exploring intelligent agent-powered software.">
 
 <img src="assets/title-recognition.svg" width="100%" alt="02 Architecture &amp; System Leadership">

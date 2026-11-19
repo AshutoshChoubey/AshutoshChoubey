@@ -19,9 +19,9 @@
     </linearGradient>
   </defs>
   <style>
-    .p1-serif { font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif; }
-    .p1-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
-    .p1-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .p1-serif { font-family: Georgia, 'Iowan Old Style', 'Palatino Linotype', 'Times New Roman', serif; }
+    .p1-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; }
+    .p1-sans { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; }
     .p1-in { animation: p1-in 1.2s cubic-bezier(.16,1,.3,1) both; }
     .p1-d1 { animation-delay: .15s; } .p1-d2 { animation-delay: .4s; }
     .p1-chip { animation: p1-chip .7s cubic-bezier(.34,1.56,.64,1) both; }
@@ -44,32 +44,47 @@
       <text class="p1-sans" x="56" y="166" font-size="17" fill="#B6A3AC">Signals, HTTP interceptors, caching, and enterprise application architecture.</text>
       <text class="p1-mono" x="56" y="200" font-size="12.5" fill="#E5B5C7"><tspan fill="#C77B9B">BUILT ›</tspan> Signals interop, caching &amp; mutex interceptors, modular app.config</text>
       <line class="p1-draw" x1="56" y1="226" x2="680" y2="226" stroke="#C77B9B" stroke-opacity=".3"/>
-    <g transform="translate(56 266)"><text class="p1-serif" font-size="34" font-weight="300" fill="#F8F0F3">Signals</text><text class="p1-sans" y="24" font-size="12.5" fill="#B6A3AC">dynamic reactive dependencies</text></g>
-    <g transform="translate(261 266)"><text class="p1-serif" font-size="34" font-weight="300" fill="#F8F0F3">Mutex</text><text class="p1-sans" y="24" font-size="12.5" fill="#B6A3AC">concurrency interceptor</text></g>
-    <g transform="translate(466 266)"><text class="p1-serif" font-size="34" font-weight="300" fill="#F8F0F3">Enterprise</text><text class="p1-sans" y="24" font-size="12.5" fill="#B6A3AC">modular application config</text></g>
-      <g class="p1-chip" style="animation-delay:1.00s"><rect x="56" y="314" width="62" height="26" rx="13" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="p1-mono" x="87" y="331" text-anchor="middle" font-size="11.5" fill="#E5B5C7">Python</text></g><g class="p1-chip" style="animation-delay:1.12s"><rect x="126" y="314" width="40" height="26" rx="13" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="p1-mono" x="146" y="331" text-anchor="middle" font-size="11.5" fill="#E5B5C7">NLP</text></g><g class="p1-chip" style="animation-delay:1.24s"><rect x="175" y="314" width="40" height="26" rx="13" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="p1-mono" x="195" y="331" text-anchor="middle" font-size="11.5" fill="#E5B5C7">LLM</text></g><g class="p1-chip" style="animation-delay:1.36s"><rect x="223" y="314" width="77" height="26" rx="13" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="p1-mono" x="261" y="331" text-anchor="middle" font-size="11.5" fill="#E5B5C7">REST API</text></g><g class="p1-chip" style="animation-delay:1.48s"><rect x="308" y="314" width="159" height="26" rx="13" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="p1-mono" x="387" y="331" text-anchor="middle" font-size="11.5" fill="#E5B5C7">8 policy categories</text></g>
+      <g transform="translate(56 266)"><text class="p1-serif" font-size="34" font-weight="300" fill="#F8F0F3">Signals</text><text class="p1-sans" y="24" font-size="12.5" fill="#B6A3AC">dynamic reactive graph</text></g>
+      <g transform="translate(261 266)"><text class="p1-serif" font-size="34" font-weight="300" fill="#F8F0F3">Mutex</text><text class="p1-sans" y="24" font-size="12.5" fill="#B6A3AC">concurrency interceptor</text></g>
+      <g transform="translate(466 266)"><text class="p1-serif" font-size="34" font-weight="300" fill="#F8F0F3">Enterprise</text><text class="p1-sans" y="24" font-size="12.5" fill="#B6A3AC">modular application config</text></g>
+      <g class="p1-chip" style="animation-delay:1.00s"><rect x="56" y="314" width="112" height="26" rx="13" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="p1-mono" x="112" y="331" text-anchor="middle" font-size="11.5" fill="#E5B5C7">Angular 17+</text></g>
+      <g class="p1-chip" style="animation-delay:1.12s"><rect x="176" y="314" width="92" height="26" rx="13" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="p1-mono" x="222" y="331" text-anchor="middle" font-size="11.5" fill="#E5B5C7">TypeScript</text></g>
+      <g class="p1-chip" style="animation-delay:1.24s"><rect x="276" y="314" width="102" height="26" rx="13" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="p1-mono" x="327" y="331" text-anchor="middle" font-size="11.5" fill="#E5B5C7">RxJS Interop</text></g>
+      <g class="p1-chip" style="animation-delay:1.36s"><rect x="386" y="314" width="126" height="26" rx="13" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="p1-mono" x="449" y="331" text-anchor="middle" font-size="11.5" fill="#E5B5C7">HTTP Interceptors</text></g>
+      <g class="p1-chip" style="animation-delay:1.48s"><rect x="520" y="314" width="118" height="26" rx="13" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="p1-mono" x="579" y="331" text-anchor="middle" font-size="11.5" fill="#E5B5C7">Mutex Queue</text></g>
     </g>
     <g class="p1-in p1-d2"><g transform="translate(0 35)">
-      <g transform="translate(870 46)">
-        <rect x="-40" y="22" width="150" height="196" rx="10" fill="#27101C" stroke="#C77B9B" stroke-opacity=".2" transform="rotate(-9 35 120)"/>
-        <rect x="-10" y="14" width="150" height="196" rx="10" fill="#2F1422" stroke="#C77B9B" stroke-opacity=".28" transform="rotate(-3 65 112)"/>
-        <g transform="rotate(4 120 110)">
-          <rect x="44" y="8" width="150" height="200" rx="10" fill="#331627" stroke="#C77B9B" stroke-opacity=".45"/>
-          <g fill="#F8F0F3" fill-opacity=".16">
-            <rect x="64" y="34" width="110" height="5" rx="2.5"/><rect x="64" y="52" width="90" height="5" rx="2.5"/>
-            <rect x="64" y="88" width="110" height="5" rx="2.5"/><rect x="64" y="124" width="100" height="5" rx="2.5"/>
-            <rect x="64" y="160" width="110" height="5" rx="2.5"/><rect x="64" y="178" width="70" height="5" rx="2.5"/>
-          </g>
-          <rect x="64" y="70" width="104" height="5" rx="2.5" fill="#E5B5C7" filter="url(#p1-glowf)"/>
-          <rect x="64" y="142" width="74" height="5" rx="2.5" fill="#C77B9B" filter="url(#p1-glowf)"/>
-          <rect x="46" y="10" width="146" height="40" fill="#E5B5C7" fill-opacity=".08">
-            <animate attributeName="y" values="10;166;10" dur="5s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1; .45 0 .55 1"/>
-          </rect>
+      <g transform="translate(740 40)">
+        <text class="p1-mono" x="14" y="16" font-size="11" letter-spacing="2" fill="#B6A3AC">REACTIVE SIGNAL DEPENDENCY GRAPH</text>
+        <!-- Signal Node 1 -->
+        <g transform="translate(20 44)">
+          <rect width="170" height="52" rx="10" fill="#27101C" stroke="#C77B9B" stroke-opacity=".4"/>
+          <text class="p1-mono" x="14" y="22" font-size="11" fill="#F8F0F3">signal(state)</text>
+          <text class="p1-mono" x="14" y="38" font-size="9.5" fill="#E5B5C7">producer · source</text>
         </g>
-        <g transform="translate(120 170)">
-          <rect width="196" height="54" rx="10" fill="#190B12" fill-opacity=".92" stroke="#C77B9B" stroke-opacity=".35"/>
-          <text class="p1-mono" x="14" y="22" font-size="10.5" fill="#F8F0F3">signal() -> computed()</text>
-          <text class="p1-mono" x="14" y="40" font-size="10.5" fill="#E5B5C7">RxJS <-> Signal Interop</text>
+        <!-- Connecting Line -->
+        <path d="M190 70 C 230 70, 230 130, 270 130" fill="none" stroke="#E5B5C7" stroke-width="1.5"/>
+        <circle r="3.5" fill="#F8F0F3" filter="url(#p1-glowf)">
+          <animateMotion dur="3s" repeatCount="indefinite" path="M190 70 C 230 70, 230 130, 270 130" calcMode="spline" keyPoints="0;1" keyTimes="0;1" keySplines=".45 0 .55 1"/>
+        </circle>
+        <!-- Computed Node -->
+        <g transform="translate(270 104)">
+          <rect width="180" height="52" rx="10" fill="#451126" stroke="#E5B5C7" stroke-opacity=".7"/>
+          <text class="p1-mono" x="14" y="22" font-size="11" fill="#F8F0F3">computed(derived)</text>
+          <text class="p1-mono" x="14" y="38" font-size="9.5" fill="#F8F0F3">memoized · reactive</text>
+        </g>
+        <!-- Interceptor Node -->
+        <g transform="translate(20 160)">
+          <rect width="190" height="52" rx="10" fill="#190B12" stroke="#C77B9B" stroke-opacity=".4"/>
+          <text class="p1-mono" x="14" y="22" font-size="11" fill="#F8F0F3">HttpInterceptorFn</text>
+          <text class="p1-mono" x="14" y="38" font-size="9.5" fill="#B6A3AC">mutexQueue &amp; cache</text>
+        </g>
+        <!-- Line to RxJS Interop -->
+        <path d="M210 186 C 240 186, 240 145, 270 140" fill="none" stroke="#C77B9B" stroke-opacity=".5" stroke-dasharray="4 4"/>
+        <!-- Live Interop Indicator Box -->
+        <g transform="translate(160 228)">
+          <rect width="240" height="32" rx="8" fill="#10070C" stroke="#C77B9B" stroke-opacity=".3"/>
+          <text class="p1-mono" x="120" y="20" text-anchor="middle" font-size="10.5" fill="#E5B5C7">toSignal() &amp; toObservable() Interop</text>
         </g>
       </g>
     </g></g>
