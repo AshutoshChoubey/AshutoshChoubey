@@ -69,6 +69,13 @@ Public learning projects and code references, selected after reviewing their imp
 - [AI engineering research](https://worldgyan.com/technology/production-ai-engineering/) — Published research on architecture, retrieval, serving and evaluation.
 - [Angular Testing — WorldGyan](https://www.youtube.com/playlist?list=PLqQyE6QNucSfUIpucL_nx7vDuwAa1A_VH) — Practical testing tutorials on the official YouTube channel.
 
+### 🌌 Obsidian Architect Edition
+
+Interactive dark obsidian theme engineered with real-time GitHub telemetry, responsive SVG constellation graphs, and terminal system profiling.
+
+- [**Explore the Obsidian Architect Theme README & Assets**](./themes/obsidian-architect/README.md) — Complete themed showcase with interactive animations, SVG cards, and full system telemetry.
+- [**Jet Heatmap Architecture Guide**](./themes/obsidian-architect/JET-HEATMAP-GUIDE.md) — Documentation for automated GitHub contribution calendar jet telemetry.
+
 <p>
 <picture>
   <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/72e54942992f/connect-mobile.svg">

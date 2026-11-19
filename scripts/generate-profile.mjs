@@ -152,6 +152,13 @@ ${picture('research')}
 
 ${c.resources.map(p=>`- [${p.title}](${p.url}) — ${p.description}`).join('\n')}
 
+### 🌌 Obsidian Architect Edition
+
+Interactive dark obsidian theme engineered with real-time GitHub telemetry, responsive SVG constellation graphs, and terminal system profiling.
+
+- [**Explore the Obsidian Architect Theme README & Assets**](./themes/obsidian-architect/README.md) — Complete themed showcase with interactive animations, SVG cards, and full system telemetry.
+- [**Jet Heatmap Architecture Guide**](./themes/obsidian-architect/JET-HEATMAP-GUIDE.md) — Documentation for automated GitHub contribution calendar jet telemetry.
+
 ${picture('connect')}
 
 [GitHub](${c.links.github}) · [LinkedIn](${c.links.linkedin}) · [Professional Portfolio](${c.links.portfolio}) · [WorldGyan](${c.links.worldgyan}) · [YouTube](${c.links.youtube})
