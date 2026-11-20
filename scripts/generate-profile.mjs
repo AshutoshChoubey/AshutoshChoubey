@@ -46,7 +46,7 @@ function technology(m) {
   let b=sectionHeader('02','CORE TECHNOLOGY',w,m);
   if(m) {
     b+=rect(28,78,364,74,'#163052',12,'stroke="#3D6690"');
-    b+=text(46,113,c.technology.primary[0],31,'#FFFFFF','font-weight="700"');
+    b+=text(46,113,c.technology.primary[0]+' 22+',31,'#FFFFFF','font-weight="700"');
     b+=text(46,137,'Frontend architecture',16,'#A5DFFF');
     b+=text(28,193,c.technology.primary.slice(1,3).join('  /  '),24,'#FFFFFF','font-weight="600"');
     b+=text(28,234,c.technology.primary.slice(3).join('  /  '),23,'#73DEFF','font-weight="600"');
@@ -61,7 +61,7 @@ function technology(m) {
     b+=text(28,466,c.technology.quality,14,'#B4C2D5');
   } else {
     b+=rect(42,80,204,112,'#163052',12,'stroke="#3D6690"');
-    b+=text(62,126,c.technology.primary[0],34,'#FFFFFF','font-weight="700"');
+    b+=text(62,126,c.technology.primary[0]+' 22+',34,'#FFFFFF','font-weight="700"');
     b+=text(62,158,'Frontend architecture',16,'#A5DFFF');
     c.technology.primary.slice(1).forEach((s,i)=>{
       const x=278+i*161;
@@ -125,7 +125,7 @@ const picture = name => `<p>\n<picture>\n  <source media="(prefers-reduced-motio
 
 const readme=`<!-- Generated from profile.config.json. Edit the source, then run npm run generate. -->
 <a href="${c.links.portfolio}">
-  <img src="./themes/main/assets/hero-architect.svg" width="100%" alt="Ashutosh Kumar Choubey — Frontend Architect | System Design | AI Orchestration. Building scalable frontend systems. Exploring intelligent, agent-powered software. Founder, WorldGyan.">
+  <img src="./themes/main/assets/hero-architect.svg" width="100%" alt="Ashutosh Kumar Choubey — Software Engineer | System Design | AI Orchestration. Building scalable software systems. Exploring intelligent, agent-powered software. Founder, WorldGyan.">
 </a>
 
 <p align="center">
@@ -138,13 +138,7 @@ const readme=`<!-- Generated from profile.config.json. Edit the source, then run
 
 <img src="./themes/main/assets/terminal-system.svg" width="100%" alt="System Architecture CLI: whoami, focus, platform, shipped repositories, and engineering foundations.">
 
-${picture('hero')}
-
-**${c.identity.name} · ${c.identity.headline}**
-
-${c.identity.positioning}
-
-${picture('expertise')}
+<img src="./themes/main/assets/engineering-systems.svg" width="100%" alt="WorldGyan — Engineering Systems: Frontend Architecture, Enterprise Engineering, System Design, Performance and Scalability. Founder: Ashutosh Kumar Choubey.">
 
 ${picture('technology')}
 
@@ -161,7 +155,7 @@ ${picture('ai-systems')}
 Public learning projects and code references, selected after reviewing their implementations.
 
 <a href="https://github.com/AshutoshChoubey/angular-interview-worldgyan.com">
-  <img src="./themes/main/assets/project-angular-architecture.svg" width="100%" alt="Angular Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.">
+  <img src="./themes/main/assets/project-angular-architecture.svg" width="100%" alt="Angular 22+ Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.">
 </a>
 
 - [**Angular architecture study**](https://github.com/AshutoshChoubey/angular-interview-worldgyan.com) — Study guides and TypeScript examples for Angular signals, HTTP interceptors, authentication flows and application architecture.
@@ -184,9 +178,9 @@ Public learning projects and code references, selected after reviewing their imp
 
 - [**TypeScript type-system examples**](https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com) — Focused examples of generics, unions, mapped types and utility types, alongside a type-system study reference.
 
-<p align="center"><a href="${c.links.worldgyan}"><img src="./${c.worldgyan.logo}" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="${c.links.worldgyan}"><img src="${assetUrl('assets/worldgyan-wordmark.svg')}" width="160" height="64" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
+<img src="./themes/main/assets/research-systems.svg" width="100%" alt="Engineering, Shared: Published research in frontend system design and production AI engineering with practical tutorials.">
 
-${picture('research')}
+<p align="center"><a href="${c.links.worldgyan}"><img src="./${c.worldgyan.logo}" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="${c.links.worldgyan}"><img src="${assetUrl('assets/worldgyan-wordmark.svg')}" width="160" height="64" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
 
 ${c.resources.map(p=>`- [${p.title}](${p.url}) — ${p.description}`).join('\n')}
 
@@ -196,6 +190,22 @@ Interactive dark obsidian theme engineered with real-time GitHub telemetry, resp
 
 - [**Explore the Obsidian Architect Theme README & Assets**](./themes/obsidian-architect/README.md) — Complete themed showcase with interactive animations, SVG cards, and full system telemetry.
 - [**Jet Heatmap Architecture Guide**](./themes/obsidian-architect/JET-HEATMAP-GUIDE.md) — Documentation for automated GitHub contribution calendar jet telemetry.
+- [**Classic Engineering Minimal Theme**](./themes/classic-engineering/README.md) — Preserved vector baseline specification.
+
+<details>
+<summary><b>📐 Architectural Specification &amp; Responsive Fallbacks</b></summary>
+
+${picture('hero')}
+
+**${c.identity.name} · ${c.identity.headline}**
+
+${c.identity.positioning}
+
+${picture('expertise')}
+
+${picture('research')}
+
+</details>
 
 ${picture('connect')}
 

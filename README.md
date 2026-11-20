@@ -1,6 +1,6 @@
 <!-- Generated from profile.config.json. Edit the source, then run npm run generate. -->
 <a href="https://me.worldgyan.com/">
-  <img src="./themes/main/assets/hero-architect.svg" width="100%" alt="Ashutosh Kumar Choubey — Frontend Architect | System Design | AI Orchestration. Building scalable frontend systems. Exploring intelligent, agent-powered software. Founder, WorldGyan.">
+  <img src="./themes/main/assets/hero-architect.svg" width="100%" alt="Ashutosh Kumar Choubey — Software Engineer | System Design | AI Orchestration. Building scalable software systems. Exploring intelligent, agent-powered software. Founder, WorldGyan.">
 </a>
 
 <p align="center">
@@ -13,34 +13,14 @@
 
 <img src="./themes/main/assets/terminal-system.svg" width="100%" alt="System Architecture CLI: whoami, focus, platform, shipped repositories, and engineering foundations.">
 
-<p>
-<picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/a82c4a3715b6/hero-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/9fd22a00280d/hero.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/1722cb8e5c35/hero-mobile.svg">
-  <img src="./assets/rendered/c37e9aa6cd87/hero.svg" width="100%" alt="Ashutosh Kumar Choubey — Frontend Architect | System Design | AI Orchestration. FRONTEND ARCHITECTURE · SYSTEM DESIGN · AI ORCHESTRATION. Building scalable frontend systems. Exploring intelligent, agent-powered software. AI engineering and agentic systems are exploration interests.">
-</picture>
-</p>
-
-**Ashutosh Kumar Choubey · Frontend Architect | System Design | AI Orchestration**
-
-Building scalable frontend systems. Exploring intelligent, agent-powered software.
+<img src="./themes/main/assets/engineering-systems.svg" width="100%" alt="WorldGyan — Engineering Systems: Frontend Architecture, Enterprise Engineering, System Design, Performance and Scalability. Founder: Ashutosh Kumar Choubey.">
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/cce821112ced/expertise-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/2b4b139111b8/expertise.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/81659348a649/expertise-mobile.svg">
-  <img src="./assets/rendered/7f2a31c730c5/expertise.svg" width="100%" alt="Engineering expertise: frontend architecture, enterprise engineering, system design, performance and scalability. Frontend Architecture: Components · design systems. Enterprise Engineering: Integration · quality. System Design: Boundaries · state · delivery. Performance &amp; Scalability: Rendering · modular delivery. Exploring AI Architecture, Agentic AI, AI Orchestration, LLM Integration, MCP, evaluations and human review.">
-</picture>
-</p>
-
-<p>
-<picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/3003b33ba3dd/technology-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/5cd8a5784b7e/technology.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/23dc74fa7295/technology-mobile.svg">
-  <img src="./assets/rendered/5baff7a9b9d3/technology.svg" width="100%" alt="Core technologies: Angular, TypeScript, JavaScript, RxJS, NgRx. HTML5 · CSS3 / SCSS · Component Architecture. Supporting: Node.js / REST APIs, Jasmine / Jest, Git / CI/CD. Accessibility · Security · Automated Testing.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/66d7c791f223/technology-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/0d371c320a8b/technology.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/b375896f11d4/technology-mobile.svg">
+  <img src="./assets/rendered/48ef9ef6373b/technology.svg" width="100%" alt="Core technologies: Angular, TypeScript, JavaScript, RxJS, NgRx. HTML5 · CSS3 / SCSS · Component Architecture. Supporting: Node.js / REST APIs, Jasmine / Jest, Git / CI/CD. Accessibility · Security · Automated Testing.">
 </picture>
 </p>
 
@@ -64,7 +44,7 @@ Building scalable frontend systems. Exploring intelligent, agent-powered softwar
 Public learning projects and code references, selected after reviewing their implementations.
 
 <a href="https://github.com/AshutoshChoubey/angular-interview-worldgyan.com">
-  <img src="./themes/main/assets/project-angular-architecture.svg" width="100%" alt="Angular Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.">
+  <img src="./themes/main/assets/project-angular-architecture.svg" width="100%" alt="Angular 22+ Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.">
 </a>
 
 - [**Angular architecture study**](https://github.com/AshutoshChoubey/angular-interview-worldgyan.com) — Study guides and TypeScript examples for Angular signals, HTTP interceptors, authentication flows and application architecture.
@@ -87,16 +67,9 @@ Public learning projects and code references, selected after reviewing their imp
 
 - [**TypeScript type-system examples**](https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com) — Focused examples of generics, unions, mapped types and utility types, alongside a type-system study reference.
 
-<p align="center"><a href="https://worldgyan.com/"><img src="./assets/worldgyan-logo.png" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="https://worldgyan.com/"><img src="./assets/rendered/a6eaf50fb202/worldgyan-wordmark.svg" width="160" height="64" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
+<img src="./themes/main/assets/research-systems.svg" width="100%" alt="Engineering, Shared: Published research in frontend system design and production AI engineering with practical tutorials.">
 
-<p>
-<picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/56d69706f545/research-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/28a25a9d8999/research.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/06e407e1cc76/research-mobile.svg">
-  <img src="./assets/rendered/1532eadc2053/research.svg" width="100%" alt="WorldGyan: technical research and education across software engineering and intelligent systems. Published research in frontend system design and AI architecture, with practical Angular testing tutorials. Clickable resources are provided in the README.">
-</picture>
-</p>
+<p align="center"><a href="https://worldgyan.com/"><img src="./assets/worldgyan-logo.png" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="https://worldgyan.com/"><img src="./assets/rendered/a6eaf50fb202/worldgyan-wordmark.svg" width="160" height="64" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
 
 - [Frontend system design](https://worldgyan.com/technology/frontend-system-design/) — Micro-frontends, integration boundaries and enterprise scaling tradeoffs.
 - [AI engineering research](https://worldgyan.com/technology/production-ai-engineering/) — Published research on architecture, retrieval, serving and evaluation.
@@ -108,6 +81,43 @@ Interactive dark obsidian theme engineered with real-time GitHub telemetry, resp
 
 - [**Explore the Obsidian Architect Theme README & Assets**](./themes/obsidian-architect/README.md) — Complete themed showcase with interactive animations, SVG cards, and full system telemetry.
 - [**Jet Heatmap Architecture Guide**](./themes/obsidian-architect/JET-HEATMAP-GUIDE.md) — Documentation for automated GitHub contribution calendar jet telemetry.
+- [**Classic Engineering Minimal Theme**](./themes/classic-engineering/README.md) — Preserved vector baseline specification.
+
+<details>
+<summary><b>📐 Architectural Specification &amp; Responsive Fallbacks</b></summary>
+
+<p>
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/1a4d826df8db/hero-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/ef2b9703f9b0/hero.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/96d9a1d4c129/hero-mobile.svg">
+  <img src="./assets/rendered/b921be9f0272/hero.svg" width="100%" alt="Ashutosh Kumar Choubey — Software Engineer | System Design | AI Orchestration. SOFTWARE ENGINEERING · FRONTEND ARCHITECTURE · SYSTEM DESIGN · AI ORCHESTRATION. Building scalable frontend systems. Exploring intelligent, agent-powered software. AI engineering and agentic systems are exploration interests.">
+</picture>
+</p>
+
+**Ashutosh Kumar Choubey · Software Engineer | System Design | AI Orchestration**
+
+Building scalable frontend systems. Exploring intelligent, agent-powered software.
+
+<p>
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/cce821112ced/expertise-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/2b4b139111b8/expertise.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/81659348a649/expertise-mobile.svg">
+  <img src="./assets/rendered/7f2a31c730c5/expertise.svg" width="100%" alt="Engineering expertise: frontend architecture, enterprise engineering, system design, performance and scalability. Frontend Architecture: Components · design systems. Enterprise Engineering: Integration · quality. System Design: Boundaries · state · delivery. Performance &amp; Scalability: Rendering · modular delivery. Exploring AI Architecture, Agentic AI, AI Orchestration, LLM Integration, MCP, evaluations and human review.">
+</picture>
+</p>
+
+<p>
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/56d69706f545/research-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/28a25a9d8999/research.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/06e407e1cc76/research-mobile.svg">
+  <img src="./assets/rendered/1532eadc2053/research.svg" width="100%" alt="WorldGyan: technical research and education across software engineering and intelligent systems. Published research in frontend system design and AI architecture, with practical Angular testing tutorials. Clickable resources are provided in the README.">
+</picture>
+</p>
+
+</details>
 
 <p>
 <picture>

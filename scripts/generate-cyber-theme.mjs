@@ -8,9 +8,10 @@ export async function generateCyberTheme(customRoot) {
   await mkdir(outDir, { recursive: true });
 
   const photoBase64 = (await readFile(path.join(root, 'scripts/user_photo.base64.txt'), 'utf8')).trim();
+  const logoBase64 = (await readFile(path.join(root, 'assets/worldgyan-logo-hero.base64.txt'), 'utf8')).trim();
 
-// Shared SVG defs and styles for Cyber-Architect theme
-const commonDefs = `
+  // Shared SVG defs and styles for Cyber-Architect theme
+  const commonDefs = `
     <linearGradient id="cyber-bg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#060B17"/>
       <stop offset=".45" stop-color="#0B172E"/>
@@ -39,7 +40,7 @@ const commonDefs = `
     </filter>
 `;
 
-const commonStyles = `
+  const commonStyles = `
     .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
     .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
     .serif { font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif; }
@@ -48,9 +49,8 @@ const commonStyles = `
     @media (prefers-reduced-motion: reduce) { .trace-anim { display: none; } }
 `;
 
-// Floating lava sparks SVG snippet
-function lavaSparks(w, h, seed = 0) {
-  return `
+  function lavaSparks(w, h, seed = 0) {
+    return `
     <!-- Floating Lava Sparks & Energetic Embers -->
     <g class="lava-sparks">
       <!-- Emerald Green Sparks -->
@@ -87,13 +87,13 @@ function lavaSparks(w, h, seed = 0) {
       </circle>
     </g>
   `;
-}
+  }
 
-// 1. HERO ARCHITECT SVG
-const heroArchitectSvg = `<?xml version="1.0" encoding="UTF-8"?>
+  // 1. HERO ARCHITECT SVG (Minimal, Commanding, Clean)
+  const heroArchitectSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-labelledby="hero-t hero-d">
-  <title id="hero-t">Ashutosh Kumar Choubey — Frontend Architect | System Design | AI Orchestration</title>
-  <desc id="hero-d">Building scalable frontend systems. Exploring intelligent, agent-powered software. Founder, WorldGyan.</desc>
+  <title id="hero-t">Ashutosh Kumar Choubey — Software Engineer | System Design | AI Orchestration</title>
+  <desc id="hero-d">Software Engineer, System Design and AI Orchestration. Agentic AI, AI Architecture, and enterprise systems.</desc>
   <defs>
     ${commonDefs}
     <clipPath id="hero-clip"><rect width="1200" height="480" rx="20"/></clipPath>
@@ -104,15 +104,15 @@ const heroArchitectSvg = `<?xml version="1.0" encoding="UTF-8"?>
       <stop offset=".8" stop-color="#73DEFF"/>
       <stop offset="1" stop-color="#38BDF8"/>
     </linearGradient>
+    <linearGradient id="hero-pill-grad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0F223D"/>
+      <stop offset=".5" stop-color="#0D1D33"/>
+      <stop offset="1" stop-color="#091526"/>
+    </linearGradient>
     <linearGradient id="hero-photo-grade" x1="0" y1="0" x2="0" y2="1">
       <stop offset=".5" stop-color="#060B17" stop-opacity="0"/>
       <stop offset=".8" stop-color="#060B17" stop-opacity=".6"/>
       <stop offset="1" stop-color="#060B17" stop-opacity=".95"/>
-    </linearGradient>
-    <linearGradient id="hero-photo-wash" cx="50%" cy="30%" r="80%">
-      <stop offset="0" stop-color="#E0F2FE"/>
-      <stop offset=".5" stop-color="#7DD3FC"/>
-      <stop offset="1" stop-color="#0284C7"/>
     </linearGradient>
     <linearGradient id="hero-photo-sheen" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
@@ -133,17 +133,15 @@ const heroArchitectSvg = `<?xml version="1.0" encoding="UTF-8"?>
   <style>
     ${commonStyles}
     .hero-rise { animation: hero-rise 1.2s cubic-bezier(.16,1,.3,1) both; }
-    .hero-fade { animation: hero-fade 1.5s cubic-bezier(.16,1,.3,1) both; }
     .hero-photo { animation: hero-photo 1.5s cubic-bezier(.16,1,.3,1) .35s both; }
     @keyframes hero-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
-    @keyframes hero-fade { from { opacity: 0; } to { opacity: 1; } }
     @keyframes hero-photo { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
-    @media (prefers-reduced-motion: reduce) { .hero-rise, .hero-fade, .hero-photo { animation: none; } }
+    @media (prefers-reduced-motion: reduce) { .hero-rise, .hero-photo { animation: none; } }
   </style>
   <g clip-path="url(#hero-clip)">
     <!-- Base Deep Obsidian Canvas -->
     <rect width="1200" height="480" fill="url(#cyber-bg)"/>
-    <!-- Slow Ambient Light Fields -->
+    <!-- Ambient Light Fields -->
     <ellipse cx="920" cy="160" rx="380" ry="260" fill="url(#cyber-glow-cyan)">
       <animateTransform attributeName="transform" type="translate" values="0 0; -40 25; 0 0" dur="20s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1; .45 0 .55 1"/>
     </ellipse>
@@ -161,8 +159,8 @@ const heroArchitectSvg = `<?xml version="1.0" encoding="UTF-8"?>
 
     <!-- Left Content Column -->
     <g class="hero-rise" style="animation-delay: 0.1s;">
-      <!-- Terminal Pill Top-Left: ~/ashutosh $ build -scale-enterprise -->
-      <g transform="translate(56 50)">
+      <!-- Terminal Pill Top-Left -->
+      <g transform="translate(56 46)">
         <rect width="364" height="34" rx="17" fill="#0A1526" stroke="#1E3A5F" stroke-opacity=".8"/>
         <circle cx="18" cy="17" r="4.5" fill="#34D399" filter="url(#cyber-glow)">
           <animate attributeName="opacity" values="1;.4;1" dur="2s" repeatCount="indefinite"/>
@@ -171,38 +169,39 @@ const heroArchitectSvg = `<?xml version="1.0" encoding="UTF-8"?>
       </g>
 
       <!-- Main Name Heading -->
-      <text class="sans" x="54" y="146" font-size="50" font-weight="800" letter-spacing="-0.5" fill="url(#hero-name-grad)">Ashutosh Kumar Choubey</text>
+      <text class="sans" x="54" y="142" font-size="52" font-weight="800" letter-spacing="-0.5" fill="url(#hero-name-grad)">Ashutosh Kumar Choubey</text>
 
-      <!-- Subtitle -->
-      <text class="sans" x="56" y="186" font-size="19" font-weight="600" fill="#E2E8F0">Frontend Architect <tspan fill="#34D399">·</tspan> System Design <tspan fill="#38BDF8">·</tspan> AI Orchestration</text>
+      <!-- Clean Rectangular Shape Container -->
+      <g transform="translate(56 166)">
+        <rect width="660" height="44" rx="10" fill="url(#hero-pill-grad)" stroke="#1E3A5F" stroke-width="1.2"/>
+        <path d="M16 43H644" stroke="#38BDF8" stroke-opacity=".5" stroke-width="1.2"/>
+        <text class="sans" x="22" y="28" font-size="17" font-weight="600" fill="#F8FAFC">Software Engineer <tspan fill="#34D399">·</tspan> System Design <tspan fill="#38BDF8">·</tspan> AI Orchestration</text>
+      </g>
 
-      <!-- Positioning -->
-      <text class="sans" x="56" y="222" font-size="15" fill="#94A3B8">Building scalable frontend systems. Exploring intelligent, agent-powered software.</text>
-      <text class="mono" x="56" y="248" font-size="12.5" fill="#38BDF8"><tspan fill="#34D399">Platform ›</tspan> Founder, WorldGyan (worldgyan.com) · Research, Architecture &amp; Intelligence</text>
+      <!-- Focused Architectural Badges: Software Engineer, System Design, AI Architecture, Agentic AI, AI Orchestration -->
+      <g transform="translate(56 230)">
+        <g><rect width="144" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#38BDF8">Software Engineer</text></g>
+        <g transform="translate(154 0)"><rect width="130" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="65" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#34D399">System Design</text></g>
+        <g transform="translate(294 0)"><rect width="144" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#F59E0B">AI Architecture</text></g>
+        <g transform="translate(448 0)"><rect width="112" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="56" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#73DEFF">Agentic AI</text></g>
+        <g transform="translate(570 0)"><rect width="144" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#F43F5E">AI Orchestration</text></g>
+      </g>
 
       <!-- Horizontal Divider -->
-      <line x1="56" y1="272" x2="720" y2="272" stroke="#1E3A5F" stroke-opacity=".6"/>
+      <line x1="56" y1="288" x2="720" y2="288" stroke="#1E3A5F" stroke-opacity=".6"/>
 
-      <!-- Capability Highlights Metrics -->
-      <g transform="translate(56 312)">
-        <text class="serif" font-size="32" font-weight="400" fill="#F8FAFC">Angular 18+</text>
-        <text class="sans" y="24" font-size="12" font-weight="600" fill="#34D399">SIGNALS &amp; INTEROPERABILITY</text>
+      <!-- Capability Highlights Metrics with Angular 22+ -->
+      <g transform="translate(56 342)">
+        <text class="serif" font-size="34" font-weight="400" fill="#F8FAFC">Angular 22+</text>
+        <text class="sans" y="24" font-size="12" font-weight="700" fill="#34D399">SIGNALS &amp; INTEROPERABILITY</text>
       </g>
-      <g transform="translate(290 312)">
-        <text class="serif" font-size="32" font-weight="400" fill="#F8FAFC">TypeScript</text>
-        <text class="sans" y="24" font-size="12" font-weight="600" fill="#38BDF8">TYPE-LEVEL COMPUTATION</text>
+      <g transform="translate(290 342)">
+        <text class="serif" font-size="34" font-weight="400" fill="#F8FAFC">TypeScript</text>
+        <text class="sans" y="24" font-size="12" font-weight="700" fill="#38BDF8">TYPE-LEVEL COMPUTATION</text>
       </g>
-      <g transform="translate(510 312)">
-        <text class="serif" font-size="32" font-weight="400" fill="#F8FAFC">Agentic AI</text>
-        <text class="sans" y="24" font-size="12" font-weight="600" fill="#F43F5E">ORCHESTRATION &amp; MCP</text>
-      </g>
-
-      <!-- Architectural Focus Badges -->
-      <g transform="translate(56 394)">
-        <g><rect width="144" height="28" rx="14" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="72" y="18" text-anchor="middle" font-size="11.5" fill="#38BDF8">Founder, WorldGyan</text></g>
-        <g transform="translate(154 0)"><rect width="176" height="28" rx="14" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="88" y="18" text-anchor="middle" font-size="11.5" fill="#34D399">Angular &amp; TypeScript</text></g>
-        <g transform="translate(340 0)"><rect width="178" height="28" rx="14" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="89" y="18" text-anchor="middle" font-size="11.5" fill="#E2E8F0">Reactive Concurrency</text></g>
-        <g transform="translate(528 0)"><rect width="170" height="28" rx="14" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="85" y="18" text-anchor="middle" font-size="11.5" fill="#F43F5E">Agentic Orchestration</text></g>
+      <g transform="translate(510 342)">
+        <text class="serif" font-size="34" font-weight="400" fill="#F8FAFC">Agentic AI</text>
+        <text class="sans" y="24" font-size="12" font-weight="700" fill="#F43F5E">ORCHESTRATION &amp; MCP</text>
       </g>
     </g>
 
@@ -216,11 +215,8 @@ const heroArchitectSvg = `<?xml version="1.0" encoding="UTF-8"?>
         <!-- Orbiting Satellite Nodes in Green, Red, Cyan -->
         <g>
           <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="45s" repeatCount="indefinite"/>
-          <!-- Emerald Green Node -->
           <circle cx="200" cy="0" r="4.5" fill="#34D399" filter="url(#cyber-glow)"/>
-          <!-- Ruby Red Node -->
           <circle cx="-141" cy="-141" r="3.5" fill="#F43F5E" filter="url(#cyber-glow)"/>
-          <!-- Cyan Node -->
           <circle cx="0" cy="150" r="3" fill="#00C9FF"/>
         </g>
       </g>
@@ -249,8 +245,8 @@ const heroArchitectSvg = `<?xml version="1.0" encoding="UTF-8"?>
 </svg>
 `;
 
-// 2. TERMINAL SYSTEM SVG (MacBook / Linux Terminal Window)
-const terminalSystemSvg = `<?xml version="1.0" encoding="UTF-8"?>
+  // 2. TERMINAL SYSTEM SVG (MacBook / Linux Terminal Window with Angular 22+)
+  const terminalSystemSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-labelledby="term-t term-d">
   <title id="term-t">System Architecture CLI — Ashutosh Kumar Choubey</title>
   <desc id="term-d">MacBook Linux developer terminal window with system diagnostics, whoami, focus, platform, shipped repositories, and architecture core.</desc>
@@ -297,7 +293,7 @@ const terminalSystemSvg = `<?xml version="1.0" encoding="UTF-8"?>
       <!-- Traffic Light Buttons -->
       <circle cx="62" cy="58" r="5.5" fill="#EF4444"/>
       <circle cx="80" cy="58" r="5.5" fill="#F59E0B"/>
-      <circle cx="98" cy="58" r="5.5" fill="#10B981"/>
+      <circle cx="108" cy="58" r="5.5" fill="#10B981"/>
       <text class="mono" x="420" y="62" text-anchor="middle" font-size="11.5" letter-spacing="1.2" fill="#94A3B8">ashutosh@worldgyan: ~ (zsh)</text>
     </g>
 
@@ -305,11 +301,11 @@ const terminalSystemSvg = `<?xml version="1.0" encoding="UTF-8"?>
     <g class="mono" font-size="13">
       <!-- 01 whoami -->
       <g clip-path="url(#t-c0)"><text x="72" y="128" fill="#38BDF8">$</text><text x="94" y="128" fill="#F8FAFC">whoami</text></g>
-      <g clip-path="url(#t-c1)"><text x="72" y="153" fill="#34D399">→</text><text x="94" y="153" fill="#94A3B8">Ashutosh Kumar Choubey · Frontend Architect · Founder, WorldGyan</text></g>
+      <g clip-path="url(#t-c1)"><text x="72" y="153" fill="#34D399">→</text><text x="94" y="153" fill="#94A3B8">Ashutosh Kumar Choubey · Software Engineer · Founder, WorldGyan</text></g>
 
       <!-- 02 focus.txt -->
       <g clip-path="url(#t-c2)"><text x="72" y="178" fill="#38BDF8">$</text><text x="94" y="178" fill="#F8FAFC">cat focus.txt</text></g>
-      <g clip-path="url(#t-c3)"><text x="72" y="203" fill="#34D399">→</text><text x="94" y="203" fill="#94A3B8">Frontend Architecture · Enterprise Scale · AI Orchestration</text></g>
+      <g clip-path="url(#t-c3)"><text x="72" y="203" fill="#34D399">→</text><text x="94" y="203" fill="#94A3B8">Software Engineering · System Design · AI Orchestration</text></g>
 
       <!-- 03 platform.txt -->
       <g clip-path="url(#t-c4)"><text x="72" y="228" fill="#38BDF8">$</text><text x="94" y="228" fill="#F8FAFC">cat platform.txt</text></g>
@@ -321,7 +317,7 @@ const terminalSystemSvg = `<?xml version="1.0" encoding="UTF-8"?>
 
       <!-- 05 principle -->
       <g clip-path="url(#t-c8)"><text x="72" y="328" fill="#38BDF8">$</text><text x="94" y="328" fill="#F8FAFC">echo $PRINCIPLE</text></g>
-      <g clip-path="url(#t-c9)"><text x="72" y="353" fill="#34D399">→</text><text x="94" y="353" fill="#94A3B8">scalable frontend systems · deterministic AI orchestration</text></g>
+      <g clip-path="url(#t-c9)"><text x="72" y="353" fill="#34D399">→</text><text x="94" y="353" fill="#94A3B8">scalable software systems · deterministic AI orchestration</text></g>
     </g>
 
     <!-- Blinking Terminal Prompt Cursor -->
@@ -336,7 +332,7 @@ const terminalSystemSvg = `<?xml version="1.0" encoding="UTF-8"?>
         <rect width="330" height="96" rx="12" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".7"/>
         <line x1="16" y1="18" x2="16" y2="78" stroke="#34D399" stroke-width="3" stroke-linecap="round"/>
         <text class="sans" x="32" y="38" font-size="13" font-weight="700" letter-spacing="0.5" fill="#38BDF8">Primary Architecture</text>
-        <text class="sans" x="32" y="60" font-size="14.5" font-weight="600" fill="#F8FAFC">Angular 18+ · TypeScript 5+</text>
+        <text class="sans" x="32" y="60" font-size="14.5" font-weight="600" fill="#F8FAFC">Angular 22+ · TypeScript 5+</text>
         <text class="sans" x="32" y="80" font-size="12" fill="#94A3B8">Signals graph, RxJS interop, Zoneless CD</text>
       </g>
 
@@ -368,10 +364,161 @@ const terminalSystemSvg = `<?xml version="1.0" encoding="UTF-8"?>
 </svg>
 `;
 
-// 3. PROJECT 1: ANGULAR ARCHITECTURE STUDY SVG
-const projectAngularArchitectureSvg = `<?xml version="1.0" encoding="UTF-8"?>
+  // 3. ENGINEERING SYSTEMS SVG (WorldGyan Logo + Founder + Continuously Moving Cinematic Orbit)
+  const engineeringSystemsSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" role="img" aria-labelledby="eng-t eng-d">
+  <title id="eng-t">WorldGyan — Engineering Systems &amp; Architecture</title>
+  <desc id="eng-d">Founder Ashutosh Kumar Choubey, WorldGyan. Frontend architecture, enterprise engineering, system design, performance and scalability with slow moving cinematic orbital system.</desc>
+  <defs>
+    ${commonDefs}
+    <clipPath id="eng-clip"><rect width="1200" height="540" rx="20"/></clipPath>
+  </defs>
+  <style>
+    ${commonStyles}
+    .eng-in { animation: eng-in 1.2s cubic-bezier(.16,1,.3,1) both; }
+    @keyframes eng-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .eng-in { animation: none; } }
+  </style>
+  <g clip-path="url(#eng-clip)">
+    <!-- Base Deep Obsidian Canvas -->
+    <rect width="1200" height="540" fill="url(#cyber-bg)"/>
+    <ellipse cx="600" cy="240" rx="420" ry="260" fill="url(#cyber-glow-cyan)"/>
+    <rect width="1200" height="540" fill="url(#cyber-grid)"/>
+
+    ${lavaSparks(1200, 540, 60)}
+
+    <!-- Top Header: WorldGyan Logo & Founder Presentation -->
+    <g class="eng-in" style="animation-delay: 0.1s;">
+      <g transform="translate(56 36)">
+        <!-- Embedded WorldGyan Logo -->
+        <image x="0" y="0" width="48" height="48" href="data:image/png;base64,${logoBase64}"/>
+        <text class="sans" x="62" y="24" font-size="22" font-weight="700">
+          <tspan fill="#F8FAFC">World</tspan><tspan fill="#F59E0B">Gyan</tspan>
+          <tspan font-size="14" font-weight="500" fill="#94A3B8" dx="12">· Next-Gen AI &amp; Engineering</tspan>
+        </text>
+        <text class="sans" x="62" y="44" font-size="13" font-weight="600" fill="#38BDF8">Founder &amp; Principal Architect: <tspan fill="#34D399">Ashutosh Kumar Choubey</tspan></text>
+      </g>
+      <line x1="56" y1="96" x2="1144" y2="96" stroke="#1E3A5F" stroke-opacity=".7"/>
+    </g>
+
+    <!-- Center Cinematic Continuously Moving Orbiting Circles around "Architecture" -->
+    <g transform="translate(600 230)">
+      <!-- Outer Rotating Ellipse (30s duration, continuous) -->
+      <g fill="none" stroke="#1E3A5F" stroke-opacity=".6" stroke-width="1.4">
+        <ellipse cx="0" cy="0" rx="110" ry="136">
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="28s" repeatCount="indefinite"/>
+        </ellipse>
+        <ellipse cx="0" cy="0" rx="136" ry="60">
+          <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="22s" repeatCount="indefinite"/>
+        </ellipse>
+      </g>
+
+      <!-- Counter-Rotating Dashed Orbit with Glowing Satellite Node -->
+      <g fill="none" stroke="#38BDF8" stroke-opacity=".8" stroke-width="1.6">
+        <circle r="120" stroke-dasharray="24 16 6 16">
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="18s" repeatCount="indefinite"/>
+        </circle>
+        <!-- Orbiting Emerald Glowing Node -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="18s" repeatCount="indefinite"/>
+          <circle cx="120" cy="0" r="4.5" fill="#34D399" filter="url(#cyber-glow)"/>
+        </g>
+        <!-- Orbiting Ruby Glowing Node -->
+        <g>
+          <animateTransform attributeName="transform" type="rotate" from="180" to="540" dur="24s" repeatCount="indefinite"/>
+          <circle cx="120" cy="0" r="4" fill="#F43F5E" filter="url(#cyber-glow)"/>
+        </g>
+      </g>
+
+      <!-- 3D Isometric Stack Placed Centrally -->
+      <g transform="translate(-44 -36)">
+        <path d="M0 0l44 -20L88 0 44 20z" fill="#163659" stroke="#38BDF8" stroke-width="1.2"/>
+        <path d="M0 0v8l44 20v-8M88 0v8l-44 20" fill="#0D1D33" stroke="#1E3A5F" stroke-width="1"/>
+        <path d="M0 24l44 -20L88 24 44 44z" fill="#1E40AF" stroke="#34D399" stroke-width="1.2"/>
+        <path d="M0 24v8l44 20v-8M88 24v8l-44 20" fill="#0A1526" stroke="#1E3A5F" stroke-width="1"/>
+        <path d="M0 48l44 -20L88 48 44 68z" fill="#0D2847" stroke="#73DEFF" stroke-width="1.2"/>
+      </g>
+      <text class="sans" x="0" y="68" font-size="13" font-weight="700" letter-spacing="1" fill="#38BDF8" text-anchor="middle">ARCHITECTURE</text>
+    </g>
+
+    <!-- 4 Core Engineering Pillar Cards -->
+    <g class="eng-in" style="animation-delay: 0.25s;">
+      <!-- Card 1: Frontend Architecture (Top Left) -->
+      <g transform="translate(56 120)">
+        <rect width="360" height="92" rx="12" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".8"/>
+        <text class="mono" x="20" y="28" font-size="11" font-weight="700" fill="#34D399">01 · ARCHITECTURE</text>
+        <text class="sans" x="20" y="54" font-size="19" font-weight="700" fill="#F8FAFC">Frontend Architecture</text>
+        <text class="sans" x="20" y="76" font-size="13" fill="#94A3B8">Components · Design Systems · Signals Reactive State</text>
+      </g>
+
+      <!-- Card 2: Enterprise Engineering (Top Right) -->
+      <g transform="translate(784 120)">
+        <rect width="360" height="92" rx="12" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".8"/>
+        <text class="mono" x="20" y="28" font-size="11" font-weight="700" fill="#38BDF8">02 · ENTERPRISE</text>
+        <text class="sans" x="20" y="54" font-size="19" font-weight="700" fill="#F8FAFC">Enterprise Engineering</text>
+        <text class="sans" x="20" y="76" font-size="13" fill="#94A3B8">Integration · Concurrency Mutex · CI/CD Quality</text>
+      </g>
+
+      <!-- Card 3: System Design (Bottom Left) -->
+      <g transform="translate(56 242)">
+        <rect width="360" height="92" rx="12" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".8"/>
+        <text class="mono" x="20" y="28" font-size="11" font-weight="700" fill="#F59E0B">03 · DESIGN</text>
+        <text class="sans" x="20" y="54" font-size="19" font-weight="700" fill="#F8FAFC">System Design</text>
+        <text class="sans" x="20" y="76" font-size="13" fill="#94A3B8">Micro-Frontends · Boundaries · Immutable Delivery</text>
+      </g>
+
+      <!-- Card 4: Performance & Scalability (Bottom Right) -->
+      <g transform="translate(784 242)">
+        <rect width="360" height="92" rx="12" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".8"/>
+        <text class="mono" x="20" y="28" font-size="11" font-weight="700" fill="#F43F5E">04 · SCALABILITY</text>
+        <text class="sans" x="20" y="54" font-size="19" font-weight="700" fill="#F8FAFC">Performance &amp; Scalability</text>
+        <text class="sans" x="20" y="76" font-size="13" fill="#94A3B8">Zoneless Change Detection · Modular O(1) Rendering</text>
+      </g>
+    </g>
+
+    <!-- Lower Section: Exploring AI Engineering -->
+    <g class="eng-in" style="animation-delay: 0.4s;">
+      <line x1="56" y1="364" x2="1144" y2="364" stroke="#1E3A5F" stroke-opacity=".7"/>
+      <text class="sans" x="56" y="394" font-size="12" font-weight="700" letter-spacing="1" fill="#38BDF8">EXPLORING / AI ENGINEERING &amp; ORCHESTRATION</text>
+      
+      <!-- AI Architecture Card -->
+      <g transform="translate(56 414)">
+        <rect width="344" height="74" rx="10" fill="#0D1D33" stroke="#1E3A5F"/>
+        <circle cx="20" cy="26" r="3.5" fill="#34D399"/>
+        <text class="sans" x="34" y="30" font-size="16" font-weight="700" fill="#F8FAFC">AI Architecture</text>
+        <text class="sans" x="34" y="52" font-size="12.5" fill="#94A3B8">Context engineering · Retrieval · Model routing</text>
+      </g>
+
+      <!-- Agentic AI Card -->
+      <g transform="translate(428 414)">
+        <rect width="344" height="74" rx="10" fill="#0D1D33" stroke="#1E3A5F"/>
+        <circle cx="20" cy="26" r="3.5" fill="#38BDF8"/>
+        <text class="sans" x="34" y="30" font-size="16" font-weight="700" fill="#F8FAFC">Agentic AI</text>
+        <text class="sans" x="34" y="52" font-size="12.5" fill="#94A3B8">Autonomous tools · Reasoning · MCP contracts</text>
+      </g>
+
+      <!-- AI Orchestration Card -->
+      <g transform="translate(800 414)">
+        <rect width="344" height="74" rx="10" fill="#0D1D33" stroke="#1E3A5F"/>
+        <circle cx="20" cy="26" r="3.5" fill="#F43F5E"/>
+        <text class="sans" x="34" y="30" font-size="16" font-weight="700" fill="#F8FAFC">AI Orchestration</text>
+        <text class="sans" x="34" y="52" font-size="12.5" fill="#94A3B8">State machines · Multi-agent workflows · Evals</text>
+      </g>
+
+      <text class="mono" x="56" y="514" font-size="12" fill="#38BDF8">LLM Integration · Model Context Protocol (MCP) · Automated Evaluations · Human Review</text>
+    </g>
+
+    <!-- Base Perimeter Border & Surrounding Corner Trace -->
+    <rect x=".5" y=".5" width="1199" height="539" rx="19.5" fill="none" stroke="#1E3A5F" stroke-opacity=".4"/>
+    <rect class="trace-anim" x=".5" y=".5" width="1199" height="539" rx="19.5" fill="none" stroke="url(#cyber-trace)" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+</svg>
+`;
+
+  // 4. PROJECT 1: ANGULAR 22+ ARCHITECTURE STUDY SVG
+  const projectAngularArchitectureSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" width="1200" height="370" role="img" aria-labelledby="p1-t">
-  <title id="p1-t">Angular Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.</title>
+  <title id="p1-t">Angular 22+ Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.</title>
   <defs>
     ${commonDefs}
     <clipPath id="p1-clip"><rect width="1200" height="370" rx="18"/></clipPath>
@@ -394,9 +541,9 @@ const projectAngularArchitectureSvg = `<?xml version="1.0" encoding="UTF-8"?>
 
     <!-- Left Content Column -->
     <g class="p1-in" style="animation-delay: 0.15s;">
-      <text class="sans" x="56" y="62" font-size="12" font-weight="700" letter-spacing="1" fill="#38BDF8">01 · ARCHITECTURE · ANGULAR · SIGNALS</text>
-      <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8FAFC">Angular Architecture Study</text>
-      <text class="sans" x="56" y="166" font-size="16.5" fill="#94A3B8">Signals, HTTP interceptors, caching, and enterprise application architecture.</text>
+      <text class="sans" x="56" y="62" font-size="12" font-weight="700" letter-spacing="1" fill="#38BDF8">01 · ARCHITECTURE · ANGULAR 22+ · SIGNALS</text>
+      <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8FAFC">Angular 22+ Architecture</text>
+      <text class="sans" x="56" y="166" font-size="16.5" fill="#94A3B8">Signals graph, HTTP interceptors, caching, and enterprise application architecture.</text>
       <text class="mono" x="56" y="200" font-size="12.5" fill="#E2E8F0"><tspan fill="#34D399">Built ›</tspan> Signals interop, caching &amp; mutex interceptors, modular app.config</text>
       <line x1="56" y1="226" x2="680" y2="226" stroke="#1E3A5F" stroke-opacity=".7"/>
 
@@ -415,7 +562,7 @@ const projectAngularArchitectureSvg = `<?xml version="1.0" encoding="UTF-8"?>
       </g>
 
       <!-- Chips -->
-      <g class="p1-chip" style="animation-delay:1.00s"><rect x="56" y="314" width="112" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="112" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">Angular 18+</text></g>
+      <g class="p1-chip" style="animation-delay:1.00s"><rect x="56" y="314" width="112" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="112" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">Angular 22+</text></g>
       <g class="p1-chip" style="animation-delay:1.12s"><rect x="176" y="314" width="92" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="222" y="331" text-anchor="middle" font-size="11.5" fill="#34D399">TypeScript</text></g>
       <g class="p1-chip" style="animation-delay:1.24s"><rect x="276" y="314" width="102" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="327" y="331" text-anchor="middle" font-size="11.5" fill="#E2E8F0">RxJS Interop</text></g>
       <g class="p1-chip" style="animation-delay:1.36s"><rect x="386" y="314" width="126" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="449" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">HTTP Interceptors</text></g>
@@ -472,8 +619,8 @@ const projectAngularArchitectureSvg = `<?xml version="1.0" encoding="UTF-8"?>
 </svg>
 `;
 
-// 4. PROJECT 2: RXJS OPERATOR LAB SVG
-const projectRxjsOperatorLabSvg = `<?xml version="1.0" encoding="UTF-8"?>
+  // 5. PROJECT 2: RXJS OPERATOR LAB SVG
+  const projectRxjsOperatorLabSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" width="1200" height="370" role="img" aria-labelledby="p2-t">
   <title id="p2-t">RxJS Operator Lab: Interactive Higher-Order Mapping Lab.</title>
   <defs>
@@ -559,8 +706,8 @@ const projectRxjsOperatorLabSvg = `<?xml version="1.0" encoding="UTF-8"?>
 </svg>
 `;
 
-// 5. PROJECT 3: NGRX EFFECTS DEMO SVG
-const projectNgrxEffectsSvg = `<?xml version="1.0" encoding="UTF-8"?>
+  // 6. PROJECT 3: NGRX EFFECTS DEMO SVG
+  const projectNgrxEffectsSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" width="1200" height="370" role="img" aria-labelledby="p3-t">
   <title id="p3-t">NgRx Effects Demo: Connecting Store Actions, Reducers &amp; HTTP Side Effects.</title>
   <defs>
@@ -681,8 +828,8 @@ const projectNgrxEffectsSvg = `<?xml version="1.0" encoding="UTF-8"?>
 </svg>
 `;
 
-// 6. PROJECT 4: TYPESCRIPT TYPE-SYSTEM REFERENCE SVG
-const projectTypescriptTypesSvg = `<?xml version="1.0" encoding="UTF-8"?>
+  // 7. PROJECT 4: TYPESCRIPT TYPE-SYSTEM REFERENCE SVG
+  const projectTypescriptTypesSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" width="1200" height="370" role="img" aria-labelledby="p4-t">
   <title id="p4-t">TypeScript Type-System: Advanced Generics, Unions &amp; Mapped Types.</title>
   <defs>
@@ -779,14 +926,83 @@ const projectTypescriptTypesSvg = `<?xml version="1.0" encoding="UTF-8"?>
 </svg>
 `;
 
+  // 8. RESEARCH & KNOWLEDGE CARD (Engineering, Shared)
+  const researchSystemsSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-labelledby="res-t res-d">
+  <title id="res-t">WorldGyan — Engineering Shared &amp; Research Systems</title>
+  <desc id="res-d">Published research in frontend system design, production AI engineering, and practical Angular testing tutorials.</desc>
+  <defs>
+    ${commonDefs}
+    <clipPath id="res-clip"><rect width="1200" height="320" rx="20"/></clipPath>
+  </defs>
+  <style>
+    ${commonStyles}
+    .res-in { animation: res-in 1.2s cubic-bezier(.16,1,.3,1) both; }
+    @keyframes res-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .res-in { animation: none; } }
+  </style>
+  <g clip-path="url(#res-clip)">
+    <!-- Base Deep Obsidian Canvas -->
+    <rect width="1200" height="320" fill="url(#cyber-bg)"/>
+    <ellipse cx="600" cy="160" rx="380" ry="200" fill="url(#cyber-glow-cyan)"/>
+    <rect width="1200" height="320" fill="url(#cyber-grid)"/>
+
+    ${lavaSparks(1200, 320, 100)}
+
+    <!-- Header -->
+    <g class="res-in" style="animation-delay: 0.1s;">
+      <text class="sans" x="56" y="52" font-size="12" font-weight="700" letter-spacing="1" fill="#38BDF8">04 · RESEARCH &amp; KNOWLEDGE · WORLDGYAN</text>
+      <text class="sans" x="54" y="94" font-size="34" font-weight="800" fill="#F8FAFC">Engineering, Shared.</text>
+      <text class="sans" x="56" y="122" font-size="15" fill="#94A3B8">Frontend systems, AI architecture &amp; practical enterprise tutorials.</text>
+    </g>
+
+    <!-- 3 Interactive Research Modules -->
+    <g class="res-in" style="animation-delay: 0.25s;">
+      <!-- Module 1: Frontend System Design -->
+      <g transform="translate(56 150)">
+        <rect width="344" height="120" rx="12" fill="#0D1D33" stroke="#1E3A5F"/>
+        <line x1="16" y1="20" x2="16" y2="100" stroke="#34D399" stroke-width="3" stroke-linecap="round"/>
+        <text class="sans" x="32" y="38" font-size="15" font-weight="700" fill="#F8FAFC">Frontend System Design</text>
+        <text class="sans" x="32" y="62" font-size="12.5" fill="#94A3B8">Micro-frontends, integration boundaries &amp; scaling tradeoffs.</text>
+        <text class="mono" x="32" y="92" font-size="11" font-weight="600" fill="#34D399">Read research paper →</text>
+      </g>
+
+      <!-- Module 2: AI Engineering Research -->
+      <g transform="translate(428 150)">
+        <rect width="344" height="120" rx="12" fill="#0D1D33" stroke="#1E3A5F"/>
+        <line x1="16" y1="20" x2="16" y2="100" stroke="#00C9FF" stroke-width="3" stroke-linecap="round"/>
+        <text class="sans" x="32" y="38" font-size="15" font-weight="700" fill="#F8FAFC">Production AI Engineering</text>
+        <text class="sans" x="32" y="62" font-size="12.5" fill="#94A3B8">Architecture, retrieval, serving, orchestration &amp; evals.</text>
+        <text class="mono" x="32" y="92" font-size="11" font-weight="600" fill="#00C9FF">Read research paper →</text>
+      </g>
+
+      <!-- Module 3: Angular Testing Tutorials -->
+      <g transform="translate(800 150)">
+        <rect width="344" height="120" rx="12" fill="#0D1D33" stroke="#1E3A5F"/>
+        <line x1="16" y1="20" x2="16" y2="100" stroke="#F43F5E" stroke-width="3" stroke-linecap="round"/>
+        <text class="sans" x="32" y="38" font-size="15" font-weight="700" fill="#F8FAFC">Angular Testing Tutorials</text>
+        <text class="sans" x="32" y="62" font-size="12.5" fill="#94A3B8">Unit testing, integration testing &amp; enterprise test suites.</text>
+        <text class="mono" x="32" y="92" font-size="11" font-weight="600" fill="#F43F5E">Watch video series →</text>
+      </g>
+    </g>
+
+    <!-- Base Perimeter Border & Surrounding Corner Trace -->
+    <rect x=".5" y=".5" width="1199" height="319" rx="19.5" fill="none" stroke="#1E3A5F" stroke-opacity=".4"/>
+    <rect class="trace-anim" x=".5" y=".5" width="1199" height="319" rx="19.5" fill="none" stroke="url(#cyber-trace)" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+</svg>
+`;
+
   await writeFile(path.join(outDir, 'hero-architect.svg'), heroArchitectSvg);
   await writeFile(path.join(outDir, 'terminal-system.svg'), terminalSystemSvg);
+  await writeFile(path.join(outDir, 'engineering-systems.svg'), engineeringSystemsSvg);
   await writeFile(path.join(outDir, 'project-angular-architecture.svg'), projectAngularArchitectureSvg);
   await writeFile(path.join(outDir, 'project-rxjs-operator-lab.svg'), projectRxjsOperatorLabSvg);
   await writeFile(path.join(outDir, 'project-ngrx-effects.svg'), projectNgrxEffectsSvg);
   await writeFile(path.join(outDir, 'project-typescript-types.svg'), projectTypescriptTypesSvg);
+  await writeFile(path.join(outDir, 'research-systems.svg'), researchSystemsSvg);
 
-  console.log('Successfully generated 6 Cyber-Architect SVGs in themes/main/assets/');
+  console.log('Successfully generated 8 Cyber-Architect SVGs in themes/main/assets/');
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
