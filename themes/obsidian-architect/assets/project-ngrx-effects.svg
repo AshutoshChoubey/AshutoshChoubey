@@ -39,10 +39,10 @@
     <rect x="720" width="480" height="370" fill="url(#p3-grid)"/>
     <rect width="1200" height="370" fill="url(#p3-glow)"/>
     <g class="p3-in p3-d1">
-      <text class="p3-mono" x="56" y="62" font-size="12" letter-spacing="2.6" fill="#C77B9B">03 · STATE MANAGEMENT · NGRX · ARCHITECTURE</text>
+      <text class="p3-sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">03 · State Management · NgRx · Architecture</text>
       <text class="p3-serif" x="54" y="126" font-size="52" font-weight="300" letter-spacing="-1.5" fill="#F8F0F3">NgRx Effects Demo<tspan class="p3-serif" font-size="22" font-style="italic" fill="#E5B5C7" dx="14">PokéAPI Store</tspan></text>
       <text class="p3-sans" x="56" y="166" font-size="17" fill="#B6A3AC">Connecting store actions, reducers and HTTP side effects to decoupled views.</text>
-      <text class="p3-mono" x="56" y="200" font-size="12.5" fill="#E5B5C7"><tspan fill="#C77B9B">BUILT ›</tspan> clean action-reducer-effect separation with async HTTP side-effect dispatch</text>
+      <text class="p3-mono" x="56" y="200" font-size="12.5" fill="#E5B5C7"><tspan fill="#C77B9B">Built ›</tspan> clean action-reducer-effect separation with async HTTP side-effect dispatch</text>
       <line class="p3-draw" x1="56" y1="226" x2="680" y2="226" stroke="#C77B9B" stroke-opacity=".3"/>
       <g transform="translate(56 266)"><text class="p3-serif" font-size="34" font-weight="300" fill="#F8F0F3">Store</text><text class="p3-sans" y="24" font-size="12.5" fill="#B6A3AC">single source of truth</text></g>
       <g transform="translate(261 266)"><text class="p3-serif" font-size="34" font-weight="300" fill="#F8F0F3">Effects</text><text class="p3-sans" y="24" font-size="12.5" fill="#B6A3AC">async HTTP side effects</text></g>
@@ -79,7 +79,7 @@
             <animate attributeName="stroke-opacity" values=".3;1;.3;.3" keyTimes="0;.08;.2;1" dur="6s" begin="2.2s" repeatCount="indefinite"/>
           </rect>
           <text class="p3-mono" x="8" y="18" font-size="9" fill="#B6A3AC">03</text>
-          <text class="p3-mono" x="38" y="40" font-size="9.5" text-anchor="middle" fill="#F8F0F3">HTTP API</text>
+          <text class="p3-mono" x="38" y="40" font-size="9.5" text-anchor="middle" fill="#F8F0F3">Http API</text>
         </g>
         <g transform="translate(1002 106)">
           <rect width="76" height="58" rx="9" fill="#27101C" stroke="#C77B9B" stroke-opacity=".3">
@@ -98,7 +98,7 @@
           <text class="p3-mono" x="38" y="40" font-size="9.5" text-anchor="middle" fill="#F8F0F3">Reducer</text>
         </g>
         <text class="p3-mono" x="1162" y="206" font-size="11" text-anchor="end" fill="#E5B5C7">Actions → Effects → Reducers → View Selectors</text>
-        <text class="p3-mono" x="1162" y="232" font-size="10.5" text-anchor="end" letter-spacing="1.5" fill="#B6A3AC">IMMUTABLE STATE · DETERMINISTIC CYCLE</text>
+        <text class="p3-sans" x="1162" y="232" font-size="11" font-weight="500" text-anchor="end" letter-spacing="0.8" fill="#B6A3AC">Immutable State · Deterministic Cycle</text>
       </g>
     </g></g>
     <rect x=".5" y=".5" width="1199" height="369" rx="17.5" fill="none" stroke="#C77B9B" stroke-opacity=".2"/>

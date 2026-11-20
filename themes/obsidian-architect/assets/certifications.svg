@@ -22,7 +22,7 @@
   <g class="ce-tile" style="animation-delay:0.20s"><g transform="translate(40 40)">
     <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
     <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:2.00s"/>
-    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">ARCHITECTURE</text>
+    <text class="ce-sans" x="22" y="36" font-size="12" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">Architecture</text>
     <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/><circle cx="227" cy="31" r="3.5" fill="#C77B9B"/>
     <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
     <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">Frontend Architecture</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">Components · Design Systems</text><text class="ce-sans" x="22" y="130" font-size="14" fill="#E5B5C7">Enterprise Scalability</text>
@@ -30,7 +30,7 @@
   <g class="ce-tile" style="animation-delay:0.32s"><g transform="translate(325 40)">
     <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
     <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:2.35s"/>
-    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">ANGULAR CORE</text>
+    <text class="ce-sans" x="22" y="36" font-size="12" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">Angular Core</text>
     <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/><circle cx="227" cy="31" r="3.5" fill="#C77B9B"/><circle cx="216" cy="31" r="3.5" fill="#C77B9B"/>
     <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
     <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">Angular Signals &amp; RxJS</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">Reactive State Interop</text><text class="ce-sans" x="22" y="130" font-size="14" fill="#B6A3AC">Http Interceptors &amp; NgRx</text>
@@ -38,7 +38,7 @@
   <g class="ce-tile" style="animation-delay:0.44s"><g transform="translate(610 40)">
     <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
     <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:2.70s"/>
-    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">SYSTEM DESIGN</text>
+    <text class="ce-sans" x="22" y="36" font-size="12" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">System Design</text>
     <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/>
     <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
     <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">Micro-frontends</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">Boundaries · State · Delivery</text><text class="ce-sans" x="22" y="130" font-size="14" fill="#B6A3AC">Rendering &amp; Modular Scale</text>
@@ -46,7 +46,7 @@
   <g class="ce-tile" style="animation-delay:0.56s"><g transform="translate(895 40)">
     <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
     <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:3.05s"/>
-    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">AI ORCHESTRATION</text>
+    <text class="ce-sans" x="22" y="36" font-size="12" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">AI Orchestration</text>
     <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/><circle cx="227" cy="31" r="3.5" fill="#C77B9B"/>
     <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
     <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">Tool-using LLMs &amp; MCP</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">Agent Orchestration</text><text class="ce-sans" x="22" y="130" font-size="14" fill="#E5B5C7">Evaluation &amp; Human Review</text>
@@ -54,7 +54,7 @@
   <g class="ce-tile" style="animation-delay:0.68s"><g transform="translate(40 230)">
     <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
     <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:3.40s"/>
-    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">TYPESCRIPT</text>
+    <text class="ce-sans" x="22" y="36" font-size="12" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">TypeScript</text>
     <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/><circle cx="227" cy="31" r="3.5" fill="#C77B9B"/><circle cx="216" cy="31" r="3.5" fill="#C77B9B"/>
     <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
     <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">Advanced Type Systems</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">Generics · Unions · Mapped</text><text class="ce-sans" x="22" y="130" font-size="14" fill="#B6A3AC">Strict Typing Verification</text>
@@ -62,7 +62,7 @@
   <g class="ce-tile" style="animation-delay:0.80s"><g transform="translate(325 230)">
     <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
     <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:3.75s"/>
-    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">QUALITY GATES</text>
+    <text class="ce-sans" x="22" y="36" font-size="12" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">Quality Gates</text>
     <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/>
     <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
     <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">Automated Testing</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">Jasmine · Jest · CI/CD</text><text class="ce-sans" x="22" y="130" font-size="14" fill="#E5B5C7">Accessibility &amp; Security</text>
@@ -70,7 +70,7 @@
   <g class="ce-tile" style="animation-delay:0.92s"><g transform="translate(610 230)">
     <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
     <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:4.10s"/>
-    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">RESEARCH</text>
+    <text class="ce-sans" x="22" y="36" font-size="12" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">Research</text>
     <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/>
     <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
     <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">WorldGyan.com</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">Frontend System Design</text><text class="ce-sans" x="22" y="130" font-size="14" fill="#E5B5C7">Production AI Engineering</text>
@@ -78,7 +78,7 @@
   <g class="ce-tile" style="animation-delay:1.04s"><g transform="translate(895 230)">
     <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
     <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:4.45s"/>
-    <text class="ce-mono" x="22" y="36" font-size="11.5" letter-spacing="2.6" fill="#C77B9B">SERVICES &amp; APIS</text>
+    <text class="ce-sans" x="22" y="36" font-size="12" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">Services &amp; APIs</text>
     <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/>
     <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
     <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">Node.js · REST APIs</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">Docker &amp; Containerization</text><text class="ce-sans" x="22" y="130" font-size="14" fill="#B6A3AC">Integration &amp; Delivery</text>

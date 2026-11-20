@@ -60,21 +60,21 @@
     <g class="ab-card" style="animation-delay:1.2s"><g transform="translate(836 70)">
       <rect width="324" height="88" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".28"/>
       <rect x="0" y="0" width="3" height="88" rx="1.5" fill="#C77B9B"/>
-      <text class="ab-mono" x="22" y="26" font-size="10" letter-spacing="2" fill="#C77B9B">PRIMARY ARCHITECTURE</text>
+      <text class="ab-sans" x="22" y="26" font-size="11" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">Primary Architecture</text>
       <text class="ab-serif" x="22" y="58" font-size="28" font-weight="300" fill="#F8F0F3">Angular &amp; TS</text>
       <text class="ab-sans" x="22" y="78" font-size="12" fill="#B6A3AC">Signals · RxJS · NgRx · Design Systems</text>
     </g></g>
     <g class="ab-card" style="animation-delay:1.7s"><g transform="translate(836 174)">
       <rect width="324" height="88" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".28"/>
       <rect x="0" y="0" width="3" height="88" rx="1.5" fill="#C77B9B"/>
-      <text class="ab-mono" x="22" y="26" font-size="10" letter-spacing="2" fill="#C77B9B">INTELLIGENT SYSTEMS</text>
+      <text class="ab-sans" x="22" y="26" font-size="11" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">Intelligent Systems</text>
       <text class="ab-serif" x="22" y="58" font-size="28" font-weight="300" fill="#F8F0F3">AI &amp; MCP</text>
       <text class="ab-sans" x="22" y="78" font-size="12" fill="#B6A3AC">Tool-using LLMs · Agent Orchestration</text>
     </g></g>
     <g class="ab-card" style="animation-delay:2.2s"><g transform="translate(836 278)">
       <rect width="324" height="88" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".28"/>
       <rect x="0" y="0" width="3" height="88" rx="1.5" fill="#C77B9B"/>
-      <text class="ab-mono" x="22" y="26" font-size="10" letter-spacing="2" fill="#C77B9B">ENGINEERING FOUNDATION</text>
+      <text class="ab-sans" x="22" y="26" font-size="11" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">Engineering Foundation</text>
       <text class="ab-serif" x="22" y="58" font-size="28" font-weight="300" fill="#F8F0F3">System Design</text>
       <text class="ab-sans" x="22" y="78" font-size="12" fill="#B6A3AC">Micro-frontends · Enterprise Scalability</text>
     </g></g>

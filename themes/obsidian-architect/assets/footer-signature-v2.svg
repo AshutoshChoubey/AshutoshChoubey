@@ -18,6 +18,7 @@
   <style>
     .sig-serif { font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif; }
     .sig-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .sig-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .sig-name {
       stroke: #E5B5C7; stroke-width: 1; fill: #E5B5C7; fill-opacity: 0;
       stroke-dasharray: 900; stroke-dashoffset: 900;
@@ -65,6 +66,6 @@
 
   <g class="sig-in">
     <text class="sig-serif" x="600" y="176" text-anchor="middle" font-size="20" font-style="italic" fill="#F8F0F3">Building scalable frontend systems. Exploring intelligent, agent-powered software.</text>
-    <text class="sig-mono" x="600" y="206" text-anchor="middle" font-size="11" letter-spacing="3" fill="#B6A3AC">FOUNDER, WORLDGYAN · FRONTEND ARCHITECT · AI ORCHESTRATION</text>
+    <text class="sig-sans" x="600" y="206" text-anchor="middle" font-size="12" font-weight="500" letter-spacing="1" fill="#E5B5C7">Founder, WorldGyan · Frontend Architect · AI Orchestration</text>
   </g>
 </svg>

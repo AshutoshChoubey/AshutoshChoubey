@@ -180,11 +180,11 @@
         <circle cx="-134" cy="-134" r="2" fill="#C77B9B"/>
       </g>
       <!-- Node labels: the layers I work across -->
-      <g class="hero-mono" font-size="10.5" letter-spacing="1.6" fill="#B6A3AC">
-        <g transform="translate(-118 -152)"><circle r="3" fill="#C77B9B"/><text x="10" y="4">AI AGENTS</text></g>
-        <g transform="translate(150 -96)"><circle r="3" fill="#C77B9B"/><text x="10" y="4">SYSTEMS</text></g>
-        <g transform="translate(150 110)"><circle r="3" fill="#C77B9B"/><text x="10" y="4">WORLDGYAN</text></g>
-        <g transform="translate(-158 40)"><circle r="3" fill="#C77B9B"/><text x="-14" y="4" text-anchor="end">FRONTEND</text></g>
+      <g class="hero-sans" font-size="11" font-weight="500" letter-spacing="0.6" fill="#B6A3AC">
+        <g transform="translate(-118 -152)"><circle r="3" fill="#C77B9B"/><text x="10" y="4">AI Agents</text></g>
+        <g transform="translate(150 -96)"><circle r="3" fill="#C77B9B"/><text x="10" y="4">Systems</text></g>
+        <g transform="translate(150 110)"><circle r="3" fill="#C77B9B"/><text x="10" y="4">WorldGyan</text></g>
+        <g transform="translate(-158 40)"><circle r="3" fill="#C77B9B"/><text x="-14" y="4" text-anchor="end">Frontend</text></g>
       </g>
     </g>
 
@@ -209,7 +209,7 @@
     <!-- Eyebrow -->
     <g class="hero-rise d2">
       <line x1="72" y1="136" x2="104" y2="136" stroke="#C77B9B"/>
-      <text class="hero-mono" x="116" y="140" font-size="12.5" letter-spacing="3.4" fill="#C77B9B">FRONTEND ARCHITECTURE · SYSTEM DESIGN · AI ORCHESTRATION</text>
+      <text class="hero-sans" x="116" y="140" font-size="12" font-weight="600" letter-spacing="1.2" fill="#E5B5C7">Frontend Architecture · System Design · AI Orchestration</text>
     </g>
 
     <!-- Name -->
@@ -226,14 +226,14 @@
     <path class="hero-draw" d="M72 346 C 220 340, 420 352, 600 342" fill="none" stroke="url(#hero-rule)" stroke-width="2" stroke-linecap="round" filter="url(#hero-glow)"/>
 
     <!-- Positioning -->
-    <text class="hero-mono hero-rise d5" x="72" y="384" font-size="13" letter-spacing="2.6" fill="#F8F0F3">FRONTEND ARCHITECT  ·  SYSTEM DESIGN  ·  AI ORCHESTRATION</text>
+    <text class="hero-sans hero-rise d5" x="72" y="384" font-size="13" font-weight="600" letter-spacing="1" fill="#F8F0F3">Frontend Architect  ·  System Design  ·  AI Orchestration</text>
     <text class="hero-serif hero-rise d6" x="72" y="420" font-size="19" font-style="italic" fill="#B6A3AC">Building scalable frontend systems. Exploring intelligent, agent-powered software.</text>
 
     <!-- Meta strip -->
     <g class="hero-fade d6">
       <line x1="72" y1="446" x2="1128" y2="446" stroke="#C77B9B" stroke-opacity=".14"/>
-      <text class="hero-mono" x="72" y="466" font-size="10.5" letter-spacing="2" fill="#B6A3AC">FOUNDER, WORLDGYAN · ENTERPRISE FRONTEND ARCHITECTURE · RESEARCH</text>
-      <text class="hero-mono" x="1128" y="466" text-anchor="end" font-size="10.5" letter-spacing="2" fill="#E5B5C7">ANGULAR SIGNALS · RXJS INTEROP · SYSTEM DESIGN · AI ORCHESTRATION</text>
+      <text class="hero-sans" x="72" y="466" font-size="11" font-weight="400" letter-spacing="0.5" fill="#B6A3AC">Founder, WorldGyan · Enterprise Frontend Architecture · Research</text>
+      <text class="hero-sans" x="1128" y="466" text-anchor="end" font-size="11" font-weight="500" letter-spacing="0.5" fill="#E5B5C7">Angular Signals · RxJS Interop · System Design · AI Orchestration</text>
     </g>
 
     <!-- Frame -->

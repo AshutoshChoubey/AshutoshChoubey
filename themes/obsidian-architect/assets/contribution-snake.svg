@@ -15,6 +15,7 @@
   <style>
     .hm-serif { font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif; }
     .hm-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .hm-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
     .hm-c { transform-box: fill-box; transform-origin: center; animation: hm-in .8s cubic-bezier(.34,1.56,.64,1) both; }
     .hm-fade { animation: hm-fade 1.2s ease both; }
     @keyframes hm-in { from { opacity: 0; transform: scale(.2); } to { opacity: 1; transform: none; } }
@@ -27,25 +28,25 @@
   <rect x=".5" y=".5" width="1199" height="409" rx="19.5" fill="none" stroke="#C77B9B" stroke-opacity=".16"/>
 
   <g class="hm-fade">
-    <text class="hm-mono" x="56" y="68" font-size="11" letter-spacing="2.6" fill="#C77B9B">COMMIT LOG · REAL GITHUB ACTIVITY</text>
+    <text class="hm-sans" x="56" y="68" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">Commit Log · Real GitHub Activity</text>
     <text class="hm-serif" x="54" y="110" font-size="27" font-weight="300" fill="#F8F0F3">A year of building, <tspan font-style="italic" fill="#E5B5C7">one square</tspan> at a time.</text>
     <g transform="translate(610 58)">
-      <text class="hm-mono" font-size="10" letter-spacing="1.8" fill="#C77B9B">CONTRIBUTIONS</text>
+      <text class="hm-sans" font-size="11" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">Contributions</text>
       <text class="hm-serif" y="44" font-size="36" font-weight="300" fill="#F8F0F3">1,062</text>
       <text class="hm-mono" y="64" font-size="9.5" fill="#B6A3AC">Nov 2025 – Nov 2026</text>
     </g>
     <g transform="translate(760 58)">
-      <text class="hm-mono" font-size="10" letter-spacing="1.8" fill="#C77B9B">ACTIVE DAYS</text>
+      <text class="hm-sans" font-size="11" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">Active Days</text>
       <text class="hm-serif" y="44" font-size="36" font-weight="300" fill="#F8F0F3">205</text>
       <text class="hm-mono" y="64" font-size="9.5" fill="#B6A3AC">of 368 days</text>
     </g>
     <g transform="translate(910 58)">
-      <text class="hm-mono" font-size="10" letter-spacing="1.8" fill="#C77B9B">LONGEST STREAK</text>
+      <text class="hm-sans" font-size="11" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">Longest Streak</text>
       <text class="hm-serif" y="44" font-size="36" font-weight="300" fill="#F8F0F3">18</text>
       <text class="hm-mono" y="64" font-size="9.5" fill="#B6A3AC">consecutive days</text>
     </g>
     <g transform="translate(1060 58)">
-      <text class="hm-mono" font-size="10" letter-spacing="1.8" fill="#C77B9B">BUSIEST DAY</text>
+      <text class="hm-sans" font-size="11" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">Busiest Day</text>
       <text class="hm-serif" y="44" font-size="36" font-weight="300" fill="#F8F0F3">32</text>
       <text class="hm-mono" y="64" font-size="9.5" fill="#B6A3AC">24 Jan 2026</text>
     </g>
@@ -479,7 +480,7 @@
 
   <g class="hm-fade" style="animation-delay:2.6s">
       <path d="M353.5 313 V 325" stroke="#E5B5C7" stroke-opacity=".6"/>
-      <text class="hm-mono" x="346" y="339" font-size="10.5" letter-spacing="1.6" fill="#E5B5C7">LONGEST STREAK · 18 DAYS · 9 FEB 2026 – 26 FEB 2026</text>
+      <text class="hm-sans" x="346" y="339" font-size="11" font-weight="500" letter-spacing="0.6" fill="#E5B5C7">Longest Streak · 18 Days · 9 Feb 2026 – 26 Feb 2026</text>
     </g>
 
   <g class="hm-fade">

@@ -21,13 +21,13 @@
     @media (prefers-reduced-motion: reduce) { .ta-in { animation: none; } .ta-draw { animation: none; stroke-dashoffset: 0; } }
   </style>
   <g class="ta-in">
-    <text class="ta-mono" x="40" y="34" font-size="12" letter-spacing="3" fill="#C77B9B"><tspan fill="#E5B5C7">01</tspan>   ABOUT</text>
+    <text class="ta-sans" x="40" y="34" font-size="13" font-weight="600" letter-spacing="1" fill="#C77B9B"><tspan fill="#E5B5C7">01</tspan>   About</text>
   </g>
   <g class="ta-in ta-d2">
     <text class="ta-serif" x="38" y="84" font-size="40" font-weight="300" letter-spacing="-0.5" fill="#F8F0F3">Hello, I am <tspan font-style="italic" fill="url(#ta-sheen)">Ashutosh Kumar Chaubey.</tspan></text>
   </g>
   <g class="ta-in ta-d3">
-    <text class="ta-mono" x="1160" y="34" text-anchor="end" font-size="10.5" letter-spacing="2.4" fill="#B6A3AC">WHO I AM</text>
+    <text class="ta-sans" x="1160" y="34" text-anchor="end" font-size="11.5" font-weight="500" letter-spacing="0.8" fill="#B6A3AC">Who I Am</text>
   </g>
   <path class="ta-draw" d="M40 106 H1160" stroke="url(#ta-line)" stroke-width="1"/>
   <circle cx="40" cy="106" r="7" fill="url(#ta-pulse)" opacity="0">
