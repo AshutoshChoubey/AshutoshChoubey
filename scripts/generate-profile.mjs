@@ -140,6 +140,7 @@ const readme=`<!-- Generated from profile.config.json. Edit the source, then run
 <img src="./themes/main/assets/terminal-system.svg" width="100%" alt="System Architecture CLI: whoami, focus, platform, shipped repositories, and engineering foundations.">
 
 <img src="./themes/main/assets/title-part02.svg" width="100%" alt="Part 02 · Engineering Systems &amp; Architecture">
+<img src="./themes/main/assets/architecture-leadership.svg" width="100%" alt="Architecture Leadership: Ashutosh Kumar Choubey, Founder of WorldGyan. Principal Frontend Architect &amp; Systems Engineer.">
 <img src="./themes/main/assets/engineering-systems.svg" width="100%" alt="WorldGyan — Engineering Systems: Frontend Architecture, Enterprise Engineering, System Design, Performance and Scalability. Founder: Ashutosh Kumar Choubey.">
 
 <img src="./themes/main/assets/title-part03.svg" width="100%" alt="Part 03 · Core Technology &amp; Reactive Foundations">

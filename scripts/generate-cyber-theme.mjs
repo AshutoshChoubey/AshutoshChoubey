@@ -8,6 +8,7 @@ export async function generateCyberTheme(customRoot) {
   await mkdir(outDir, { recursive: true });
 
   const photoBase64 = (await readFile(path.join(root, 'scripts/user_photo.base64.txt'), 'utf8')).trim();
+  const standingPhotoBase64 = (await readFile(path.join(root, 'scripts/user_standing.base64.txt'), 'utf8')).trim();
   const logoBase64 = (await readFile(path.join(root, 'assets/worldgyan-logo-hero.base64.txt'), 'utf8')).trim();
 
   // Shared SVG defs and styles for Obsidian-Architect palette & aesthetics
@@ -507,6 +508,185 @@ export async function generateCyberTheme(customRoot) {
     <!-- Base Perimeter Border & Surrounding Corner Trace -->
     <rect x=".5" y=".5" width="1199" height="539" rx="19.5" fill="none" stroke="#C77B9B" stroke-opacity=".2"/>
     <rect class="trace-anim" x=".5" y=".5" width="1199" height="539" rx="19.5" fill="none" stroke="url(#cyber-trace)" stroke-width="2.0" stroke-linecap="round"/>
+  </g>
+</svg>
+`;
+
+  // 3B. ARCHITECTURE LEADERSHIP & STANDING PORTRAIT SVG
+  const architectureLeadershipSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="ldr-t ldr-d">
+  <title id="ldr-t">Ashutosh Kumar Choubey — Architecture Leadership &amp; Scalability</title>
+  <desc id="ldr-d">Executive standing portrait and architecture leadership pillars. Principal Frontend Architect &amp; Systems Engineer. Founder of WorldGyan.</desc>
+  <defs>
+    ${commonDefs}
+    <clipPath id="ldr-clip"><rect width="1200" height="560" rx="20"/></clipPath>
+    <clipPath id="ldr-arch"><rect x="0" y="0" width="294" height="512" rx="20"/></clipPath>
+    <linearGradient id="ldr-sheen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#F8F0F3"/>
+      <stop offset=".5" stop-color="#E5B5C7"/>
+      <stop offset="1" stop-color="#C77B9B"/>
+    </linearGradient>
+    <linearGradient id="standing-back-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#27101C" stop-opacity=".9"/>
+      <stop offset=".45" stop-color="#190B12" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#10070C" stop-opacity=".95"/>
+    </linearGradient>
+    <linearGradient id="standing-foot-blend" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#10070C" stop-opacity="0"/>
+      <stop offset=".7" stop-color="#10070C" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#10070C" stop-opacity=".9"/>
+    </linearGradient>
+  </defs>
+  <style>
+    ${commonStyles}
+    .ldr-in { animation: ldr-in 1.2s cubic-bezier(.16,1,.3,1) both; }
+    .ldr-photo { animation: ldr-photo 1.4s cubic-bezier(.16,1,.3,1) .25s both; }
+    @keyframes ldr-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    @keyframes ldr-photo { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .ldr-in, .ldr-photo { animation: none; } }
+  </style>
+  <g clip-path="url(#ldr-clip)">
+    <!-- Base Deep Obsidian Canvas -->
+    <rect width="1200" height="560" fill="url(#cyber-bg)"/>
+    <!-- Studio Ambient Light Fields in Rose & Plum -->
+    <ellipse cx="995" cy="240" rx="360" ry="260" fill="url(#cyber-glow-rose)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; -25 20; 0 0" dur="18s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1; .45 0 .55 1"/>
+    </ellipse>
+    <ellipse cx="280" cy="420" rx="340" ry="220" fill="url(#cyber-glow-plum)">
+      <animateTransform attributeName="transform" type="translate" values="0 0; 35 -15; 0 0" dur="22s" repeatCount="indefinite" calcMode="spline" keySplines=".45 0 .55 1; .45 0 .55 1"/>
+    </ellipse>
+    <!-- Technical Grid -->
+    <rect width="1200" height="560" fill="url(#cyber-grid)"/>
+
+    ${lavaSparks(1200, 560, 40)}
+
+    <!-- LEFT COLUMN: ARCHITECTURE LEADERSHIP & STRATEGY (x: 56 to 820) -->
+    <g class="ldr-in" style="animation-delay: 0.1s;">
+      <!-- Category Badge -->
+      <g transform="translate(56 42)">
+        <rect width="390" height="32" rx="16" fill="#190B12" stroke="#C77B9B" stroke-opacity=".4"/>
+        <circle cx="16" cy="16" r="4.5" fill="#E5B5C7" filter="url(#cyber-glow)">
+          <animate attributeName="opacity" values="1;.35;1" dur="2.2s" repeatCount="indefinite"/>
+        </circle>
+        <text class="mono" x="32" y="20.5" font-size="11.5" font-weight="700" letter-spacing="1.2" fill="#E5B5C7">ARCHITECTURE LEADERSHIP &amp; STRATEGY</text>
+      </g>
+
+      <!-- Headline -->
+      <text class="serif" x="56" y="112" font-size="34" font-weight="300" letter-spacing="-0.8" fill="#F8F0F3">Principal Frontend Architect <tspan font-style="italic" fill="url(#ldr-sheen)">&amp; Systems Engineer</tspan></text>
+      <text class="sans" x="56" y="142" font-size="14.5" font-weight="500" fill="#E5B5C7">Founder &amp; Research Lead at WorldGyan <tspan fill="#B6A3AC">· Next-Generation AI &amp; Software Systems</tspan></text>
+      
+      <!-- Subtle Obsidian Divider -->
+      <line x1="56" y1="164" x2="810" y2="164" stroke="#C77B9B" stroke-opacity=".25"/>
+
+      <!-- Three Core Pillars -->
+      <!-- Pillar 1: Enterprise Frontend Systems -->
+      <g transform="translate(56 182)">
+        <rect width="754" height="76" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".3"/>
+        <g transform="translate(20 18)">
+          <circle cx="10" cy="10" r="10" fill="#27101C" stroke="#E5B5C7" stroke-width="1.2"/>
+          <text class="mono" x="10" y="14" font-size="10.5" font-weight="700" text-anchor="middle" fill="#E5B5C7">01</text>
+          <text class="sans" x="30" y="14" font-size="15.5" font-weight="700" fill="#F8F0F3">Fine-Grained Reactive Systems</text>
+          <text class="sans" x="30" y="34" font-size="12.5" fill="#B6A3AC">Signals-driven reactive state, zoneless execution, O(1) change detection &amp; modular architecture.</text>
+        </g>
+      </g>
+
+      <!-- Pillar 2: High-Reliability Architecture -->
+      <g transform="translate(56 270)">
+        <rect width="754" height="76" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".3"/>
+        <g transform="translate(20 18)">
+          <circle cx="10" cy="10" r="10" fill="#27101C" stroke="#C77B9B" stroke-width="1.2"/>
+          <text class="mono" x="10" y="14" font-size="10.5" font-weight="700" text-anchor="middle" fill="#C77B9B">02</text>
+          <text class="sans" x="30" y="14" font-size="15.5" font-weight="700" fill="#F8F0F3">Enterprise Interceptor &amp; Concurrency Pipelines</text>
+          <text class="sans" x="30" y="34" font-size="12.5" fill="#B6A3AC">Atomic token refresh mutex queues, resilient HTTP pipelines, circuit breakers &amp; contract safety.</text>
+        </g>
+      </g>
+
+      <!-- Pillar 3: Agentic AI Orchestration -->
+      <g transform="translate(56 358)">
+        <rect width="754" height="76" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".3"/>
+        <g transform="translate(20 18)">
+          <circle cx="10" cy="10" r="10" fill="#27101C" stroke="#E5B5C7" stroke-width="1.2"/>
+          <text class="mono" x="10" y="14" font-size="10.5" font-weight="700" text-anchor="middle" fill="#E5B5C7">03</text>
+          <text class="sans" x="30" y="14" font-size="15.5" font-weight="700" fill="#F8F0F3">Autonomous Multi-Agent Orchestration</text>
+          <text class="sans" x="30" y="34" font-size="12.5" fill="#B6A3AC">Model Context Protocol (MCP), dynamic tool routing, evaluation gates &amp; Plan-Act-Reflect cycles.</text>
+        </g>
+      </g>
+
+      <!-- Bottom Metric Strip -->
+      <g transform="translate(56 450)">
+        <!-- Metric 1 -->
+        <g transform="translate(0 0)">
+          <rect width="180" height="54" rx="10" fill="#10070C" stroke="#C77B9B" stroke-opacity=".25"/>
+          <text class="mono" x="16" y="24" font-size="10.5" font-weight="700" fill="#E5B5C7">REACTIVITY</text>
+          <text class="sans" x="16" y="42" font-size="13" font-weight="700" fill="#F8F0F3">100% Signals Core</text>
+        </g>
+        <!-- Metric 2 -->
+        <g transform="translate(191 0)">
+          <rect width="180" height="54" rx="10" fill="#10070C" stroke="#C77B9B" stroke-opacity=".25"/>
+          <text class="mono" x="16" y="24" font-size="10.5" font-weight="700" fill="#C77B9B">PERFORMANCE</text>
+          <text class="sans" x="16" y="42" font-size="13" font-weight="700" fill="#F8F0F3">O(1) Change Detection</text>
+        </g>
+        <!-- Metric 3 -->
+        <g transform="translate(382 0)">
+          <rect width="180" height="54" rx="10" fill="#10070C" stroke="#C77B9B" stroke-opacity=".25"/>
+          <text class="mono" x="16" y="24" font-size="10.5" font-weight="700" fill="#E5B5C7">ORCHESTRATION</text>
+          <text class="sans" x="16" y="42" font-size="13" font-weight="700" fill="#F8F0F3">Multi-Agent Loops</text>
+        </g>
+        <!-- Metric 4 -->
+        <g transform="translate(573 0)">
+          <rect width="181" height="54" rx="10" fill="#10070C" stroke="#C77B9B" stroke-opacity=".25"/>
+          <text class="mono" x="16" y="24" font-size="10.5" font-weight="700" fill="#C77B9B">PLATFORM</text>
+          <text class="sans" x="16" y="42" font-size="13" font-weight="700" fill="#F8F0F3">WorldGyan Research</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- RIGHT COLUMN: STANDING FIGURE & ARCHITECTURAL PEDESTAL (x: 850 to 1160) -->
+    <g class="ldr-photo">
+      <!-- Architectural Pedestal & Framing Arch -->
+      <g transform="translate(850 24)">
+        <!-- Backdrop Arch Card -->
+        <rect width="294" height="512" rx="20" fill="url(#standing-back-grad)" stroke="#C77B9B" stroke-opacity=".35"/>
+        
+        <!-- Rotating Ambient Orbital Halo -->
+        <g transform="translate(147 210)">
+          <ellipse cx="0" cy="0" rx="120" ry="145" fill="none" stroke="#C77B9B" stroke-opacity=".25" stroke-width="1.2">
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="30s" repeatCount="indefinite"/>
+          </ellipse>
+          <circle r="132" fill="none" stroke="#E5B5C7" stroke-opacity=".35" stroke-width="1.4" stroke-dasharray="16 12 4 12">
+            <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="24s" repeatCount="indefinite"/>
+          </circle>
+          <g>
+            <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="24s" repeatCount="indefinite"/>
+            <circle cx="132" cy="0" r="3.5" fill="#E5B5C7" filter="url(#cyber-glow)"/>
+          </g>
+        </g>
+
+        <!-- Floor Pedestal Reflection at Feet -->
+        <ellipse cx="147" cy="496" rx="90" ry="12" fill="#E5B5C7" opacity=".18" filter="url(#cyber-glow)"/>
+        <ellipse cx="147" cy="496" rx="55" ry="6" fill="#F8F0F3" opacity=".28"/>
+
+        <!-- Standing Portrait in 100% Vibrant Color (Clipped Inside Arch) -->
+        <g clip-path="url(#ldr-arch)">
+          <image x="24" y="6" width="246" height="500" href="data:image/png;base64,${standingPhotoBase64}" preserveAspectRatio="xMidYMax meet"/>
+          <!-- Grounding Gradient Overlay for Natural Studio Obsidian Blend -->
+          <rect x="0" y="440" width="294" height="72" fill="url(#standing-foot-blend)"/>
+        </g>
+
+        <!-- Status Pill Overlay on Arch -->
+        <g transform="translate(20 468)">
+          <rect width="254" height="28" rx="14" fill="#10070C" fill-opacity=".85" stroke="#C77B9B" stroke-opacity=".4"/>
+          <circle cx="16" cy="14" r="3.5" fill="#E5B5C7" filter="url(#cyber-glow)">
+            <animate attributeName="opacity" values="1;.4;1" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <text class="mono" x="28" y="18" font-size="10.5" font-weight="600" fill="#E5B5C7">Ashutosh Kumar Choubey · Systems</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Outer Perimeter Border & Corner Flow Trace -->
+    <rect x=".5" y=".5" width="1199" height="559" rx="19.5" fill="none" stroke="#C77B9B" stroke-opacity=".2"/>
+    <rect class="trace-anim" x=".5" y=".5" width="1199" height="559" rx="19.5" fill="none" stroke="url(#cyber-trace)" stroke-width="2.0" stroke-linecap="round"/>
   </g>
 </svg>
 `;
@@ -1263,9 +1443,10 @@ export async function generateCyberTheme(customRoot) {
 `;
   }
 
-  // 10 Core Cards
+  // 11 Core Cards
   await writeFile(path.join(outDir, 'hero-architect.svg'), heroArchitectSvg);
   await writeFile(path.join(outDir, 'terminal-system.svg'), terminalSystemSvg);
+  await writeFile(path.join(outDir, 'architecture-leadership.svg'), architectureLeadershipSvg);
   await writeFile(path.join(outDir, 'engineering-systems.svg'), engineeringSystemsSvg);
   await writeFile(path.join(outDir, 'technology-core.svg'), technologyCoreSvg);
   await writeFile(path.join(outDir, 'project-angular-architecture.svg'), projectAngularArchitectureSvg);
