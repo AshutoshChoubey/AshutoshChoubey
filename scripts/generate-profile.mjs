@@ -129,11 +129,11 @@ const readme=`<!-- Generated from profile.config.json. Edit the source, then run
 </a>
 
 <p align="center">
-  <a href="${c.links.portfolio}"><img src="https://img.shields.io/badge/Portfolio-me.worldgyan.com-0F172A?style=flat-square&amp;labelColor=060B17&amp;logoColor=38BDF8&amp;logo=googlechrome" alt="Portfolio website"></a>
-  <a href="${c.links.worldgyan}"><img src="https://img.shields.io/badge/Platform-worldgyan.com-0F172A?style=flat-square&amp;labelColor=060B17&amp;logoColor=34D399&amp;logo=safari" alt="WorldGyan Platform"></a>
-  <a href="${c.links.linkedin}"><img src="https://img.shields.io/badge/LinkedIn-Ashutosh_Kumar_Choubey-0F172A?style=flat-square&amp;labelColor=060B17&amp;logoColor=38BDF8&amp;logo=linkedin" alt="LinkedIn profile"></a>
-  <a href="${c.links.github}"><img src="https://img.shields.io/badge/GitHub-AshutoshChoubey-0F172A?style=flat-square&amp;labelColor=060B17&amp;logoColor=F8FAFC&amp;logo=github" alt="GitHub profile"></a>
-  <a href="${c.links.youtube}"><img src="https://img.shields.io/badge/YouTube-@WorldGyan-0F172A?style=flat-square&amp;labelColor=060B17&amp;logoColor=F43F5E&amp;logo=youtube" alt="YouTube channel"></a>
+  <a href="${c.links.portfolio}"><img src="https://img.shields.io/badge/Portfolio-me.worldgyan.com-190B12?style=flat-square&amp;labelColor=10070C&amp;logoColor=E5B5C7&amp;logo=googlechrome" alt="Portfolio website"></a>
+  <a href="${c.links.worldgyan}"><img src="https://img.shields.io/badge/Platform-worldgyan.com-190B12?style=flat-square&amp;labelColor=10070C&amp;logoColor=C77B9B&amp;logo=safari" alt="WorldGyan Platform"></a>
+  <a href="${c.links.linkedin}"><img src="https://img.shields.io/badge/LinkedIn-Ashutosh_Kumar_Choubey-190B12?style=flat-square&amp;labelColor=10070C&amp;logoColor=E5B5C7&amp;logo=linkedin" alt="LinkedIn profile"></a>
+  <a href="${c.links.github}"><img src="https://img.shields.io/badge/GitHub-AshutoshChoubey-190B12?style=flat-square&amp;labelColor=10070C&amp;logoColor=F8F0F3&amp;logo=github" alt="GitHub profile"></a>
+  <a href="${c.links.youtube}"><img src="https://img.shields.io/badge/YouTube-@WorldGyan-190B12?style=flat-square&amp;labelColor=10070C&amp;logoColor=C77B9B&amp;logo=youtube" alt="YouTube channel"></a>
 </p>
 
 <img src="./themes/main/assets/terminal-system.svg" width="100%" alt="System Architecture CLI: whoami, focus, platform, shipped repositories, and engineering foundations.">
@@ -186,7 +186,9 @@ ${c.resources.map(p=>`- [${p.title}](${p.url}) — ${p.description}`).join('\n')
 
 ### 🌌 Explore More Themes
 
-- [**Obsidian Architect Edition**](./themes/obsidian-architect/README.md)
+- [**Cyber-Architect Edition (Midnight Cyan)**](./themes/cyber-architect/README.md)
+- [**Obsidian Architect Standalone Edition**](./themes/obsidian-architect/README.md)
+- [**Classic Engineering Minimal Edition**](./themes/classic-engineering/README.md)
 
 <details>
 <summary><b>📐 Architectural Specification &amp; Responsive Fallbacks</b></summary>
