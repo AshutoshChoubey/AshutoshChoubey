@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-labelledby="term-t term-d">
+  <title id="term-t">System Architecture CLI — Ashutosh Kumar Choubey</title>
+  <desc id="term-d">MacBook Linux developer terminal window with system diagnostics, whoami, focus, platform, shipped repositories, and architecture core.</desc>
+  <defs>
+    
+    <linearGradient id="cyber-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#060B17"/>
+      <stop offset=".45" stop-color="#0B172E"/>
+      <stop offset="1" stop-color="#050811"/>
+    </linearGradient>
+    <radialGradient id="cyber-glow-cyan" cx="80%" cy="25%" r="65%">
+      <stop offset="0" stop-color="#00C9FF" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#00C9FF" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="cyber-glow-blue" cx="20%" cy="80%" r="55%">
+      <stop offset="0" stop-color="#1E40AF" stop-opacity=".32"/>
+      <stop offset="1" stop-color="#1E40AF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cyber-trace" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#34D399"/>
+      <stop offset=".3" stop-color="#00C9FF"/>
+      <stop offset=".7" stop-color="#38BDF8"/>
+      <stop offset="1" stop-color="#F43F5E"/>
+    </linearGradient>
+    <pattern id="cyber-grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#38BDF8" stroke-opacity=".05" stroke-width="1"/>
+    </pattern>
+    <filter id="cyber-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <clipPath id="term-clip"><rect width="1200" height="420" rx="20"/></clipPath>
+    <pattern id="term-scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#38BDF8" opacity=".035"/></pattern>
+    <clipPath id="t-c0"><rect class="t-type" x="68" y="112" width="92" height="22" style="animation-delay:0.5s;animation-duration:0.4s;animation-timing-function:steps(6)"/></clipPath>
+    <clipPath id="t-c1"><rect class="t-type" x="68" y="137" width="560" height="22" style="animation-delay:1.0s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
+    <clipPath id="t-c2"><rect class="t-type" x="68" y="162" width="180" height="22" style="animation-delay:1.8s;animation-duration:0.5s;animation-timing-function:steps(16)"/></clipPath>
+    <clipPath id="t-c3"><rect class="t-type" x="68" y="187" width="560" height="22" style="animation-delay:2.4s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
+    <clipPath id="t-c4"><rect class="t-type" x="68" y="212" width="190" height="22" style="animation-delay:3.2s;animation-duration:0.5s;animation-timing-function:steps(18)"/></clipPath>
+    <clipPath id="t-c5"><rect class="t-type" x="68" y="237" width="560" height="22" style="animation-delay:3.8s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
+    <clipPath id="t-c6"><rect class="t-type" x="68" y="262" width="140" height="22" style="animation-delay:4.6s;animation-duration:0.4s;animation-timing-function:steps(12)"/></clipPath>
+    <clipPath id="t-c7"><rect class="t-type" x="68" y="287" width="560" height="22" style="animation-delay:5.1s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
+    <clipPath id="t-c8"><rect class="t-type" x="68" y="312" width="168" height="22" style="animation-delay:5.9s;animation-duration:0.4s;animation-timing-function:steps(15)"/></clipPath>
+    <clipPath id="t-c9"><rect class="t-type" x="68" y="337" width="560" height="22" style="animation-delay:6.4s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
+  </defs>
+  <style>
+    
+    .sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+    .serif { font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif; }
+    .trace-anim { stroke-dasharray: 620 2700; stroke-dashoffset: 3320; animation: trace 6.5s linear infinite; }
+    @keyframes trace { to { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: reduce) { .trace-anim { display: none; } }
+
+    .t-type { transform-box: fill-box; transform-origin: left center; animation-name: t-type; animation-fill-mode: both; }
+    .t-card { animation: t-in 1s cubic-bezier(.16,1,.3,1) both; }
+    .t-fade { animation: t-fade 1s ease both; }
+    @keyframes t-type { 0% { transform: scaleX(0); } 85%, 100% { transform: scaleX(1); } }
+    @keyframes t-in { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+    @keyframes t-fade { from { opacity: 0; } to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .t-type, .t-card, .t-fade { animation: none; } }
+  </style>
+  <g clip-path="url(#term-clip)">
+    <!-- Base Deep Obsidian Canvas -->
+    <rect width="1200" height="420" fill="url(#cyber-bg)"/>
+    <ellipse cx="980" cy="180" rx="400" ry="240" fill="url(#cyber-glow-cyan)"/>
+    <ellipse cx="220" cy="380" rx="340" ry="200" fill="url(#cyber-glow-blue)"/>
+    <rect width="1200" height="420" fill="url(#cyber-grid)"/>
+
+    
+    <!-- Floating Lava Sparks & Energetic Embers -->
+    <g class="lava-sparks">
+      <!-- Emerald Green Sparks -->
+      <circle cx="560" cy="380" r="2.2" fill="#34D399" filter="url(#cyber-glow)">
+        <animate attributeName="cy" values="380;40" dur="4.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;.95;.0" dur="4.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="780" cy="360" r="1.6" fill="#34D399">
+        <animate attributeName="cy" values="360;30" dur="5.8s" begin="1.2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;.85;.0" dur="5.8s" begin="1.2s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Ruby Red Sparks -->
+      <circle cx="680" cy="390" r="2" fill="#F43F5E" filter="url(#cyber-glow)">
+        <animate attributeName="cy" values="390;50" dur="5.2s" begin="0.6s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;.9;.0" dur="5.2s" begin="0.6s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="1100" cy="370" r="1.8" fill="#F43F5E">
+        <animate attributeName="cy" values="370;45" dur="6.1s" begin="2.1s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;.8;.0" dur="6.1s" begin="2.1s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Electric Cyan Sparks -->
+      <circle cx="480" cy="350" r="1.8" fill="#00C9FF">
+        <animate attributeName="cy" values="350;35" dur="4.9s" begin="1.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;.9;.0" dur="4.9s" begin="1.8s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="920" cy="385" r="2.2" fill="#38BDF8" filter="url(#cyber-glow)">
+        <animate attributeName="cy" values="385;60" dur="5.5s" begin="0.3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;.95;.0" dur="5.5s" begin="0.3s" repeatCount="indefinite"/>
+      </circle>
+      <!-- Golden Amber Sparks -->
+      <circle cx="840" cy="375" r="1.5" fill="#F59E0B">
+        <animate attributeName="cy" values="375;55" dur="6.4s" begin="2.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;.75;.0" dur="6.4s" begin="2.8s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  
+
+    <!-- MacBook / Linux Style Terminal Window -->
+    <g class="t-fade">
+      <rect x="40" y="40" width="760" height="340" rx="14" fill="#08101E" stroke="#1E3A5F" stroke-opacity=".7"/>
+      <rect x="40" y="40" width="760" height="340" rx="14" fill="url(#term-scan)"/>
+      <path d="M40 54 a14 14 0 0 1 14 -14 H786 a14 14 0 0 1 14 14 V76 H40 Z" fill="#0D192E"/>
+      <line x1="40" y1="76" x2="800" y2="76" stroke="#1E3A5F" stroke-opacity=".5"/>
+      <!-- Traffic Light Buttons -->
+      <circle cx="62" cy="58" r="5.5" fill="#EF4444"/>
+      <circle cx="80" cy="58" r="5.5" fill="#F59E0B"/>
+      <circle cx="98" cy="58" r="5.5" fill="#10B981"/>
+      <text class="mono" x="420" y="62" text-anchor="middle" font-size="11.5" letter-spacing="1.2" fill="#94A3B8">ashutosh@worldgyan: ~ (zsh)</text>
+    </g>
+
+    <!-- Terminal Code Execution Stream -->
+    <g class="mono" font-size="13">
+      <!-- 01 whoami -->
+      <g clip-path="url(#t-c0)"><text x="72" y="128" fill="#38BDF8">$</text><text x="94" y="128" fill="#F8FAFC">whoami</text></g>
+      <g clip-path="url(#t-c1)"><text x="72" y="153" fill="#34D399">→</text><text x="94" y="153" fill="#94A3B8">Ashutosh Kumar Choubey · Frontend Architect · Founder, WorldGyan</text></g>
+
+      <!-- 02 focus.txt -->
+      <g clip-path="url(#t-c2)"><text x="72" y="178" fill="#38BDF8">$</text><text x="94" y="178" fill="#F8FAFC">cat focus.txt</text></g>
+      <g clip-path="url(#t-c3)"><text x="72" y="203" fill="#34D399">→</text><text x="94" y="203" fill="#94A3B8">Frontend Architecture · Enterprise Scale · AI Orchestration</text></g>
+
+      <!-- 03 platform.txt -->
+      <g clip-path="url(#t-c4)"><text x="72" y="228" fill="#38BDF8">$</text><text x="94" y="228" fill="#F8FAFC">cat platform.txt</text></g>
+      <g clip-path="url(#t-c5)"><text x="72" y="253" fill="#34D399">→</text><text x="94" y="253" fill="#94A3B8">WorldGyan (worldgyan.com) · Research, System Design &amp; AI Systems</text></g>
+
+      <!-- 04 shipped -->
+      <g clip-path="url(#t-c6)"><text x="72" y="278" fill="#38BDF8">$</text><text x="94" y="278" fill="#F8FAFC">ls ./shipped</text></g>
+      <g clip-path="url(#t-c7)"><text x="72" y="303" fill="#34D399">→</text><text x="94" y="303" fill="#94A3B8">angular-architecture  rxjs-operator-lab  ngrx-effects  typescript-type-system</text></g>
+
+      <!-- 05 principle -->
+      <g clip-path="url(#t-c8)"><text x="72" y="328" fill="#38BDF8">$</text><text x="94" y="328" fill="#F8FAFC">echo $PRINCIPLE</text></g>
+      <g clip-path="url(#t-c9)"><text x="72" y="353" fill="#34D399">→</text><text x="94" y="353" fill="#94A3B8">scalable frontend systems · deterministic AI orchestration</text></g>
+    </g>
+
+    <!-- Blinking Terminal Prompt Cursor -->
+    <rect x="72" y="364" width="8" height="15" fill="#38BDF8" class="t-fade" style="animation-delay:7.2s">
+      <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.5;1" dur="1s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- Right Column: Architecture Capability Cards -->
+    <g class="t-card" style="animation-delay:0.8s">
+      <!-- Card 1: Primary Architecture -->
+      <g transform="translate(830 40)">
+        <rect width="330" height="96" rx="12" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".7"/>
+        <line x1="16" y1="18" x2="16" y2="78" stroke="#34D399" stroke-width="3" stroke-linecap="round"/>
+        <text class="sans" x="32" y="38" font-size="13" font-weight="700" letter-spacing="0.5" fill="#38BDF8">Primary Architecture</text>
+        <text class="sans" x="32" y="60" font-size="14.5" font-weight="600" fill="#F8FAFC">Angular 18+ · TypeScript 5+</text>
+        <text class="sans" x="32" y="80" font-size="12" fill="#94A3B8">Signals graph, RxJS interop, Zoneless CD</text>
+      </g>
+
+      <!-- Card 2: Intelligent Systems -->
+      <g transform="translate(830 154)">
+        <rect width="330" height="104" rx="12" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".7"/>
+        <line x1="16" y1="18" x2="16" y2="86" stroke="#00C9FF" stroke-width="3" stroke-linecap="round"/>
+        <text class="sans" x="32" y="38" font-size="13" font-weight="700" letter-spacing="0.5" fill="#F59E0B">Intelligent Systems</text>
+        <text class="sans" x="32" y="60" font-size="14.5" font-weight="600" fill="#F8FAFC">AI Architecture &amp; MCP</text>
+        <text class="sans" x="32" y="80" font-size="12" fill="#94A3B8">Deterministic agent orchestration, tool workflows</text>
+        <text class="sans" x="32" y="96" font-size="11" fill="#38BDF8">LLM routing &amp; automated evaluations</text>
+      </g>
+
+      <!-- Card 3: Engineering Foundation -->
+      <g transform="translate(830 276)">
+        <rect width="330" height="104" rx="12" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".7"/>
+        <line x1="16" y1="18" x2="16" y2="86" stroke="#F43F5E" stroke-width="3" stroke-linecap="round"/>
+        <text class="sans" x="32" y="38" font-size="13" font-weight="700" letter-spacing="0.5" fill="#F43F5E">Engineering Foundation</text>
+        <text class="sans" x="32" y="60" font-size="14.5" font-weight="600" fill="#F8FAFC">Clean Systems &amp; Concurrency</text>
+        <text class="sans" x="32" y="80" font-size="12" fill="#94A3B8">Micro-frontends, HTTP mutex queues, caching</text>
+        <text class="sans" x="32" y="96" font-size="11" fill="#34D399">Strict unit testing, CI/CD verification</text>
+      </g>
+    </g>
+
+    <!-- Base Perimeter Border & Surrounding Corner Trace -->
+    <rect x=".5" y=".5" width="1199" height="419" rx="19.5" fill="none" stroke="#1E3A5F" stroke-opacity=".4"/>
+    <rect class="trace-anim" x=".5" y=".5" width="1199" height="419" rx="19.5" fill="none" stroke="url(#cyber-trace)" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+</svg>

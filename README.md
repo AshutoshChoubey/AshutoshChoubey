@@ -1,4 +1,18 @@
 <!-- Generated from profile.config.json. Edit the source, then run npm run generate. -->
+<a href="https://me.worldgyan.com/">
+  <img src="./themes/main/assets/hero-architect.svg" width="100%" alt="Ashutosh Kumar Choubey — Frontend Architect | System Design | AI Orchestration. Building scalable frontend systems. Exploring intelligent, agent-powered software. Founder, WorldGyan.">
+</a>
+
+<p align="center">
+  <a href="https://me.worldgyan.com/"><img src="https://img.shields.io/badge/Portfolio-me.worldgyan.com-0F172A?style=flat-square&amp;labelColor=060B17&amp;logoColor=38BDF8&amp;logo=googlechrome" alt="Portfolio website"></a>
+  <a href="https://worldgyan.com/"><img src="https://img.shields.io/badge/Platform-worldgyan.com-0F172A?style=flat-square&amp;labelColor=060B17&amp;logoColor=34D399&amp;logo=safari" alt="WorldGyan Platform"></a>
+  <a href="https://www.linkedin.com/in/ashutosh-kumar-choubey"><img src="https://img.shields.io/badge/LinkedIn-Ashutosh_Kumar_Choubey-0F172A?style=flat-square&amp;labelColor=060B17&amp;logoColor=38BDF8&amp;logo=linkedin" alt="LinkedIn profile"></a>
+  <a href="https://github.com/AshutoshChoubey"><img src="https://img.shields.io/badge/GitHub-AshutoshChoubey-0F172A?style=flat-square&amp;labelColor=060B17&amp;logoColor=F8FAFC&amp;logo=github" alt="GitHub profile"></a>
+  <a href="https://www.youtube.com/@WorldGyan"><img src="https://img.shields.io/badge/YouTube-@WorldGyan-0F172A?style=flat-square&amp;labelColor=060B17&amp;logoColor=F43F5E&amp;logo=youtube" alt="YouTube channel"></a>
+</p>
+
+<img src="./themes/main/assets/terminal-system.svg" width="100%" alt="System Architecture CLI: whoami, focus, platform, shipped repositories, and engineering foundations.">
+
 <p>
 <picture>
   <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/a82c4a3715b6/hero-mobile.svg">
@@ -49,9 +63,28 @@ Building scalable frontend systems. Exploring intelligent, agent-powered softwar
 
 Public learning projects and code references, selected after reviewing their implementations.
 
+<a href="https://github.com/AshutoshChoubey/angular-interview-worldgyan.com">
+  <img src="./themes/main/assets/project-angular-architecture.svg" width="100%" alt="Angular Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.">
+</a>
+
 - [**Angular architecture study**](https://github.com/AshutoshChoubey/angular-interview-worldgyan.com) — Study guides and TypeScript examples for Angular signals, HTTP interceptors, authentication flows and application architecture.
+
+<a href="https://github.com/AshutoshChoubey/rxjs-interview-worldgyan.com">
+  <img src="./themes/main/assets/project-rxjs-operator-lab.svg" width="100%" alt="RxJS Operator Lab: Interactive Higher-Order Mapping Lab comparing switchMap, mergeMap, concatMap and exhaustMap.">
+</a>
+
 - [**RxJS operator lab**](https://github.com/AshutoshChoubey/rxjs-interview-worldgyan.com) — Angular demonstrations comparing switchMap, mergeMap, concatMap and exhaustMap, with a reactive search example.
+
+<a href="https://github.com/AshutoshChoubey/ngrxeffects">
+  <img src="./themes/main/assets/project-ngrx-effects.svg" width="100%" alt="NgRx Effects Demo: Connecting store actions, reducers and HTTP side effects to decoupled views.">
+</a>
+
 - [**NgRx effects demo**](https://github.com/AshutoshChoubey/ngrxeffects) — An Angular PokéAPI example connecting store actions, reducers and HTTP side effects to list and detail views.
+
+<a href="https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com">
+  <img src="./themes/main/assets/project-typescript-types.svg" width="100%" alt="TypeScript Type-System Reference: Advanced Generics, Unions &amp; Mapped Types.">
+</a>
+
 - [**TypeScript type-system examples**](https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com) — Focused examples of generics, unions, mapped types and utility types, alongside a type-system study reference.
 
 <p align="center"><a href="https://worldgyan.com/"><img src="./assets/worldgyan-logo.png" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="https://worldgyan.com/"><img src="./assets/rendered/a6eaf50fb202/worldgyan-wordmark.svg" width="160" height="64" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
