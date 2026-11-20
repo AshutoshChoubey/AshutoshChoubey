@@ -21,7 +21,7 @@
 
 **Currently building:** Public engineering studies and teaching examples in Angular, reactive workflows, state management and TypeScript.
 
-<img src="./themes/main/assets/ai-orchestration.svg" width="100%" alt="AI Architecture &amp; Orchestration: Agentic AI workflows, Plan-Act-Reflect cycles, MCP tool integration, evaluations and human review.">
+<img src="./themes/main/assets/ai-orchestration.svg" width="100%" alt="AI Architecture &amp; Orchestration: Agentic workflows, Plan-Act-Reflect execution cycles, and tool integrations.">
 
 **Exploring and researching:** AI architecture, Agentic AI, AI orchestration and LLM-powered applications; tool integration, evaluations and human review.
 

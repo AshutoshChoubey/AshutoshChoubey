@@ -146,7 +146,7 @@ const readme=`<!-- Generated from profile.config.json. Edit the source, then run
 
 **Currently building:** ${c.classifications.building}
 
-<img src="./themes/main/assets/ai-orchestration.svg" width="100%" alt="AI Architecture &amp; Orchestration: Agentic AI workflows, Plan-Act-Reflect cycles, MCP tool integration, evaluations and human review.">
+<img src="./themes/main/assets/ai-orchestration.svg" width="100%" alt="AI Architecture &amp; Orchestration: Agentic workflows, Plan-Act-Reflect execution cycles, and tool integrations.">
 
 **Exploring and researching:** ${c.classifications.exploring}
 
