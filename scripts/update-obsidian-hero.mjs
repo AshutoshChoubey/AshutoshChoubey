@@ -33,7 +33,9 @@ svg = svg.replace(
 );
 
 await writeFile(heroSvgPath, svg, 'utf8');
-console.log('Successfully updated architect-hero.svg with new creator studio portrait!');
+const heroV2SvgPath = path.join(root, 'themes/obsidian-architect/assets/architect-hero-v2.svg');
+await writeFile(heroV2SvgPath, svg, 'utf8');
+console.log('Successfully updated architect-hero.svg and architect-hero-v2.svg with new creator studio portrait!');
 
 // Also update site portfolio assets
 const siteImgDir = path.join(root, 'themes/obsidian-architect/site/assets/img');

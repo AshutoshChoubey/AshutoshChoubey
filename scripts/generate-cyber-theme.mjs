@@ -1445,6 +1445,7 @@ export async function generateCyberTheme(customRoot) {
 
   // 11 Core Cards
   await writeFile(path.join(outDir, 'hero-architect.svg'), heroArchitectSvg);
+  await writeFile(path.join(outDir, 'hero-architect-v2.svg'), heroArchitectSvg);
   await writeFile(path.join(outDir, 'terminal-system.svg'), terminalSystemSvg);
   await writeFile(path.join(outDir, 'architecture-leadership.svg'), architectureLeadershipSvg);
   await writeFile(path.join(outDir, 'engineering-systems.svg'), engineeringSystemsSvg);
