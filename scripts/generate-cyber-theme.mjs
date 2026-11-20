@@ -109,13 +109,12 @@ export async function generateCyberTheme(customRoot) {
       <stop offset="1" stop-color="#10070C"/>
     </linearGradient>
     <linearGradient id="hero-photo-grade" x1="0" y1="0" x2="0" y2="1">
-      <stop offset=".5" stop-color="#10070C" stop-opacity="0"/>
-      <stop offset=".8" stop-color="#10070C" stop-opacity=".6"/>
-      <stop offset="1" stop-color="#10070C" stop-opacity=".95"/>
+      <stop offset=".86" stop-color="#10070C" stop-opacity="0"/>
+      <stop offset="1" stop-color="#10070C" stop-opacity=".75"/>
     </linearGradient>
     <linearGradient id="hero-photo-sheen" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#FFFFFF" stop-opacity="0"/>
-      <stop offset=".5" stop-color="#FFFFFF" stop-opacity=".25"/>
+      <stop offset=".5" stop-color="#FFFFFF" stop-opacity=".12"/>
       <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="hero-scan" x1="0" y1="0" x2="0" y2="1">
@@ -215,10 +214,11 @@ export async function generateCyberTheme(customRoot) {
         </g>
       </g>
 
-      <!-- Clipped Portrait Photo -->
+      <!-- Clipped Portrait Photo (Full Rich Vibrant Color, Seamless Ambient Blend) -->
       <g clip-path="url(#hero-arch)">
-        <rect x="847" y="84" width="236" height="296" fill="#10070C"/>
-        <image href="data:image/jpeg;base64,${photoBase64}" x="847" y="84" width="236" height="296" preserveAspectRatio="xMidYMin slice" style="mix-blend-mode:luminosity; opacity: 0.92;"/>
+        <rect x="847" y="84" width="236" height="296" fill="url(#cyber-bg)"/>
+        <ellipse cx="965" cy="200" rx="100" ry="110" fill="url(#cyber-glow-rose)" opacity=".7"/>
+        <image href="data:image/png;base64,${photoBase64}" x="847" y="84" width="236" height="296" preserveAspectRatio="xMidYMin slice"/>
         <rect x="847" y="84" width="236" height="296" fill="url(#hero-photo-grade)"/>
         <!-- Diagonal Animated Sheen Reflection -->
         <rect x="700" y="84" width="90" height="296" fill="url(#hero-photo-sheen)" transform="skewX(-16)">
