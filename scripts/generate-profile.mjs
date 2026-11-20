@@ -129,60 +129,98 @@ const readme=`<!-- Generated from profile.config.json. Edit the source, then run
 </a>
 
 <p align="center">
-  <a href="${c.links.portfolio}"><img src="https://img.shields.io/badge/Portfolio-me.worldgyan.com-190B12?style=flat-square&amp;labelColor=10070C&amp;logoColor=E5B5C7&amp;logo=googlechrome" alt="Portfolio website"></a>
-  <a href="${c.links.worldgyan}"><img src="https://img.shields.io/badge/Platform-worldgyan.com-190B12?style=flat-square&amp;labelColor=10070C&amp;logoColor=C77B9B&amp;logo=safari" alt="WorldGyan Platform"></a>
-  <a href="${c.links.linkedin}"><img src="https://img.shields.io/badge/LinkedIn-Ashutosh_Kumar_Choubey-190B12?style=flat-square&amp;labelColor=10070C&amp;logoColor=E5B5C7&amp;logo=linkedin" alt="LinkedIn profile"></a>
-  <a href="${c.links.github}"><img src="https://img.shields.io/badge/GitHub-AshutoshChoubey-190B12?style=flat-square&amp;labelColor=10070C&amp;logoColor=F8F0F3&amp;logo=github" alt="GitHub profile"></a>
-  <a href="${c.links.youtube}"><img src="https://img.shields.io/badge/YouTube-@WorldGyan-190B12?style=flat-square&amp;labelColor=10070C&amp;logoColor=C77B9B&amp;logo=youtube" alt="YouTube channel"></a>
+  <a href="${c.links.portfolio}"><img src="https://img.shields.io/badge/Portfolio-me.worldgyan.com-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=googlechrome" alt="Portfolio website"></a>
+  <a href="${c.links.worldgyan}"><img src="https://img.shields.io/badge/Platform-worldgyan.com-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=safari" alt="WorldGyan Platform"></a>
+  <a href="${c.links.linkedin}"><img src="https://img.shields.io/badge/LinkedIn-Ashutosh_Kumar_Choubey-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=linkedin" alt="LinkedIn profile"></a>
+  <a href="${c.links.github}"><img src="https://img.shields.io/badge/GitHub-AshutoshChoubey-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=github" alt="GitHub profile AshutoshChoubey"></a>
+  <a href="${c.links.youtube}"><img src="https://img.shields.io/badge/YouTube-@WorldGyan-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=youtube" alt="YouTube Channel WorldGyan"></a>
 </p>
 
+<img src="./themes/main/assets/title-part01.svg" width="100%" alt="Part 01 · System Architecture CLI">
 <img src="./themes/main/assets/terminal-system.svg" width="100%" alt="System Architecture CLI: whoami, focus, platform, shipped repositories, and engineering foundations.">
 
+<img src="./themes/main/assets/title-part02.svg" width="100%" alt="Part 02 · Engineering Systems &amp; Architecture">
 <img src="./themes/main/assets/engineering-systems.svg" width="100%" alt="WorldGyan — Engineering Systems: Frontend Architecture, Enterprise Engineering, System Design, Performance and Scalability. Founder: Ashutosh Kumar Choubey.">
 
+<img src="./themes/main/assets/title-part03.svg" width="100%" alt="Part 03 · Core Technology &amp; Reactive Foundations">
 <img src="./themes/main/assets/technology-core.svg" width="100%" alt="Core Technologies: Angular, TypeScript, RxJS, NgRx, and Supporting Systems.">
 
 **Established expertise:** ${c.classifications.established}
 
 **Currently building:** ${c.classifications.building}
 
+<img src="./themes/main/assets/title-part04.svg" width="100%" alt="Part 04 · AI Architecture &amp; Autonomous Agent Orchestration">
 <img src="./themes/main/assets/ai-orchestration.svg" width="100%" alt="AI Architecture &amp; Orchestration: Agentic workflows, Plan-Act-Reflect execution cycles, and tool integrations.">
 
 **Exploring and researching:** ${c.classifications.exploring}
 
-### Selected engineering projects
+<img src="./themes/main/assets/title-part05.svg" width="100%" alt="Part 05 · Selected Engineering Projects — Scalable Systems &amp; Open Source">
 
 Public learning projects and code references, selected after reviewing their implementations.
 
 <a href="https://github.com/AshutoshChoubey/angular-interview-worldgyan.com">
   <img src="./themes/main/assets/project-angular-architecture.svg" width="100%" alt="Angular Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.">
 </a>
+<p align="center">
+  <a href="https://github.com/AshutoshChoubey/angular-interview-worldgyan.com"><img src="https://img.shields.io/badge/Repository-Angular_Architecture-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=github" alt="Angular Architecture Study repository"></a>
+  <a href="https://worldgyan.com/technology/frontend-system-design/"><img src="https://img.shields.io/badge/Research-Frontend_System_Design-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=readme" alt="Frontend System Design article"></a>
+</p>
 
 - [**Angular architecture study**](https://github.com/AshutoshChoubey/angular-interview-worldgyan.com) — Study guides and TypeScript examples for Angular signals, HTTP interceptors, authentication flows and application architecture.
 
 <a href="https://github.com/AshutoshChoubey/rxjs-interview-worldgyan.com">
   <img src="./themes/main/assets/project-rxjs-operator-lab.svg" width="100%" alt="RxJS Operator Lab: Interactive Higher-Order Mapping Lab comparing switchMap, mergeMap, concatMap and exhaustMap.">
 </a>
+<p align="center">
+  <a href="https://github.com/AshutoshChoubey/rxjs-interview-worldgyan.com"><img src="https://img.shields.io/badge/Repository-RxJS_Operator_Lab-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=github" alt="RxJS Operator Lab repository"></a>
+  <a href="https://www.youtube.com/playlist?list=PLqQyE6QNucSfUIpucL_nx7vDuwAa1A_VH"><img src="https://img.shields.io/badge/Watch-Angular_Testing_Series-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=youtube" alt="Angular Testing tutorials"></a>
+</p>
 
 - [**RxJS operator lab**](https://github.com/AshutoshChoubey/rxjs-interview-worldgyan.com) — Angular demonstrations comparing switchMap, mergeMap, concatMap and exhaustMap, with a reactive search example.
 
 <a href="https://github.com/AshutoshChoubey/ngrxeffects">
   <img src="./themes/main/assets/project-ngrx-effects.svg" width="100%" alt="NgRx Effects Demo: Connecting store actions, reducers and HTTP side effects to decoupled views.">
 </a>
+<p align="center">
+  <a href="https://github.com/AshutoshChoubey/ngrxeffects"><img src="https://img.shields.io/badge/Repository-NgRx_Effects_Demo-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=github" alt="NgRx Effects Demo repository"></a>
+</p>
 
 - [**NgRx effects demo**](https://github.com/AshutoshChoubey/ngrxeffects) — An Angular PokéAPI example connecting store actions, reducers and HTTP side effects to list and detail views.
 
 <a href="https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com">
   <img src="./themes/main/assets/project-typescript-types.svg" width="100%" alt="TypeScript Type-System Reference: Advanced Generics, Unions &amp; Mapped Types.">
 </a>
+<p align="center">
+  <a href="https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com"><img src="https://img.shields.io/badge/Repository-TypeScript_Type_System-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=github" alt="TypeScript Type-System repository"></a>
+</p>
 
 - [**TypeScript type-system examples**](https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com) — Focused examples of generics, unions, mapped types and utility types, alongside a type-system study reference.
 
+<img src="./themes/main/assets/title-part06.svg" width="100%" alt="Part 06 · Commit Log &amp; Real GitHub Activity — Years of Building">
+<img src="./themes/main/assets/github-jet.svg" width="100%" alt="GitHub Jet Heatmap: Animated jet flying over real GitHub contribution calendar.">
+<img src="./themes/main/assets/contribution-snake.svg" width="100%" alt="Animated contribution snake showing real public GitHub contributions for @AshutoshChoubey.">
+
+<img src="./themes/main/assets/title-part07.svg" width="100%" alt="Part 07 · Research &amp; Knowledge Sharing — Engineering, Shared">
 <img src="./themes/main/assets/research-systems.svg" width="100%" alt="Engineering, Shared: Published research in frontend system design and production AI engineering with practical tutorials.">
 
 <p align="center"><a href="${c.links.worldgyan}"><img src="./${c.worldgyan.logo}" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="${c.links.worldgyan}"><img src="${assetUrl('assets/worldgyan-wordmark.svg')}" width="160" height="64" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
 
 ${c.resources.map(p=>`- [${p.title}](${p.url}) — ${p.description}`).join('\n')}
+
+<img src="./themes/main/assets/title-part08.svg" width="100%" alt="Part 08 · Connect — Let's build something worth explaining.">
+
+<p align="center">
+  <a href="mailto:contact@worldgyan.com"><img src="https://img.shields.io/badge/Email-contact@worldgyan.com-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=gmail" alt="Email contact@worldgyan.com"></a>
+  <a href="${c.links.linkedin}"><img src="https://img.shields.io/badge/LinkedIn-Ashutosh_Kumar_Choubey-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=linkedin" alt="LinkedIn profile"></a>
+  <a href="${c.links.github}"><img src="https://img.shields.io/badge/GitHub-AshutoshChoubey-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=github" alt="GitHub profile AshutoshChoubey"></a>
+  <a href="${c.links.portfolio}"><img src="https://img.shields.io/badge/Portfolio-me.worldgyan.com-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=googlechrome" alt="Portfolio website"></a>
+  <a href="${c.links.worldgyan}"><img src="https://img.shields.io/badge/Platform-worldgyan.com-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=safari" alt="WorldGyan Platform"></a>
+  <a href="${c.links.youtube}"><img src="https://img.shields.io/badge/YouTube-@WorldGyan-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=youtube" alt="YouTube Channel WorldGyan"></a>
+</p>
+
+<a href="${c.links.portfolio}">
+  <img src="./themes/main/assets/footer-signature-v2.svg" width="100%" alt="Ashutosh Choubey — Building scalable frontend systems. Exploring intelligent, agent-powered software.">
+</a>
 
 ### 🌌 Explore More Themes
 

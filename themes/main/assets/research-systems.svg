@@ -92,7 +92,7 @@
 
     <!-- Header -->
     <g class="res-in" style="animation-delay: 0.1s;">
-      <text class="sans" x="56" y="52" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">04 · RESEARCH &amp; KNOWLEDGE · WORLDGYAN</text>
+      <text class="sans" x="56" y="52" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">PART 07 · RESEARCH &amp; KNOWLEDGE · WORLDGYAN</text>
       <text class="serif" x="54" y="94" font-size="36" font-weight="300" fill="#F8F0F3">Engineering, Shared.</text>
       <text class="sans" x="56" y="122" font-size="15" fill="#B6A3AC">Frontend systems, AI architecture &amp; practical enterprise tutorials.</text>
     </g>

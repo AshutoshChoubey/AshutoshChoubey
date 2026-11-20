@@ -93,7 +93,7 @@
 
     <!-- Left Content Column -->
     <g class="p1-in" style="animation-delay: 0.15s;">
-      <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">01 · ARCHITECTURE · ANGULAR · SIGNALS</text>
+      <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">PART 05.1 · ARCHITECTURE · ANGULAR · SIGNALS</text>
       <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8F0F3">Angular Architecture Study</text>
       <text class="sans" x="56" y="166" font-size="16.5" fill="#B6A3AC">Signals reactive state, HTTP interceptors, authentication flows and architecture patterns.</text>
       <text class="mono" x="56" y="200" font-size="12.5" fill="#F8F0F3"><tspan fill="#C77B9B">Built ›</tspan> Signals reactive state, authentication interceptors &amp; modular app.config</text>

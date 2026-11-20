@@ -394,7 +394,7 @@ export async function generateCyberTheme(customRoot) {
       </g>
       <g transform="translate(1144 50)">
         <rect x="-210" y="-14" width="210" height="28" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".4"/>
-        <text class="mono" x="-105" y="4" font-size="11" font-weight="700" text-anchor="middle" fill="#E5B5C7">01 · ARCHITECTURE PLATFORM</text>
+        <text class="mono" x="-105" y="4" font-size="11" font-weight="700" text-anchor="middle" fill="#E5B5C7">PART 02 · ARCHITECTURE PLATFORM</text>
       </g>
       <line x1="56" y1="96" x2="1144" y2="96" stroke="#C77B9B" stroke-opacity=".25"/>
     </g>
@@ -537,7 +537,7 @@ export async function generateCyberTheme(customRoot) {
 
     <!-- Left Content Column -->
     <g class="p1-in" style="animation-delay: 0.15s;">
-      <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">01 · ARCHITECTURE · ANGULAR · SIGNALS</text>
+      <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">PART 05.1 · ARCHITECTURE · ANGULAR · SIGNALS</text>
       <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8F0F3">Angular Architecture Study</text>
       <text class="sans" x="56" y="166" font-size="16.5" fill="#B6A3AC">Signals reactive state, HTTP interceptors, authentication flows and architecture patterns.</text>
       <text class="mono" x="56" y="200" font-size="12.5" fill="#F8F0F3"><tspan fill="#C77B9B">Built ›</tspan> Signals reactive state, authentication interceptors &amp; modular app.config</text>
@@ -641,7 +641,7 @@ export async function generateCyberTheme(customRoot) {
 
     <!-- Left Content Column -->
     <g class="p2-in" style="animation-delay: 0.15s;">
-      <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">02 · REACTIVE PROGRAMMING · RXJS · STREAMS</text>
+      <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">PART 05.2 · REACTIVE LAB · RXJS · OPERATORS</text>
       <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8F0F3">RxJS Operator Lab</text>
       <text class="sans" x="56" y="166" font-size="16.5" fill="#B6A3AC">Comparing switchMap, mergeMap, concatMap and exhaustMap with reactive search.</text>
       <text class="mono" x="56" y="200" font-size="12.5" fill="#F8F0F3"><tspan fill="#C77B9B">Built ›</tspan> Interactive visual demonstrations of concurrency &amp; stream lifecycle</text>
@@ -728,7 +728,7 @@ export async function generateCyberTheme(customRoot) {
 
     <!-- Left Content Column -->
     <g class="p3-in" style="animation-delay: 0.15s;">
-      <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">03 · STATE MANAGEMENT · NGRX · ARCHITECTURE</text>
+      <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">PART 05.3 · STATE MANAGEMENT · NGRX · EFFECTS</text>
       <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8F0F3">NgRx Effects Demo</text>
       <text class="sans" x="56" y="166" font-size="16.5" fill="#B6A3AC">Connecting store actions, reducers and HTTP side effects to decoupled views.</text>
       <text class="mono" x="56" y="200" font-size="12.5" fill="#F8F0F3"><tspan fill="#C77B9B">Built ›</tspan> clean action-reducer-effect separation with async HTTP side-effect dispatch</text>
@@ -850,7 +850,7 @@ export async function generateCyberTheme(customRoot) {
 
     <!-- Left Content Column -->
     <g class="p4-in" style="animation-delay: 0.15s;">
-      <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">04 · TYPE SYSTEM · TYPESCRIPT · COMPILER</text>
+      <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">PART 05.4 · TYPE SYSTEM · TYPESCRIPT · COMPILER</text>
       <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8F0F3">TypeScript Type-System</text>
       <text class="sans" x="56" y="166" font-size="16.5" fill="#B6A3AC">Focused implementations of generics, unions, mapped types and utility types.</text>
       <text class="mono" x="56" y="200" font-size="12.5" fill="#F8F0F3"><tspan fill="#C77B9B">Built ›</tspan> Comprehensive type-system reference with conditional types &amp; mapped inference</text>
@@ -947,7 +947,7 @@ export async function generateCyberTheme(customRoot) {
 
     <!-- Header -->
     <g class="res-in" style="animation-delay: 0.1s;">
-      <text class="sans" x="56" y="52" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">04 · RESEARCH &amp; KNOWLEDGE · WORLDGYAN</text>
+      <text class="sans" x="56" y="52" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">PART 07 · RESEARCH &amp; KNOWLEDGE · WORLDGYAN</text>
       <text class="serif" x="54" y="94" font-size="36" font-weight="300" fill="#F8F0F3">Engineering, Shared.</text>
       <text class="sans" x="56" y="122" font-size="15" fill="#B6A3AC">Frontend systems, AI architecture &amp; practical enterprise tutorials.</text>
     </g>
@@ -1045,7 +1045,7 @@ export async function generateCyberTheme(customRoot) {
 
     <!-- Top Section Header -->
     <g class="tech-in" style="animation-delay: 0.1s;">
-      <text class="mono" x="56" y="44" font-size="11.5" font-weight="700" letter-spacing="1.2" fill="#E5B5C7">01 · CORE TECHNOLOGIES</text>
+      <text class="mono" x="56" y="44" font-size="11.5" font-weight="700" letter-spacing="1.2" fill="#E5B5C7">PART 03 · CORE TECHNOLOGIES</text>
       <text class="serif" x="56" y="74" font-size="22" font-weight="300" fill="#F8F0F3">Engineering Foundations</text>
       <line x1="56" y1="92" x2="1144" y2="92" stroke="#C77B9B" stroke-opacity=".25"/>
     </g>
@@ -1145,7 +1145,7 @@ export async function generateCyberTheme(customRoot) {
 
     <!-- Top Section Header -->
     <g class="ai-in" style="animation-delay: 0.1s;">
-      <text class="mono" x="56" y="38" font-size="11.5" font-weight="700" letter-spacing="1.2" fill="#E5B5C7">02 · AI ARCHITECTURE &amp; RESEARCH</text>
+      <text class="mono" x="56" y="38" font-size="11.5" font-weight="700" letter-spacing="1.2" fill="#E5B5C7">PART 04 · AI ARCHITECTURE &amp; ORCHESTRATION</text>
       <text class="serif" x="56" y="66" font-size="22" font-weight="300" fill="#F8F0F3">Intelligent Systems &amp; Agent Workflows</text>
       <line x1="56" y1="82" x2="1144" y2="82" stroke="#C77B9B" stroke-opacity=".25"/>
     </g>
@@ -1218,6 +1218,52 @@ export async function generateCyberTheme(customRoot) {
 </svg>
 `;
 
+  const escXml = str => String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/'/g, '&apos;').replace(/"/g, '&quot;');
+
+  function generatePartTitleSvg(id, partNum, partLabel, mainTitle, italicWord = '', rightLabel = '') {
+    return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="1200" height="120" role="img" aria-labelledby="t-title-${id}">
+  <title id="t-title-${id}">${escXml(partNum)} ${escXml(partLabel)}: ${escXml(mainTitle)} ${escXml(italicWord)}</title>
+  <defs>
+    <linearGradient id="t-line-${id}" gradientUnits="userSpaceOnUse" x1="40" y1="0" x2="1160" y2="0">
+      <stop offset="0" stop-color="#C77B9B"/><stop offset=".6" stop-color="#701A3D"/><stop offset="1" stop-color="#701A3D" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="t-sheen-${id}" gradientUnits="userSpaceOnUse" x1="-300" y1="0" x2="0" y2="0">
+      <stop offset="0" stop-color="#E5B5C7"/><stop offset=".5" stop-color="#F8F0F3"/><stop offset="1" stop-color="#E5B5C7"/>
+      <animateTransform attributeName="gradientTransform" type="translate" values="0 0;1500 0;1500 0" keyTimes="0;.4;1" dur="7s" begin="1.5s" repeatCount="indefinite"/>
+    </linearGradient>
+    <radialGradient id="t-pulse-${id}"><stop offset="0" stop-color="#F8F0F3"/><stop offset=".5" stop-color="#E5B5C7" stop-opacity=".6"/><stop offset="1" stop-color="#C77B9B" stop-opacity="0"/></radialGradient>
+  </defs>
+  <style>
+    .tc-serif { font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif; }
+    .tc-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .tc-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+    .tc-in { animation: tc-in 1.1s cubic-bezier(.16,1,.3,1) both; }
+    .tc-d2 { animation-delay: .2s; } .tc-d3 { animation-delay: .45s; }
+    .tc-draw { stroke-dasharray: 1200; stroke-dashoffset: 1200; animation: tc-draw 1.8s cubic-bezier(.65,0,.35,1) .5s forwards; }
+    @keyframes tc-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+    @keyframes tc-draw { to { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: reduce) { .tc-in { animation: none; } .tc-draw { animation: none; stroke-dashoffset: 0; } }
+  </style>
+  <g class="tc-in">
+    <text class="tc-sans" x="40" y="34" font-size="13" font-weight="600" letter-spacing="1" fill="#C77B9B"><tspan fill="#E5B5C7">${escXml(partNum)}</tspan>   ${escXml(partLabel)}</text>
+  </g>
+  <g class="tc-in tc-d2">
+    <text class="tc-serif" x="38" y="84" font-size="44" font-weight="300" letter-spacing="-1" fill="#F8F0F3">${escXml(mainTitle)} <tspan font-style="italic" fill="url(#t-sheen-${id})">${escXml(italicWord)}</tspan></text>
+  </g>
+  <g class="tc-in tc-d3">
+    <text class="tc-sans" x="1160" y="34" text-anchor="end" font-size="11.5" font-weight="500" letter-spacing="0.8" fill="#B6A3AC">${escXml(rightLabel)}</text>
+  </g>
+  <path class="tc-draw" d="M40 106 H1160" stroke="url(#t-line-${id})" stroke-width="1"/>
+  <circle cx="40" cy="106" r="7" fill="url(#t-pulse-${id})" opacity="0">
+    <animate attributeName="cx" values="40;1160" dur="6s" begin="2.3s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .55 1"/>
+    <animate attributeName="opacity" values="0;1;0" keyTimes="0;.15;1" dur="6s" begin="2.3s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+`;
+  }
+
+  // 10 Core Cards
   await writeFile(path.join(outDir, 'hero-architect.svg'), heroArchitectSvg);
   await writeFile(path.join(outDir, 'terminal-system.svg'), terminalSystemSvg);
   await writeFile(path.join(outDir, 'engineering-systems.svg'), engineeringSystemsSvg);
@@ -1228,5 +1274,27 @@ export async function generateCyberTheme(customRoot) {
   await writeFile(path.join(outDir, 'project-typescript-types.svg'), projectTypescriptTypesSvg);
   await writeFile(path.join(outDir, 'research-systems.svg'), researchSystemsSvg);
   await writeFile(path.join(outDir, 'ai-orchestration.svg'), aiOrchestrationSvg);
-  console.log('Successfully generated 10 Obsidian-Architect SVGs in themes/main/assets/');
+
+  // 8 Part Title SVGs
+  await writeFile(path.join(outDir, 'title-part01.svg'), generatePartTitleSvg('part01', 'PART 01', 'SYSTEM ARCHITECTURE CLI', 'Developer Environment &', 'Execution Core.', 'whoami · focus · platform'));
+  await writeFile(path.join(outDir, 'title-part02.svg'), generatePartTitleSvg('part02', 'PART 02', 'ENGINEERING SYSTEMS', 'Architecture Leadership &', 'Scalability.', 'WorldGyan Platform · 4 Core Pillars'));
+  await writeFile(path.join(outDir, 'title-part03.svg'), generatePartTitleSvg('part03', 'PART 03', 'CORE TECHNOLOGY', 'Reactive Engineering &', 'Foundations.', 'Angular · TypeScript · RxJS · NgRx'));
+  await writeFile(path.join(outDir, 'title-part04.svg'), generatePartTitleSvg('part04', 'PART 04', 'AI ORCHESTRATION', 'Autonomous Agent Workflows &', 'Execution Cycles.', 'Plan · Act · Reflect'));
+  await writeFile(path.join(outDir, 'title-part05.svg'), generatePartTitleSvg('part05', 'PART 05', 'SELECTED ENGINEERING PROJECTS', 'Scalable Systems &', 'Open Source.', 'Verified Public Reference Implementations'));
+  await writeFile(path.join(outDir, 'title-part06.svg'), generatePartTitleSvg('part06', 'PART 06', 'COMMIT LOG & TELEMETRY', 'Years of', 'building.', 'Real GitHub Activity · Refreshed Daily'));
+  await writeFile(path.join(outDir, 'title-part07.svg'), generatePartTitleSvg('part07', 'PART 07', 'RESEARCH & KNOWLEDGE', 'Engineering,', 'shared.', 'Frontend Systems · AI Engineering'));
+  await writeFile(path.join(outDir, 'title-part08.svg'), generatePartTitleSvg('part08', 'PART 08', 'CONNECT & COLLABORATE', "Let's build something", 'worth explaining.', 'Open Inbox & Direct Channels'));
+
+  // Telemetry & Connect Obsidian Assets
+  let githubJet = await readFile(path.join(root, 'themes/obsidian-architect/dist/github-jet.svg'), 'utf8');
+  githubJet = githubJet.replace('fill="#0d1117"', 'fill="#10070C" rx="14" stroke="#C77B9B" stroke-opacity=".25"');
+  await writeFile(path.join(outDir, 'github-jet.svg'), githubJet);
+
+  const snake = await readFile(path.join(root, 'themes/obsidian-architect/assets/contribution-snake.svg'), 'utf8');
+  await writeFile(path.join(outDir, 'contribution-snake.svg'), snake);
+
+  const sig = await readFile(path.join(root, 'themes/obsidian-architect/assets/footer-signature-v2.svg'), 'utf8');
+  await writeFile(path.join(outDir, 'footer-signature-v2.svg'), sig);
+
+  console.log('Successfully generated Obsidian-Architect SVGs & Part Titles in themes/main/assets/');
 }
