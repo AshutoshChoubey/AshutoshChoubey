@@ -163,7 +163,7 @@
         <rect width="360" height="92" rx="12" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".8"/>
         <text class="mono" x="20" y="28" font-size="11" font-weight="700" fill="#38BDF8">02 · ENTERPRISE</text>
         <text class="sans" x="20" y="54" font-size="19" font-weight="700" fill="#F8FAFC">Enterprise Engineering</text>
-        <text class="sans" x="20" y="76" font-size="13" fill="#94A3B8">Integration · Concurrency Mutex · CI/CD Quality</text>
+        <text class="sans" x="20" y="76" font-size="13" fill="#94A3B8">Enterprise Integration · REST APIs · Testing &amp; Quality</text>
       </g>
 
       <!-- Card 3: System Design (Bottom Left) -->
@@ -171,7 +171,7 @@
         <rect width="360" height="92" rx="12" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".8"/>
         <text class="mono" x="20" y="28" font-size="11" font-weight="700" fill="#F59E0B">03 · DESIGN</text>
         <text class="sans" x="20" y="54" font-size="19" font-weight="700" fill="#F8FAFC">System Design</text>
-        <text class="sans" x="20" y="76" font-size="13" fill="#94A3B8">Micro-Frontends · Boundaries · Immutable Delivery</text>
+        <text class="sans" x="20" y="76" font-size="13" fill="#94A3B8">System Boundaries · State Isolation · Modular Architecture</text>
       </g>
 
       <!-- Card 4: Performance & Scalability (Bottom Right) -->
@@ -179,7 +179,7 @@
         <rect width="360" height="92" rx="12" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".8"/>
         <text class="mono" x="20" y="28" font-size="11" font-weight="700" fill="#F43F5E">04 · SCALABILITY</text>
         <text class="sans" x="20" y="54" font-size="19" font-weight="700" fill="#F8FAFC">Performance &amp; Scalability</text>
-        <text class="sans" x="20" y="76" font-size="13" fill="#94A3B8">Zoneless Change Detection · Modular O(1) Rendering</text>
+        <text class="sans" x="20" y="76" font-size="13" fill="#94A3B8">Signals Change Detection · Performance Optimization</text>
       </g>
     </g>
 

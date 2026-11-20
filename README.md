@@ -15,7 +15,7 @@
 
 <img src="./themes/main/assets/engineering-systems.svg" width="100%" alt="WorldGyan — Engineering Systems: Frontend Architecture, Enterprise Engineering, System Design, Performance and Scalability. Founder: Ashutosh Kumar Choubey.">
 
-<img src="./themes/main/assets/technology-core.svg" width="100%" alt="Core Technologies: Angular 22+, TypeScript, RxJS, NgRx, and Supporting Enterprise Systems.">
+<img src="./themes/main/assets/technology-core.svg" width="100%" alt="Core Technologies: Angular, TypeScript, RxJS, NgRx, and Supporting Systems.">
 
 **Established expertise:** Frontend architecture, Angular, TypeScript, RxJS and NgRx; enterprise UI engineering, component systems and automated testing.
 
@@ -30,7 +30,7 @@
 Public learning projects and code references, selected after reviewing their implementations.
 
 <a href="https://github.com/AshutoshChoubey/angular-interview-worldgyan.com">
-  <img src="./themes/main/assets/project-angular-architecture.svg" width="100%" alt="Angular 22+ Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.">
+  <img src="./themes/main/assets/project-angular-architecture.svg" width="100%" alt="Angular Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.">
 </a>
 
 - [**Angular architecture study**](https://github.com/AshutoshChoubey/angular-interview-worldgyan.com) — Study guides and TypeScript examples for Angular signals, HTTP interceptors, authentication flows and application architecture.
@@ -92,10 +92,10 @@ Building scalable frontend systems. Exploring intelligent, agent-powered softwar
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/e07529a85852/technology-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/84b9776f09ac/technology.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/372dc492dc46/technology-mobile.svg">
-  <img src="./assets/rendered/f60957c0a3d1/technology.svg" width="100%" alt="Core technologies: Angular, TypeScript, JavaScript, RxJS, NgRx. HTML5 · CSS3 / SCSS · Component Architecture. Supporting: Node.js / REST APIs, Jasmine / Jest, Git / CI/CD. Accessibility · Security · Automated Testing.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/03bbd1e35f14/technology-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/023dea640ced/technology.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/801faa005b3a/technology-mobile.svg">
+  <img src="./assets/rendered/15777ba5c352/technology.svg" width="100%" alt="Core technologies: Angular, TypeScript, JavaScript, RxJS, NgRx. HTML5 · CSS3 / SCSS · Component Architecture. Supporting: Node.js / REST APIs, Jasmine / Jest, Git / CI/CD. Accessibility · Security · Automated Testing.">
 </picture>
 </p>
 

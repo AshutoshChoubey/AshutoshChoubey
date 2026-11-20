@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="ai-title ai-desc">
-  <title id="ai-title">AI Architecture &amp; Orchestration: Agentic Workflows, Tool Integration &amp; Human Review.</title>
-  <desc id="ai-desc">Autonomous Plan-Act-Reflect cycles, Model Context Protocol integration, evaluations, and human review feedback.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" width="1200" height="370" role="img" aria-labelledby="ai-title ai-desc">
+  <title id="ai-title">AI Architecture &amp; Orchestration: Agentic Workflows &amp; Human Review.</title>
+  <desc id="ai-desc">Autonomous Plan-Act-Reflect cycles, tool integration, and human review feedback.</desc>
   <defs>
     
     <linearGradient id="cyber-bg" x1="0" y1="0" x2="1" y2="1">
@@ -31,7 +31,7 @@
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
 
-    <clipPath id="ai-clip"><rect width="1200" height="520" rx="18"/></clipPath>
+    <clipPath id="ai-clip"><rect width="1200" height="370" rx="18"/></clipPath>
     <linearGradient id="wave-cyan" x1="0" y1="0" x2="1" y2="0">
       <stop offset="0" stop-color="#00C9FF" stop-opacity=".7"/>
       <stop offset=".5" stop-color="#38BDF8" stop-opacity=".9"/>
@@ -43,7 +43,7 @@
       <stop offset="1" stop-color="#34D399" stop-opacity=".7"/>
     </linearGradient>
     <linearGradient id="wave-fill-grad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#00C9FF" stop-opacity=".15"/>
+      <stop offset="0" stop-color="#00C9FF" stop-opacity=".12"/>
       <stop offset="1" stop-color="#060B17" stop-opacity="0"/>
     </linearGradient>
     <!-- Animated Scanner Gradient for Human Review & Feedback -->
@@ -70,24 +70,20 @@
   </style>
   <g clip-path="url(#ai-clip)">
     <!-- Base Deep Obsidian Canvas -->
-    <rect width="1200" height="520" fill="url(#cyber-bg)"/>
-    <ellipse cx="600" cy="220" rx="460" ry="260" fill="url(#cyber-glow-cyan)"/>
-    <rect width="1200" height="520" fill="url(#cyber-grid)"/>
+    <rect width="1200" height="370" fill="url(#cyber-bg)"/>
+    <ellipse cx="600" cy="180" rx="460" ry="200" fill="url(#cyber-glow-cyan)"/>
+    <rect width="1200" height="370" fill="url(#cyber-grid)"/>
 
     <!-- Continuous Horizontal Flowing Background Waves (Green and Cyan Blue) -->
-    <g opacity="0.38">
+    <g opacity="0.35">
       <!-- Wave 1: Flowing Cyan/Blue Wave -->
-      <path fill="none" stroke="url(#wave-cyan)" stroke-width="2.6">
-        <animate attributeName="d" dur="11s" repeatCount="indefinite" values="M0 220 Q150 170 300 220 T600 220 T900 220 T1200 220;M0 220 Q150 270 300 220 T600 220 T900 220 T1200 220;M0 220 Q150 170 300 220 T600 220 T900 220 T1200 220"/>
+      <path fill="none" stroke="url(#wave-cyan)" stroke-width="2.4">
+        <animate attributeName="d" dur="11s" repeatCount="indefinite" values="M0 160 Q150 120 300 160 T600 160 T900 160 T1200 160;M0 160 Q150 200 300 160 T600 160 T900 160 T1200 160;M0 160 Q150 120 300 160 T600 160 T900 160 T1200 160"/>
       </path>
       <!-- Wave 2: Flowing Emerald Green Wave with Moving Dash Stream -->
-      <path fill="none" stroke="url(#wave-green)" stroke-width="2.2" stroke-dasharray="16 12">
-        <animate attributeName="d" dur="8.5s" repeatCount="indefinite" values="M0 250 Q200 300 400 250 T800 250 T1200 250;M0 250 Q200 200 400 250 T800 250 T1200 250;M0 250 Q200 300 400 250 T800 250 T1200 250"/>
-        <animate attributeName="stroke-dashoffset" from="0" to="-280" dur="8.5s" repeatCount="indefinite"/>
-      </path>
-      <!-- Wave 3: Subtle Translucent Aquatic Fill Wave -->
-      <path fill="url(#wave-fill-grad)">
-        <animate attributeName="d" dur="14s" repeatCount="indefinite" values="M0 290 Q300 230 600 290 T1200 290 L1200 520 L0 520 Z;M0 290 Q300 350 600 290 T1200 290 L1200 520 L0 520 Z;M0 290 Q300 230 600 290 T1200 290 L1200 520 L0 520 Z"/>
+      <path fill="none" stroke="url(#wave-green)" stroke-width="2.0" stroke-dasharray="14 10">
+        <animate attributeName="d" dur="8.5s" repeatCount="indefinite" values="M0 180 Q200 220 400 180 T800 180 T1200 180;M0 180 Q200 140 400 180 T800 180 T1200 180;M0 180 Q200 220 400 180 T800 180 T1200 180"/>
+        <animate attributeName="stroke-dashoffset" from="0" to="-240" dur="8.5s" repeatCount="indefinite"/>
       </path>
     </g>
 
@@ -95,35 +91,35 @@
     <!-- Floating Lava Sparks & Energetic Embers -->
     <g class="lava-sparks">
       <!-- Emerald Green Sparks -->
-      <circle cx="710" cy="480" r="2.2" fill="#34D399" filter="url(#cyber-glow)">
-        <animate attributeName="cy" values="480;40" dur="4.6s" repeatCount="indefinite"/>
+      <circle cx="660" cy="330" r="2.2" fill="#34D399" filter="url(#cyber-glow)">
+        <animate attributeName="cy" values="330;40" dur="4.6s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0;.95;.0" dur="4.6s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="930" cy="460" r="1.6" fill="#34D399">
-        <animate attributeName="cy" values="460;30" dur="5.8s" begin="1.2s" repeatCount="indefinite"/>
+      <circle cx="880" cy="310" r="1.6" fill="#34D399">
+        <animate attributeName="cy" values="310;30" dur="5.8s" begin="1.2s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0;.85;.0" dur="5.8s" begin="1.2s" repeatCount="indefinite"/>
       </circle>
       <!-- Ruby Red Sparks -->
-      <circle cx="830" cy="490" r="2" fill="#F43F5E" filter="url(#cyber-glow)">
-        <animate attributeName="cy" values="490;50" dur="5.2s" begin="0.6s" repeatCount="indefinite"/>
+      <circle cx="780" cy="340" r="2" fill="#F43F5E" filter="url(#cyber-glow)">
+        <animate attributeName="cy" values="340;50" dur="5.2s" begin="0.6s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0;.9;.0" dur="5.2s" begin="0.6s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="1250" cy="470" r="1.8" fill="#F43F5E">
-        <animate attributeName="cy" values="470;45" dur="6.1s" begin="2.1s" repeatCount="indefinite"/>
+      <circle cx="1200" cy="320" r="1.8" fill="#F43F5E">
+        <animate attributeName="cy" values="320;45" dur="6.1s" begin="2.1s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0;.8;.0" dur="6.1s" begin="2.1s" repeatCount="indefinite"/>
       </circle>
       <!-- Electric Cyan Sparks -->
-      <circle cx="630" cy="450" r="1.8" fill="#00C9FF">
-        <animate attributeName="cy" values="450;35" dur="4.9s" begin="1.8s" repeatCount="indefinite"/>
+      <circle cx="580" cy="300" r="1.8" fill="#00C9FF">
+        <animate attributeName="cy" values="300;35" dur="4.9s" begin="1.8s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0;.9;.0" dur="4.9s" begin="1.8s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="1070" cy="485" r="2.2" fill="#38BDF8" filter="url(#cyber-glow)">
-        <animate attributeName="cy" values="485;60" dur="5.5s" begin="0.3s" repeatCount="indefinite"/>
+      <circle cx="1020" cy="335" r="2.2" fill="#38BDF8" filter="url(#cyber-glow)">
+        <animate attributeName="cy" values="335;60" dur="5.5s" begin="0.3s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0;.95;.0" dur="5.5s" begin="0.3s" repeatCount="indefinite"/>
       </circle>
       <!-- Golden Amber Sparks -->
-      <circle cx="990" cy="475" r="1.5" fill="#F59E0B">
-        <animate attributeName="cy" values="475;55" dur="6.4s" begin="2.8s" repeatCount="indefinite"/>
+      <circle cx="940" cy="325" r="1.5" fill="#F59E0B">
+        <animate attributeName="cy" values="325;55" dur="6.4s" begin="2.8s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0;.75;.0" dur="6.4s" begin="2.8s" repeatCount="indefinite"/>
       </circle>
     </g>
@@ -131,155 +127,91 @@
 
     <!-- Top Section Header -->
     <g class="ai-in" style="animation-delay: 0.1s;">
-      <g transform="translate(56 36)">
-        <rect x="0" y="0" width="220" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/>
-        <text class="mono" x="110" y="17" font-size="11" font-weight="700" letter-spacing="1" fill="#38BDF8" text-anchor="middle">02 · AI ARCHITECTURE &amp; RESEARCH</text>
-        <text class="sans" x="238" y="19" font-size="16" font-weight="700" fill="#F8FAFC">Intelligent Systems &amp; Agent Orchestration</text>
-      </g>
-      <text class="sans" x="56" y="86" font-size="13" fill="#94A3B8">Conceptual research architecture: multi-turn reasoning loops, tool-calling agents, MCP contracts, and human review gates.</text>
-      <line x1="56" y1="102" x2="1144" y2="102" stroke="#1E3A5F" stroke-opacity=".7"/>
+      <text class="mono" x="56" y="44" font-size="11.5" font-weight="700" letter-spacing="1.2" fill="#38BDF8">02 · AI ARCHITECTURE &amp; RESEARCH</text>
+      <text class="sans" x="56" y="74" font-size="20" font-weight="700" fill="#F8FAFC">Intelligent Systems &amp; Agent Workflows</text>
+      <line x1="56" y1="92" x2="1144" y2="92" stroke="#1E3A5F" stroke-opacity=".6"/>
     </g>
 
-    <!-- Center Agentic Orchestration Topologies -->
-    <g class="ai-in" style="animation-delay: 0.25s;">
-      <!-- Module 1: Intent & Context (Left) -->
-      <g transform="translate(56 126)">
-        <rect width="230" height="172" rx="14" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".85"/>
-        <text class="mono" x="20" y="32" font-size="11" font-weight="700" fill="#34D399">01 · REASONING</text>
-        <text class="sans" x="20" y="60" font-size="20" font-weight="700" fill="#F8FAFC">Intent &amp; Context</text>
-        <text class="sans" x="20" y="86" font-size="13" fill="#94A3B8">User goals, grounded semantic memory &amp; execution boundaries.</text>
-        <g transform="translate(20 120)">
-          <rect width="112" height="24" rx="12" fill="#081829" stroke="#1E3A5F"/>
-          <text class="mono" x="56" y="16" font-size="10.5" fill="#34D399" text-anchor="middle">Goal DAG</text>
-        </g>
+    <!-- Center Agentic Orchestration Cycle (Plan -> Act -> Reflect) -->
+    <g class="ai-in" style="animation-delay: 0.25s;" transform="translate(180 114)">
+      <!-- Main Agent Container -->
+      <rect width="840" height="120" rx="14" fill="#0E233E" stroke="#1E3A5F"/>
+
+      <!-- Node 1: PLAN -->
+      <g transform="translate(36 28)">
+        <rect width="180" height="64" rx="10" fill="#0A1628" stroke="#1E3A5F"/>
+        <text class="mono" x="90" y="28" font-size="13" font-weight="700" fill="#34D399" text-anchor="middle">PLAN</text>
+        <text class="sans" x="90" y="48" font-size="11" fill="#94A3B8" text-anchor="middle">Goals &amp; Context</text>
       </g>
 
-      <!-- Connecting Moving Line 1 -> Center (Intent to Orchestrator) -->
+      <!-- MOVING ARROW: Plan -> Act (Continuously Flowing Arrow & Chevron) -->
       <g>
-        <path d="M286 212 H330" fill="none" stroke="#34D399" stroke-width="2.2" stroke-dasharray="6 4">
-          <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.8s" repeatCount="indefinite"/>
-        </path>
-        <polygon points="334 212, 324 207, 327 212, 324 217" fill="#34D399">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="0.8s" repeatCount="indefinite"/>
+        <line x1="228" y1="60" x2="292" y2="60" stroke="#34D399" stroke-width="2.2" stroke-dasharray="6 4">
+          <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.9s" repeatCount="indefinite"/>
+        </line>
+        <polygon points="296 60, 286 55, 289 60, 286 65" fill="#34D399">
+          <animate attributeName="transform" type="translate" values="0,0; 4,0; 0,0" dur="0.9s" repeatCount="indefinite"/>
         </polygon>
       </g>
 
-      <!-- Center Orchestrator: Plan -> Act -> Reflect -->
-      <g transform="translate(338 120)">
-        <rect width="524" height="184" rx="16" fill="#0E233E" stroke="#38BDF8" stroke-width="1.4"/>
-        <text class="mono" x="24" y="30" font-size="11" font-weight="700" fill="#38BDF8">AGENTIC AI ORCHESTRATION ENGINE</text>
-        <text class="sans" x="24" y="58" font-size="22" font-weight="800" fill="#FFFFFF">Plan  →  Act  →  Reflect</text>
-        <text class="sans" x="24" y="82" font-size="12.5" fill="#94A3B8">Continuous state evaluation, tool dispatch, and autonomous reflection cycle.</text>
-
-        <!-- Node: PLAN -->
-        <g transform="translate(24 104)">
-          <rect width="132" height="60" rx="10" fill="#0A1628" stroke="#1E3A5F"/>
-          <text class="mono" x="66" y="26" font-size="12" font-weight="700" fill="#34D399" text-anchor="middle">PLAN</text>
-          <text class="sans" x="66" y="46" font-size="10.5" fill="#94A3B8" text-anchor="middle">Task Decompose</text>
-        </g>
-
-        <!-- MOVING ARROW: Plan -> Act (Continuously Flowing Arrow & Chevron) -->
-        <g>
-          <line x1="162" y1="134" x2="194" y2="134" stroke="#34D399" stroke-width="2.5" stroke-dasharray="6 4">
-            <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.9s" repeatCount="indefinite"/>
-          </line>
-          <polygon points="198 134, 188 128, 191 134, 188 140" fill="#34D399">
-            <animate attributeName="transform" type="translate" values="0,0; 4,0; 0,0" dur="0.9s" repeatCount="indefinite"/>
-          </polygon>
-        </g>
-
-        <!-- Node: ACT -->
-        <g transform="translate(202 104)">
-          <rect width="132" height="60" rx="10" fill="#0A1628" stroke="#1E3A5F"/>
-          <text class="mono" x="66" y="26" font-size="12" font-weight="700" fill="#00C9FF" text-anchor="middle">ACT</text>
-          <text class="sans" x="66" y="46" font-size="10.5" fill="#94A3B8" text-anchor="middle">Tool &amp; Model Call</text>
-        </g>
-
-        <!-- MOVING ARROW: Act -> Reflect (Continuously Flowing Arrow & Chevron) -->
-        <g>
-          <line x1="340" y1="134" x2="372" y2="134" stroke="#00C9FF" stroke-width="2.5" stroke-dasharray="6 4">
-            <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.9s" repeatCount="indefinite"/>
-          </line>
-          <polygon points="376 134, 366 128, 369 134, 366 140" fill="#00C9FF">
-            <animate attributeName="transform" type="translate" values="0,0; 4,0; 0,0" dur="0.9s" repeatCount="indefinite"/>
-          </polygon>
-        </g>
-
-        <!-- Node: REFLECT -->
-        <g transform="translate(380 104)">
-          <rect width="120" height="60" rx="10" fill="#0A1628" stroke="#1E3A5F"/>
-          <text class="mono" x="60" y="26" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="middle">REFLECT</text>
-          <text class="sans" x="60" y="46" font-size="10.5" fill="#94A3B8" text-anchor="middle">Verify Output</text>
-        </g>
-
-        <!-- CONTINUOUS FLOWING REFLECTION LOOP: Reflect back to Plan -->
-        <g>
-          <path d="M440 104 C440 68, 90 68, 90 100" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6 4">
-            <animate attributeName="stroke-dashoffset" from="0" to="-40" dur="1.8s" repeatCount="indefinite"/>
-          </path>
-          <polygon points="90 104, 85 94, 90 97, 95 94" fill="#F59E0B">
-            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/>
-          </polygon>
-          <text class="mono" x="265" y="60" font-size="9" font-weight="700" fill="#F59E0B" text-anchor="middle">FEEDBACK LOOP</text>
-        </g>
+      <!-- Node 2: ACT -->
+      <g transform="translate(304 28)">
+        <rect width="210" height="64" rx="10" fill="#0A1628" stroke="#1E3A5F"/>
+        <text class="mono" x="105" y="28" font-size="13" font-weight="700" fill="#00C9FF" text-anchor="middle">ACT</text>
+        <text class="sans" x="105" y="48" font-size="11" fill="#94A3B8" text-anchor="middle">Tool &amp; Model Execution</text>
       </g>
 
-      <!-- Connecting Moving Line Center -> Tools (Right) -->
+      <!-- MOVING ARROW: Act -> Reflect (Continuously Flowing Arrow & Chevron) -->
       <g>
-        <path d="M862 212 H908" fill="none" stroke="#38BDF8" stroke-width="2.2" stroke-dasharray="6 4">
-          <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.8s" repeatCount="indefinite"/>
-        </path>
-        <polygon points="912 212, 902 207, 905 212, 902 217" fill="#38BDF8">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="0.8s" repeatCount="indefinite"/>
+        <line x1="526" y1="60" x2="590" y2="60" stroke="#00C9FF" stroke-width="2.2" stroke-dasharray="6 4">
+          <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.9s" repeatCount="indefinite"/>
+        </line>
+        <polygon points="594 60, 584 55, 587 60, 584 65" fill="#00C9FF">
+          <animate attributeName="transform" type="translate" values="0,0; 4,0; 0,0" dur="0.9s" repeatCount="indefinite"/>
         </polygon>
       </g>
 
-      <!-- Module 3: Tools & Grounded Knowledge (Right) -->
-      <g transform="translate(914 126)">
-        <rect width="230" height="172" rx="14" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".85"/>
-        <text class="mono" x="20" y="32" font-size="11" font-weight="700" fill="#38BDF8">03 · CAPABILITIES</text>
-        <text class="sans" x="20" y="60" font-size="20" font-weight="700" fill="#F8FAFC">Tools &amp; MCP</text>
-        <text class="sans" x="20" y="86" font-size="13" fill="#94A3B8">Model Context Protocol, external APIs &amp; grounded runtime.</text>
-        <g transform="translate(20 120)">
-          <rect width="138" height="24" rx="12" fill="#081829" stroke="#1E3A5F"/>
-          <text class="mono" x="69" y="16" font-size="10.5" fill="#38BDF8" text-anchor="middle">Tool Contracts</text>
-        </g>
+      <!-- Node 3: REFLECT -->
+      <g transform="translate(602 28)">
+        <rect width="202" height="64" rx="10" fill="#0A1628" stroke="#1E3A5F"/>
+        <text class="mono" x="101" y="28" font-size="13" font-weight="700" fill="#F59E0B" text-anchor="middle">REFLECT</text>
+        <text class="sans" x="101" y="48" font-size="11" fill="#94A3B8" text-anchor="middle">Evaluation &amp; Validation</text>
       </g>
-    </g>
 
-    <!-- Continuous Animated Feedback Pipelines to Human Review -->
-    <g>
-      <path d="M171 298 V396 H240" fill="none" stroke="#34D399" stroke-width="2" stroke-dasharray="6 4">
-        <animate attributeName="stroke-dashoffset" from="0" to="-40" dur="1.5s" repeatCount="indefinite"/>
-      </path>
-      <path d="M1029 298 V396 H960" fill="none" stroke="#38BDF8" stroke-width="2" stroke-dasharray="6 4">
-        <animate attributeName="stroke-dashoffset" from="0" to="-40" dur="1.5s" repeatCount="indefinite"/>
-      </path>
+      <!-- CONTINUOUS FLOWING REFLECTION LOOP: Reflect back to Plan -->
+      <g>
+        <path d="M703 28 C703 -4, 126 -4, 126 28" fill="none" stroke="#F59E0B" stroke-width="1.8" stroke-dasharray="5 4">
+          <animate attributeName="stroke-dashoffset" from="0" to="-36" dur="1.8s" repeatCount="indefinite"/>
+        </path>
+        <polygon points="126 28, 121 20, 126 23, 131 20" fill="#F59E0B">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/>
+        </polygon>
+      </g>
     </g>
 
     <!-- Lower Section: HUMAN REVIEW & FEEDBACK (Continuous Moving Background Animation) -->
-    <g class="ai-in" style="animation-delay: 0.4s;" transform="translate(240 354)">
+    <g class="ai-in" style="animation-delay: 0.4s;" transform="translate(180 252)">
       <!-- Animated Moving Scanner Background Container -->
-      <rect width="720" height="84" rx="14" fill="url(#hr-scan)" stroke="#38BDF8" stroke-width="1.4"/>
+      <rect width="840" height="68" rx="12" fill="url(#hr-scan)" stroke="#1E3A5F" stroke-width="1.2"/>
 
       <!-- Continuously Moving Laser Stream Across Background of Human Review -->
-      <line x1="20" y1="42" x2="700" y2="42" stroke="#34D399" stroke-width="1.8" stroke-dasharray="14 10" opacity="0.8">
+      <line x1="20" y1="34" x2="820" y2="34" stroke="#34D399" stroke-width="1.6" stroke-dasharray="14 10" opacity="0.75">
         <animate attributeName="stroke-dashoffset" from="48" to="0" dur="1.2s" repeatCount="indefinite"/>
       </line>
 
       <!-- Center Beacon Node -->
-      <circle cx="360" cy="42" r="14" fill="none" stroke="#00C9FF" opacity="0.6">
-        <animate attributeName="r" values="6;18;6" dur="2.4s" repeatCount="indefinite"/>
+      <circle cx="420" cy="34" r="12" fill="none" stroke="#00C9FF" opacity="0.6">
+        <animate attributeName="r" values="5;15;5" dur="2.4s" repeatCount="indefinite"/>
         <animate attributeName="opacity" values="0.9;0.1;0.9" dur="2.4s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="360" cy="42" r="4.5" fill="#34D399" filter="url(#cyber-glow)"/>
+      <circle cx="420" cy="34" r="4" fill="#34D399" filter="url(#cyber-glow)"/>
 
-      <text class="mono" x="360" y="28" font-size="12" font-weight="700" letter-spacing="1.4" fill="#34D399" text-anchor="middle">HUMAN REVIEW &amp; DECISION GATEWAY</text>
-      <text class="sans" x="360" y="66" font-size="13" fill="#F8FAFC" text-anchor="middle">Real-World Observability · Quality Evaluations · Decision Guardrails · Reliable Production Delivery</text>
+      <text class="mono" x="420" y="24" font-size="11" font-weight="700" letter-spacing="1.4" fill="#34D399" text-anchor="middle">HUMAN REVIEW &amp; DECISION GATE</text>
+      <text class="sans" x="420" y="52" font-size="12" fill="#F8FAFC" text-anchor="middle">Reliable oversight, safety evaluations, and human decisions in production workflows.</text>
     </g>
 
     <!-- Base Perimeter Border & Surrounding Radiant Corner Trace -->
-    <rect x=".5" y=".5" width="1199" height="519" rx="17.5" fill="none" stroke="#1E3A5F" stroke-opacity=".4"/>
-    <rect class="trace-anim" x=".5" y=".5" width="1199" height="519" rx="17.5" fill="none" stroke="url(#cyber-trace)" stroke-width="2.2" stroke-linecap="round"/>
+    <rect x=".5" y=".5" width="1199" height="369" rx="17.5" fill="none" stroke="#1E3A5F" stroke-opacity=".4"/>
+    <rect class="trace-anim" x=".5" y=".5" width="1199" height="369" rx="17.5" fill="none" stroke="url(#cyber-trace)" stroke-width="2.2" stroke-linecap="round"/>
   </g>
 </svg>

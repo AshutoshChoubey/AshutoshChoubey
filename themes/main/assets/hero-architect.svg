@@ -168,18 +168,18 @@
       <!-- Horizontal Divider -->
       <line x1="56" y1="288" x2="720" y2="288" stroke="#1E3A5F" stroke-opacity=".6"/>
 
-      <!-- Capability Highlights Metrics with Angular 22+ -->
+      <!-- Capability Highlights Metrics -->
       <g transform="translate(56 342)">
-        <text class="serif" font-size="34" font-weight="400" fill="#F8FAFC">Angular 22+</text>
-        <text class="sans" y="24" font-size="12" font-weight="700" fill="#34D399">SIGNALS &amp; INTEROPERABILITY</text>
+        <text class="serif" font-size="34" font-weight="400" fill="#F8FAFC">Angular</text>
+        <text class="sans" y="24" font-size="12" font-weight="700" fill="#34D399">REACTIVE ARCHITECTURE</text>
       </g>
       <g transform="translate(290 342)">
         <text class="serif" font-size="34" font-weight="400" fill="#F8FAFC">TypeScript</text>
-        <text class="sans" y="24" font-size="12" font-weight="700" fill="#38BDF8">TYPE-LEVEL COMPUTATION</text>
+        <text class="sans" y="24" font-size="12" font-weight="700" fill="#38BDF8">STRICT TYPINGS</text>
       </g>
       <g transform="translate(510 342)">
-        <text class="serif" font-size="34" font-weight="400" fill="#F8FAFC">Agentic AI</text>
-        <text class="sans" y="24" font-size="12" font-weight="700" fill="#F43F5E">ORCHESTRATION &amp; MCP</text>
+        <text class="serif" font-size="34" font-weight="400" fill="#F8FAFC">AI Systems</text>
+        <text class="sans" y="24" font-size="12" font-weight="700" fill="#F43F5E">AGENT ORCHESTRATION</text>
       </g>
     </g>
 

@@ -46,7 +46,7 @@ function technology(m) {
   let b=sectionHeader('01','CORE TECHNOLOGY',w,m);
   if(m) {
     b+=rect(28,78,364,74,'#163052',12,'stroke="#3D6690"');
-    b+=text(46,113,c.technology.primary[0]+' 22+',28,'#FFFFFF','font-weight="700"');
+    b+=text(46,113,c.technology.primary[0],28,'#FFFFFF','font-weight="700"');
     b+=text(46,137,'Frontend architecture',16,'#A5DFFF');
     b+=text(28,193,c.technology.primary.slice(1,3).join('  /  '),24,'#FFFFFF','font-weight="600"');
     b+=text(28,234,c.technology.primary.slice(3).join('  /  '),23,'#73DEFF','font-weight="600"');
@@ -61,7 +61,7 @@ function technology(m) {
     b+=text(28,466,c.technology.quality,14,'#B4C2D5');
   } else {
     b+=rect(42,80,226,112,'#163052',12,'stroke="#3D6690"');
-    b+=text(56,126,c.technology.primary[0]+' 22+',28,'#FFFFFF','font-weight="700"');
+    b+=text(56,126,c.technology.primary[0],28,'#FFFFFF','font-weight="700"');
     b+=text(56,158,'Frontend architecture',16,'#A5DFFF');
     c.technology.primary.slice(1).forEach((s,i)=>{
       const x=298+i*156;
@@ -140,7 +140,7 @@ const readme=`<!-- Generated from profile.config.json. Edit the source, then run
 
 <img src="./themes/main/assets/engineering-systems.svg" width="100%" alt="WorldGyan — Engineering Systems: Frontend Architecture, Enterprise Engineering, System Design, Performance and Scalability. Founder: Ashutosh Kumar Choubey.">
 
-<img src="./themes/main/assets/technology-core.svg" width="100%" alt="Core Technologies: Angular 22+, TypeScript, RxJS, NgRx, and Supporting Enterprise Systems.">
+<img src="./themes/main/assets/technology-core.svg" width="100%" alt="Core Technologies: Angular, TypeScript, RxJS, NgRx, and Supporting Systems.">
 
 **Established expertise:** ${c.classifications.established}
 
@@ -155,7 +155,7 @@ const readme=`<!-- Generated from profile.config.json. Edit the source, then run
 Public learning projects and code references, selected after reviewing their implementations.
 
 <a href="https://github.com/AshutoshChoubey/angular-interview-worldgyan.com">
-  <img src="./themes/main/assets/project-angular-architecture.svg" width="100%" alt="Angular 22+ Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.">
+  <img src="./themes/main/assets/project-angular-architecture.svg" width="100%" alt="Angular Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.">
 </a>
 
 - [**Angular architecture study**](https://github.com/AshutoshChoubey/angular-interview-worldgyan.com) — Study guides and TypeScript examples for Angular signals, HTTP interceptors, authentication flows and application architecture.

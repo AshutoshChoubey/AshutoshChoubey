@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 370" width="1200" height="370" role="img" aria-labelledby="p1-t">
-  <title id="p1-t">Angular 22+ Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.</title>
+  <title id="p1-t">Angular Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.</title>
   <defs>
     
     <linearGradient id="cyber-bg" x1="0" y1="0" x2="1" y2="1">
@@ -93,10 +93,10 @@
 
     <!-- Left Content Column -->
     <g class="p1-in" style="animation-delay: 0.15s;">
-      <text class="sans" x="56" y="62" font-size="12" font-weight="700" letter-spacing="1" fill="#38BDF8">01 · ARCHITECTURE · ANGULAR 22+ · SIGNALS</text>
-      <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8FAFC">Angular 22+ Architecture</text>
-      <text class="sans" x="56" y="166" font-size="16.5" fill="#94A3B8">Signals graph, HTTP interceptors, caching, and enterprise application architecture.</text>
-      <text class="mono" x="56" y="200" font-size="12.5" fill="#E2E8F0"><tspan fill="#34D399">Built ›</tspan> Signals interop, caching &amp; mutex interceptors, modular app.config</text>
+      <text class="sans" x="56" y="62" font-size="12" font-weight="700" letter-spacing="1" fill="#38BDF8">01 · ARCHITECTURE · ANGULAR · SIGNALS</text>
+      <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8FAFC">Angular Architecture Study</text>
+      <text class="sans" x="56" y="166" font-size="16.5" fill="#94A3B8">Signals reactive state, HTTP interceptors, authentication flows and architecture patterns.</text>
+      <text class="mono" x="56" y="200" font-size="12.5" fill="#E2E8F0"><tspan fill="#34D399">Built ›</tspan> Signals reactive state, authentication interceptors &amp; modular app.config</text>
       <line x1="56" y1="226" x2="680" y2="226" stroke="#1E3A5F" stroke-opacity=".7"/>
 
       <!-- Metric Blocks -->
@@ -105,20 +105,20 @@
         <text class="sans" y="24" font-size="12.5" fill="#34D399">dynamic reactive graph</text>
       </g>
       <g transform="translate(261 266)">
-        <text class="serif" font-size="34" font-weight="300" fill="#F8FAFC">Mutex</text>
-        <text class="sans" y="24" font-size="12.5" fill="#38BDF8">concurrency interceptor</text>
+        <text class="serif" font-size="34" font-weight="300" fill="#F8FAFC">Interceptors</text>
+        <text class="sans" y="24" font-size="12.5" fill="#38BDF8">auth &amp; request pipeline</text>
       </g>
       <g transform="translate(466 266)">
-        <text class="serif" font-size="34" font-weight="300" fill="#F8FAFC">Enterprise</text>
-        <text class="sans" y="24" font-size="12.5" fill="#F43F5E">modular application config</text>
+        <text class="serif" font-size="34" font-weight="300" fill="#F8FAFC">Patterns</text>
+        <text class="sans" y="24" font-size="12.5" fill="#F43F5E">modular application state</text>
       </g>
 
       <!-- Chips -->
-      <g class="p1-chip" style="animation-delay:1.00s"><rect x="56" y="314" width="112" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="112" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">Angular 22+</text></g>
-      <g class="p1-chip" style="animation-delay:1.12s"><rect x="176" y="314" width="92" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="222" y="331" text-anchor="middle" font-size="11.5" fill="#34D399">TypeScript</text></g>
-      <g class="p1-chip" style="animation-delay:1.24s"><rect x="276" y="314" width="102" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="327" y="331" text-anchor="middle" font-size="11.5" fill="#E2E8F0">RxJS Interop</text></g>
-      <g class="p1-chip" style="animation-delay:1.36s"><rect x="386" y="314" width="126" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="449" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">HTTP Interceptors</text></g>
-      <g class="p1-chip" style="animation-delay:1.48s"><rect x="520" y="314" width="118" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="579" y="331" text-anchor="middle" font-size="11.5" fill="#F43F5E">Mutex Queue</text></g>
+      <g class="p1-chip" style="animation-delay:1.00s"><rect x="56" y="314" width="84" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="98" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">Angular</text></g>
+      <g class="p1-chip" style="animation-delay:1.12s"><rect x="148" y="314" width="92" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="194" y="331" text-anchor="middle" font-size="11.5" fill="#34D399">TypeScript</text></g>
+      <g class="p1-chip" style="animation-delay:1.24s"><rect x="248" y="314" width="76" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="286" y="331" text-anchor="middle" font-size="11.5" fill="#E2E8F0">Signals</text></g>
+      <g class="p1-chip" style="animation-delay:1.36s"><rect x="332" y="314" width="112" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="388" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">Interceptors</text></g>
+      <g class="p1-chip" style="animation-delay:1.48s"><rect x="452" y="314" width="108" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="506" y="331" text-anchor="middle" font-size="11.5" fill="#F43F5E">Architecture</text></g>
     </g>
 
     <!-- Right Column: Interactive Diagram -->
@@ -150,7 +150,7 @@
         <g transform="translate(20 160)">
           <rect width="190" height="52" rx="10" fill="#08101E" stroke="#1E3A5F"/>
           <text class="mono" x="14" y="22" font-size="11" fill="#F8FAFC">HttpInterceptorFn</text>
-          <text class="mono" x="14" y="38" font-size="9.5" fill="#94A3B8">mutexQueue &amp; cache</text>
+          <text class="mono" x="14" y="38" font-size="9.5" fill="#94A3B8">auth token pipeline</text>
         </g>
 
         <!-- Line to RxJS Interop -->
