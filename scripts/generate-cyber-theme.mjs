@@ -398,6 +398,10 @@ export async function generateCyberTheme(customRoot) {
         </text>
         <text class="sans" x="62" y="44" font-size="13" font-weight="600" fill="#38BDF8">Founder &amp; Principal Architect: <tspan fill="#34D399">Ashutosh Kumar Choubey</tspan></text>
       </g>
+      <g transform="translate(1144 50)">
+        <rect x="-210" y="-14" width="210" height="28" rx="14" fill="#0D1D33" stroke="#1E3A5F"/>
+        <text class="mono" x="-105" y="4" font-size="11" font-weight="700" text-anchor="middle" fill="#38BDF8">01 · ARCHITECTURE PLATFORM</text>
+      </g>
       <line x1="56" y1="96" x2="1144" y2="96" stroke="#1E3A5F" stroke-opacity=".7"/>
     </g>
 
@@ -733,7 +737,7 @@ export async function generateCyberTheme(customRoot) {
     <!-- Left Content Column -->
     <g class="p3-in" style="animation-delay: 0.15s;">
       <text class="sans" x="56" y="62" font-size="12" font-weight="700" letter-spacing="1" fill="#38BDF8">03 · STATE MANAGEMENT · NGRX · ARCHITECTURE</text>
-      <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8FAFC">NgRx Effects Demo<tspan class="serif" font-size="22" font-style="italic" fill="#38BDF8" dx="14">PokéAPI Store</tspan></text>
+      <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8FAFC">NgRx Effects Demo</text>
       <text class="sans" x="56" y="166" font-size="16.5" fill="#94A3B8">Connecting store actions, reducers and HTTP side effects to decoupled views.</text>
       <text class="mono" x="56" y="200" font-size="12.5" fill="#E2E8F0"><tspan fill="#34D399">Built ›</tspan> clean action-reducer-effect separation with async HTTP side-effect dispatch</text>
       <line x1="56" y1="226" x2="680" y2="226" stroke="#1E3A5F" stroke-opacity=".7"/>
@@ -753,18 +757,18 @@ export async function generateCyberTheme(customRoot) {
       </g>
 
       <!-- Chips -->
-      <g class="p3-chip" style="animation-delay:1.00s"><rect x="56" y="314" width="92" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="102" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">NgRx 18+</text></g>
-      <g class="p3-chip" style="animation-delay:1.12s"><rect x="156" y="314" width="86" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="199" y="331" text-anchor="middle" font-size="11.5" fill="#34D399">Angular</text></g>
-      <g class="p3-chip" style="animation-delay:1.24s"><rect x="250" y="314" width="70" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="285" y="331" text-anchor="middle" font-size="11.5" fill="#E2E8F0">Store</text></g>
-      <g class="p3-chip" style="animation-delay:1.36s"><rect x="328" y="314" width="76" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="366" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">Effects</text></g>
-      <g class="p3-chip" style="animation-delay:1.48s"><rect x="412" y="314" width="90" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="457" y="331" text-anchor="middle" font-size="11.5" fill="#F43F5E">Selectors</text></g>
+      <g class="p3-chip" style="animation-delay:1.00s"><rect x="56" y="314" width="76" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="94" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">NgRx</text></g>
+      <g class="p3-chip" style="animation-delay:1.12s"><rect x="142" y="314" width="86" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="185" y="331" text-anchor="middle" font-size="11.5" fill="#34D399">Angular</text></g>
+      <g class="p3-chip" style="animation-delay:1.24s"><rect x="238" y="314" width="70" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="273" y="331" text-anchor="middle" font-size="11.5" fill="#E2E8F0">Store</text></g>
+      <g class="p3-chip" style="animation-delay:1.36s"><rect x="318" y="314" width="76" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="356" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">Effects</text></g>
+      <g class="p3-chip" style="animation-delay:1.48s"><rect x="404" y="314" width="90" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="449" y="331" text-anchor="middle" font-size="11.5" fill="#F43F5E">Selectors</text></g>
     </g>
 
     <!-- Right Column: Step-by-Step Reactive State Cycle -->
     <g class="p3-in" style="animation-delay: 0.35s;">
       <g transform="translate(0 35)">
         <rect x="750" y="46" width="270" height="38" rx="12" fill="#0D192E" stroke="#38BDF8" stroke-opacity=".7"/>
-        <text class="mono" x="766" y="70" font-size="11.5" fill="#F8FAFC">dispatch(loadPokemon({id}))</text>
+        <text class="mono" x="766" y="70" font-size="11.5" fill="#F8FAFC">dispatch(loadEntity({id}))</text>
 
         <!-- Step 1: Dispatch -->
         <g transform="translate(750 106)">
@@ -993,16 +997,423 @@ export async function generateCyberTheme(customRoot) {
 </svg>
 `;
 
+  // 9. CORE TECHNOLOGY WITH CONTINUOUS FLOWING HORIZONTAL WAVES & PERIMETER TRACE
+  const technologyCoreSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="tech-title tech-desc">
+  <title id="tech-title">Core Technology: Angular 22+, TypeScript, RxJS, NgRx, and Supporting Enterprise Systems.</title>
+  <desc id="tech-desc">Established frontend architecture, reactive streaming, enterprise state management, and supporting web standards.</desc>
+  <defs>
+    ${commonDefs}
+    <clipPath id="tech-clip"><rect width="1200" height="520" rx="18"/></clipPath>
+    <linearGradient id="wave-cyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00C9FF" stop-opacity=".7"/>
+      <stop offset=".5" stop-color="#38BDF8" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#00C9FF" stop-opacity=".7"/>
+    </linearGradient>
+    <linearGradient id="wave-green" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#34D399" stop-opacity=".7"/>
+      <stop offset=".5" stop-color="#059669" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#34D399" stop-opacity=".7"/>
+    </linearGradient>
+    <linearGradient id="wave-fill-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00C9FF" stop-opacity=".15"/>
+      <stop offset="1" stop-color="#060B17" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <style>
+    ${commonStyles}
+    .tech-in { animation: tech-in 1.2s cubic-bezier(.16,1,.3,1) both; }
+    @keyframes tech-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .tech-in { animation: none; } }
+  </style>
+  <g clip-path="url(#tech-clip)">
+    <!-- Base Deep Obsidian Canvas -->
+    <rect width="1200" height="520" fill="url(#cyber-bg)"/>
+    <ellipse cx="600" cy="240" rx="460" ry="260" fill="url(#cyber-glow-cyan)"/>
+    <rect width="1200" height="520" fill="url(#cyber-grid)"/>
+
+    <!-- Continuous Horizontal Flowing Background Waves (Green and Cyan Blue) -->
+    <g opacity="0.38">
+      <!-- Wave 1: Flowing Cyan/Blue Wave -->
+      <path fill="none" stroke="url(#wave-cyan)" stroke-width="2.6">
+        <animate attributeName="d" dur="12s" repeatCount="indefinite" values="M0 240 Q150 190 300 240 T600 240 T900 240 T1200 240;M0 240 Q150 280 300 240 T600 240 T900 240 T1200 240;M0 240 Q150 190 300 240 T600 240 T900 240 T1200 240"/>
+      </path>
+      <!-- Wave 2: Flowing Emerald Green Wave with Moving Dash Stream -->
+      <path fill="none" stroke="url(#wave-green)" stroke-width="2.2" stroke-dasharray="16 12">
+        <animate attributeName="d" dur="9s" repeatCount="indefinite" values="M0 265 Q200 315 400 265 T800 265 T1200 265;M0 265 Q200 215 400 265 T800 265 T1200 265;M0 265 Q200 315 400 265 T800 265 T1200 265"/>
+        <animate attributeName="stroke-dashoffset" from="0" to="-280" dur="9s" repeatCount="indefinite"/>
+      </path>
+      <!-- Wave 3: Subtle Translucent Aquatic Fill Wave -->
+      <path fill="url(#wave-fill-grad)">
+        <animate attributeName="d" dur="15s" repeatCount="indefinite" values="M0 310 Q300 250 600 310 T1200 310 L1200 520 L0 520 Z;M0 310 Q300 370 600 310 T1200 310 L1200 520 L0 520 Z;M0 310 Q300 250 600 310 T1200 310 L1200 520 L0 520 Z"/>
+      </path>
+    </g>
+
+    ${lavaSparks(1200, 520, 110)}
+
+    <!-- Top Section Header -->
+    <g class="tech-in" style="animation-delay: 0.1s;">
+      <g transform="translate(56 36)">
+        <rect x="0" y="0" width="180" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/>
+        <text class="mono" x="90" y="17" font-size="11" font-weight="700" letter-spacing="1" fill="#34D399" text-anchor="middle">01 · CORE TECHNOLOGY</text>
+        <text class="sans" x="200" y="19" font-size="16" font-weight="700" fill="#F8FAFC">Engineering Stack &amp; Enterprise Foundations</text>
+      </g>
+      <text class="sans" x="56" y="86" font-size="13" fill="#94A3B8">Established frontend architecture, reactive streaming systems, and deterministic enterprise state management.</text>
+      <line x1="56" y1="102" x2="1144" y2="102" stroke="#1E3A5F" stroke-opacity=".7"/>
+    </g>
+
+    <!-- Row 1: Primary Frameworks (4 Core Cards) -->
+    <g class="tech-in" style="animation-delay: 0.25s;">
+      <!-- Card 1: Angular 22+ (Spacious, Zero Text Overflow) -->
+      <g transform="translate(56 120)">
+        <rect width="258" height="136" rx="14" fill="#0D1D33" stroke="#38BDF8" stroke-width="1.3"/>
+        <rect x="18" y="16" width="100" height="22" rx="11" fill="#081829" stroke="#1E3A5F"/>
+        <text class="mono" x="68" y="31" font-size="10" font-weight="700" fill="#34D399" text-anchor="middle">PRIMARY STACK</text>
+        <text class="sans" x="18" y="72" font-size="28" font-weight="800" fill="#FFFFFF">Angular 22+</text>
+        <text class="sans" x="18" y="98" font-size="13" font-weight="600" fill="#38BDF8">Signals · Zoneless · Architecture</text>
+        <text class="sans" x="18" y="118" font-size="11.5" fill="#94A3B8">Enterprise component topology</text>
+      </g>
+
+      <!-- Card 2: TypeScript -->
+      <g transform="translate(330 120)">
+        <rect width="258" height="136" rx="14" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".85"/>
+        <rect x="18" y="16" width="104" height="22" rx="11" fill="#081829" stroke="#1E3A5F"/>
+        <text class="mono" x="70" y="31" font-size="10" font-weight="700" fill="#38BDF8" text-anchor="middle">STRICT TYPINGS</text>
+        <text class="sans" x="18" y="72" font-size="28" font-weight="800" fill="#FFFFFF">TypeScript</text>
+        <text class="sans" x="18" y="98" font-size="13" font-weight="600" fill="#38BDF8">Generics · Discriminated Unions</text>
+        <text class="sans" x="18" y="118" font-size="11.5" fill="#94A3B8">Strict type inference &amp; safety</text>
+      </g>
+
+      <!-- Card 3: RxJS -->
+      <g transform="translate(604 120)">
+        <rect width="258" height="136" rx="14" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".85"/>
+        <rect x="18" y="16" width="112" height="22" rx="11" fill="#081829" stroke="#1E3A5F"/>
+        <text class="mono" x="74" y="31" font-size="10" font-weight="700" fill="#F59E0B" text-anchor="middle">REACTIVE STREAMS</text>
+        <text class="sans" x="18" y="72" font-size="28" font-weight="800" fill="#FFFFFF">RxJS</text>
+        <text class="sans" x="18" y="98" font-size="13" font-weight="600" fill="#F59E0B">Higher-Order · Mutex Queues</text>
+        <text class="sans" x="18" y="118" font-size="11.5" fill="#94A3B8">Declarative asynchronous pipelines</text>
+      </g>
+
+      <!-- Card 4: NgRx -->
+      <g transform="translate(878 120)">
+        <rect width="266" height="136" rx="14" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".85"/>
+        <rect x="18" y="16" width="104" height="22" rx="11" fill="#081829" stroke="#1E3A5F"/>
+        <text class="mono" x="70" y="31" font-size="10" font-weight="700" fill="#F43F5E" text-anchor="middle">STATE ISOLATION</text>
+        <text class="sans" x="18" y="72" font-size="28" font-weight="800" fill="#FFFFFF">NgRx</text>
+        <text class="sans" x="18" y="98" font-size="13" font-weight="600" fill="#F43F5E">Store · Effects · Selectors</text>
+        <text class="sans" x="18" y="118" font-size="11.5" fill="#94A3B8">Decoupled unidirectional flow</text>
+      </g>
+    </g>
+
+    <!-- Row 2: Supporting Engineering & Governance -->
+    <g class="tech-in" style="animation-delay: 0.4s;">
+      <g transform="translate(56 280)">
+        <rect width="350" height="114" rx="12" fill="#0A1628" stroke="#1E3A5F" stroke-opacity=".7"/>
+        <line x1="16" y1="18" x2="16" y2="96" stroke="#34D399" stroke-width="3" stroke-linecap="round"/>
+        <text class="mono" x="32" y="34" font-size="11" font-weight="700" fill="#34D399">WEB &amp; COMPONENT ARCHITECTURE</text>
+        <text class="sans" x="32" y="58" font-size="16" font-weight="700" fill="#F8FAFC">HTML5 · CSS3 / SCSS · Design Systems</text>
+        <text class="sans" x="32" y="82" font-size="12.5" fill="#94A3B8">Component libraries, tokens &amp; responsive layouts.</text>
+      </g>
+
+      <g transform="translate(426 280)">
+        <rect width="350" height="114" rx="12" fill="#0A1628" stroke="#1E3A5F" stroke-opacity=".7"/>
+        <line x1="16" y1="18" x2="16" y2="96" stroke="#38BDF8" stroke-width="3" stroke-linecap="round"/>
+        <text class="mono" x="32" y="34" font-size="11" font-weight="700" fill="#38BDF8">BACKEND &amp; CI/CD DELIVERY</text>
+        <text class="sans" x="32" y="58" font-size="16" font-weight="700" fill="#F8FAFC">Node.js · REST APIs · Jasmine / Jest</text>
+        <text class="sans" x="32" y="82" font-size="12.5" fill="#94A3B8">Automated test suites &amp; Git CI/CD pipelines.</text>
+      </g>
+
+      <g transform="translate(794 280)">
+        <rect width="350" height="114" rx="12" fill="#0A1628" stroke="#1E3A5F" stroke-opacity=".7"/>
+        <line x1="16" y1="18" x2="16" y2="96" stroke="#F43F5E" stroke-width="3" stroke-linecap="round"/>
+        <text class="mono" x="32" y="34" font-size="11" font-weight="700" fill="#F43F5E">STANDARDS &amp; GOVERNANCE</text>
+        <text class="sans" x="32" y="58" font-size="16" font-weight="700" fill="#F8FAFC">Accessibility · Security · Quality</text>
+        <text class="sans" x="32" y="82" font-size="12.5" fill="#94A3B8">WCAG 2.1 AA, OWASP hardening &amp; zero-regression tests.</text>
+      </g>
+    </g>
+
+    <!-- Bottom Status Chips / Verification Tokens -->
+    <g class="tech-in" style="animation-delay: 0.55s;" transform="translate(56 422)">
+      <line x1="0" y1="0" x2="1088" y2="0" stroke="#1E3A5F" stroke-opacity=".6"/>
+      <g transform="translate(0 20)">
+        <rect width="138" height="28" rx="14" fill="#0D1D33" stroke="#1E3A5F"/>
+        <circle cx="16" cy="14" r="4" fill="#34D399"/>
+        <text class="mono" x="28" y="18" font-size="11.5" fill="#E2E8F0">Angular 22+</text>
+      </g>
+      <g transform="translate(150 20)">
+        <rect width="144" height="28" rx="14" fill="#0D1D33" stroke="#1E3A5F"/>
+        <circle cx="16" cy="14" r="4" fill="#38BDF8"/>
+        <text class="mono" x="28" y="18" font-size="11.5" fill="#E2E8F0">TypeScript 5.x</text>
+      </g>
+      <g transform="translate(306 20)">
+        <rect width="108" height="28" rx="14" fill="#0D1D33" stroke="#1E3A5F"/>
+        <circle cx="16" cy="14" r="4" fill="#00C9FF"/>
+        <text class="mono" x="28" y="18" font-size="11.5" fill="#E2E8F0">Zoneless</text>
+      </g>
+      <g transform="translate(426 20)">
+        <rect width="112" height="28" rx="14" fill="#0D1D33" stroke="#1E3A5F"/>
+        <circle cx="16" cy="14" r="4" fill="#F59E0B"/>
+        <text class="mono" x="28" y="18" font-size="11.5" fill="#E2E8F0">RxJS 7+</text>
+      </g>
+      <g transform="translate(550 20)">
+        <rect width="98" height="28" rx="14" fill="#0D1D33" stroke="#1E3A5F"/>
+        <circle cx="16" cy="14" r="4" fill="#F43F5E"/>
+        <text class="mono" x="28" y="18" font-size="11.5" fill="#E2E8F0">NgRx</text>
+      </g>
+      <g transform="translate(660 20)">
+        <rect width="134" height="28" rx="14" fill="#0D1D33" stroke="#1E3A5F"/>
+        <circle cx="16" cy="14" r="4" fill="#34D399"/>
+        <text class="mono" x="28" y="18" font-size="11.5" fill="#E2E8F0">Jasmine/Jest</text>
+      </g>
+      <g transform="translate(806 20)">
+        <rect width="128" height="28" rx="14" fill="#0D1D33" stroke="#1E3A5F"/>
+        <circle cx="16" cy="14" r="4" fill="#38BDF8"/>
+        <text class="mono" x="28" y="18" font-size="11.5" fill="#E2E8F0">Git CI/CD</text>
+      </g>
+      <g transform="translate(946 20)">
+        <rect width="142" height="28" rx="14" fill="#0D1D33" stroke="#1E3A5F"/>
+        <circle cx="16" cy="14" r="4" fill="#34D399"/>
+        <text class="mono" x="28" y="18" font-size="11.5" fill="#E2E8F0">WCAG 2.1 AA</text>
+      </g>
+    </g>
+
+    <!-- Base Perimeter Border & Surrounding Radiant Corner Trace -->
+    <rect x=".5" y=".5" width="1199" height="519" rx="17.5" fill="none" stroke="#1E3A5F" stroke-opacity=".4"/>
+    <rect class="trace-anim" x=".5" y=".5" width="1199" height="519" rx="17.5" fill="none" stroke="url(#cyber-trace)" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+</svg>
+`;
+
+  // 10. AI ARCHITECTURE & ORCHESTRATION WITH MOVING ARROWS & MOVING HUMAN REVIEW BACKGROUND
+  const aiOrchestrationSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="ai-title ai-desc">
+  <title id="ai-title">AI Architecture &amp; Orchestration: Agentic Workflows, Tool Integration &amp; Human Review.</title>
+  <desc id="ai-desc">Autonomous Plan-Act-Reflect cycles, Model Context Protocol integration, evaluations, and human review feedback.</desc>
+  <defs>
+    ${commonDefs}
+    <clipPath id="ai-clip"><rect width="1200" height="520" rx="18"/></clipPath>
+    <linearGradient id="wave-cyan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#00C9FF" stop-opacity=".7"/>
+      <stop offset=".5" stop-color="#38BDF8" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#00C9FF" stop-opacity=".7"/>
+    </linearGradient>
+    <linearGradient id="wave-green" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#34D399" stop-opacity=".7"/>
+      <stop offset=".5" stop-color="#059669" stop-opacity=".9"/>
+      <stop offset="1" stop-color="#34D399" stop-opacity=".7"/>
+    </linearGradient>
+    <linearGradient id="wave-fill-grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#00C9FF" stop-opacity=".15"/>
+      <stop offset="1" stop-color="#060B17" stop-opacity="0"/>
+    </linearGradient>
+    <!-- Animated Scanner Gradient for Human Review & Feedback -->
+    <linearGradient id="hr-scan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0E233E"/>
+      <stop offset="50%" stop-color="#1E40AF"/>
+      <stop offset="100%" stop-color="#0E233E"/>
+      <animate attributeName="x1" values="-100%;100%" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="x2" values="0%;200%" dur="4s" repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+  <style>
+    ${commonStyles}
+    .ai-in { animation: ai-in 1.2s cubic-bezier(.16,1,.3,1) both; }
+    @keyframes ai-in { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+    @media (prefers-reduced-motion: reduce) { .ai-in { animation: none; } }
+  </style>
+  <g clip-path="url(#ai-clip)">
+    <!-- Base Deep Obsidian Canvas -->
+    <rect width="1200" height="520" fill="url(#cyber-bg)"/>
+    <ellipse cx="600" cy="220" rx="460" ry="260" fill="url(#cyber-glow-cyan)"/>
+    <rect width="1200" height="520" fill="url(#cyber-grid)"/>
+
+    <!-- Continuous Horizontal Flowing Background Waves (Green and Cyan Blue) -->
+    <g opacity="0.38">
+      <!-- Wave 1: Flowing Cyan/Blue Wave -->
+      <path fill="none" stroke="url(#wave-cyan)" stroke-width="2.6">
+        <animate attributeName="d" dur="11s" repeatCount="indefinite" values="M0 220 Q150 170 300 220 T600 220 T900 220 T1200 220;M0 220 Q150 270 300 220 T600 220 T900 220 T1200 220;M0 220 Q150 170 300 220 T600 220 T900 220 T1200 220"/>
+      </path>
+      <!-- Wave 2: Flowing Emerald Green Wave with Moving Dash Stream -->
+      <path fill="none" stroke="url(#wave-green)" stroke-width="2.2" stroke-dasharray="16 12">
+        <animate attributeName="d" dur="8.5s" repeatCount="indefinite" values="M0 250 Q200 300 400 250 T800 250 T1200 250;M0 250 Q200 200 400 250 T800 250 T1200 250;M0 250 Q200 300 400 250 T800 250 T1200 250"/>
+        <animate attributeName="stroke-dashoffset" from="0" to="-280" dur="8.5s" repeatCount="indefinite"/>
+      </path>
+      <!-- Wave 3: Subtle Translucent Aquatic Fill Wave -->
+      <path fill="url(#wave-fill-grad)">
+        <animate attributeName="d" dur="14s" repeatCount="indefinite" values="M0 290 Q300 230 600 290 T1200 290 L1200 520 L0 520 Z;M0 290 Q300 350 600 290 T1200 290 L1200 520 L0 520 Z;M0 290 Q300 230 600 290 T1200 290 L1200 520 L0 520 Z"/>
+      </path>
+    </g>
+
+    ${lavaSparks(1200, 520, 190)}
+
+    <!-- Top Section Header -->
+    <g class="ai-in" style="animation-delay: 0.1s;">
+      <g transform="translate(56 36)">
+        <rect x="0" y="0" width="220" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/>
+        <text class="mono" x="110" y="17" font-size="11" font-weight="700" letter-spacing="1" fill="#38BDF8" text-anchor="middle">02 · AI ARCHITECTURE &amp; RESEARCH</text>
+        <text class="sans" x="238" y="19" font-size="16" font-weight="700" fill="#F8FAFC">Intelligent Systems &amp; Agent Orchestration</text>
+      </g>
+      <text class="sans" x="56" y="86" font-size="13" fill="#94A3B8">Conceptual research architecture: multi-turn reasoning loops, tool-calling agents, MCP contracts, and human review gates.</text>
+      <line x1="56" y1="102" x2="1144" y2="102" stroke="#1E3A5F" stroke-opacity=".7"/>
+    </g>
+
+    <!-- Center Agentic Orchestration Topologies -->
+    <g class="ai-in" style="animation-delay: 0.25s;">
+      <!-- Module 1: Intent & Context (Left) -->
+      <g transform="translate(56 126)">
+        <rect width="230" height="172" rx="14" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".85"/>
+        <text class="mono" x="20" y="32" font-size="11" font-weight="700" fill="#34D399">01 · REASONING</text>
+        <text class="sans" x="20" y="60" font-size="20" font-weight="700" fill="#F8FAFC">Intent &amp; Context</text>
+        <text class="sans" x="20" y="86" font-size="13" fill="#94A3B8">User goals, grounded semantic memory &amp; execution boundaries.</text>
+        <g transform="translate(20 120)">
+          <rect width="112" height="24" rx="12" fill="#081829" stroke="#1E3A5F"/>
+          <text class="mono" x="56" y="16" font-size="10.5" fill="#34D399" text-anchor="middle">Goal DAG</text>
+        </g>
+      </g>
+
+      <!-- Connecting Moving Line 1 -> Center (Intent to Orchestrator) -->
+      <g>
+        <path d="M286 212 H330" fill="none" stroke="#34D399" stroke-width="2.2" stroke-dasharray="6 4">
+          <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.8s" repeatCount="indefinite"/>
+        </path>
+        <polygon points="334 212, 324 207, 327 212, 324 217" fill="#34D399">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="0.8s" repeatCount="indefinite"/>
+        </polygon>
+      </g>
+
+      <!-- Center Orchestrator: Plan -> Act -> Reflect -->
+      <g transform="translate(338 120)">
+        <rect width="524" height="184" rx="16" fill="#0E233E" stroke="#38BDF8" stroke-width="1.4"/>
+        <text class="mono" x="24" y="30" font-size="11" font-weight="700" fill="#38BDF8">AGENTIC AI ORCHESTRATION ENGINE</text>
+        <text class="sans" x="24" y="58" font-size="22" font-weight="800" fill="#FFFFFF">Plan  →  Act  →  Reflect</text>
+        <text class="sans" x="24" y="82" font-size="12.5" fill="#94A3B8">Continuous state evaluation, tool dispatch, and autonomous reflection cycle.</text>
+
+        <!-- Node: PLAN -->
+        <g transform="translate(24 104)">
+          <rect width="132" height="60" rx="10" fill="#0A1628" stroke="#1E3A5F"/>
+          <text class="mono" x="66" y="26" font-size="12" font-weight="700" fill="#34D399" text-anchor="middle">PLAN</text>
+          <text class="sans" x="66" y="46" font-size="10.5" fill="#94A3B8" text-anchor="middle">Task Decompose</text>
+        </g>
+
+        <!-- MOVING ARROW: Plan -> Act (Continuously Flowing Arrow & Chevron) -->
+        <g>
+          <line x1="162" y1="134" x2="194" y2="134" stroke="#34D399" stroke-width="2.5" stroke-dasharray="6 4">
+            <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.9s" repeatCount="indefinite"/>
+          </line>
+          <polygon points="198 134, 188 128, 191 134, 188 140" fill="#34D399">
+            <animate attributeName="transform" type="translate" values="0,0; 4,0; 0,0" dur="0.9s" repeatCount="indefinite"/>
+          </polygon>
+        </g>
+
+        <!-- Node: ACT -->
+        <g transform="translate(202 104)">
+          <rect width="132" height="60" rx="10" fill="#0A1628" stroke="#1E3A5F"/>
+          <text class="mono" x="66" y="26" font-size="12" font-weight="700" fill="#00C9FF" text-anchor="middle">ACT</text>
+          <text class="sans" x="66" y="46" font-size="10.5" fill="#94A3B8" text-anchor="middle">Tool &amp; Model Call</text>
+        </g>
+
+        <!-- MOVING ARROW: Act -> Reflect (Continuously Flowing Arrow & Chevron) -->
+        <g>
+          <line x1="340" y1="134" x2="372" y2="134" stroke="#00C9FF" stroke-width="2.5" stroke-dasharray="6 4">
+            <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.9s" repeatCount="indefinite"/>
+          </line>
+          <polygon points="376 134, 366 128, 369 134, 366 140" fill="#00C9FF">
+            <animate attributeName="transform" type="translate" values="0,0; 4,0; 0,0" dur="0.9s" repeatCount="indefinite"/>
+          </polygon>
+        </g>
+
+        <!-- Node: REFLECT -->
+        <g transform="translate(380 104)">
+          <rect width="120" height="60" rx="10" fill="#0A1628" stroke="#1E3A5F"/>
+          <text class="mono" x="60" y="26" font-size="12" font-weight="700" fill="#F59E0B" text-anchor="middle">REFLECT</text>
+          <text class="sans" x="60" y="46" font-size="10.5" fill="#94A3B8" text-anchor="middle">Verify Output</text>
+        </g>
+
+        <!-- CONTINUOUS FLOWING REFLECTION LOOP: Reflect back to Plan -->
+        <g>
+          <path d="M440 104 C440 68, 90 68, 90 100" fill="none" stroke="#F59E0B" stroke-width="2" stroke-dasharray="6 4">
+            <animate attributeName="stroke-dashoffset" from="0" to="-40" dur="1.8s" repeatCount="indefinite"/>
+          </path>
+          <polygon points="90 104, 85 94, 90 97, 95 94" fill="#F59E0B">
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite"/>
+          </polygon>
+          <text class="mono" x="265" y="60" font-size="9" font-weight="700" fill="#F59E0B" text-anchor="middle">FEEDBACK LOOP</text>
+        </g>
+      </g>
+
+      <!-- Connecting Moving Line Center -> Tools (Right) -->
+      <g>
+        <path d="M862 212 H908" fill="none" stroke="#38BDF8" stroke-width="2.2" stroke-dasharray="6 4">
+          <animate attributeName="stroke-dashoffset" from="20" to="0" dur="0.8s" repeatCount="indefinite"/>
+        </path>
+        <polygon points="912 212, 902 207, 905 212, 902 217" fill="#38BDF8">
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="0.8s" repeatCount="indefinite"/>
+        </polygon>
+      </g>
+
+      <!-- Module 3: Tools & Grounded Knowledge (Right) -->
+      <g transform="translate(914 126)">
+        <rect width="230" height="172" rx="14" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".85"/>
+        <text class="mono" x="20" y="32" font-size="11" font-weight="700" fill="#38BDF8">03 · CAPABILITIES</text>
+        <text class="sans" x="20" y="60" font-size="20" font-weight="700" fill="#F8FAFC">Tools &amp; MCP</text>
+        <text class="sans" x="20" y="86" font-size="13" fill="#94A3B8">Model Context Protocol, external APIs &amp; grounded runtime.</text>
+        <g transform="translate(20 120)">
+          <rect width="138" height="24" rx="12" fill="#081829" stroke="#1E3A5F"/>
+          <text class="mono" x="69" y="16" font-size="10.5" fill="#38BDF8" text-anchor="middle">Tool Contracts</text>
+        </g>
+      </g>
+    </g>
+
+    <!-- Continuous Animated Feedback Pipelines to Human Review -->
+    <g>
+      <path d="M171 298 V396 H240" fill="none" stroke="#34D399" stroke-width="2" stroke-dasharray="6 4">
+        <animate attributeName="stroke-dashoffset" from="0" to="-40" dur="1.5s" repeatCount="indefinite"/>
+      </path>
+      <path d="M1029 298 V396 H960" fill="none" stroke="#38BDF8" stroke-width="2" stroke-dasharray="6 4">
+        <animate attributeName="stroke-dashoffset" from="0" to="-40" dur="1.5s" repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Lower Section: HUMAN REVIEW & FEEDBACK (Continuous Moving Background Animation) -->
+    <g class="ai-in" style="animation-delay: 0.4s;" transform="translate(240 354)">
+      <!-- Animated Moving Scanner Background Container -->
+      <rect width="720" height="84" rx="14" fill="url(#hr-scan)" stroke="#38BDF8" stroke-width="1.4"/>
+
+      <!-- Continuously Moving Laser Stream Across Background of Human Review -->
+      <line x1="20" y1="42" x2="700" y2="42" stroke="#34D399" stroke-width="1.8" stroke-dasharray="14 10" opacity="0.8">
+        <animate attributeName="stroke-dashoffset" from="48" to="0" dur="1.2s" repeatCount="indefinite"/>
+      </line>
+
+      <!-- Center Beacon Node -->
+      <circle cx="360" cy="42" r="14" fill="none" stroke="#00C9FF" opacity="0.6">
+        <animate attributeName="r" values="6;18;6" dur="2.4s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.9;0.1;0.9" dur="2.4s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="360" cy="42" r="4.5" fill="#34D399" filter="url(#cyber-glow)"/>
+
+      <text class="mono" x="360" y="28" font-size="12" font-weight="700" letter-spacing="1.4" fill="#34D399" text-anchor="middle">HUMAN REVIEW &amp; DECISION GATEWAY</text>
+      <text class="sans" x="360" y="66" font-size="13" fill="#F8FAFC" text-anchor="middle">Real-World Observability · Quality Evaluations · Decision Guardrails · Reliable Production Delivery</text>
+    </g>
+
+    <!-- Base Perimeter Border & Surrounding Radiant Corner Trace -->
+    <rect x=".5" y=".5" width="1199" height="519" rx="17.5" fill="none" stroke="#1E3A5F" stroke-opacity=".4"/>
+    <rect class="trace-anim" x=".5" y=".5" width="1199" height="519" rx="17.5" fill="none" stroke="url(#cyber-trace)" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+</svg>
+`;
+
   await writeFile(path.join(outDir, 'hero-architect.svg'), heroArchitectSvg);
   await writeFile(path.join(outDir, 'terminal-system.svg'), terminalSystemSvg);
   await writeFile(path.join(outDir, 'engineering-systems.svg'), engineeringSystemsSvg);
+  await writeFile(path.join(outDir, 'technology-core.svg'), technologyCoreSvg);
+  await writeFile(path.join(outDir, 'ai-orchestration.svg'), aiOrchestrationSvg);
   await writeFile(path.join(outDir, 'project-angular-architecture.svg'), projectAngularArchitectureSvg);
   await writeFile(path.join(outDir, 'project-rxjs-operator-lab.svg'), projectRxjsOperatorLabSvg);
   await writeFile(path.join(outDir, 'project-ngrx-effects.svg'), projectNgrxEffectsSvg);
   await writeFile(path.join(outDir, 'project-typescript-types.svg'), projectTypescriptTypesSvg);
   await writeFile(path.join(outDir, 'research-systems.svg'), researchSystemsSvg);
 
-  console.log('Successfully generated 8 Cyber-Architect SVGs in themes/main/assets/');
+  console.log('Successfully generated 10 Cyber-Architect SVGs in themes/main/assets/');
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

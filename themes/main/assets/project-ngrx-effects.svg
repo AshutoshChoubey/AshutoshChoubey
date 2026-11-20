@@ -94,7 +94,7 @@
     <!-- Left Content Column -->
     <g class="p3-in" style="animation-delay: 0.15s;">
       <text class="sans" x="56" y="62" font-size="12" font-weight="700" letter-spacing="1" fill="#38BDF8">03 · STATE MANAGEMENT · NGRX · ARCHITECTURE</text>
-      <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8FAFC">NgRx Effects Demo<tspan class="serif" font-size="22" font-style="italic" fill="#38BDF8" dx="14">PokéAPI Store</tspan></text>
+      <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8FAFC">NgRx Effects Demo</text>
       <text class="sans" x="56" y="166" font-size="16.5" fill="#94A3B8">Connecting store actions, reducers and HTTP side effects to decoupled views.</text>
       <text class="mono" x="56" y="200" font-size="12.5" fill="#E2E8F0"><tspan fill="#34D399">Built ›</tspan> clean action-reducer-effect separation with async HTTP side-effect dispatch</text>
       <line x1="56" y1="226" x2="680" y2="226" stroke="#1E3A5F" stroke-opacity=".7"/>
@@ -114,18 +114,18 @@
       </g>
 
       <!-- Chips -->
-      <g class="p3-chip" style="animation-delay:1.00s"><rect x="56" y="314" width="92" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="102" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">NgRx 18+</text></g>
-      <g class="p3-chip" style="animation-delay:1.12s"><rect x="156" y="314" width="86" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="199" y="331" text-anchor="middle" font-size="11.5" fill="#34D399">Angular</text></g>
-      <g class="p3-chip" style="animation-delay:1.24s"><rect x="250" y="314" width="70" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="285" y="331" text-anchor="middle" font-size="11.5" fill="#E2E8F0">Store</text></g>
-      <g class="p3-chip" style="animation-delay:1.36s"><rect x="328" y="314" width="76" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="366" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">Effects</text></g>
-      <g class="p3-chip" style="animation-delay:1.48s"><rect x="412" y="314" width="90" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="457" y="331" text-anchor="middle" font-size="11.5" fill="#F43F5E">Selectors</text></g>
+      <g class="p3-chip" style="animation-delay:1.00s"><rect x="56" y="314" width="76" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="94" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">NgRx</text></g>
+      <g class="p3-chip" style="animation-delay:1.12s"><rect x="142" y="314" width="86" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="185" y="331" text-anchor="middle" font-size="11.5" fill="#34D399">Angular</text></g>
+      <g class="p3-chip" style="animation-delay:1.24s"><rect x="238" y="314" width="70" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="273" y="331" text-anchor="middle" font-size="11.5" fill="#E2E8F0">Store</text></g>
+      <g class="p3-chip" style="animation-delay:1.36s"><rect x="318" y="314" width="76" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="356" y="331" text-anchor="middle" font-size="11.5" fill="#38BDF8">Effects</text></g>
+      <g class="p3-chip" style="animation-delay:1.48s"><rect x="404" y="314" width="90" height="26" rx="13" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="449" y="331" text-anchor="middle" font-size="11.5" fill="#F43F5E">Selectors</text></g>
     </g>
 
     <!-- Right Column: Step-by-Step Reactive State Cycle -->
     <g class="p3-in" style="animation-delay: 0.35s;">
       <g transform="translate(0 35)">
         <rect x="750" y="46" width="270" height="38" rx="12" fill="#0D192E" stroke="#38BDF8" stroke-opacity=".7"/>
-        <text class="mono" x="766" y="70" font-size="11.5" fill="#F8FAFC">dispatch(loadPokemon({id}))</text>
+        <text class="mono" x="766" y="70" font-size="11.5" fill="#F8FAFC">dispatch(loadEntity({id}))</text>
 
         <!-- Step 1: Dispatch -->
         <g transform="translate(750 106)">

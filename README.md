@@ -15,27 +15,13 @@
 
 <img src="./themes/main/assets/engineering-systems.svg" width="100%" alt="WorldGyan — Engineering Systems: Frontend Architecture, Enterprise Engineering, System Design, Performance and Scalability. Founder: Ashutosh Kumar Choubey.">
 
-<p>
-<picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/66d7c791f223/technology-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/0d371c320a8b/technology.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/b375896f11d4/technology-mobile.svg">
-  <img src="./assets/rendered/48ef9ef6373b/technology.svg" width="100%" alt="Core technologies: Angular, TypeScript, JavaScript, RxJS, NgRx. HTML5 · CSS3 / SCSS · Component Architecture. Supporting: Node.js / REST APIs, Jasmine / Jest, Git / CI/CD. Accessibility · Security · Automated Testing.">
-</picture>
-</p>
+<img src="./themes/main/assets/technology-core.svg" width="100%" alt="Core Technologies: Angular 22+, TypeScript, RxJS, NgRx, and Supporting Enterprise Systems.">
 
 **Established expertise:** Frontend architecture, Angular, TypeScript, RxJS and NgRx; enterprise UI engineering, component systems and automated testing.
 
 **Currently building:** Public engineering studies and teaching examples in Angular, reactive workflows, state management and TypeScript.
 
-<p>
-<picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/9719c72acc87/ai-systems-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/827f07c90255/ai-systems.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/46820306bbac/ai-systems-mobile.svg">
-  <img src="./assets/rendered/44d04538265b/ai-systems.svg" width="100%" alt="Exploring and researching AI architecture, AI-powered applications, LLMs and agent orchestration. Conceptual research architecture, not a production deployment. AI architecture. Tool-using LLMs &amp; MCP. Agent orchestration. Evaluation &amp; human review. Exploring the next generation of intelligent software.">
-</picture>
-</p>
+<img src="./themes/main/assets/ai-orchestration.svg" width="100%" alt="AI Architecture &amp; Orchestration: Agentic AI workflows, Plan-Act-Reflect cycles, MCP tool integration, evaluations and human review.">
 
 **Exploring and researching:** AI architecture, Agentic AI, AI orchestration and LLM-powered applications; tool integration, evaluations and human review.
 
@@ -75,13 +61,9 @@ Public learning projects and code references, selected after reviewing their imp
 - [AI engineering research](https://worldgyan.com/technology/production-ai-engineering/) — Published research on architecture, retrieval, serving and evaluation.
 - [Angular Testing — WorldGyan](https://www.youtube.com/playlist?list=PLqQyE6QNucSfUIpucL_nx7vDuwAa1A_VH) — Practical testing tutorials on the official YouTube channel.
 
-### 🌌 Obsidian Architect Edition
+### 🌌 Explore More Themes
 
-Interactive dark obsidian theme engineered with real-time GitHub telemetry, responsive SVG constellation graphs, and terminal system profiling.
-
-- [**Explore the Obsidian Architect Theme README & Assets**](./themes/obsidian-architect/README.md) — Complete themed showcase with interactive animations, SVG cards, and full system telemetry.
-- [**Jet Heatmap Architecture Guide**](./themes/obsidian-architect/JET-HEATMAP-GUIDE.md) — Documentation for automated GitHub contribution calendar jet telemetry.
-- [**Classic Engineering Minimal Theme**](./themes/classic-engineering/README.md) — Preserved vector baseline specification.
+- [**Obsidian Architect Edition**](./themes/obsidian-architect/README.md)
 
 <details>
 <summary><b>📐 Architectural Specification &amp; Responsive Fallbacks</b></summary>
@@ -110,12 +92,32 @@ Building scalable frontend systems. Exploring intelligent, agent-powered softwar
 
 <p>
 <picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/e07529a85852/technology-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/84b9776f09ac/technology.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/372dc492dc46/technology-mobile.svg">
+  <img src="./assets/rendered/f60957c0a3d1/technology.svg" width="100%" alt="Core technologies: Angular, TypeScript, JavaScript, RxJS, NgRx. HTML5 · CSS3 / SCSS · Component Architecture. Supporting: Node.js / REST APIs, Jasmine / Jest, Git / CI/CD. Accessibility · Security · Automated Testing.">
+</picture>
+</p>
+
+<p>
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/9719c72acc87/ai-systems-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/827f07c90255/ai-systems.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/46820306bbac/ai-systems-mobile.svg">
+  <img src="./assets/rendered/44d04538265b/ai-systems.svg" width="100%" alt="Exploring and researching AI architecture, AI-powered applications, LLMs and agent orchestration. Conceptual research architecture, not a production deployment. AI architecture. Tool-using LLMs &amp; MCP. Agent orchestration. Evaluation &amp; human review. Exploring the next generation of intelligent software.">
+</picture>
+</p>
+
+<p>
+<picture>
   <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/56d69706f545/research-mobile.svg">
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/28a25a9d8999/research.svg">
   <source media="(max-width: 900px)" srcset="./assets/rendered/06e407e1cc76/research-mobile.svg">
   <img src="./assets/rendered/1532eadc2053/research.svg" width="100%" alt="WorldGyan: technical research and education across software engineering and intelligent systems. Published research in frontend system design and AI architecture, with practical Angular testing tutorials. Clickable resources are provided in the README.">
 </picture>
 </p>
+
+*Preserved Classic Minimal Theme specification is documented in [Classic Engineering Minimal Theme](./themes/classic-engineering/README.md).*
 
 </details>
 

@@ -1,10 +1,10 @@
-<!-- Generated from profile.config.json. Edit the source, then run npm run generate. -->
+<!-- Preserved Classic Engineering Minimal Theme specification for Ashutosh Kumar Choubey -->
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/a82c4a3715b6/hero-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/9fd22a00280d/hero.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/1722cb8e5c35/hero-mobile.svg">
-  <img src="./assets/rendered/c37e9aa6cd87/hero.svg" width="100%" alt="Ashutosh Kumar Choubey — Frontend Architect | System Design | AI Orchestration. FRONTEND ARCHITECTURE · SYSTEM DESIGN · AI ORCHESTRATION. Building scalable frontend systems. Exploring intelligent, agent-powered software. AI engineering and agentic systems are exploration interests.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="../../assets/static/hero-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/static/hero.svg">
+  <source media="(max-width: 900px)" srcset="../../assets/hero-mobile.svg">
+  <img src="../../assets/hero.svg" width="100%" alt="Ashutosh Kumar Choubey — Frontend Architect | System Design | AI Orchestration. FRONTEND ARCHITECTURE · SYSTEM DESIGN · AI ORCHESTRATION. Building scalable frontend systems. Exploring intelligent, agent-powered software. AI engineering and agentic systems are exploration interests.">
 </picture>
 </p>
 
@@ -14,19 +14,19 @@ Building scalable frontend systems. Exploring intelligent, agent-powered softwar
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/cce821112ced/expertise-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/2b4b139111b8/expertise.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/81659348a649/expertise-mobile.svg">
-  <img src="./assets/rendered/7f2a31c730c5/expertise.svg" width="100%" alt="Engineering expertise: frontend architecture, enterprise engineering, system design, performance and scalability. Frontend Architecture: Components · design systems. Enterprise Engineering: Integration · quality. System Design: Boundaries · state · delivery. Performance &amp; Scalability: Rendering · modular delivery. Exploring AI Architecture, Agentic AI, AI Orchestration, LLM Integration, MCP, evaluations and human review.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="../../assets/static/expertise-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/static/expertise.svg">
+  <source media="(max-width: 900px)" srcset="../../assets/expertise-mobile.svg">
+  <img src="../../assets/expertise.svg" width="100%" alt="Engineering expertise: frontend architecture, enterprise engineering, system design, performance and scalability. Frontend Architecture: Components · design systems. Enterprise Engineering: Integration · quality. System Design: Boundaries · state · delivery. Performance &amp; Scalability: Rendering · modular delivery. Exploring AI Architecture, Agentic AI, AI Orchestration, LLM Integration, MCP, evaluations and human review.">
 </picture>
 </p>
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/3003b33ba3dd/technology-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/5cd8a5784b7e/technology.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/23dc74fa7295/technology-mobile.svg">
-  <img src="./assets/rendered/5baff7a9b9d3/technology.svg" width="100%" alt="Core technologies: Angular, TypeScript, JavaScript, RxJS, NgRx. HTML5 · CSS3 / SCSS · Component Architecture. Supporting: Node.js / REST APIs, Jasmine / Jest, Git / CI/CD. Accessibility · Security · Automated Testing.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="../../assets/static/technology-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/static/technology.svg">
+  <source media="(max-width: 900px)" srcset="../../assets/technology-mobile.svg">
+  <img src="../../assets/technology.svg" width="100%" alt="Core technologies: Angular, TypeScript, JavaScript, RxJS, NgRx. HTML5 · CSS3 / SCSS · Component Architecture. Supporting: Node.js / REST APIs, Jasmine / Jest, Git / CI/CD. Accessibility · Security · Automated Testing.">
 </picture>
 </p>
 
@@ -36,10 +36,10 @@ Building scalable frontend systems. Exploring intelligent, agent-powered softwar
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/9719c72acc87/ai-systems-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/827f07c90255/ai-systems.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/46820306bbac/ai-systems-mobile.svg">
-  <img src="./assets/rendered/44d04538265b/ai-systems.svg" width="100%" alt="Exploring and researching AI architecture, AI-powered applications, LLMs and agent orchestration. Conceptual research architecture, not a production deployment. AI architecture. Tool-using LLMs &amp; MCP. Agent orchestration. Evaluation &amp; human review. Exploring the next generation of intelligent software.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="../../assets/static/ai-systems-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/static/ai-systems.svg">
+  <source media="(max-width: 900px)" srcset="../../assets/ai-systems-mobile.svg">
+  <img src="../../assets/ai-systems.svg" width="100%" alt="Exploring and researching AI architecture, AI-powered applications, LLMs and agent orchestration. Conceptual research architecture, not a production deployment. AI architecture. Tool-using LLMs &amp; MCP. Agent orchestration. Evaluation &amp; human review. Exploring the next generation of intelligent software.">
 </picture>
 </p>
 
@@ -54,14 +54,14 @@ Public learning projects and code references, selected after reviewing their imp
 - [**NgRx effects demo**](https://github.com/AshutoshChoubey/ngrxeffects) — An Angular PokéAPI example connecting store actions, reducers and HTTP side effects to list and detail views.
 - [**TypeScript type-system examples**](https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com) — Focused examples of generics, unions, mapped types and utility types, alongside a type-system study reference.
 
-<p align="center"><a href="https://worldgyan.com/"><img src="./assets/worldgyan-logo.png" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="https://worldgyan.com/"><img src="./assets/rendered/a6eaf50fb202/worldgyan-wordmark.svg" width="160" height="64" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
+<p align="center"><a href="https://worldgyan.com/"><img src="../../assets/worldgyan-logo.png" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="https://worldgyan.com/"><img src="../../assets/worldgyan-wordmark.svg" width="160" height="64" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/56d69706f545/research-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/28a25a9d8999/research.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/06e407e1cc76/research-mobile.svg">
-  <img src="./assets/rendered/1532eadc2053/research.svg" width="100%" alt="WorldGyan: technical research and education across software engineering and intelligent systems. Published research in frontend system design and AI architecture, with practical Angular testing tutorials. Clickable resources are provided in the README.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="../../assets/static/research-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/static/research.svg">
+  <source media="(max-width: 900px)" srcset="../../assets/research-mobile.svg">
+  <img src="../../assets/research.svg" width="100%" alt="WorldGyan: technical research and education across software engineering and intelligent systems. Published research in frontend system design and AI architecture, with practical Angular testing tutorials. Clickable resources are provided in the README.">
 </picture>
 </p>
 
@@ -73,15 +73,15 @@ Public learning projects and code references, selected after reviewing their imp
 
 Interactive dark obsidian theme engineered with real-time GitHub telemetry, responsive SVG constellation graphs, and terminal system profiling.
 
-- [**Explore the Obsidian Architect Theme README & Assets**](./themes/obsidian-architect/README.md) — Complete themed showcase with interactive animations, SVG cards, and full system telemetry.
-- [**Jet Heatmap Architecture Guide**](./themes/obsidian-architect/JET-HEATMAP-GUIDE.md) — Documentation for automated GitHub contribution calendar jet telemetry.
+- [**Explore the Obsidian Architect Theme README & Assets**](../obsidian-architect/README.md) — Complete themed showcase with interactive animations, SVG cards, and full system telemetry.
+- [**Jet Heatmap Architecture Guide**](../obsidian-architect/JET-HEATMAP-GUIDE.md) — Documentation for automated GitHub contribution calendar jet telemetry.
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/72e54942992f/connect-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/fb938fa18060/connect.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/71c1f5b19c16/connect-mobile.svg">
-  <img src="./assets/rendered/cbcbc3204386/connect.svg" width="100%" alt="Ashutosh Kumar Choubey — Founder, WorldGyan. Engineer. Architect. Explore. Build. GitHub, LinkedIn, professional portfolio, WorldGyan and YouTube links are provided in the README.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="../../assets/static/connect-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="../../assets/static/connect.svg">
+  <source media="(max-width: 900px)" srcset="../../assets/connect-mobile.svg">
+  <img src="../../assets/connect.svg" width="100%" alt="Ashutosh Kumar Choubey — Founder, WorldGyan. Engineer. Architect. Explore. Build. GitHub, LinkedIn, professional portfolio, WorldGyan and YouTube links are provided in the README.">
 </picture>
 </p>
 

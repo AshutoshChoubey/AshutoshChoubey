@@ -43,10 +43,10 @@ function sectionHeader(n,title,w,mobile,light=false) {
 }
 function technology(m) {
   const w=m?420:960,h=m?492:298;
-  let b=sectionHeader('02','CORE TECHNOLOGY',w,m);
+  let b=sectionHeader('01','CORE TECHNOLOGY',w,m);
   if(m) {
     b+=rect(28,78,364,74,'#163052',12,'stroke="#3D6690"');
-    b+=text(46,113,c.technology.primary[0]+' 22+',31,'#FFFFFF','font-weight="700"');
+    b+=text(46,113,c.technology.primary[0]+' 22+',28,'#FFFFFF','font-weight="700"');
     b+=text(46,137,'Frontend architecture',16,'#A5DFFF');
     b+=text(28,193,c.technology.primary.slice(1,3).join('  /  '),24,'#FFFFFF','font-weight="600"');
     b+=text(28,234,c.technology.primary.slice(3).join('  /  '),23,'#73DEFF','font-weight="600"');
@@ -60,15 +60,15 @@ function technology(m) {
     b+=line(28,434,392,434);
     b+=text(28,466,c.technology.quality,14,'#B4C2D5');
   } else {
-    b+=rect(42,80,204,112,'#163052',12,'stroke="#3D6690"');
-    b+=text(62,126,c.technology.primary[0]+' 22+',34,'#FFFFFF','font-weight="700"');
-    b+=text(62,158,'Frontend architecture',16,'#A5DFFF');
+    b+=rect(42,80,226,112,'#163052',12,'stroke="#3D6690"');
+    b+=text(56,126,c.technology.primary[0]+' 22+',28,'#FFFFFF','font-weight="700"');
+    b+=text(56,158,'Frontend architecture',16,'#A5DFFF');
     c.technology.primary.slice(1).forEach((s,i)=>{
-      const x=278+i*161;
+      const x=298+i*156;
       b+=text(x,119,s,25,i>1?'#73DEFF':'#FFFFFF','font-weight="600"');
       b+=line(x,134,x+133,134,'#345170');
     });
-    b+=text(278,170,c.technology.web,18,'#B4C2D5');
+    b+=text(298,170,c.technology.web,18,'#B4C2D5');
     b+=trace('M42 210H918');
     b+=label(42,244,'SUPPORTING');
     b+=text(208,244,c.technology.supporting.join('   ·   '),17,'#CFD9E7');
@@ -140,13 +140,13 @@ const readme=`<!-- Generated from profile.config.json. Edit the source, then run
 
 <img src="./themes/main/assets/engineering-systems.svg" width="100%" alt="WorldGyan — Engineering Systems: Frontend Architecture, Enterprise Engineering, System Design, Performance and Scalability. Founder: Ashutosh Kumar Choubey.">
 
-${picture('technology')}
+<img src="./themes/main/assets/technology-core.svg" width="100%" alt="Core Technologies: Angular 22+, TypeScript, RxJS, NgRx, and Supporting Enterprise Systems.">
 
 **Established expertise:** ${c.classifications.established}
 
 **Currently building:** ${c.classifications.building}
 
-${picture('ai-systems')}
+<img src="./themes/main/assets/ai-orchestration.svg" width="100%" alt="AI Architecture &amp; Orchestration: Agentic AI workflows, Plan-Act-Reflect cycles, MCP tool integration, evaluations and human review.">
 
 **Exploring and researching:** ${c.classifications.exploring}
 
@@ -184,13 +184,9 @@ Public learning projects and code references, selected after reviewing their imp
 
 ${c.resources.map(p=>`- [${p.title}](${p.url}) — ${p.description}`).join('\n')}
 
-### 🌌 Obsidian Architect Edition
+### 🌌 Explore More Themes
 
-Interactive dark obsidian theme engineered with real-time GitHub telemetry, responsive SVG constellation graphs, and terminal system profiling.
-
-- [**Explore the Obsidian Architect Theme README & Assets**](./themes/obsidian-architect/README.md) — Complete themed showcase with interactive animations, SVG cards, and full system telemetry.
-- [**Jet Heatmap Architecture Guide**](./themes/obsidian-architect/JET-HEATMAP-GUIDE.md) — Documentation for automated GitHub contribution calendar jet telemetry.
-- [**Classic Engineering Minimal Theme**](./themes/classic-engineering/README.md) — Preserved vector baseline specification.
+- [**Obsidian Architect Edition**](./themes/obsidian-architect/README.md)
 
 <details>
 <summary><b>📐 Architectural Specification &amp; Responsive Fallbacks</b></summary>
@@ -203,7 +199,13 @@ ${c.identity.positioning}
 
 ${picture('expertise')}
 
+${picture('technology')}
+
+${picture('ai-systems')}
+
 ${picture('research')}
+
+*Preserved Classic Minimal Theme specification is documented in [Classic Engineering Minimal Theme](./themes/classic-engineering/README.md).*
 
 </details>
 

@@ -101,6 +101,10 @@
         </text>
         <text class="sans" x="62" y="44" font-size="13" font-weight="600" fill="#38BDF8">Founder &amp; Principal Architect: <tspan fill="#34D399">Ashutosh Kumar Choubey</tspan></text>
       </g>
+      <g transform="translate(1144 50)">
+        <rect x="-210" y="-14" width="210" height="28" rx="14" fill="#0D1D33" stroke="#1E3A5F"/>
+        <text class="mono" x="-105" y="4" font-size="11" font-weight="700" text-anchor="middle" fill="#38BDF8">01 · ARCHITECTURE PLATFORM</text>
+      </g>
       <line x1="56" y1="96" x2="1144" y2="96" stroke="#1E3A5F" stroke-opacity=".7"/>
     </g>
 
