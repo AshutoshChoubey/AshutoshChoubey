@@ -1,5 +1,5 @@
 <a href="https://me.worldgyan.com/">
-  <img src="assets/architect-hero.svg" width="100%" alt="Ashutosh Kumar Choubey — Frontend Architect | System Design | AI Orchestration. Building scalable frontend systems. Exploring intelligent, agent-powered software. Founder, WorldGyan.">
+  <img src="assets/architect-hero-v2.svg" width="100%" alt="Ashutosh Kumar Choubey — Frontend Architect | System Design | AI Orchestration. Building scalable frontend systems. Exploring intelligent, agent-powered software. Founder, WorldGyan.">
 </a>
 
 <p align="center">

@@ -7,7 +7,7 @@ export async function generateCyberTheme(customRoot) {
   const outDir = path.join(root, 'themes/main/assets');
   await mkdir(outDir, { recursive: true });
 
-  const photoBase64 = (await readFile(path.join(root, 'scripts/user_photo.base64.txt'), 'utf8')).trim();
+  const photoBase64 = (await readFile(path.join(root, 'scripts/user_studio_creator_retina.base64.txt'), 'utf8')).trim();
   const standingPhotoBase64 = (await readFile(path.join(root, 'scripts/user_standing.base64.txt'), 'utf8')).trim();
   const logoBase64 = (await readFile(path.join(root, 'assets/worldgyan-logo-hero.base64.txt'), 'utf8')).trim();
 
@@ -219,7 +219,7 @@ export async function generateCyberTheme(customRoot) {
       <g clip-path="url(#hero-arch)">
         <rect x="847" y="84" width="236" height="296" fill="url(#cyber-bg)"/>
         <ellipse cx="965" cy="200" rx="100" ry="110" fill="url(#cyber-glow-rose)" opacity=".7"/>
-        <image href="data:image/png;base64,${photoBase64}" x="847" y="84" width="236" height="296" preserveAspectRatio="xMidYMin slice"/>
+        <image href="data:image/jpeg;base64,${photoBase64}" x="847" y="84" width="236" height="296" preserveAspectRatio="xMidYMin slice"/>
         <rect x="847" y="84" width="236" height="296" fill="url(#hero-photo-grade)"/>
         <!-- Diagonal Animated Sheen Reflection -->
         <rect x="700" y="84" width="90" height="296" fill="url(#hero-photo-sheen)" transform="skewX(-16)">
