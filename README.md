@@ -20,29 +20,29 @@
 
 ## About Ashutosh
 
-<p>
+<p align="center">
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/40d35229662c/profile-cards-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/72d3f2a33ada/profile-cards.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/3f4398585916/profile-cards-mobile.svg">
-  <img src="./assets/rendered/84ad2e132da4/profile-cards.svg" width="100%" alt="Dot portrait of Ashutosh Kumar Choubey alongside a TypeScript summary of his frontend architecture work with Angular, TypeScript, RxJS, NgRx and his research in AI orchestration. Ashutosh Kumar Choubey, Senior Software Engineer. Components · design systems. Accessible UI · automated testing. Founder, WorldGyan.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/caf3e40ecb82/terminal-card-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/6dfd84baa80c/terminal-card.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/c771b74c24e4/terminal-card-mobile.svg">
+  <img src="./assets/rendered/922eb8ba3199/terminal-card.svg" alt="Ashutosh's engineering.ts. Focus areas include System design and Project architecture. Frontend stack includes Angular, TypeScript, RxJS, NgRx. Research includes AI orchestration.">
+</picture>
+<picture>
+  <source media="(prefers-reduced-motion: no-preference) and (max-width: 900px)" srcset="./assets/profile-motion/seated-reveal.gif">
+  <source media="(prefers-reduced-motion: no-preference) and (min-width: 901px)" srcset="./assets/profile-motion/seated-reveal.gif 1.68x">
+  <source media="(min-width: 901px)" srcset="./assets/profile-motion/seated-portrait.webp 1.68x">
+  <img src="./assets/profile-motion/seated-portrait.webp" alt="Ashutosh Kumar Choubey seated in a dark teal shirt.">
 </picture>
 </p>
 
 ### In the studio
 
-<p align="center">
-  <a href="./assets/profile-motion/stage-motion.gif"><picture>
-    <source media="(prefers-reduced-motion: no-preference)" srcset="./assets/profile-motion/stage-motion.gif">
-    <img src="./assets/profile-motion/stage-portrait.webp" width="48%" loading="lazy" alt="Ashutosh Kumar Choubey in a charcoal suit and teal shirt.">
-  </picture></a>
-  <a href="./assets/profile-motion/podcast-motion.gif"><picture>
-    <source media="(prefers-reduced-motion: no-preference)" srcset="./assets/profile-motion/podcast-motion.gif">
-    <img src="./assets/profile-motion/podcast-portrait.webp" width="48%" loading="lazy" alt="Ashutosh Kumar Choubey seated at a microphone.">
-  </picture></a>
+<p>
+<picture>
+  <source media="(prefers-reduced-motion: no-preference)" srcset="./assets/profile-motion/studio-walk.gif">
+  <img src="./assets/profile-motion/studio-walk.webp" width="100%" alt="Ashutosh Kumar Choubey in a charcoal suit and teal shirt in the studio.">
+</picture>
 </p>
-
-[Stage portrait GIF](./assets/profile-motion/stage-motion.gif) · [Podcast portrait GIF](./assets/profile-motion/podcast-motion.gif) · [Watch the silent cut (MP4)](./assets/profile-motion/profile-motion.mp4)
 
 <img src="./themes/main/assets/title-part03.svg" width="100%" alt="Part 03 · Core Technology &amp; Reactive Foundations">
 <img src="./themes/main/assets/technology-core.svg" width="100%" alt="Core Technologies: Angular, TypeScript, RxJS, NgRx, and Supporting Systems.">
@@ -102,20 +102,17 @@ Public learning projects and code references, selected after reviewing their imp
 
 <p>
 <picture>
-  <source media="(max-width: 900px)" srcset="./assets/rendered/112b0d89179e/github-activity-mobile.svg">
-  <img src="./assets/rendered/b671acaa4ce0/github-activity.svg" width="100%" alt="From Nov 22, 2025 through Nov 21, 2026, GitHub displayed 757 contributions for @AshutoshChoubey across 32 active days. The longest streak was 11 days. The calendar shows daily counts and the trend shows the latest 12 completed weeks.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/112b0d89179e/github-activity-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/b671acaa4ce0/github-activity.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/1759efedeba1/github-activity-mobile.svg">
+  <img src="./assets/rendered/0760fc4e5efe/github-activity.svg" width="100%" alt="From Nov 22, 2025 through Nov 21, 2026, GitHub displayed 757 contributions for @AshutoshChoubey across 32 active days. The longest streak was 11 days. The calendar shows daily counts and the trend shows the latest 12 completed weeks.">
 </picture>
 </p>
 
 Daily contributions and weekly totals from my GitHub profile. GitHub may include anonymized private contributions when enabled. [View activity on GitHub](https://github.com/AshutoshChoubey#contribution-activity).
 
-<details>
-<summary>Contribution animations</summary>
-
 <img src="./themes/main/assets/github-jet.svg" width="100%" loading="lazy" alt="Animated jet flying over the GitHub contribution calendar.">
 <img src="./themes/main/assets/contribution-snake.svg" width="100%" loading="lazy" alt="Animated contribution snake for AshutoshChoubey.">
-
-</details>
 
 <img src="./themes/main/assets/title-part07.svg" width="100%" alt="Part 07 · Research &amp; Knowledge Sharing — Engineering, Shared">
 <img src="./themes/main/assets/research-systems.svg" width="100%" alt="Engineering, Shared: Published research in frontend system design and production AI engineering with practical tutorials.">

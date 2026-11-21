@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 672 432" width="400" height="257" role="img" aria-labelledby="title desc">
+  <title id="title">engineering.ts</title>
+  <desc id="desc">Ashutosh's engineering.ts. Focus areas include System design and Project architecture. Frontend stack includes Angular, TypeScript, RxJS, NgRx. Research includes AI orchestration.</desc>
+  <defs><linearGradient id="surface" x2=".75" y2="1"><stop stop-color="#190B12"/><stop offset="1" stop-color="#10070C"/></linearGradient></defs>
+  <style>text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .source-1 { animation: type-line .32s steps(21) 0.10s both; }
+    .source-2 { animation: type-line .32s steps(10) 0.35s both; }
+    .source-3 { animation: type-line .32s steps(20) 0.60s both; }
+    .source-4 { animation: type-line .32s steps(27) 0.85s both; }
+    .source-5 { animation: type-line .32s steps(4) 1.10s both; }
+    .source-6 { animation: type-line .32s steps(32) 1.35s both; }
+    .source-7 { animation: type-line .32s steps(26) 1.60s both; }
+    .source-8 { animation: type-line .32s steps(31) 1.85s both; }
+    .source-9 { animation: type-line .32s steps(11) 2.10s both; }
+    @keyframes type-line { from { clip-path: inset(-3px 100% -4px 0); } to { clip-path: inset(-3px -3px -4px 0); } }
+    @media (prefers-reduced-motion: reduce) { .code-line { animation: none; } }</style>
+  <rect x=".5" y=".5" width="671" height="431" rx="18" fill="url(#surface)" stroke="#54253A"/>
+  <path d="M1 64 H671 M67 85 V399" stroke="#54253A"/>
+  <circle cx="36" cy="32" r="4" fill="#C77B9B" opacity="1"/><circle cx="52" cy="32" r="4" fill="#C77B9B" opacity="0.58"/><circle cx="68" cy="32" r="4" fill="#C77B9B" opacity="0.36"/>
+  <text x="97" y="38" fill="#E5B5C7" font-size="19">engineering.ts</text>
+  <text x="33" y="111" fill="#C77B9B" font-size="16">01</text>
+  <text x="82" y="111" class="code-line source-1" xml:space="preserve" font-size="26"><tspan fill="#C77B9B">const</tspan><tspan fill="#F8F0F3"> engineering = {</tspan></text>
+  <text x="33" y="145" fill="#C77B9B" font-size="16">02</text>
+  <text x="82" y="145" class="code-line source-2" xml:space="preserve" font-size="26"><tspan fill="#F8F0F3">  focus: [</tspan></text>
+  <text x="33" y="179" fill="#C77B9B" font-size="16">03</text>
+  <text x="82" y="179" class="code-line source-3" xml:space="preserve" font-size="26"><tspan fill="#F8F0F3">    </tspan><tspan fill="#E5B5C7">'system design'</tspan><tspan fill="#F8F0F3">,</tspan></text>
+  <text x="33" y="213" fill="#C77B9B" font-size="16">04</text>
+  <text x="82" y="213" class="code-line source-4" xml:space="preserve" font-size="26"><tspan fill="#F8F0F3">    </tspan><tspan fill="#E5B5C7">'project architecture'</tspan><tspan fill="#F8F0F3">,</tspan></text>
+  <text x="33" y="247" fill="#C77B9B" font-size="16">05</text>
+  <text x="82" y="247" class="code-line source-5" xml:space="preserve" font-size="26"><tspan fill="#F8F0F3">  ],</tspan></text>
+  <text x="33" y="281" fill="#C77B9B" font-size="16">06</text>
+  <text x="82" y="281" class="code-line source-6" xml:space="preserve" font-size="26"><tspan fill="#F8F0F3">  ui: [</tspan><tspan fill="#E5B5C7">'Angular', 'TypeScript'</tspan><tspan fill="#F8F0F3">],</tspan></text>
+  <text x="33" y="315" fill="#C77B9B" font-size="16">07</text>
+  <text x="82" y="315" class="code-line source-7" xml:space="preserve" font-size="26"><tspan fill="#F8F0F3">  state: [</tspan><tspan fill="#E5B5C7">'RxJS', 'NgRx'</tspan><tspan fill="#F8F0F3">],</tspan></text>
+  <text x="33" y="349" fill="#C77B9B" font-size="16">08</text>
+  <text x="82" y="349" class="code-line source-8" xml:space="preserve" font-size="26"><tspan fill="#F8F0F3">  research: </tspan><tspan fill="#E5B5C7">'AI orchestration'</tspan><tspan fill="#F8F0F3">,</tspan></text>
+  <text x="33" y="383" fill="#C77B9B" font-size="16">09</text>
+  <text x="82" y="383" class="code-line source-9" xml:space="preserve" font-size="26"><tspan fill="#F8F0F3">}</tspan><tspan fill="#C77B9B"> as const</tspan><tspan fill="#F8F0F3">;</tspan></text>
+</svg>

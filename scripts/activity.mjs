@@ -103,7 +103,35 @@ function heatColor(count) {
   return palette.heat[ranges.findIndex(max => count <= max)];
 }
 
-function calendar(weeks, x, y, step, verticalStep, cell, labelSize) {
+const motionStyles = `
+  .activity-metric { animation: activity-metric 14s ease-in-out var(--activity-delay) infinite; }
+  .activity-week { animation: activity-week 14s ease-in-out var(--activity-delay) infinite; }
+  .activity-trace { animation: activity-trace 14s ease-out 1.5s infinite; }
+  .activity-point { animation: activity-point 14s ease-in-out var(--activity-delay) infinite; }
+  @keyframes activity-metric {
+    0%, 10%, 100% { transform: translateY(0); }
+    4% { transform: translateY(-4px); }
+  }
+  @keyframes activity-week {
+    0%, 11%, 100% { transform: translateY(0); filter: none; }
+    4% { transform: translateY(-1.8px); filter: brightness(1.25); }
+  }
+  @keyframes activity-trace {
+    0% { stroke-dashoffset: 100; opacity: .88; }
+    25% { stroke-dashoffset: 0; opacity: .88; }
+    39%, 100% { stroke-dashoffset: 0; opacity: 0; }
+  }
+  @keyframes activity-point {
+    0%, 12%, 100% { r: 3.5px; }
+    5% { r: 5px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .activity-metric, .activity-week, .activity-trace, .activity-point { animation: none; }
+  }`;
+
+const motionAttributes = (name, delay) => ` class="${name}" style="--activity-delay: ${delay.toFixed(2)}s"`;
+
+function calendar(weeks, x, y, step, verticalStep, cell, labelSize, { animated, weekOffset = 0 }) {
   const days = [['Mon', 1], ['Wed', 3], ['Fri', 5]];
   const dayLabels = days.map(([label, row]) => text(x - 8, y + row * verticalStep + cell, label, labelSize, { align: 'end' }));
   const monthLabels = [];
@@ -117,10 +145,12 @@ function calendar(weeks, x, y, step, verticalStep, cell, labelSize) {
       const date = (monthStart ?? week[0]).date;
       monthLabels.push(text(left, y - 7, monthFormat.format(Date.parse(date)), labelSize));
     }
-    for (const { date, count, row } of week) {
+    const weekCells = week.map(({ date, count, row }) => {
       const label = `${dateFormat.format(Date.parse(date))}: ${count} ${count === 1 ? 'contribution' : 'contributions'}`;
-      cells.push(`<rect x="${left}" y="${y + row * verticalStep}" width="${cell}" height="${cell}" rx="2" fill="${heatColor(count)}"><title>${label}</title></rect>`);
-    }
+      return `<rect x="${left}" y="${y + row * verticalStep}" width="${cell}" height="${cell}" rx="2" fill="${heatColor(count)}"><title>${label}</title></rect>`;
+    }).join('\n');
+    const delay = 1 + Math.floor((index + weekOffset) / 4) * .22;
+    cells.push(animated ? `<g${motionAttributes('activity-week', delay)}>${weekCells}</g>` : weekCells);
   }
   return [...dayLabels, ...monthLabels, ...cells].join('\n');
 }
@@ -135,7 +165,7 @@ function calendarLegend(x, y, size) {
   }).join('\n');
 }
 
-function weeklyTrend(weeks, x, y, width, height, labelSize) {
+function weeklyTrend(weeks, x, y, width, height, labelSize, animated) {
   const desiredStep = Math.max(1, Math.max(...weeks.map(week => week.count)) / 3);
   const magnitude = 10 ** Math.floor(Math.log10(desiredStep));
   const tickStep = Math.ceil([1, 2, 2.5, 5, 10].find(value => value * magnitude >= desiredStep) * magnitude);
@@ -149,21 +179,23 @@ function weeklyTrend(weeks, x, y, width, height, labelSize) {
     return `<path d="M${x} ${top}h${width}" stroke="${palette.grid}"/>${text(x - 8, top + 4, count, labelSize, { align: 'end' })}`;
   });
   const points = weeks.map((week, i) => `${leftAt(i).toFixed(2)} ${topAt(week.count).toFixed(2)}`);
+  const path = `M${points.join('L')}`;
   const dots = weeks.map((week, index) => {
     const label = `${weekFormat.format(Date.parse(week.start))} – ${weekFormat.format(Date.parse(week.end))}: ${week.count} ${week.count === 1 ? 'contribution' : 'contributions'}`;
-    return `<circle cx="${leftAt(index).toFixed(2)}" cy="${topAt(week.count).toFixed(2)}" r="3.5" fill="${palette.detail}"><title>${label}</title></circle>`;
+    const motion = animated ? motionAttributes('activity-point', 1.65 + index * .26) : '';
+    return `<circle cx="${leftAt(index).toFixed(2)}" cy="${topAt(week.count).toFixed(2)}" r="3.5" fill="${palette.detail}"${motion}><title>${label}</title></circle>`;
   });
   const firstWeek = weekFormat.format(Date.parse(weeks[0].start));
   const lastWeek = weekFormat.format(Date.parse(weeks.at(-1).end));
   return `${grids.join('\n')}
 <path d="M${x} ${baseline}L${points.join('L')}L${x + width} ${baseline}Z" fill="url(#trend-area)"/>
-<path d="M${points.join('L')}" fill="none" stroke="${palette.accent}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
-${dots.join('\n')}
+<path d="${path}" fill="none" stroke="${palette.accent}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+${animated ? `<path class="activity-trace" d="${path}" pathLength="100" fill="none" stroke="${palette.detail}" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round" stroke-dasharray="100" stroke-dashoffset="100" opacity="0" aria-hidden="true"/>\n` : ''}${dots.join('\n')}
 ${text(x, baseline + 22, firstWeek, labelSize)}
 ${text(x + width, baseline + 22, lastWeek, labelSize, { align: 'end' })}`;
 }
 
-function renderDashboard(summary, weeks, trend, mobile) {
+function renderDashboard(summary, weeks, trend, { mobile = false, animated = true } = {}) {
   const width = mobile ? 420 : 1200;
   const height = mobile ? 685 : 422;
   const metricX = mobile ? [20, 149, 278] : [36, 420, 804];
@@ -174,9 +206,12 @@ function renderDashboard(summary, weeks, trend, mobile) {
     ['Contributions', integerFormat.format(summary.contributions)],
     ['Active days', summary.activeDays],
     ['Longest streak', `${summary.longestStreak} ${summary.longestStreak === 1 ? 'day' : 'days'}`]
-  ].map(([label, value], index) => `${panel(metricX[index], metricY, metricWidth, 73)}
+  ].map(([label, value], index) => {
+    const number = text(metricX[index] + metricInset, metricY + 57, value, mobile ? 24 : 31, { color: palette.heading, weight: 600 });
+    return `${panel(metricX[index], metricY, metricWidth, 73)}
 ${text(metricX[index] + metricInset, metricY + 25, label, mobile ? 14 : 17)}
-${text(metricX[index] + metricInset, metricY + 57, value, mobile ? 24 : 31, { color: palette.heading, weight: 600 })}`);
+${animated ? `<g${motionAttributes('activity-metric', .35 + index * .16)}>${number}</g>` : number}`;
+  });
 
   const heading = mobile ? [
     text(20, 47, 'GitHub activity', 37, { color: palette.heading, family: 'serif' }),
@@ -192,24 +227,24 @@ ${text(metricX[index] + metricInset, metricY + 57, value, mobile ? 24 : 31, { co
   const panels = mobile ? [
     panel(20, 196, 380, 255),
     text(36, 225, calendarTitle, 20, { color: palette.heading, weight: 600 }),
-    calendar(weeks.slice(0, 27), 65, 253, 11.8, 10.7, 9, 12),
-    calendar(weeks.slice(27), 65, 344, 11.8, 10.7, 9, 12),
+    calendar(weeks.slice(0, 27), 65, 253, 11.8, 10.7, 9, 12, { animated }),
+    calendar(weeks.slice(27), 65, 344, 11.8, 10.7, 9, 12, { animated, weekOffset: 27 }),
     calendarLegend(65, 435, 12),
     panel(20, 466, 380, 168),
     text(36, 495, trendTitle, 20, { color: palette.heading, weight: 600 }),
     text(383, 495, axesScope, 12, { align: 'end' }),
-    weeklyTrend(trend, 66, 519, 309, 72, 12),
+    weeklyTrend(trend, 66, 519, 309, 72, 12, animated),
     text(20, 656, 'GitHub profile calendar. Counts may include', 13),
     text(20, 673, 'anonymized private contributions.', 13)
   ] : [
     panel(36, 185, 690, 195),
     text(56, 221, calendarTitle, 23, { color: palette.heading, weight: 600 }),
-    calendar(weeks, 95, 263, 11.4, 12, 9.5, 13),
+    calendar(weeks, 95, 263, 11.4, 12, 9.5, 13, { animated }),
     calendarLegend(95, 360, 13),
     panel(742, 185, 422, 195),
     text(762, 221, trendTitle, 23, { color: palette.heading, weight: 600 }),
     text(1144, 220, axesScope, 13, { align: 'end' }),
-    weeklyTrend(trend, 803, 260, 330, 66, 13),
+    weeklyTrend(trend, 803, 260, 330, 66, 13, animated),
     text(36, 405, 'GitHub profile calendar. Counts may include anonymized private contributions.', 14)
   ];
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -223,7 +258,7 @@ ${text(metricX[index] + metricInset, metricY + 57, value, mobile ? 24 : 31, { co
 <style>
   .sans { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
   .serif { font-family: Georgia, 'Times New Roman', serif; }
-  .mono { font-family: ui-monospace, Consolas, monospace; }
+  .mono { font-family: ui-monospace, Consolas, monospace; }${animated ? motionStyles : ''}
 </style>
 <rect x=".5" y=".5" width="${width - 1}" height="${height - 1}" rx="16" fill="url(#surface)" stroke="${palette.border}"/>
 ${[...heading, ...metrics, ...panels].join('\n')}
@@ -239,8 +274,10 @@ export async function buildGitHubActivity() {
   const weeks = calendarWeeks(days);
   const trend = recentWeeks(weeks, summary.endDate, summary.capturedDate);
   return {
-    desktop: renderDashboard(summary, weeks, trend, false),
-    mobile: renderDashboard(summary, weeks, trend, true),
+    desktop: renderDashboard(summary, weeks, trend),
+    mobile: renderDashboard(summary, weeks, trend, { mobile: true }),
+    desktopStatic: renderDashboard(summary, weeks, trend, { animated: false }),
+    mobileStatic: renderDashboard(summary, weeks, trend, { mobile: true, animated: false }),
     summary
   };
 }

@@ -154,24 +154,14 @@
   "presentation": {
     "mobileBreakpoint": 900
   },
-  "profileCards": {
-    "role": "Senior Software Engineer",
-    "focus": "Frontend architecture",
-    "delivery": "Accessible UI · automated testing",
+  "engineeringTerminal": {
+    "focus": ["System design", "Project architecture"],
     "research": "AI orchestration"
   },
-  "profileMotion": [
-    {
-      "id": "stage",
-      "title": "Stage portrait",
-      "alt": "Ashutosh Kumar Choubey in a charcoal suit and teal shirt."
-    },
-    {
-      "id": "podcast",
-      "title": "Podcast portrait",
-      "alt": "Ashutosh Kumar Choubey seated at a microphone."
-    }
-  ],
+  "profileMotion": {
+    "seatedAlt": "Ashutosh Kumar Choubey seated in a dark teal shirt.",
+    "studioAlt": "Ashutosh Kumar Choubey in a charcoal suit and teal shirt in the studio."
+  },
   "engineeringDirection": [
     {
       "title": "AI Architecture",

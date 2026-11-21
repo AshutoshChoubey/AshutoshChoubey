@@ -31,9 +31,9 @@ Keep the public README concise. Technology research can evolve without rewriting
 
 ## About cards and GitHub activity
 
-Edit About card copy in `profile.config.json` and its artwork in `scripts/profile-cards.mjs`. The profile uses a paired SVG on desktop and stacked cards on mobile. The separate terminal and info SVGs are also generated for reuse. Media lives in `assets/profile-motion/`, with still previews for reduced-motion viewers and direct links to the GIFs and silent MP4.
+Edit the engineering terminal copy in `profile.config.json` and its artwork in `scripts/profile-terminal.mjs`. The terminal and seated portrait sit side by side when there is room and stack at narrow widths. Media lives in `assets/profile-motion/` with still previews for reduced-motion viewers. The renderers are `scripts/render-seated-reveal.py`, which takes the original seated cutout as input, and `scripts/render-studio-walk.py`, which uses the standing portrait in `assets/`.
 
-Run `npm run refresh:activity` to fetch the contribution calendar from GitHub without credentials and regenerate the profile. A rejected or unavailable response leaves `data/github-activity.json` intact. `npm run generate` uses the saved data without a network request. The dashboard shows the calendar date range, groups the trend by completed weeks, and can include anonymized private activity that GitHub shows on the public calendar.
+Run `npm run refresh:activity` to fetch the contribution calendar from GitHub without credentials and regenerate the profile. A rejected or unavailable response leaves `data/github-activity.json` intact. `npm run generate` uses the saved data without a network request. The dashboard animates the dated calendar, weekly trend and totals. The stored totals can include anonymized private activity that GitHub shows on the public calendar.
 
 ## Dates and changing technology
 
