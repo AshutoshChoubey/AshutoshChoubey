@@ -2,8 +2,10 @@ import {readFile, writeFile, mkdir, rm} from 'node:fs/promises';
 import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
+import {buildGitHubActivity} from './activity.mjs';
 import {advancedCompositions} from './design-v2.mjs';
 import {generateCyberTheme} from './generate-cyber-theme.mjs';
+import {profileCardsAlt, renderInfoCard, renderProfileCards, renderTerminalCard} from './profile-cards.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const c = JSON.parse(await readFile(path.join(root, 'profile.config.json'), 'utf8'));
@@ -112,6 +114,19 @@ for(const [name,draw] of Object.entries(compositions)) for(const mobile of [fals
   outputs.set(`assets/${filename}`,svg(name,w,h,b,{light}));
   outputs.set(`assets/static/${filename}`,svg(name,w,h,b,{light,staticAsset:true}));
 }
+for(const mobile of [false,true]) {
+  const filename=`profile-cards${mobile?'-mobile':''}.svg`;
+  outputs.set(`assets/${filename}`,renderProfileCards(c,{mobile}));
+  outputs.set(`assets/static/${filename}`,renderProfileCards(c,{mobile,staticAsset:true}));
+}
+outputs.set('assets/terminal-card.svg',renderTerminalCard(c));
+outputs.set('assets/static/terminal-card.svg',renderTerminalCard(c,{staticAsset:true}));
+outputs.set('assets/info-card.svg',renderInfoCard(c));
+
+const activity=await buildGitHubActivity();
+outputs.set('assets/github-activity.svg',activity.desktop);
+outputs.set('assets/github-activity-mobile.svg',activity.mobile);
+
 outputs.set('assets/worldgyan-wordmark.svg',`<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="360" height="144" viewBox="0 0 360 144" role="img" aria-labelledby="title desc"><title id="title">WorldGyan</title><desc id="desc">World in black, Gyan in saffron. Next-Gen AI and Engineering.</desc><rect width="360" height="144" rx="12" fill="#FFFFFF"/><text x="180" y="79" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="700" text-anchor="middle"><tspan fill="${esc(c.worldgyan.wordmark.world)}">World</tspan><tspan fill="${esc(c.worldgyan.wordmark.gyan)}">Gyan</tspan></text><text x="180" y="108" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#334155" text-anchor="middle">Next-Gen AI &amp; Engineering</text></svg>\n`);
 // GitHub's raw redirect can drop query strings. Version the path, not just the URL query.
 const assetUrl=file=>{
@@ -121,7 +136,28 @@ const assetUrl=file=>{
   outputs.set(rendered,content);
   return `./${rendered}`;
 };
-const picture = name => `<p>\n<picture>\n  <source media="(prefers-reduced-motion: reduce) and (max-width: ${c.presentation.mobileBreakpoint}px)" srcset="${assetUrl(`assets/static/${name}-mobile.svg`)}">\n  <source media="(prefers-reduced-motion: reduce)" srcset="${assetUrl(`assets/static/${name}.svg`)}">\n  <source media="(max-width: ${c.presentation.mobileBreakpoint}px)" srcset="${assetUrl(`assets/${name}-mobile.svg`)}">\n  <img src="${assetUrl(`assets/${name}.svg`)}" width="100%" alt="${esc(titles[name]+'. '+descriptions[name])}">\n</picture>\n</p>`;
+function picture(name,alt=`${titles[name]}. ${descriptions[name]}`, {staticOnly=false}={}) {
+  const mobile=`(max-width: ${c.presentation.mobileBreakpoint}px)`;
+  const reduced='(prefers-reduced-motion: reduce)';
+  const source=(media,file)=>`  <source media="${media}" srcset="${assetUrl(file)}">`;
+  return [
+    '<p>', '<picture>',
+    ...(staticOnly?[]:[
+      source(`${reduced} and ${mobile}`,`assets/static/${name}-mobile.svg`),
+      source(reduced,`assets/static/${name}.svg`),
+    ]),
+    source(mobile,`assets/${name}-mobile.svg`),
+    `  <img src="${assetUrl(`assets/${name}.svg`)}" width="100%" alt="${esc(alt)}">`,
+    '</picture>', '</p>',
+  ].join('\n');
+}
+
+const motionDirectory='./assets/profile-motion';
+const motionUrl=id=>`${motionDirectory}/${id}-motion.gif`;
+const motionPreview=({id,alt})=>`  <a href="${motionUrl(id)}"><picture>
+    <source media="(prefers-reduced-motion: no-preference)" srcset="${motionUrl(id)}">
+    <img src="${motionDirectory}/${id}-portrait.webp" width="48%" loading="lazy" alt="${esc(alt)}">
+  </picture></a>`;
 
 const readme=`<!-- Generated from profile.config.json. Edit the source, then run npm run generate. -->
 <a href="${c.links.portfolio}">
@@ -142,6 +178,18 @@ const readme=`<!-- Generated from profile.config.json. Edit the source, then run
 <img src="./themes/main/assets/title-part02.svg" width="100%" alt="Part 02 · Engineering Systems &amp; Architecture">
 <img src="./themes/main/assets/architecture-leadership.svg" width="100%" alt="Architecture Leadership: Ashutosh Kumar Choubey, Founder of WorldGyan. Principal Frontend Architect &amp; Systems Engineer.">
 <img src="./themes/main/assets/engineering-systems.svg" width="100%" alt="WorldGyan — Engineering Systems: Frontend Architecture, Enterprise Engineering, System Design, Performance and Scalability. Founder: Ashutosh Kumar Choubey.">
+
+## About Ashutosh
+
+${picture('profile-cards',profileCardsAlt(c))}
+
+### In the studio
+
+<p align="center">
+${c.profileMotion.map(motionPreview).join('\n')}
+</p>
+
+${c.profileMotion.map(({id,title})=>`[${title} GIF](${motionUrl(id)})`).join(' · ')} · [Watch the silent cut (MP4)](${motionDirectory}/profile-motion.mp4)
 
 <img src="./themes/main/assets/title-part03.svg" width="100%" alt="Part 03 · Core Technology &amp; Reactive Foundations">
 <img src="./themes/main/assets/technology-core.svg" width="100%" alt="Core Technologies: Angular, TypeScript, RxJS, NgRx, and Supporting Systems.">
@@ -197,9 +245,19 @@ Public learning projects and code references, selected after reviewing their imp
 
 - [**TypeScript type-system examples**](https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com) — Focused examples of generics, unions, mapped types and utility types, alongside a type-system study reference.
 
-<img src="./themes/main/assets/title-part06.svg" width="100%" alt="Part 06 · Commit Log &amp; Real GitHub Activity — Years of Building">
-<img src="./themes/main/assets/github-jet.svg" width="100%" alt="GitHub Jet Heatmap: Animated jet flying over real GitHub contribution calendar.">
-<img src="./themes/main/assets/contribution-snake.svg" width="100%" alt="Animated contribution snake showing real public GitHub contributions for @AshutoshChoubey.">
+<img src="./themes/main/assets/title-part06.svg" width="100%" alt="Part 06 · GitHub Analytics &amp; Open Source Activity">
+
+${picture('github-activity',activity.summary.description,{staticOnly:true})}
+
+Daily contributions and weekly totals from my GitHub profile. GitHub may include anonymized private contributions when enabled. [View activity on GitHub](${c.links.github}#contribution-activity).
+
+<details>
+<summary>Contribution animations</summary>
+
+<img src="./themes/main/assets/github-jet.svg" width="100%" loading="lazy" alt="Animated jet flying over the GitHub contribution calendar.">
+<img src="./themes/main/assets/contribution-snake.svg" width="100%" loading="lazy" alt="Animated contribution snake for AshutoshChoubey.">
+
+</details>
 
 <img src="./themes/main/assets/title-part07.svg" width="100%" alt="Part 07 · Research &amp; Knowledge Sharing — Engineering, Shared">
 <img src="./themes/main/assets/research-systems.svg" width="100%" alt="Engineering, Shared: Published research in frontend system design and production AI engineering with practical tutorials.">

@@ -18,6 +18,32 @@
 <img src="./themes/main/assets/architecture-leadership.svg" width="100%" alt="Architecture Leadership: Ashutosh Kumar Choubey, Founder of WorldGyan. Principal Frontend Architect &amp; Systems Engineer.">
 <img src="./themes/main/assets/engineering-systems.svg" width="100%" alt="WorldGyan — Engineering Systems: Frontend Architecture, Enterprise Engineering, System Design, Performance and Scalability. Founder: Ashutosh Kumar Choubey.">
 
+## About Ashutosh
+
+<p>
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/40d35229662c/profile-cards-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/72d3f2a33ada/profile-cards.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/3f4398585916/profile-cards-mobile.svg">
+  <img src="./assets/rendered/84ad2e132da4/profile-cards.svg" width="100%" alt="Dot portrait of Ashutosh Kumar Choubey alongside a TypeScript summary of his frontend architecture work with Angular, TypeScript, RxJS, NgRx and his research in AI orchestration. Ashutosh Kumar Choubey, Senior Software Engineer. Components · design systems. Accessible UI · automated testing. Founder, WorldGyan.">
+</picture>
+</p>
+
+### In the studio
+
+<p align="center">
+  <a href="./assets/profile-motion/stage-motion.gif"><picture>
+    <source media="(prefers-reduced-motion: no-preference)" srcset="./assets/profile-motion/stage-motion.gif">
+    <img src="./assets/profile-motion/stage-portrait.webp" width="48%" loading="lazy" alt="Ashutosh Kumar Choubey in a charcoal suit and teal shirt.">
+  </picture></a>
+  <a href="./assets/profile-motion/podcast-motion.gif"><picture>
+    <source media="(prefers-reduced-motion: no-preference)" srcset="./assets/profile-motion/podcast-motion.gif">
+    <img src="./assets/profile-motion/podcast-portrait.webp" width="48%" loading="lazy" alt="Ashutosh Kumar Choubey seated at a microphone.">
+  </picture></a>
+</p>
+
+[Stage portrait GIF](./assets/profile-motion/stage-motion.gif) · [Podcast portrait GIF](./assets/profile-motion/podcast-motion.gif) · [Watch the silent cut (MP4)](./assets/profile-motion/profile-motion.mp4)
+
 <img src="./themes/main/assets/title-part03.svg" width="100%" alt="Part 03 · Core Technology &amp; Reactive Foundations">
 <img src="./themes/main/assets/technology-core.svg" width="100%" alt="Core Technologies: Angular, TypeScript, RxJS, NgRx, and Supporting Systems.">
 
@@ -72,9 +98,24 @@ Public learning projects and code references, selected after reviewing their imp
 
 - [**TypeScript type-system examples**](https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com) — Focused examples of generics, unions, mapped types and utility types, alongside a type-system study reference.
 
-<img src="./themes/main/assets/title-part06.svg" width="100%" alt="Part 06 · Commit Log &amp; Real GitHub Activity — Years of Building">
-<img src="./themes/main/assets/github-jet.svg" width="100%" alt="GitHub Jet Heatmap: Animated jet flying over real GitHub contribution calendar.">
-<img src="./themes/main/assets/contribution-snake.svg" width="100%" alt="Animated contribution snake showing real public GitHub contributions for @AshutoshChoubey.">
+<img src="./themes/main/assets/title-part06.svg" width="100%" alt="Part 06 · GitHub Analytics &amp; Open Source Activity">
+
+<p>
+<picture>
+  <source media="(max-width: 900px)" srcset="./assets/rendered/112b0d89179e/github-activity-mobile.svg">
+  <img src="./assets/rendered/b671acaa4ce0/github-activity.svg" width="100%" alt="From Nov 22, 2025 through Nov 21, 2026, GitHub displayed 757 contributions for @AshutoshChoubey across 32 active days. The longest streak was 11 days. The calendar shows daily counts and the trend shows the latest 12 completed weeks.">
+</picture>
+</p>
+
+Daily contributions and weekly totals from my GitHub profile. GitHub may include anonymized private contributions when enabled. [View activity on GitHub](https://github.com/AshutoshChoubey#contribution-activity).
+
+<details>
+<summary>Contribution animations</summary>
+
+<img src="./themes/main/assets/github-jet.svg" width="100%" loading="lazy" alt="Animated jet flying over the GitHub contribution calendar.">
+<img src="./themes/main/assets/contribution-snake.svg" width="100%" loading="lazy" alt="Animated contribution snake for AshutoshChoubey.">
+
+</details>
 
 <img src="./themes/main/assets/title-part07.svg" width="100%" alt="Part 07 · Research &amp; Knowledge Sharing — Engineering, Shared">
 <img src="./themes/main/assets/research-systems.svg" width="100%" alt="Engineering, Shared: Published research in frontend system design and production AI engineering with practical tutorials.">

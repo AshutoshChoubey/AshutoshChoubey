@@ -5,9 +5,9 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const names = ['hero', 'expertise', 'technology', 'ai-systems', 'research', 'connect'];
+const names = ['hero', 'expertise', 'technology', 'ai-systems', 'research', 'connect', 'profile-cards'];
 const expected = names.flatMap(name => [`assets/${name}.svg`, `assets/${name}-mobile.svg`, `assets/static/${name}.svg`, `assets/static/${name}-mobile.svg`]);
-expected.push('assets/worldgyan-wordmark.svg');
+expected.push('assets/worldgyan-wordmark.svg', 'assets/github-activity.svg', 'assets/github-activity-mobile.svg');
 const problems = [];
 const rendered=[];
 for(const file of [...expected]){
@@ -19,6 +19,7 @@ for(const file of [...expected]){
     if(!content.equals(await readFile(path.join(root,target))))problems.push(`Rendered copy differs: ${target}`);
   }catch(error){problems.push(`Content-versioned asset: ${error.message}`);}
 }
+expected.push('assets/terminal-card.svg', 'assets/static/terminal-card.svg', 'assets/info-card.svg');
 try{
   const manifest=JSON.parse(await readFile(path.join(root,'assets/rendered/manifest.json'),'utf8'));
   if(JSON.stringify(manifest.files)!==JSON.stringify(rendered.sort()))problems.push('Rendered asset manifest differs from source hashes');
