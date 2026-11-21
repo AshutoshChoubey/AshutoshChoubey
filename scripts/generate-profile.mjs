@@ -6,7 +6,7 @@ import {buildGitHubActivity} from './activity.mjs';
 import {characterPortraitAlt, renderCharacterPortrait} from './character-portrait.mjs';
 import {advancedCompositions} from './design-v2.mjs';
 import {generateCyberTheme} from './generate-cyber-theme.mjs';
-import {buildLanguageChart} from './language-chart.mjs';
+import {buildTechnologyFocus} from './language-chart.mjs';
 import {renderTerminalCard, terminalAlt} from './profile-terminal.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -124,8 +124,9 @@ for(const mobile of [false,true]) {
   outputs.set(`assets/static/character-portrait${suffix}.svg`,renderCharacterPortrait({mobile,staticAsset:true}));
 }
 
-const [activity,languages]=await Promise.all([buildGitHubActivity(),buildLanguageChart()]);
-for(const [name,chart] of [['github-activity',activity],['github-languages',languages]]) {
+const activity=await buildGitHubActivity();
+const focus=buildTechnologyFocus(c.technologyFocus);
+for(const [name,chart] of [['github-activity',activity],['github-languages',focus]]) {
   outputs.set(`assets/${name}.svg`,chart.desktop);
   outputs.set(`assets/${name}-mobile.svg`,chart.mobile);
   outputs.set(`assets/static/${name}.svg`,chart.desktopStatic);
@@ -245,7 +246,7 @@ ${picture('github-activity',activity.summary.description)}
 
 [View contribution activity on GitHub](${c.links.github}#contribution-activity).
 
-${picture('github-languages',languages.summary.description)}
+${picture('github-languages',focus.summary.description)}
 
 <img src="./themes/main/assets/github-jet.svg" width="100%" loading="lazy" alt="Animated jet flying over the GitHub contribution calendar.">
 <img src="./themes/main/assets/contribution-snake.svg" width="100%" loading="lazy" alt="Animated contribution snake for AshutoshChoubey.">

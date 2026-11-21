@@ -78,3 +78,9 @@ Chrome checks at 320, 375, 768, 1024, and 1440 pixels in light and dark surround
 ### Terminal portrait refinement and T-SQL slice
 
 The denser portrait grid uses near-white terminal characters on burgundy and keeps the original seated photo as the source. Chrome verified the paired desktop and stacked mobile layouts. The language chart uses connected donut segments, and the active highlight stays within its segment. The six segments share their inner and outer endpoints in desktop, mobile, animated, and static SVGs. The short T-SQL segment was inspected at the 12 o’clock seam while highlighted.
+
+### Technology focus and repeating portrait redraw
+
+The focus chart gives JavaScript and TypeScript equal emphasis as the largest slices, followed by Angular, RxJS, Python, and Agentic AI. It labels the slice sizes as relative emphasis and Agentic AI as exploration. Desktop and mobile checks showed the labels fit and the highlight continued to cycle.
+
+Chrome displayed the full glyph portrait at 3, 9.5, and 14.5 seconds with identical frames. It restarted in the next 16-second cycle and completed again. The portrait takes about 2.3 seconds to draw, then holds for nearly 13 seconds before the fade. The profile selected the static artwork during reduced-motion checks.

@@ -6,9 +6,24 @@
     <linearGradient id="surface" x2="0" y2="1"><stop stop-color="#190B12"/><stop offset="1" stop-color="#10070C"/></linearGradient>
   </defs>
   <style>text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
-    .characters { animation: decode-portrait 1.25s ease-out both; }
-    @keyframes decode-portrait { from { opacity: .28; } to { opacity: 1; } }
-    @media (prefers-reduced-motion: reduce) { .characters { animation: none; } }</style>
+    .characters { animation: clear-portrait 16s ease-in-out infinite; }
+    .characters text { animation: write-portrait 16s steps(28) infinite; }
+    .characters text:nth-child(even) { animation: write-alternate-rows 16s steps(28) infinite; }
+    @keyframes write-portrait {
+      0%, 1% { clip-path: inset(-4px 100% -4px 0); }
+      13%, 100% { clip-path: inset(-4px); }
+    }
+    @keyframes write-alternate-rows {
+      0%, 2.5% { clip-path: inset(-4px 100% -4px 0); }
+      14.5%, 100% { clip-path: inset(-4px); }
+    }
+    @keyframes clear-portrait {
+      0%, 95% { opacity: 1; }
+      99.5%, 100% { opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .characters, .characters text, .characters text:nth-child(even) { animation: none; }
+    }</style>
   <rect x=".5" y=".5" width="671" height="431" rx="18" fill="url(#surface)" stroke="#54253A"/>
   <path d="M1 57 H671 M1 400 H671" stroke="#54253A"/>
   <circle cx="36" cy="29" r="4" fill="#C77B9B"/>

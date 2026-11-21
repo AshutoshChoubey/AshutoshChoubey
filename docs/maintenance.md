@@ -33,7 +33,7 @@ Keep the public README concise. Technology research can evolve without rewriting
 
 Edit the engineering terminal copy in `profile.config.json` and its artwork in `scripts/profile-terminal.mjs`. `scripts/character-portrait.mjs` renders the seated portrait from `data/character-portrait.json`. The sampler in `scripts/sample-character-portrait.py` converts the original transparent cutout to glyphs. The two panels sit side by side when there is room and stack at narrow widths.
 
-Run `npm run refresh:activity` to fetch the contribution calendar and regenerate the weekly chart. Run `npm run refresh:languages` to refresh the public repository language breakdown. `npm run generate` uses the saved snapshots without a network request. The weekly chart can include anonymized private activity that GitHub shows on the public contribution calendar.
+Set `technologyFocus` in `profile.config.json` to control the focus chart labels, emphasis, and highlight order. Run `npm run refresh:activity` to fetch the contribution calendar and regenerate the weekly chart. Run `npm run refresh:languages` to update the separate public repository-language snapshot. `npm run generate` builds from the local configuration and activity snapshot. The weekly chart can include anonymized private activity that GitHub shows on the public contribution calendar.
 
 ## Dates and changing technology
 

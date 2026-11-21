@@ -46,6 +46,14 @@
     ],
     "quality": "Accessibility · Security · Automated Testing"
   },
+  "technologyFocus": [
+    { "name": "JavaScript", "weight": 28, "role": "Primary" },
+    { "name": "TypeScript", "weight": 28, "role": "Primary" },
+    { "name": "Angular", "weight": 18, "role": "Frontend" },
+    { "name": "RxJS", "weight": 12, "role": "Reactive" },
+    { "name": "Python", "weight": 8, "role": "Supporting" },
+    { "name": "Agentic AI", "weight": 6, "role": "Exploring" }
+  ],
   "exploring": [
     "AI architecture",
     "Tool-using LLMs & MCP",

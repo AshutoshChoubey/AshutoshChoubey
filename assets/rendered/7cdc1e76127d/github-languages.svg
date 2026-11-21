@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 383" width="1200" height="383" role="img" aria-labelledby="title desc">
+<title id="title">Technology focus</title>
+<desc id="desc">Technology focus cycles through JavaScript (primary), TypeScript (primary), Angular (frontend), RxJS (reactive), Python (supporting), Agentic AI (exploring). Most emphasis goes to JavaScript and TypeScript. Slice size shows relative emphasis.</desc>
+<defs><linearGradient id="board" x2="1" y2="1"><stop stop-color="#190B12"/><stop offset="1" stop-color="#10070C"/></linearGradient></defs>
+<style>
+.sans{font-family:system-ui,Arial,sans-serif}.serif{font-family:Georgia,'Times New Roman',serif}
+.highlight{opacity:0}
+.language-0{animation:language-0 12s ease infinite}
+@keyframes language-0{0%,14.667%{opacity:1}16.667%,100%{opacity:0}}
+.language-1{animation:language-1 12s ease infinite}
+@keyframes language-1{0%,16.667%{opacity:0}18.667%,31.333%{opacity:1}33.333%,100%{opacity:0}}
+.language-2{animation:language-2 12s ease infinite}
+@keyframes language-2{0%,33.333%{opacity:0}35.333%,48%{opacity:1}50%,100%{opacity:0}}
+.language-3{animation:language-3 12s ease infinite}
+@keyframes language-3{0%,50%{opacity:0}52%,64.667%{opacity:1}66.667%,100%{opacity:0}}
+.language-4{animation:language-4 12s ease infinite}
+@keyframes language-4{0%,66.667%{opacity:0}68.667%,81.333%{opacity:1}83.333%,100%{opacity:0}}
+.language-5{animation:language-5 12s ease infinite}
+@keyframes language-5{0%,83.333%{opacity:0}85.333%,98%{opacity:1}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.highlight{animation:none}}
+</style>
+<rect x="1" y="1" width="1198" height="381" rx="18" fill="url(#board)" stroke="#542039" stroke-width="2"/>
+<text x="44" y="59" class="serif" font-size="41" fill="#F8F0F3" text-anchor="start" font-weight="400">Technology focus</text>
+<text x="44" y="89" class="sans" font-size="18" fill="#E5B5C7" text-anchor="start" font-weight="400">Frontend engineering, supporting tools, and AI exploration</text>
+<path d="M244.000 105.500 A108.5 108.5 0 0 1 350.578 234.331 L314.234 227.398 A71.5 71.5 0 0 0 244.000 142.500 Z" fill="#E9A6C2" fill-rule="evenodd" stroke="#E9A6C2" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M350.578 234.331 A108.5 108.5 0 0 1 204.058 314.881 L217.679 280.479 A71.5 71.5 0 0 0 314.234 227.398 Z" fill="#9F648F" fill-rule="evenodd" stroke="#9F648F" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M204.058 314.881 A108.5 108.5 0 0 1 135.714 220.813 L172.641 218.490 A71.5 71.5 0 0 0 217.679 280.479 Z" fill="#D25785" fill-rule="evenodd" stroke="#D25785" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M135.714 220.813 A108.5 108.5 0 0 1 160.399 144.839 L188.908 168.424 A71.5 71.5 0 0 0 172.641 218.490 Z" fill="#BD92C1" fill-rule="evenodd" stroke="#BD92C1" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M160.399 144.839 A108.5 108.5 0 0 1 204.058 113.119 L217.679 147.521 A71.5 71.5 0 0 0 188.908 168.424 Z" fill="#E17767" fill-rule="evenodd" stroke="#E17767" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M204.058 113.119 A108.5 108.5 0 0 1 244.000 105.500 L244.000 142.500 A71.5 71.5 0 0 0 217.679 147.521 Z" fill="#8369A5" fill-rule="evenodd" stroke="#8369A5" stroke-width=".65" stroke-linejoin="round"/>
+<path class="highlight language-0" d="M244.000 105.500 A108.5 108.5 0 0 1 350.578 234.331 L314.234 227.398 A71.5 71.5 0 0 0 244.000 142.500 Z" fill="#FFC8DE" fill-rule="evenodd" fill-opacity=".52"/>
+<path class="highlight language-1" d="M350.578 234.331 A108.5 108.5 0 0 1 204.058 314.881 L217.679 280.479 A71.5 71.5 0 0 0 314.234 227.398 Z" fill="#FFC8DE" fill-rule="evenodd" fill-opacity=".52"/>
+<path class="highlight language-2" d="M204.058 314.881 A108.5 108.5 0 0 1 135.714 220.813 L172.641 218.490 A71.5 71.5 0 0 0 217.679 280.479 Z" fill="#FFC8DE" fill-rule="evenodd" fill-opacity=".52"/>
+<path class="highlight language-3" d="M135.714 220.813 A108.5 108.5 0 0 1 160.399 144.839 L188.908 168.424 A71.5 71.5 0 0 0 172.641 218.490 Z" fill="#FFC8DE" fill-rule="evenodd" fill-opacity=".52"/>
+<path class="highlight language-4" d="M160.399 144.839 A108.5 108.5 0 0 1 204.058 113.119 L217.679 147.521 A71.5 71.5 0 0 0 188.908 168.424 Z" fill="#FFC8DE" fill-rule="evenodd" fill-opacity=".52"/>
+<path class="highlight language-5" d="M204.058 113.119 A108.5 108.5 0 0 1 244.000 105.500 L244.000 142.500 A71.5 71.5 0 0 0 217.679 147.521 Z" fill="#FFC8DE" fill-rule="evenodd" fill-opacity=".52"/>
+<text x="244" y="220" class="serif" font-size="34" fill="#F8F0F3" text-anchor="middle" font-weight="600">JS · TS</text>
+<text x="244" y="245" class="sans" font-size="15" fill="#E5B5C7" text-anchor="middle" font-weight="400">primary focus</text>
+<rect x="472" y="123" width="337" height="40" rx="6" fill="#150910" stroke="#542039"/>
+<rect class="highlight language-0" x="472" y="123" width="337" height="40" rx="6" fill="#381727" stroke="#E9A6C2"/>
+<circle cx="486" cy="143" r="5" fill="#E9A6C2"/>
+<text x="498" y="148" class="sans" font-size="16" fill="#F8F0F3" text-anchor="start" font-weight="400">JavaScript</text>
+<text x="796" y="148" class="sans" font-size="16" fill="#E5B5C7" text-anchor="end" font-weight="600">Primary</text>
+<rect x="472" y="175" width="337" height="40" rx="6" fill="#150910" stroke="#542039"/>
+<rect class="highlight language-1" x="472" y="175" width="337" height="40" rx="6" fill="#381727" stroke="#9F648F"/>
+<circle cx="486" cy="195" r="5" fill="#9F648F"/>
+<text x="498" y="200" class="sans" font-size="16" fill="#F8F0F3" text-anchor="start" font-weight="400">TypeScript</text>
+<text x="796" y="200" class="sans" font-size="16" fill="#E5B5C7" text-anchor="end" font-weight="600">Primary</text>
+<rect x="472" y="227" width="337" height="40" rx="6" fill="#150910" stroke="#542039"/>
+<rect class="highlight language-2" x="472" y="227" width="337" height="40" rx="6" fill="#381727" stroke="#D25785"/>
+<circle cx="486" cy="247" r="5" fill="#D25785"/>
+<text x="498" y="252" class="sans" font-size="16" fill="#F8F0F3" text-anchor="start" font-weight="400">Angular</text>
+<text x="796" y="252" class="sans" font-size="16" fill="#E5B5C7" text-anchor="end" font-weight="600">Frontend</text>
+<rect x="821" y="123" width="337" height="40" rx="6" fill="#150910" stroke="#542039"/>
+<rect class="highlight language-3" x="821" y="123" width="337" height="40" rx="6" fill="#381727" stroke="#BD92C1"/>
+<circle cx="835" cy="143" r="5" fill="#BD92C1"/>
+<text x="847" y="148" class="sans" font-size="16" fill="#F8F0F3" text-anchor="start" font-weight="400">RxJS</text>
+<text x="1145" y="148" class="sans" font-size="16" fill="#E5B5C7" text-anchor="end" font-weight="600">Reactive</text>
+<rect x="821" y="175" width="337" height="40" rx="6" fill="#150910" stroke="#542039"/>
+<rect class="highlight language-4" x="821" y="175" width="337" height="40" rx="6" fill="#381727" stroke="#E17767"/>
+<circle cx="835" cy="195" r="5" fill="#E17767"/>
+<text x="847" y="200" class="sans" font-size="16" fill="#F8F0F3" text-anchor="start" font-weight="400">Python</text>
+<text x="1145" y="200" class="sans" font-size="16" fill="#E5B5C7" text-anchor="end" font-weight="600">Supporting</text>
+<rect x="821" y="227" width="337" height="40" rx="6" fill="#150910" stroke="#542039"/>
+<rect class="highlight language-5" x="821" y="227" width="337" height="40" rx="6" fill="#381727" stroke="#8369A5"/>
+<circle cx="835" cy="247" r="5" fill="#8369A5"/>
+<text x="847" y="252" class="sans" font-size="16" fill="#F8F0F3" text-anchor="start" font-weight="400">Agentic AI</text>
+<text x="1145" y="252" class="sans" font-size="16" fill="#E5B5C7" text-anchor="end" font-weight="600">Exploring</text>
+<text x="44" y="355" class="sans" font-size="15" fill="#E5B5C7" text-anchor="start" font-weight="400">Slice size reflects relative emphasis</text>
+</svg>

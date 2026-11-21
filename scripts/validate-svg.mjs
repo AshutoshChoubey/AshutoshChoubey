@@ -48,7 +48,7 @@ def seconds(value):
     return float(match.group(1))/(1000 if match.group(2)=='ms' else 1) if match else None
 for item in json.load(sys.stdin):
     file=item['file']; text=item['text']; static='/static/' in file
-    chart=not static and re.fullmatch(r'github-(?:activity|languages)(?:-mobile)?\.svg',file.rsplit('/',1)[-1]) is not None
+    looping_asset=not static and re.fullmatch(r'(?:github-(?:activity|languages)|character-portrait)(?:-mobile)?\.svg',file.rsplit('/',1)[-1]) is not None
     if len(text.encode('utf-8'))>100000: issue(file,'asset exceeds 100 KB budget')
     if re.search(r'<!DOCTYPE|<!ENTITY|<\?xml-stylesheet',text,re.I):
         issue(file,'DOCTYPE, entities and external stylesheets are prohibited'); continue
@@ -110,15 +110,15 @@ for item in json.load(sys.stdin):
     declarations=re.findall(r'(?<![-\w])animation\s*:\s*([^;}]+)',css)
     active=[d for d in declarations if not re.fullmatch(r'none(?:\s*!important)?',d.strip())]
     if static and active: issue(file,'static fallback has active CSS animation')
-    if chart and not active: issue(file,'chart needs its motion cycle')
+    if looping_asset and not any('infinite' in declaration.split() for declaration in active): issue(file,'expected a repeating motion cycle')
     if re.search(r'animation-(?:duration|delay|iteration-count)\s*:',css): issue(file,'use a single inspectable animation shorthand')
     for declaration in active:
         if ',' in declaration: issue(file,'multiple animations per declaration are not supported by validation')
         tokens=declaration.strip().split()
         durations=[seconds(token) for token in tokens if seconds(token) is not None]
-        limit=24 if chart else 4
+        limit=24 if looping_asset else 4
         if not durations or not 0<durations[0]<=limit or sum(durations)>limit: issue(file,f'animation cycle including delay must be at most {limit} seconds')
-        if not chart and ('infinite' in tokens or any(re.fullmatch(r'\d+(?:\.\d+)?',token) and float(token)!=1 for token in tokens)): issue(file,'CSS animation must run once')
+        if not looping_asset and ('infinite' in tokens or any(re.fullmatch(r'\d+(?:\.\d+)?',token) and float(token)!=1 for token in tokens)): issue(file,'CSS animation must run once')
     if active and (not re.search(r'prefers-reduced-motion\s*:\s*reduce',css) or not re.search(r'animation\s*:\s*none',css)):
         issue(file,'animated SVG must disable motion under prefers-reduced-motion: reduce')
     if re.search(r'<text\b[^>]*(?:opacity=[\"\']0[\"\']|visibility=[\"\']hidden)',text,re.I): issue(file,'essential text must be visible without animation')

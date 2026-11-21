@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 449" width="420" height="449" role="img" aria-labelledby="title desc">
+<title id="title">Technology focus</title>
+<desc id="desc">Technology focus cycles through JavaScript (primary), TypeScript (primary), Angular (frontend), RxJS (reactive), Python (supporting), Agentic AI (exploring). Most emphasis goes to JavaScript and TypeScript. Slice size shows relative emphasis.</desc>
+<defs><linearGradient id="board" x2="1" y2="1"><stop stop-color="#190B12"/><stop offset="1" stop-color="#10070C"/></linearGradient></defs>
+<style>
+.sans{font-family:system-ui,Arial,sans-serif}.serif{font-family:Georgia,'Times New Roman',serif}
+</style>
+<rect x="1" y="1" width="418" height="447" rx="18" fill="url(#board)" stroke="#542039" stroke-width="2"/>
+<text x="22" y="47" class="serif" font-size="32" fill="#F8F0F3" text-anchor="start" font-weight="400">Technology focus</text>
+<text x="22" y="73" class="sans" font-size="15" fill="#E5B5C7" text-anchor="start" font-weight="400">Frontend engineering and AI exploration</text>
+<path d="M210.000 92.500 A77.5 77.5 0 0 1 286.127 184.522 L259.606 179.463 A50.5 50.5 0 0 0 210.000 119.500 Z" fill="#E9A6C2" fill-rule="evenodd" stroke="#E9A6C2" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M286.127 184.522 A77.5 77.5 0 0 1 181.470 242.058 L191.410 216.954 A50.5 50.5 0 0 0 259.606 179.463 Z" fill="#9F648F" fill-rule="evenodd" stroke="#9F648F" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M181.470 242.058 A77.5 77.5 0 0 1 132.653 174.866 L159.600 173.171 A50.5 50.5 0 0 0 191.410 216.954 Z" fill="#D25785" fill-rule="evenodd" stroke="#D25785" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M132.653 174.866 A77.5 77.5 0 0 1 150.285 120.600 L171.089 137.810 A50.5 50.5 0 0 0 159.600 173.171 Z" fill="#BD92C1" fill-rule="evenodd" stroke="#BD92C1" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M150.285 120.600 A77.5 77.5 0 0 1 181.470 97.942 L191.410 123.046 A50.5 50.5 0 0 0 171.089 137.810 Z" fill="#E17767" fill-rule="evenodd" stroke="#E17767" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M181.470 97.942 A77.5 77.5 0 0 1 210.000 92.500 L210.000 119.500 A50.5 50.5 0 0 0 191.410 123.046 Z" fill="#8369A5" fill-rule="evenodd" stroke="#8369A5" stroke-width=".65" stroke-linejoin="round"/>
+<text x="210" y="176" class="serif" font-size="25" fill="#F8F0F3" text-anchor="middle" font-weight="600">JS · TS</text>
+<text x="210" y="196" class="sans" font-size="13" fill="#E5B5C7" text-anchor="middle" font-weight="400">primary focus</text>
+<rect x="22" y="277" width="183" height="31" rx="6" fill="#150910" stroke="#542039"/>
+
+<circle cx="36" cy="292.5" r="4" fill="#E9A6C2"/>
+<text x="48" y="297.5" class="sans" font-size="14" fill="#F8F0F3" text-anchor="start" font-weight="400">JavaScript</text>
+<text x="192" y="297.5" class="sans" font-size="13" fill="#E5B5C7" text-anchor="end" font-weight="600">Primary</text>
+<rect x="22" y="316" width="183" height="31" rx="6" fill="#150910" stroke="#542039"/>
+
+<circle cx="36" cy="331.5" r="4" fill="#9F648F"/>
+<text x="48" y="336.5" class="sans" font-size="14" fill="#F8F0F3" text-anchor="start" font-weight="400">TypeScript</text>
+<text x="192" y="336.5" class="sans" font-size="13" fill="#E5B5C7" text-anchor="end" font-weight="600">Primary</text>
+<rect x="22" y="355" width="183" height="31" rx="6" fill="#150910" stroke="#542039"/>
+
+<circle cx="36" cy="370.5" r="4" fill="#D25785"/>
+<text x="48" y="375.5" class="sans" font-size="14" fill="#F8F0F3" text-anchor="start" font-weight="400">Angular</text>
+<text x="192" y="375.5" class="sans" font-size="13" fill="#E5B5C7" text-anchor="end" font-weight="600">Frontend</text>
+<rect x="213" y="277" width="183" height="31" rx="6" fill="#150910" stroke="#542039"/>
+
+<circle cx="227" cy="292.5" r="4" fill="#BD92C1"/>
+<text x="239" y="297.5" class="sans" font-size="14" fill="#F8F0F3" text-anchor="start" font-weight="400">RxJS</text>
+<text x="383" y="297.5" class="sans" font-size="13" fill="#E5B5C7" text-anchor="end" font-weight="600">Reactive</text>
+<rect x="213" y="316" width="183" height="31" rx="6" fill="#150910" stroke="#542039"/>
+
+<circle cx="227" cy="331.5" r="4" fill="#E17767"/>
+<text x="239" y="336.5" class="sans" font-size="14" fill="#F8F0F3" text-anchor="start" font-weight="400">Python</text>
+<text x="383" y="336.5" class="sans" font-size="13" fill="#E5B5C7" text-anchor="end" font-weight="600">Supporting</text>
+<rect x="213" y="355" width="183" height="31" rx="6" fill="#150910" stroke="#542039"/>
+
+<circle cx="227" cy="370.5" r="4" fill="#8369A5"/>
+<text x="239" y="375.5" class="sans" font-size="14" fill="#F8F0F3" text-anchor="start" font-weight="400">Agentic AI</text>
+<text x="383" y="375.5" class="sans" font-size="13" fill="#E5B5C7" text-anchor="end" font-weight="600">Exploring</text>
+<text x="22" y="421" class="sans" font-size="13" fill="#E5B5C7" text-anchor="start" font-weight="400">Slice size reflects relative emphasis</text>
+</svg>

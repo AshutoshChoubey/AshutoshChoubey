@@ -30,8 +30,8 @@
 <picture>
   <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/0d0d7a3b0e95/character-portrait-mobile.svg">
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/ad81138adc2c/character-portrait.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/b53c454dd009/character-portrait-mobile.svg">
-  <img src="./assets/rendered/3db2b98b0ed5/character-portrait.svg" alt="ASCII character portrait of Ashutosh Kumar Choubey seated, drawn with asterisks, hash signs, and other coding symbols.">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/0545a72c3220/character-portrait-mobile.svg">
+  <img src="./assets/rendered/80158a4b8ce7/character-portrait.svg" alt="ASCII character portrait of Ashutosh Kumar Choubey seated, drawn with asterisks, hash signs, and other coding symbols.">
 </picture>
 </p>
 
@@ -106,10 +106,10 @@ Public learning projects and code references, selected after reviewing their imp
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/b8276035af3a/github-languages-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/00802c0c4b6d/github-languages.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/8885ded848f0/github-languages-mobile.svg">
-  <img src="./assets/rendered/d982f741c93e/github-languages.svg" width="100%" alt="GitHub primary languages reported for 32 of 38 owned public repositories as of Nov 21, 2026. JavaScript 7, HTML 10, TypeScript 8, PHP 5, CSS 1, T-SQL 1. Forks and archived repositories are excluded.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/583ee906d9e5/github-languages-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/d93cec50cc66/github-languages.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/f4d253faf63d/github-languages-mobile.svg">
+  <img src="./assets/rendered/7cdc1e76127d/github-languages.svg" width="100%" alt="Technology focus cycles through JavaScript (primary), TypeScript (primary), Angular (frontend), RxJS (reactive), Python (supporting), Agentic AI (exploring). Most emphasis goes to JavaScript and TypeScript. Slice size shows relative emphasis.">
 </picture>
 </p>
 

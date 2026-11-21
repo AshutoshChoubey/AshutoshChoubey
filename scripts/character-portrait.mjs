@@ -3,13 +3,29 @@ import rows from '../data/character-portrait.json' with { type: 'json' };
 const artWidth = 628;
 const artHeight = 318;
 const fontSize = (artWidth / rows[0].length / .60).toFixed(2);
+const redrawCycle = '16s';
 
 export const characterPortraitAlt = 'ASCII character portrait of Ashutosh Kumar Choubey seated, drawn with asterisks, hash signs, and other coding symbols.';
 
 const reveal = `
-    .characters { animation: decode-portrait 1.25s ease-out both; }
-    @keyframes decode-portrait { from { opacity: .28; } to { opacity: 1; } }
-    @media (prefers-reduced-motion: reduce) { .characters { animation: none; } }`;
+    .characters { animation: clear-portrait ${redrawCycle} ease-in-out infinite; }
+    .characters text { animation: write-portrait ${redrawCycle} steps(28) infinite; }
+    .characters text:nth-child(even) { animation: write-alternate-rows ${redrawCycle} steps(28) infinite; }
+    @keyframes write-portrait {
+      0%, 1% { clip-path: inset(-4px 100% -4px 0); }
+      13%, 100% { clip-path: inset(-4px); }
+    }
+    @keyframes write-alternate-rows {
+      0%, 2.5% { clip-path: inset(-4px 100% -4px 0); }
+      14.5%, 100% { clip-path: inset(-4px); }
+    }
+    @keyframes clear-portrait {
+      0%, 95% { opacity: 1; }
+      99.5%, 100% { opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .characters, .characters text, .characters text:nth-child(even) { animation: none; }
+    }`;
 
 function portraitRows() {
   return rows.map((row, index) => {
