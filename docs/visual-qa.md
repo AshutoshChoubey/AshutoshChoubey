@@ -84,3 +84,7 @@ The denser portrait grid uses near-white terminal characters on burgundy and kee
 The focus chart gives JavaScript and TypeScript equal emphasis as the largest slices, followed by Angular, RxJS, Python, and Agentic AI. It labels the slice sizes as relative emphasis and Agentic AI as exploration. Desktop and mobile checks showed the labels fit and the highlight continued to cycle.
 
 Chrome displayed the full glyph portrait at 3, 9.5, and 14.5 seconds with identical frames. It restarted in the next 16-second cycle and completed again. The portrait takes about 2.3 seconds to draw, then holds for nearly 13 seconds before the fade. The profile selected the static artwork during reduced-motion checks.
+
+### Top-down portrait scan
+
+The portrait now reveals from the top in character-row steps. Each 20-second cycle finishes the scan at 3.2 seconds and holds the completed artwork for 16 seconds before fading. Chromium confirmed the top-first progression, the steady completed frame, and the restart in an embedded image. The reduced-motion picture displays the completed portrait.

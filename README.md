@@ -30,8 +30,8 @@
 <picture>
   <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/0d0d7a3b0e95/character-portrait-mobile.svg">
   <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/ad81138adc2c/character-portrait.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/0545a72c3220/character-portrait-mobile.svg">
-  <img src="./assets/rendered/80158a4b8ce7/character-portrait.svg" alt="ASCII character portrait of Ashutosh Kumar Choubey seated, drawn with asterisks, hash signs, and other coding symbols.">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/2da08a1678e2/character-portrait-mobile.svg">
+  <img src="./assets/rendered/206b4e32e40c/character-portrait.svg" alt="ASCII character portrait of Ashutosh Kumar Choubey seated, drawn with asterisks, hash signs, and other coding symbols.">
 </picture>
 </p>
 
