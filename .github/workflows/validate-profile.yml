@@ -27,7 +27,7 @@ jobs:
         run: npm run validate
       - name: Check external link reachability
         run: npm run validate:links
-      - name: Link check summary
+      - name: Summarize restricted links honestly
         if: always()
         run: |
           node --input-type=module -e "import fs from 'node:fs'; const p='reports/link-report.json'; if(fs.existsSync(p)){const r=JSON.parse(fs.readFileSync(p));const pending=r.results.filter(x=>x.status!=='reachable');fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,'External links: '+r.results.filter(x=>x.status==='reachable').length+'/'+r.results.length+' HTTP reachable.\\n\\n'+pending.map(x=>'- '+x.status+': '+x.url).join('\\n')+'\\n');}"

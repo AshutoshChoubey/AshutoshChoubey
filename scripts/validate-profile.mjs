@@ -11,16 +11,17 @@ const official = {
   worldgyan: 'https://worldgyan.com/',
   youtube: 'https://www.youtube.com/@WorldGyan',
 };
-const names = ['terminal-card', 'github-activity', 'github-languages'];
+const names = ['hero', 'expertise', 'technology', 'ai-systems', 'research', 'connect', 'terminal-card', 'character-portrait', 'github-activity', 'github-languages'];
 const config = JSON.parse(await readFile(path.join(root, 'profile.config.json'), 'utf8'));
 const readme = await readFile(path.join(root, 'README.md'), 'utf8');
 const required = (condition, message) => { if (!condition) problems.push(message); };
 const attributes = text => Object.fromEntries([...text.matchAll(/([\w-]+)\s*=\s*(["'])(.*?)\2/gs)].map(match => [match[1].toLowerCase(), match[3]]));
 required(config.identity?.name === 'Ashutosh Kumar Choubey', 'Use the official full name');
-required(readme.includes(`# ${config.identity.name}\n`), 'README must expose the full name as an ordinary Markdown heading');
+required(readme.includes(`**${config.identity.name} · ${config.identity.headline}**`), 'README must expose the full name as ordinary Markdown');
 required(readme.includes(config.identity?.positioning), 'Positioning must have an ordinary-text equivalent');
-required(/frontend/i.test(config.identity?.positioning || ''), 'Frontend must be a primary specialization');
+required(/frontend/i.test(config.identity?.specializations || ''), 'Frontend must be a primary specialization');
 required(Number.isInteger(config.presentation?.mobileBreakpoint) && config.presentation.mobileBreakpoint >= 600 && config.presentation.mobileBreakpoint <= 1100, 'Choose a deliberate responsive breakpoint between 600 and 1100px');
+required(config.capabilities?.length === 4, 'Keep four principal engineering capabilities');
 required(config.technology?.primary?.includes('Angular') && config.technology?.primary?.includes('TypeScript'), 'Angular and TypeScript must remain primary technologies');
 for (const category of ['established', 'building', 'exploring']) required(Boolean(config.classifications?.[category]?.trim()), `Missing experience classification: ${category}`);
 required(config.projects?.length >= 3 && config.projects?.length <= 6, 'Feature three to six real public projects');
@@ -55,8 +56,11 @@ for (const name of names) {
   required(sources.some(source => new RegExp(`max-width:\\s*${config.presentation.mobileBreakpoint}px`).test(source.media || '') && source.srcset?.includes(`${name}-mobile.svg`)), `${name} needs its configured mobile source`);
   required(sources.some(source => /prefers-reduced-motion:\s*reduce/.test(source.media || '') && source.srcset?.includes('/static/')), `${name} needs a reduced-motion static source`);
 }
-required(!/\bIn the studio\b|\/info-card\.svg|\/profile-motion\/|\/themes\/|\/character-portrait(?:-mobile)?\.svg/i.test(readme), 'The README contains retired content');
-required(!/<(?:img|source)\b[^>]*\b(?:src|srcset)=["']https?:/i.test(readme), 'Profile artwork should be served from this repository');
+const visibleReadme = readme.replace(/<details\b[^>]*>[\s\S]*?<\/details>/gi, '');
+for (const name of ['github-jet', 'contribution-snake']) {
+  required(visibleReadme.includes(`/themes/main/assets/${name}.svg`), `${name} must be visible in the activity section`);
+}
+required(!/\bIn the studio\b|\/info-card\.svg|\/profile-motion\//i.test(readme), 'The README contains retired studio or About content');
 const refs = new Set([
   ...[...readme.matchAll(/\b(?:src|href)\s*=\s*(["'])(.*?)\1/gi)].map(match => match[2]),
   ...[...readme.matchAll(/\bsrcset\s*=\s*(["'])(.*?)\1/gi)].flatMap(match => match[2].split(',').map(candidate => candidate.trim().split(/\s+/)[0])),

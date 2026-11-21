@@ -1,14 +1,35 @@
 {
   "identity": {
     "name": "Ashutosh Kumar Choubey",
-    "headline": "Senior Software Engineer",
-    "positioning": "I build frontend applications with Angular and TypeScript, with a focus on application architecture and reactive state."
+    "givenName": "Ashutosh",
+    "familyName": "Kumar Choubey",
+    "headline": "Software Engineer | System Design | AI Orchestration",
+    "specializations": "SOFTWARE ENGINEERING · FRONTEND ARCHITECTURE · SYSTEM DESIGN · AI ORCHESTRATION",
+    "positioning": "Building scalable frontend systems. Exploring intelligent, agent-powered software."
   },
   "classifications": {
     "established": "Frontend architecture, Angular, TypeScript, RxJS and NgRx; enterprise UI engineering, component systems and automated testing.",
     "building": "Public engineering studies and teaching examples in Angular, reactive workflows, state management and TypeScript.",
     "exploring": "AI architecture, Agentic AI, AI orchestration and LLM-powered applications; tool integration, evaluations and human review."
   },
+  "capabilities": [
+    {
+      "title": "Frontend Architecture",
+      "detail": "Components · design systems"
+    },
+    {
+      "title": "Enterprise Engineering",
+      "detail": "Integration · quality"
+    },
+    {
+      "title": "System Design",
+      "detail": "Boundaries · state · delivery"
+    },
+    {
+      "title": "Performance & Scalability",
+      "detail": "Rendering · modular delivery"
+    }
+  ],
   "technology": {
     "primary": [
       "Angular",
@@ -16,7 +37,14 @@
       "JavaScript",
       "RxJS",
       "NgRx"
-    ]
+    ],
+    "web": "HTML5 · CSS3 / SCSS · Component Architecture",
+    "supporting": [
+      "Node.js / REST APIs",
+      "Jasmine / Jest",
+      "Git / CI/CD"
+    ],
+    "quality": "Accessibility · Security · Automated Testing"
   },
   "technologyFocus": [
     { "name": "JavaScript", "weight": 28, "role": "Primary" },
@@ -25,6 +53,12 @@
     { "name": "RxJS", "weight": 12, "role": "Reactive" },
     { "name": "Python", "weight": 8, "role": "Supporting" },
     { "name": "Agentic AI", "weight": 6, "role": "Exploring" }
+  ],
+  "exploring": [
+    "AI architecture",
+    "Tool-using LLMs & MCP",
+    "Agent orchestration",
+    "Evaluation & human review"
   ],
   "projects": [
     {
@@ -112,6 +146,15 @@
     "worldgyan": "https://worldgyan.com/",
     "youtube": "https://www.youtube.com/@WorldGyan"
   },
+  "worldgyan": {
+    "role": "Founder, WorldGyan",
+    "scope": "Technical research & education",
+    "logo": "assets/worldgyan-logo.png",
+    "wordmark": {
+      "world": "#000000",
+      "gyan": "#C65A0A"
+    }
+  },
   "review": {
     "date": "2026-10-16",
     "basis": "Official public portfolio, public repository source audit and current primary documentation. See docs/research-audit.md."
@@ -122,5 +165,19 @@
   "engineeringTerminal": {
     "focus": ["System design", "Project architecture"],
     "research": "AI orchestration"
-  }
+  },
+  "engineeringDirection": [
+    {
+      "title": "AI Architecture",
+      "detail": "Context · retrieval"
+    },
+    {
+      "title": "Agentic AI",
+      "detail": "Tools · reasoning"
+    },
+    {
+      "title": "AI Orchestration",
+      "detail": "State · coordination"
+    }
+  ]
 }

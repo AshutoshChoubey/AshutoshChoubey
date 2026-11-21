@@ -7,6 +7,7 @@
   "scripts": {
     "generate": "node scripts/generate-profile.mjs",
     "refresh:activity": "node scripts/refresh-github-activity.mjs && npm run generate",
+    "refresh:languages": "node scripts/refresh-github-languages.mjs && npm run generate",
     "validate": "node scripts/generate-profile.mjs --check && node scripts/validate-svg.mjs && node scripts/validate-profile.mjs",
     "validate:links": "node scripts/validate-links.mjs",
     "preview": "node scripts/render-preview.mjs"

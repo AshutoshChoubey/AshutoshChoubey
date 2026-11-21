@@ -5,10 +5,9 @@ import { fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
-const names = ['terminal-card', 'github-activity', 'github-languages'];
-const expected = names.flatMap(name => [
-  `assets/${name}.svg`, `assets/${name}-mobile.svg`, `assets/static/${name}.svg`, `assets/static/${name}-mobile.svg`,
-]);
+const names = ['hero', 'expertise', 'technology', 'ai-systems', 'research', 'connect', 'terminal-card', 'character-portrait', 'github-activity', 'github-languages'];
+const expected = names.flatMap(name => [`assets/${name}.svg`, `assets/${name}-mobile.svg`, `assets/static/${name}.svg`, `assets/static/${name}-mobile.svg`]);
+expected.push('assets/worldgyan-wordmark.svg');
 const problems = [];
 const rendered=[];
 for(const file of [...expected]){
@@ -35,7 +34,8 @@ async function walk(directory) {
 try { await walk(path.join(root, 'assets')); } catch (error) { problems.push(`assets: ${error.message}`); }
 for (const file of expected) if (!discovered.includes(file)) problems.push(`Missing ${file}`);
 for (const file of discovered) if (!expected.includes(file)) problems.push(`Unexpected SVG ${file}; add it to the explicit asset manifest if intended`);
-const files = await Promise.all(discovered.map(async file => ({ file, text: await readFile(path.join(root, file), 'utf8') })));
+const allowedLogoUri='data:image/png;base64,'+(await readFile(path.join(root,'assets/worldgyan-logo-hero.base64.txt'),'utf8')).trim();
+const files = await Promise.all(discovered.map(async file => ({ file, allowedLogoUri, text: await readFile(path.join(root, file), 'utf8') })));
 
 // Parse XML with Python's standard library; no npm parser or network resource loading.
 const xmlChecks = String.raw`
@@ -48,7 +48,7 @@ def seconds(value):
     return float(match.group(1))/(1000 if match.group(2)=='ms' else 1) if match else None
 for item in json.load(sys.stdin):
     file=item['file']; text=item['text']; static='/static/' in file
-    looping_asset=not static and re.fullmatch(r'github-(?:activity|languages)(?:-mobile)?\.svg',file.rsplit('/',1)[-1]) is not None
+    looping_asset=not static and re.fullmatch(r'(?:github-(?:activity|languages)|character-portrait)(?:-mobile)?\.svg',file.rsplit('/',1)[-1]) is not None
     if len(text.encode('utf-8'))>100000: issue(file,'asset exceeds 100 KB budget')
     if re.search(r'<!DOCTYPE|<!ENTITY|<\?xml-stylesheet',text,re.I):
         issue(file,'DOCTYPE, entities and external stylesheets are prohibited'); continue
@@ -62,7 +62,9 @@ for item in json.load(sys.stdin):
     nodes=list(svg.iter()); ids={}; styles=[]
     for node in nodes:
         tag=local(node.tag)
-        if tag.lower() in ['image','script','foreignobject','iframe','object','embed','audio','video']:
+        approvedLogo=tag=='image' and file.endswith(('hero.svg','hero-mobile.svg')) and node.get('href')==item['allowedLogoUri']
+        if tag=='image' and not approvedLogo: issue(file,'only the approved embedded WorldGyan logo is allowed')
+        if tag.lower() in ['script','foreignobject','iframe','object','embed','audio','video']:
             issue(file,'prohibited element '+tag)
         if node.get('id'):
             if node.get('id') in ids: issue(file,'duplicate id '+node.get('id'))
@@ -71,6 +73,7 @@ for item in json.load(sys.stdin):
         for key,value in node.attrib.items():
             key=local(key)
             if key.lower().startswith('on'): issue(file,'event handler '+key+' is prohibited')
+            if approvedLogo and key=='href': continue
             if key=='href' and not value.startswith('#'): issue(file,'external href is prohibited')
             if re.search(r'(?:javascript:|data:|https?://|file://)',value,re.I): issue(file,'external/data resource in attribute '+key)
             if re.search(r'url\(\s*[\"\']?(?!#)',value,re.I): issue(file,'nonlocal url() in '+key)

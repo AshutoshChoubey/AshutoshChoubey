@@ -1,124 +1,326 @@
-import { createHash } from 'node:crypto';
-import { mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import {readFile, writeFile, mkdir, rm} from 'node:fs/promises';
+import {fileURLToPath} from 'node:url';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { buildGitHubActivity } from './activity.mjs';
-import { buildTechnologyFocus } from './language-chart.mjs';
-import { renderTerminalCard, terminalAlt } from './profile-terminal.mjs';
+import {createHash} from 'node:crypto';
+import {buildGitHubActivity} from './activity.mjs';
+import {characterPortraitAlt, renderCharacterPortrait} from './character-portrait.mjs';
+import {advancedCompositions} from './design-v2.mjs';
+import {generateCyberTheme} from './generate-cyber-theme.mjs';
+import {buildTechnologyFocus} from './language-chart.mjs';
+import {renderTerminalCard, terminalAlt} from './profile-terminal.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
-const config = JSON.parse(await readFile(path.join(root, 'profile.config.json'), 'utf8'));
+const c = JSON.parse(await readFile(path.join(root, 'profile.config.json'), 'utf8'));
 const check = process.argv.includes('--check');
-const outputs = new Map();
-const html = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
-
-for (const mobile of [false, true]) {
-  const suffix = mobile ? '-mobile' : '';
-  outputs.set(`assets/terminal-card${suffix}.svg`, renderTerminalCard(config, { mobile }));
-  outputs.set(`assets/static/terminal-card${suffix}.svg`, renderTerminalCard(config, { mobile, staticAsset: true }));
+const esc = v => String(v).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+const text = (x,y,s,size=22,fill='#FFFFFF',extra='') => `<text x="${x}" y="${y}" font-size="${size}" fill="${fill}" ${extra}>${esc(s)}</text>`;
+const label = (x,y,s,fill='#94A3B8',extra='') => text(x,y,s,12,fill,`font-family="ui-monospace, SFMono-Regular, Consolas, monospace" letter-spacing="1.8" ${extra}`);
+const line = (x1,y1,x2,y2,color='#283950',extra='') => `<path d="M${x1} ${y1}H${x2}V${y2}" fill="none" stroke="${color}" ${extra}/>`;
+const rect = (x,y,w,h,fill='#101D35',r=14,extra='') => `<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="${r}" fill="${fill}" ${extra}/>`;
+const dot = (x,y,color='#00C9FF',r=4) => `<circle cx="${x}" cy="${y}" r="${r}" fill="${color}"/>`;
+const globe = (x,y,r,color='#F59E0B') => `<g transform="translate(${x} ${y})" fill="none" stroke="${color}" stroke-width="1.2"><circle r="${r}"/><ellipse rx="${r*.4}" ry="${r}"/><ellipse rx="${r}" ry="${r*.38}"/><path d="M-${r} 0H${r}"/></g>`;
+const trace = d => `<path class="trace" d="${d}" fill="none" stroke="url(#signal)" stroke-width="2" stroke-linecap="round"/>`;
+const border = (w,h) => rect(.5,.5,w-1,h-1,'none',18,'stroke="#283950" stroke-opacity=".7"');
+const titles = {
+  hero: `${c.identity.name} — ${c.identity.headline}`,
+  expertise: 'Engineering expertise: frontend architecture, enterprise engineering, system design, performance and scalability',
+  technology: `Core technologies: ${c.technology.primary.join(', ')}`,
+  'ai-systems': 'Exploring and researching AI architecture, AI-powered applications, LLMs and agent orchestration',
+  research: 'WorldGyan: technical research and education across software engineering and intelligent systems',
+  connect: `${c.identity.name} — ${c.worldgyan.role}`
+};
+const descriptions = {
+  hero: `${c.identity.specializations}. ${c.identity.positioning} AI engineering and agentic systems are exploration interests.`,
+  expertise: c.capabilities.map(v=>`${v.title}: ${v.detail}`).join('. ')+'. Exploring AI Architecture, Agentic AI, AI Orchestration, LLM Integration, MCP, evaluations and human review.',
+  technology: `${c.technology.web}. Supporting: ${c.technology.supporting.join(', ')}. ${c.technology.quality}.`,
+  'ai-systems': `Conceptual research architecture, not a production deployment. ${c.exploring.join('. ')}. Exploring the next generation of intelligent software.`,
+  research: 'Published research in frontend system design and AI architecture, with practical Angular testing tutorials. Clickable resources are provided in the README.',
+  connect: 'Engineer. Architect. Explore. Build. GitHub, LinkedIn, professional portfolio, WorldGyan and YouTube links are provided in the README.'
+};
+function svg(name,w,h,body,{light=false,staticAsset=false}={}) {
+  const style = `text{font-family:Arial,Helvetica,sans-serif}.trace{stroke-dasharray:1100;stroke-dashoffset:0;animation:trace 3.2s ease-out 1}.orbit{transform-box:fill-box;transform-origin:center;animation:orbit 4s ease-in-out 1}.assemble{animation:assemble 2.4s ease-out 1}.layer-1{animation:assemble 2.5s ease-out .3s 1}.layer-2{animation:assemble 2.7s ease-out .6s 1}.role-enter{animation:role-enter 2.2s ease-out .3s 1}.card-enter{animation:card-enter 2s ease-out 1}.step-1{animation:card-enter 2s ease-out .25s 1}.step-2{animation:card-enter 2s ease-out .5s 1}.step-3{animation:card-enter 2s ease-out .75s 1}.ai-glow{animation:ai-glow 4s ease-in-out 1}.architecture-drift{animation:architecture-drift 4s ease-in-out 1}.system-orbit{transform-box:fill-box;transform-origin:center;animation:system-orbit 4s ease-in-out 1}.halo-orbit{transform-origin:0 0;animation:halo-orbit 4s ease-in-out 1}.beacon{animation:beacon 3.8s ease-out 1}.rise{animation:rise 1.1s ease-out .15s 1}.aurora{transform-box:fill-box;transform-origin:center;animation:aurora 3.4s ease-out 1}.signal{stroke-dasharray:12 540;animation:signal 3.8s ease-out 1}@keyframes role-enter{from{transform:translateY(12px);opacity:.6}to{transform:translateY(0);opacity:1}}@keyframes card-enter{from{transform:translateY(18px);opacity:.35}to{transform:translateY(0);opacity:1}}@keyframes ai-glow{0%{fill:#73DEFF}25%{fill:#FFFFFF}50%{fill:#F8BF5C}75%{fill:#FFFFFF}100%{fill:#73DEFF}}@keyframes architecture-drift{0%{transform:translateY(18px);opacity:.4}45%{transform:translateY(-8px);opacity:1}75%{transform:translateY(4px)}100%{transform:translateY(0);opacity:1}}@keyframes system-orbit{from{transform:rotate(-85deg)}to{transform:rotate(0)}}@keyframes halo-orbit{from{transform:rotate(-150deg)}to{transform:rotate(0)}}@keyframes beacon{0%{r:4;opacity:.3}35%{r:15;opacity:.8}70%{r:5;opacity:.4}100%{r:10;opacity:1}}@keyframes assemble{from{transform:translateY(32px);opacity:.25}to{transform:translateY(0);opacity:1}}@keyframes trace{from{stroke-dashoffset:1100}to{stroke-dashoffset:0}}@keyframes orbit{from{transform:rotate(-14deg)}to{transform:rotate(0)}}@keyframes rise{from{transform:translateY(8px);opacity:.78}to{transform:translateY(0);opacity:1}}@keyframes aurora{from{transform:scale(.97);opacity:.55}to{transform:scale(1);opacity:1}}@keyframes signal{from{stroke-dashoffset:552}to{stroke-dashoffset:0}}@media(prefers-reduced-motion:reduce){.trace,.orbit,.rise,.aurora,.signal,.assemble,.role-enter,.card-enter,.halo-orbit,.system-orbit,.beacon,.ai-glow,.architecture-drift{animation:none!important}}`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="title desc">\n<title id="title">${esc(titles[name])}</title>\n<desc id="desc">${esc(descriptions[name])}</desc>\n<defs><clipPath id="frame-clip"><rect width="${w}" height="${h}" rx="18"/></clipPath><linearGradient id="surface" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0B1225"/><stop offset="1" stop-color="#122742"/></linearGradient><linearGradient id="signal"><stop stop-color="#1E40AF"/><stop offset=".52" stop-color="#00C9FF"/><stop offset="1" stop-color="#73DEFF"/></linearGradient><radialGradient id="ambient"><stop stop-color="#1E40AF" stop-opacity=".28"/><stop offset="1" stop-color="#1E40AF" stop-opacity="0"/></radialGradient><linearGradient id="ink"><stop stop-color="#0B1225"/><stop offset="1" stop-color="#1E40AF"/></linearGradient><linearGradient id="card" x2=".7" y2="1"><stop stop-color="#1A304C"/><stop offset="1" stop-color="#101E34"/></linearGradient><linearGradient id="orchestrator" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#194578"/><stop offset=".55" stop-color="#173957"/><stop offset="1" stop-color="#14243D"/></linearGradient><radialGradient id="cyan-halo"><stop stop-color="#00C9FF" stop-opacity=".19"/><stop offset="1" stop-color="#00C9FF" stop-opacity="0"/></radialGradient><radialGradient id="paper-light"><stop stop-color="#DCEBFA" stop-opacity=".65"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/></radialGradient><pattern id="blueprint" width="36" height="36" patternUnits="userSpaceOnUse"><path d="M36 0H0V36" fill="none" stroke="#345170" stroke-width=".5"/></pattern></defs>\n${staticAsset ? '<style>text{font-family:Arial,Helvetica,sans-serif}</style>' : `<style>${style}</style>`}\n${rect(0,0,w,h,light?'#FFFFFF':'url(#surface)',18)}\n<g clip-path="url(#frame-clip)">${body}</g>\n${border(w,h)}\n</svg>\n`;
+}
+function sectionHeader(n,title,w,mobile,light=false) {
+  const x=mobile?28:42;
+  return label(x,35,n+' / '+title,light?'#526179':'#A8B7CC') + line(x,52,w-x,52,light?'#DEE5EE':'#283950') + dot(w-x,34,'#F59E0B',3);
+}
+function technology(m) {
+  const w=m?420:960,h=m?492:298;
+  let b=sectionHeader('01','CORE TECHNOLOGY',w,m);
+  if(m) {
+    b+=rect(28,78,364,74,'#163052',12,'stroke="#3D6690"');
+    b+=text(46,113,c.technology.primary[0],28,'#FFFFFF','font-weight="700"');
+    b+=text(46,137,'Frontend architecture',16,'#A5DFFF');
+    b+=text(28,193,c.technology.primary.slice(1,3).join('  /  '),24,'#FFFFFF','font-weight="600"');
+    b+=text(28,234,c.technology.primary.slice(3).join('  /  '),23,'#73DEFF','font-weight="600"');
+    b+=text(28,274,'HTML5 · CSS3 / SCSS',17,'#CFD9E7');
+    b+=line(28,298,392,298);
+    b+=label(28,327,'SUPPORTING ENGINEERING');
+    c.technology.supporting.forEach((s,i)=>{
+      b+=dot(32,351+i*29,'#4E88BF',3);
+      b+=text(46,357+i*29,s,17,'#CFD9E7');
+    });
+    b+=line(28,434,392,434);
+    b+=text(28,466,c.technology.quality,14,'#B4C2D5');
+  } else {
+    b+=rect(42,80,226,112,'#163052',12,'stroke="#3D6690"');
+    b+=text(56,126,c.technology.primary[0],28,'#FFFFFF','font-weight="700"');
+    b+=text(56,158,'Frontend architecture',16,'#A5DFFF');
+    c.technology.primary.slice(1).forEach((s,i)=>{
+      const x=298+i*156;
+      b+=text(x,119,s,25,i>1?'#73DEFF':'#FFFFFF','font-weight="600"');
+      b+=line(x,134,x+133,134,'#345170');
+    });
+    b+=text(298,170,c.technology.web,18,'#B4C2D5');
+    b+=trace('M42 210H918');
+    b+=label(42,244,'SUPPORTING');
+    b+=text(208,244,c.technology.supporting.join('   ·   '),17,'#CFD9E7');
+    b+=text(208,274,c.technology.quality,16,'#B4C2D5');
+  }
+  return {w,h,b};
+}
+function research(m) {
+  const w=m?420:960,h=m?255:222;
+  let b=sectionHeader('04','RESEARCH & KNOWLEDGE',w,m,true);
+  b+=text(m?28:42,m?98:103,'Engineering, shared.',m?29:35,'#0B1225','font-weight="700"');
+  b+=text(m?28:42,m?129:139,'Frontend systems, AI architecture & practical tutorials.',m?14:18,'#526179');
+  if(m) {
+    b+=line(28,154,392,154,'#DEE5EE');
+    b+=text(28,187,'Frontend systems · AI architecture',18,'#1E40AF','font-weight="600"');
+    b+=text(28,218,'Software engineering · practical tutorials',16,'#526179');
+  } else {
+    b+=text(42,184,'Frontend systems  /  AI architecture  /  Practical tutorials',21,'#1E40AF','font-weight="600"');
+    b+=`<path d="M815 95h60v60h-60zM835 75h60v60" fill="none" stroke="#F59E0B" stroke-width="1.3"/>`;
+  }
+  return {w,h,b,light:true};
+}
+function connect(m) {
+  const w=m?420:960,h=m?288:236,mid=w/2;
+  let b=line(mid-22,42,mid+22,42,'#F59E0B','stroke-width="2"');
+  b+=text(mid,m?103:103,c.identity.name,m?25:34,'#0B1225','font-weight="600" text-anchor="middle"');
+  b+=`<text x="${mid}" y="${m?137:141}" font-size="${m?18:19}" text-anchor="middle"><tspan fill="#526179">Founder, </tspan><tspan fill="${esc(c.worldgyan.wordmark.world)}" font-weight="700">World</tspan><tspan fill="${esc(c.worldgyan.wordmark.gyan)}" font-weight="700">Gyan</tspan></text>`;
+  b+=line(mid-31,m?164:164,mid+31,m?164:164,'#345170');
+  if(m){
+    b+=text(mid,210,'ENGINEER. ARCHITECT.',23,'#0B1225','font-weight="700" letter-spacing="1.2" text-anchor="middle"');
+    b+=text(mid,244,'EXPLORE. BUILD.',23,'#1E40AF','font-weight="700" letter-spacing="1.2" text-anchor="middle"');
+  } else b+=text(mid,205,'ENGINEER. ARCHITECT. EXPLORE. BUILD.',25,'#0B1225','font-weight="700" letter-spacing="2.3" text-anchor="middle"');
+  return {w,h,b,light:true};
+}
+const logoUri='data:image/png;base64,'+(await readFile(path.join(root,'assets/worldgyan-logo-hero.base64.txt'),'utf8')).trim();
+const compositions={technology,research,connect,...advancedCompositions(c,{text,label,line,rect,dot,trace,sectionHeader,logoUri})};
+const outputs=new Map();
+for(const [name,draw] of Object.entries(compositions)) for(const mobile of [false,true]) {
+  const {w,h,b,light}=draw(mobile);
+  const filename=`${name}${mobile?'-mobile':''}.svg`;
+  outputs.set(`assets/${filename}`,svg(name,w,h,b,{light}));
+  outputs.set(`assets/static/${filename}`,svg(name,w,h,b,{light,staticAsset:true}));
+}
+for(const mobile of [false,true]) {
+  const suffix=mobile?'-mobile':'';
+  outputs.set(`assets/terminal-card${suffix}.svg`,renderTerminalCard(c,{mobile}));
+  outputs.set(`assets/static/terminal-card${suffix}.svg`,renderTerminalCard(c,{mobile,staticAsset:true}));
+  outputs.set(`assets/character-portrait${suffix}.svg`,renderCharacterPortrait({mobile}));
+  outputs.set(`assets/static/character-portrait${suffix}.svg`,renderCharacterPortrait({mobile,staticAsset:true}));
 }
 
-const activity = await buildGitHubActivity();
-const focus = buildTechnologyFocus(config.technologyFocus);
-for (const [name, chart] of [['github-activity', activity], ['github-languages', focus]]) {
-  outputs.set(`assets/${name}.svg`, chart.desktop);
-  outputs.set(`assets/${name}-mobile.svg`, chart.mobile);
-  outputs.set(`assets/static/${name}.svg`, chart.desktopStatic);
-  outputs.set(`assets/static/${name}-mobile.svg`, chart.mobileStatic);
+const activity=await buildGitHubActivity();
+const focus=buildTechnologyFocus(c.technologyFocus);
+for(const [name,chart] of [['github-activity',activity],['github-languages',focus]]) {
+  outputs.set(`assets/${name}.svg`,chart.desktop);
+  outputs.set(`assets/${name}-mobile.svg`,chart.mobile);
+  outputs.set(`assets/static/${name}.svg`,chart.desktopStatic);
+  outputs.set(`assets/static/${name}-mobile.svg`,chart.mobileStatic);
 }
 
-function assetUrl(file) {
-  const content = outputs.get(file);
-  const hash = createHash('sha256').update(content).digest('hex').slice(0, 12);
-  const directory = file.includes('/static/') ? 'assets/rendered/static' : 'assets/rendered';
-  const rendered = `${directory}/${hash}/${path.basename(file)}`;
-  outputs.set(rendered, content);
+outputs.set('assets/worldgyan-wordmark.svg',`<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="360" height="144" viewBox="0 0 360 144" role="img" aria-labelledby="title desc"><title id="title">WorldGyan</title><desc id="desc">World in black, Gyan in saffron. Next-Gen AI and Engineering.</desc><rect width="360" height="144" rx="12" fill="#FFFFFF"/><text x="180" y="79" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="700" text-anchor="middle"><tspan fill="${esc(c.worldgyan.wordmark.world)}">World</tspan><tspan fill="${esc(c.worldgyan.wordmark.gyan)}">Gyan</tspan></text><text x="180" y="108" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#334155" text-anchor="middle">Next-Gen AI &amp; Engineering</text></svg>\n`);
+// GitHub's raw redirect can drop query strings. Version the path, not just the URL query.
+const assetUrl=file=>{
+  const content=outputs.get(file);
+  const hash=createHash('sha256').update(content).digest('hex').slice(0,12);
+  const rendered=`assets/rendered/${file.includes('/static/')?'static/':''}${hash}/${path.basename(file)}`;
+  outputs.set(rendered,content);
   return `./${rendered}`;
-}
-
-function picture(name, alt, { inline = false } = {}) {
-  const mobile = `(max-width: ${config.presentation.mobileBreakpoint}px)`;
-  const reduced = '(prefers-reduced-motion: reduce)';
-  const source = (media, file) => `  <source media="${media}" srcset="${assetUrl(file)}">`;
-  const tags = [
+};
+const mobileMedia=`(max-width: ${c.presentation.mobileBreakpoint}px)`;
+const reducedMotion='(prefers-reduced-motion: reduce)';
+const pictureSource=(media,srcset)=>`  <source media="${media}" srcset="${srcset}">`;
+function picture(name,alt=`${titles[name]}. ${descriptions[name]}`, {inline=false}={}) {
+  const markup=[
     '<picture>',
-    source(`${reduced} and ${mobile}`, `assets/static/${name}-mobile.svg`),
-    source(reduced, `assets/static/${name}.svg`),
-    source(mobile, `assets/${name}-mobile.svg`),
-    `  <img src="${assetUrl(`assets/${name}.svg`)}"${inline ? '' : ' width="100%"'} alt="${html(alt)}">`,
+    pictureSource(`${reducedMotion} and ${mobileMedia}`,assetUrl(`assets/static/${name}-mobile.svg`)),
+    pictureSource(reducedMotion,assetUrl(`assets/static/${name}.svg`)),
+    pictureSource(mobileMedia,assetUrl(`assets/${name}-mobile.svg`)),
+    `  <img src="${assetUrl(`assets/${name}.svg`)}"${inline?'':' width="100%"'} alt="${esc(alt)}">`,
     '</picture>',
-  ];
-  const markup = tags.join('\n');
-  return inline ? markup : `<p>\n${markup}\n</p>`;
+  ].join('\n');
+  return inline?markup:`<p>\n${markup}\n</p>`;
 }
 
-const { identity, links, projects, resources } = config;
-const contactLinks = [
-  ['Portfolio', links.portfolio], ['LinkedIn', links.linkedin], ['WorldGyan', links.worldgyan],
-  ['YouTube', links.youtube], ['GitHub', links.github],
-].map(([label, url]) => `[${label}](${url})`).join(' · ');
-const linkList = (items, getTitle) => items.map(item => `- [${getTitle(item)}](${item.url}) — ${item.description}`).join('\n');
+const readme=`<!-- Generated from profile.config.json. Edit the source, then run npm run generate. -->
+<a href="${c.links.portfolio}">
+  <img src="./themes/main/assets/hero-architect-v2.svg" width="100%" alt="Ashutosh Kumar Choubey — Software Engineer | System Design | AI Orchestration. Building scalable software systems. Exploring intelligent, agent-powered software. Founder, WorldGyan.">
+</a>
 
-const readme = `<!-- Generated by scripts/generate-profile.mjs. -->
+<p align="center">
+  <a href="${c.links.portfolio}"><img src="https://img.shields.io/badge/Portfolio-me.worldgyan.com-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=googlechrome" alt="Portfolio website"></a>
+  <a href="${c.links.worldgyan}"><img src="https://img.shields.io/badge/Platform-worldgyan.com-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=safari" alt="WorldGyan Platform"></a>
+  <a href="${c.links.linkedin}"><img src="https://img.shields.io/badge/LinkedIn-Ashutosh_Kumar_Choubey-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=linkedin" alt="LinkedIn profile"></a>
+  <a href="${c.links.github}"><img src="https://img.shields.io/badge/GitHub-AshutoshChoubey-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=github" alt="GitHub profile AshutoshChoubey"></a>
+  <a href="${c.links.youtube}"><img src="https://img.shields.io/badge/YouTube-@WorldGyan-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=youtube" alt="YouTube Channel WorldGyan"></a>
+</p>
 
-# ${identity.name}
+<img src="./themes/main/assets/title-part01.svg" width="100%" alt="Part 01 · System Architecture CLI">
+<img src="./themes/main/assets/terminal-system.svg" width="100%" alt="System Architecture CLI: whoami, focus, platform, shipped repositories, and engineering foundations.">
 
-${identity.headline}
+<img src="./themes/main/assets/title-part02.svg" width="100%" alt="Part 02 · Engineering Systems &amp; Architecture">
+<img src="./themes/main/assets/architecture-leadership.svg" width="100%" alt="Architecture Leadership: Ashutosh Kumar Choubey, Founder of WorldGyan. Principal Frontend Architect &amp; Systems Engineer.">
+<img src="./themes/main/assets/engineering-systems.svg" width="100%" alt="WorldGyan — Engineering Systems: Frontend Architecture, Enterprise Engineering, System Design, Performance and Scalability. Founder: Ashutosh Kumar Choubey.">
 
 ## About Ashutosh
 
-${identity.positioning}
-
-${contactLinks}
-
 <p align="center">
-${picture('terminal-card', terminalAlt(config), { inline: true })}
+${picture('terminal-card',terminalAlt(c),{inline:true})}
+${picture('character-portrait',characterPortraitAlt,{inline:true})}
 </p>
 
-## Projects
+[Personal portfolio](${c.links.portfolio})
 
-${linkList(projects, project => project.name)}
+<img src="./themes/main/assets/title-part03.svg" width="100%" alt="Part 03 · Core Technology &amp; Reactive Foundations">
+<img src="./themes/main/assets/technology-core.svg" width="100%" alt="Core Technologies: Angular, TypeScript, RxJS, NgRx, and Supporting Systems.">
 
-## GitHub activity
+**Established expertise:** ${c.classifications.established}
 
-${picture('github-activity', activity.summary.description)}
+**Currently building:** ${c.classifications.building}
 
-[GitHub contribution calendar](${links.github}#contribution-activity)
+<img src="./themes/main/assets/title-part04.svg" width="100%" alt="Part 04 · AI Architecture &amp; Autonomous Agent Orchestration">
+<img src="./themes/main/assets/ai-orchestration.svg" width="100%" alt="AI Architecture &amp; Orchestration: Agentic workflows, Plan-Act-Reflect execution cycles, and tool integrations.">
 
-${picture('github-languages', focus.summary.description)}
+**Exploring and researching:** ${c.classifications.exploring}
 
-## Writing and tutorials
+<img src="./themes/main/assets/title-part05.svg" width="100%" alt="Part 05 · Selected Engineering Projects — Scalable Systems &amp; Open Source">
 
-I publish examples and tutorials through WorldGyan. I also explore agent orchestration and evaluation.
+Public learning projects and code references, selected after reviewing their implementations.
 
-${linkList(resources, resource => resource.title)}
+<a href="https://github.com/AshutoshChoubey/angular-interview-worldgyan.com">
+  <img src="./themes/main/assets/project-angular-architecture.svg" width="100%" alt="Angular Architecture Study: Signals, HTTP Interceptors &amp; Enterprise Architecture.">
+</a>
+<p align="center">
+  <a href="https://github.com/AshutoshChoubey/angular-interview-worldgyan.com"><img src="https://img.shields.io/badge/Repository-Angular_Architecture-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=github" alt="Angular Architecture Study repository"></a>
+  <a href="https://worldgyan.com/technology/frontend-system-design/"><img src="https://img.shields.io/badge/Research-Frontend_System_Design-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=readme" alt="Frontend System Design article"></a>
+</p>
 
-[Email](mailto:contact@worldgyan.com)
+- [**Angular architecture study**](https://github.com/AshutoshChoubey/angular-interview-worldgyan.com) — Study guides and TypeScript examples for Angular signals, HTTP interceptors, authentication flows and application architecture.
+
+<a href="https://github.com/AshutoshChoubey/rxjs-interview-worldgyan.com">
+  <img src="./themes/main/assets/project-rxjs-operator-lab.svg" width="100%" alt="RxJS Operator Lab: Interactive Higher-Order Mapping Lab comparing switchMap, mergeMap, concatMap and exhaustMap.">
+</a>
+<p align="center">
+  <a href="https://github.com/AshutoshChoubey/rxjs-interview-worldgyan.com"><img src="https://img.shields.io/badge/Repository-RxJS_Operator_Lab-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=github" alt="RxJS Operator Lab repository"></a>
+  <a href="https://www.youtube.com/playlist?list=PLqQyE6QNucSfUIpucL_nx7vDuwAa1A_VH"><img src="https://img.shields.io/badge/Watch-Angular_Testing_Series-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=youtube" alt="Angular Testing tutorials"></a>
+</p>
+
+- [**RxJS operator lab**](https://github.com/AshutoshChoubey/rxjs-interview-worldgyan.com) — Angular demonstrations comparing switchMap, mergeMap, concatMap and exhaustMap, with a reactive search example.
+
+<a href="https://github.com/AshutoshChoubey/ngrxeffects">
+  <img src="./themes/main/assets/project-ngrx-effects.svg" width="100%" alt="NgRx Effects Demo: Connecting store actions, reducers and HTTP side effects to decoupled views.">
+</a>
+<p align="center">
+  <a href="https://github.com/AshutoshChoubey/ngrxeffects"><img src="https://img.shields.io/badge/Repository-NgRx_Effects_Demo-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=github" alt="NgRx Effects Demo repository"></a>
+</p>
+
+- [**NgRx effects demo**](https://github.com/AshutoshChoubey/ngrxeffects) — An Angular PokéAPI example connecting store actions, reducers and HTTP side effects to list and detail views.
+
+<a href="https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com">
+  <img src="./themes/main/assets/project-typescript-types.svg" width="100%" alt="TypeScript Type-System Reference: Advanced Generics, Unions &amp; Mapped Types.">
+</a>
+<p align="center">
+  <a href="https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com"><img src="https://img.shields.io/badge/Repository-TypeScript_Type_System-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=github" alt="TypeScript Type-System repository"></a>
+</p>
+
+- [**TypeScript type-system examples**](https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com) — Focused examples of generics, unions, mapped types and utility types, alongside a type-system study reference.
+
+<img src="./themes/main/assets/title-part06.svg" width="100%" alt="Part 06 · GitHub Analytics &amp; Open Source Activity">
+
+${picture('github-activity',activity.summary.description)}
+
+[View contribution activity on GitHub](${c.links.github}#contribution-activity).
+
+${picture('github-languages',focus.summary.description)}
+
+<img src="./themes/main/assets/github-jet.svg" width="100%" loading="lazy" alt="Animated jet flying over the GitHub contribution calendar.">
+<img src="./themes/main/assets/contribution-snake.svg" width="100%" loading="lazy" alt="Animated contribution snake for AshutoshChoubey.">
+
+<img src="./themes/main/assets/title-part07.svg" width="100%" alt="Part 07 · Research &amp; Knowledge Sharing — Engineering, Shared">
+<img src="./themes/main/assets/research-systems.svg" width="100%" alt="Engineering, Shared: Published research in frontend system design and production AI engineering with practical tutorials.">
+
+<p align="center"><a href="${c.links.worldgyan}"><img src="./${c.worldgyan.logo}" width="64" height="64" alt="WorldGyan official circular logo"></a> <a href="${c.links.worldgyan}"><img src="${assetUrl('assets/worldgyan-wordmark.svg')}" width="160" height="64" alt="WorldGyan — Next-Gen AI and Engineering"></a></p>
+
+${c.resources.map(p=>`- [${p.title}](${p.url}) — ${p.description}`).join('\n')}
+
+<img src="./themes/main/assets/title-part08.svg" width="100%" alt="Part 08 · Connect — Let's build something worth explaining.">
+
+<p align="center">
+  <a href="mailto:contact@worldgyan.com"><img src="https://img.shields.io/badge/Email-contact@worldgyan.com-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=gmail" alt="Email contact@worldgyan.com"></a>
+  <a href="${c.links.linkedin}"><img src="https://img.shields.io/badge/LinkedIn-Ashutosh_Kumar_Choubey-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=linkedin" alt="LinkedIn profile"></a>
+  <a href="${c.links.github}"><img src="https://img.shields.io/badge/GitHub-AshutoshChoubey-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=github" alt="GitHub profile AshutoshChoubey"></a>
+  <a href="${c.links.portfolio}"><img src="https://img.shields.io/badge/Portfolio-me.worldgyan.com-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=googlechrome" alt="Portfolio website"></a>
+  <a href="${c.links.worldgyan}"><img src="https://img.shields.io/badge/Platform-worldgyan.com-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=safari" alt="WorldGyan Platform"></a>
+  <a href="${c.links.youtube}"><img src="https://img.shields.io/badge/YouTube-@WorldGyan-701A3D?style=flat-square&amp;labelColor=190B12&amp;logoColor=F8F0F3&amp;logo=youtube" alt="YouTube Channel WorldGyan"></a>
+</p>
+
+<a href="${c.links.portfolio}">
+  <img src="./themes/main/assets/footer-signature-v2.svg" width="100%" alt="Ashutosh Choubey — Building scalable frontend systems. Exploring intelligent, agent-powered software.">
+</a>
+
+### 🌌 Explore More Themes
+
+- [**Cyber-Architect Edition (Midnight Cyan)**](./themes/cyber-architect/README.md)
+- [**Obsidian Architect Standalone Edition**](./themes/obsidian-architect/README.md)
+- [**Classic Engineering Minimal Edition**](./themes/classic-engineering/README.md)
+
+<details>
+<summary><b>📐 Architectural Specification &amp; Responsive Fallbacks</b></summary>
+
+${picture('hero')}
+
+**${c.identity.name} · ${c.identity.headline}**
+
+${c.identity.positioning}
+
+${picture('expertise')}
+
+${picture('technology')}
+
+${picture('ai-systems')}
+
+${picture('research')}
+
+*Preserved Classic Minimal Theme specification is documented in [Classic Engineering Minimal Theme](./themes/classic-engineering/README.md).*
+
+</details>
+
+${picture('connect')}
+
+[GitHub](${c.links.github}) · [LinkedIn](${c.links.linkedin}) · [Professional Portfolio](${c.links.portfolio}) · [WorldGyan](${c.links.worldgyan}) · [YouTube](${c.links.youtube})
 `;
-outputs.set('README.md', readme);
-
-const manifest = 'assets/rendered/manifest.json';
-const renderedFiles = [...outputs.keys()].filter(file => file.startsWith('assets/rendered/')).sort();
-outputs.set(manifest, JSON.stringify({ version: 1, files: renderedFiles }, null, 2) + '\n');
-if (!check) {
-  const old = JSON.parse(await readFile(path.join(root, manifest), 'utf8').catch(() => '{}'));
-  for (const file of old.files || []) {
-    if (!/^assets\/rendered\/(?:static\/)?[a-f0-9]{12}\/[a-z-]+\.svg$/.test(file)) throw new Error('Unsafe generated manifest path');
-    if (!outputs.has(file)) await rm(path.join(root, file), { force: true });
+outputs.set('README.md',readme);
+const renderedFiles=[...outputs.keys()].filter(file=>file.startsWith('assets/rendered/')).sort();
+const manifest='assets/rendered/manifest.json';
+outputs.set(manifest,JSON.stringify({version:1,files:renderedFiles},null,2)+'\n');
+if(!check){
+  const old=JSON.parse(await readFile(path.join(root,manifest),'utf8').catch(()=>'{}'));
+  for(const file of old.files||[]){
+    if(!/^assets\/rendered\/(?:static\/)?[a-f0-9]{12}\/[a-z-]+\.svg$/.test(file))throw Error('Unsafe generated manifest path');
+    if(!outputs.has(file))await rm(path.join(root,file),{force:true});
   }
 }
-
-const stale = [];
-for (const [file, value] of outputs) {
-  const destination = path.join(root, file);
-  if (check) {
-    if (await readFile(destination, 'utf8').catch(() => null) !== value) stale.push(file);
-  } else {
-    await mkdir(path.dirname(destination), { recursive: true });
-    await writeFile(destination, value);
-  }
+if(!check) await generateCyberTheme(root);
+let stale=[];
+for(const [file,value] of outputs) {
+  const dest=path.join(root,file);
+  if(check) {if(await readFile(dest,'utf8').catch(()=>null)!==value)stale.push(file);}
+  else {await mkdir(path.dirname(dest),{recursive:true});await writeFile(dest,value);}
 }
-if (stale.length) {
-  console.error('Generated files differ: ' + stale.join(', '));
-  process.exitCode = 1;
-} else console.log(`${check ? 'Verified' : 'Generated'} ${outputs.size} deterministic files.`);
+if(stale.length){console.error('Generated files differ: '+stale.join(', '));process.exitCode=1;}
+else console.log(`${check?'Verified':'Generated'} ${outputs.size} deterministic files.`);
