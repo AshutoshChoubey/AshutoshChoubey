@@ -7,10 +7,10 @@ from pathlib import Path
 import subprocess
 
 
-GLYPHS = "~-+=*#%@"
-ROWS = 35
-CELL_WIDTH = 7.4
-CELL_HEIGHT = 9.65
+GLYPHS = " .'`-:;+=*csS%@#"
+COLUMNS = 99
+ROWS = 44
+ART_ASPECT_RATIO = 628 / 318
 OPAQUE = 180
 
 
@@ -45,6 +45,8 @@ def visible_bounds(width, height, pixels):
 
 
 def sample_cell(pixels, width, left, top, right, bottom):
+    if right <= left or bottom <= top:
+        return None
     samples, sum_luminance = 0, 0.0
     for y in range(top, bottom):
         for x in range(left, right):
@@ -60,11 +62,14 @@ def sample_cell(pixels, width, left, top, right, bottom):
 
 def sample_grid(width, height, pixels):
     left, top, right, bottom = visible_bounds(width, height, pixels)
-    # Keep the glasses and facial detail readable in a narrow terminal panel.
-    bottom = top + round((bottom - top) * .82)
-    columns = round((right - left) / (bottom - top) * ROWS * CELL_HEIGHT / CELL_WIDTH)
-    xs = [left + round((right - left) * index / columns) for index in range(columns + 1)]
-    ys = [top + round((bottom - top) * index / ROWS) for index in range(ROWS + 1)]
+    subject_height = bottom - top
+    # Frame the head and shoulders while keeping the text grid's proportions.
+    crop_height = subject_height * .667
+    crop_width = crop_height * ART_ASPECT_RATIO
+    crop_left = (left + right - crop_width) / 2
+    crop_top = top - subject_height * .027
+    xs = [max(0, min(width, round(crop_left + crop_width * index / COLUMNS))) for index in range(COLUMNS + 1)]
+    ys = [max(0, min(height, round(crop_top + crop_height * index / ROWS))) for index in range(ROWS + 1)]
     luminance = [
         [sample_cell(pixels, width, x0, y0, x1, y1) for x0, x1 in zip(xs, xs[1:])]
         for y0, y1 in zip(ys, ys[1:])
@@ -75,18 +80,19 @@ def sample_grid(width, height, pixels):
         row = []
         for x, value in enumerate(line):
             if value is None:
-                row.append(" ")
+                # Run the terminal's brightest characters around the silhouette.
+                row.append("#")
                 continue
             surrounding = [
                 luminance[other_y][other_x]
                 for other_y in range(max(0, y - 1), min(ROWS, y + 2))
-                for other_x in range(max(0, x - 1), min(columns, x + 2))
+                for other_x in range(max(0, x - 1), min(COLUMNS, x + 2))
                 if luminance[other_y][other_x] is not None
             ]
-            sharpened = value + .4 * (value - sum(surrounding) / len(surrounding))
-            contrast = max(0, min(1, (sharpened - 12) / 165)) ** .82
+            sharpened = value + .62 * (value - sum(surrounding) / len(surrounding))
+            contrast = max(0, min(1, (sharpened - 12) / 215)) ** .90
             row.append(GLYPHS[round(contrast * (len(GLYPHS) - 1))])
-        rows.append("".join(row).rstrip())
+        rows.append("".join(row))
     return rows
 
 

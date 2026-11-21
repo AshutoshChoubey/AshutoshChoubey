@@ -74,3 +74,7 @@ The microphone-free portrait decodes across the 8.31-second loop, including a 5.
 The replacement About panel uses text glyphs sampled from the microphone-free seated portrait. The terminal and portrait align on desktop and stack on narrow screens. The studio section and its GIF were removed from the source tree.
 
 Chrome checks at 320, 375, 768, 1024, and 1440 pixels in light and dark surroundings found no horizontal overflow. Both embedded charts showed frame changes. Reduced-motion checks selected the static counterparts. The weekly plot draws 12 completed weeks from the saved calendar, and the language chart cycles through six primary languages from 32 classified public repositories. The anonymous GitHub response reported 38 eligible repositories, six without a classified language.
+
+### Terminal portrait refinement and T-SQL slice
+
+The denser portrait grid uses near-white terminal characters on burgundy and keeps the original seated photo as the source. Chrome verified the paired desktop and stacked mobile layouts. The language chart uses connected donut segments, and the active highlight stays within its segment. The six segments share their inner and outer endpoints in desktop, mobile, animated, and static SVGs. The short T-SQL segment was inspected at the 12 o’clock seam while highlighted.

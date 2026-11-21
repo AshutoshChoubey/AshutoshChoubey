@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 449" width="420" height="449" role="img" aria-labelledby="title desc">
 <title id="title">Repository languages</title>
-<desc id="desc">GitHub primary languages reported for 32 of 38 owned public repositories as of Nov 21, 2026. JavaScript 7, HTML 10, TypeScript 8, PHP 5, CSS 1, TSQL 1. Forks and archived repositories are excluded.</desc>
+<desc id="desc">GitHub primary languages reported for 32 of 38 owned public repositories as of Nov 21, 2026. JavaScript 7, HTML 10, TypeScript 8, PHP 5, CSS 1, T-SQL 1. Forks and archived repositories are excluded.</desc>
 <defs><linearGradient id="board" x2="1" y2="1"><stop stop-color="#190B12"/><stop offset="1" stop-color="#10070C"/></linearGradient></defs>
 <style>
 .sans{font-family:system-ui,Arial,sans-serif}.serif{font-family:Georgia,'Times New Roman',serif}
@@ -22,12 +22,18 @@
 <rect x="1" y="1" width="418" height="447" rx="18" fill="url(#board)" stroke="#542039" stroke-width="2"/>
 <text x="22" y="47" class="serif" font-size="32" fill="#F8F0F3" text-anchor="start" font-weight="400">Repository languages</text>
 <text x="22" y="73" class="sans" font-size="15" fill="#E5B5C7" text-anchor="start" font-weight="400">32 of 38 public repositories classified</text>
-<circle cx="210" cy="170" r="64" fill="none" stroke="#E9A6C2" stroke-width="27" pathLength="100" stroke-dasharray="21.87500 78.12500" stroke-dashoffset="0.00000" transform="rotate(-90 210 170)"/><g class="highlight language-0"><circle cx="210" cy="170" r="79.5" fill="none" stroke="#FFC8DE" stroke-width="2" pathLength="100" stroke-dasharray="21.87500 78.12500" stroke-dashoffset="0.00000" transform="rotate(-90 210 170)"/></g>
-<circle cx="210" cy="170" r="64" fill="none" stroke="#9F648F" stroke-width="27" pathLength="100" stroke-dasharray="31.25000 68.75000" stroke-dashoffset="-21.87500" transform="rotate(-90 210 170)"/><g class="highlight language-1"><circle cx="210" cy="170" r="79.5" fill="none" stroke="#FFC8DE" stroke-width="2" pathLength="100" stroke-dasharray="31.25000 68.75000" stroke-dashoffset="-21.87500" transform="rotate(-90 210 170)"/></g>
-<circle cx="210" cy="170" r="64" fill="none" stroke="#D25785" stroke-width="27" pathLength="100" stroke-dasharray="25.00000 75.00000" stroke-dashoffset="-53.12500" transform="rotate(-90 210 170)"/><g class="highlight language-2"><circle cx="210" cy="170" r="79.5" fill="none" stroke="#FFC8DE" stroke-width="2" pathLength="100" stroke-dasharray="25.00000 75.00000" stroke-dashoffset="-53.12500" transform="rotate(-90 210 170)"/></g>
-<circle cx="210" cy="170" r="64" fill="none" stroke="#BD92C1" stroke-width="27" pathLength="100" stroke-dasharray="15.62500 84.37500" stroke-dashoffset="-78.12500" transform="rotate(-90 210 170)"/><g class="highlight language-3"><circle cx="210" cy="170" r="79.5" fill="none" stroke="#FFC8DE" stroke-width="2" pathLength="100" stroke-dasharray="15.62500 84.37500" stroke-dashoffset="-78.12500" transform="rotate(-90 210 170)"/></g>
-<circle cx="210" cy="170" r="64" fill="none" stroke="#E17767" stroke-width="27" pathLength="100" stroke-dasharray="3.12500 96.87500" stroke-dashoffset="-93.75000" transform="rotate(-90 210 170)"/><g class="highlight language-4"><circle cx="210" cy="170" r="79.5" fill="none" stroke="#FFC8DE" stroke-width="2" pathLength="100" stroke-dasharray="3.12500 96.87500" stroke-dashoffset="-93.75000" transform="rotate(-90 210 170)"/></g>
-<circle cx="210" cy="170" r="64" fill="none" stroke="#8369A5" stroke-width="27" pathLength="100" stroke-dasharray="3.12500 96.87500" stroke-dashoffset="-96.87500" transform="rotate(-90 210 170)"/><g class="highlight language-5"><circle cx="210" cy="170" r="79.5" fill="none" stroke="#FFC8DE" stroke-width="2" pathLength="100" stroke-dasharray="3.12500 96.87500" stroke-dashoffset="-96.87500" transform="rotate(-90 210 170)"/></g>
+<path d="M210.000 92.500 A77.5 77.5 0 0 1 286.011 154.881 L259.530 160.148 A50.5 50.5 0 0 0 210.000 119.500 Z" fill="#E9A6C2" fill-rule="evenodd" stroke="#E9A6C2" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M286.011 154.881 A77.5 77.5 0 0 1 194.881 246.011 L200.148 219.530 A50.5 50.5 0 0 0 259.530 160.148 Z" fill="#9F648F" fill-rule="evenodd" stroke="#9F648F" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M194.881 246.011 A77.5 77.5 0 0 1 133.989 154.881 L160.470 160.148 A50.5 50.5 0 0 0 200.148 219.530 Z" fill="#D25785" fill-rule="evenodd" stroke="#D25785" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M133.989 154.881 A77.5 77.5 0 0 1 180.342 98.399 L190.674 123.344 A50.5 50.5 0 0 0 160.470 160.148 Z" fill="#BD92C1" fill-rule="evenodd" stroke="#BD92C1" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M180.342 98.399 A77.5 77.5 0 0 1 194.881 93.989 L200.148 120.470 A50.5 50.5 0 0 0 190.674 123.344 Z" fill="#E17767" fill-rule="evenodd" stroke="#E17767" stroke-width=".65" stroke-linejoin="round"/>
+<path d="M194.881 93.989 A77.5 77.5 0 0 1 210.000 92.500 L210.000 119.500 A50.5 50.5 0 0 0 200.148 120.470 Z" fill="#8369A5" fill-rule="evenodd" stroke="#8369A5" stroke-width=".65" stroke-linejoin="round"/>
+<path class="highlight language-0" d="M210.000 92.500 A77.5 77.5 0 0 1 286.011 154.881 L259.530 160.148 A50.5 50.5 0 0 0 210.000 119.500 Z" fill="#FFC8DE" fill-rule="evenodd" fill-opacity=".52"/>
+<path class="highlight language-1" d="M286.011 154.881 A77.5 77.5 0 0 1 194.881 246.011 L200.148 219.530 A50.5 50.5 0 0 0 259.530 160.148 Z" fill="#FFC8DE" fill-rule="evenodd" fill-opacity=".52"/>
+<path class="highlight language-2" d="M194.881 246.011 A77.5 77.5 0 0 1 133.989 154.881 L160.470 160.148 A50.5 50.5 0 0 0 200.148 219.530 Z" fill="#FFC8DE" fill-rule="evenodd" fill-opacity=".52"/>
+<path class="highlight language-3" d="M133.989 154.881 A77.5 77.5 0 0 1 180.342 98.399 L190.674 123.344 A50.5 50.5 0 0 0 160.470 160.148 Z" fill="#FFC8DE" fill-rule="evenodd" fill-opacity=".52"/>
+<path class="highlight language-4" d="M180.342 98.399 A77.5 77.5 0 0 1 194.881 93.989 L200.148 120.470 A50.5 50.5 0 0 0 190.674 123.344 Z" fill="#FFC8DE" fill-rule="evenodd" fill-opacity=".52"/>
+<path class="highlight language-5" d="M194.881 93.989 A77.5 77.5 0 0 1 210.000 92.500 L210.000 119.500 A50.5 50.5 0 0 0 200.148 120.470 Z" fill="#FFC8DE" fill-rule="evenodd" fill-opacity=".52"/>
 <text x="210" y="176" class="serif" font-size="33" fill="#F8F0F3" text-anchor="middle" font-weight="600">32</text>
 <text x="210" y="196" class="sans" font-size="13" fill="#E5B5C7" text-anchor="middle" font-weight="400">repositories</text>
 <rect x="22" y="277" width="183" height="31" rx="6" fill="#150910" stroke="#542039"/>
@@ -58,7 +64,7 @@
 <rect x="213" y="355" width="183" height="31" rx="6" fill="#150910" stroke="#542039"/>
 <rect class="highlight language-5" x="213" y="355" width="183" height="31" rx="6" fill="#381727" stroke="#8369A5"/>
 <circle cx="227" cy="370.5" r="4" fill="#8369A5"/>
-<text x="239" y="375.5" class="sans" font-size="14" fill="#F8F0F3" text-anchor="start" font-weight="400">TSQL</text>
+<text x="239" y="375.5" class="sans" font-size="14" fill="#F8F0F3" text-anchor="start" font-weight="400">T-SQL</text>
 <text x="383" y="375.5" class="sans" font-size="14" fill="#E5B5C7" text-anchor="end" font-weight="600">1</text>
 <text x="22" y="421" class="sans" font-size="13" fill="#E5B5C7" text-anchor="start" font-weight="400">GitHub · Nov 21, 2026 · forks and archives excluded</text>
 </svg>

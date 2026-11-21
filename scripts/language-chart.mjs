@@ -50,12 +50,17 @@ function summarize(snapshot) {
     const remaining = languages.splice(slots - 1);
     languages.push({ name: 'Other languages', count: remaining.reduce((total, entry) => total + entry.count, 0) });
   }
-  let start = 0;
+  let offset = 0;
   const slices = languages.map(({ name, count }, index) => {
-    const size = 100 * count / classified;
-    const slice = { name, count, start, size, color: palette.slices[index] };
-    start += size;
-    return slice;
+    const start = offset / classified;
+    offset += count;
+    return {
+      name: name === 'TSQL' ? 'T-SQL' : name,
+      count,
+      start,
+      end: offset / classified,
+      color: palette.slices[index],
+    };
   });
   const capturedDate = dateFormat.format(new Date(snapshot.fetchedAt));
   const distribution = slices.map(({ name, count }) => `${name} ${count}`).join(', ');
@@ -68,8 +73,18 @@ function text(x, y, value, size, options = {}) {
   return `<text x="${x}" y="${y}" class="${family}" font-size="${size}" fill="${color}" text-anchor="${align}" font-weight="${weight}">${escape(value)}</text>`;
 }
 
-function arc(slice, x, y, radius, width, color) {
-  return `<circle cx="${x}" cy="${y}" r="${radius}" fill="none" stroke="${color}" stroke-width="${width}" pathLength="100" stroke-dasharray="${slice.size.toFixed(5)} ${(100 - slice.size).toFixed(5)}" stroke-dashoffset="${(-slice.start).toFixed(5)}" transform="rotate(-90 ${x} ${y})"/>`;
+function sectorPath({ start, end }, x, y, inner, outer) {
+  const point = (radius, turn) => {
+    const angle = (turn === 1 ? 0 : turn) * 2 * Math.PI;
+    return `${(x + radius * Math.sin(angle)).toFixed(3)} ${(y - radius * Math.cos(angle)).toFixed(3)}`;
+  };
+  if (start === 0 && end === 1) {
+    return `M${point(outer, 0)} A${outer} ${outer} 0 0 1 ${point(outer, 0.5)} A${outer} ${outer} 0 0 1 ${point(outer, 0)} Z ` +
+      `M${point(inner, 0)} A${inner} ${inner} 0 0 0 ${point(inner, 0.5)} A${inner} ${inner} 0 0 0 ${point(inner, 0)} Z`;
+  }
+  const largeArc = end - start > 0.5 ? 1 : 0;
+  return `M${point(outer, start)} A${outer} ${outer} 0 ${largeArc} 1 ${point(outer, end)} ` +
+    `L${point(inner, end)} A${inner} ${inner} 0 ${largeArc} 0 ${point(inner, start)} Z`;
 }
 
 function highlightStyles(count) {
@@ -92,12 +107,15 @@ function highlightStyles(count) {
 function ring(summary, x, y, mobile, animated) {
   const radius = mobile ? 64 : 90;
   const thickness = mobile ? 27 : 37;
-  const slices = summary.slices.map((slice, index) => {
-    const base = arc(slice, x, y, radius, thickness, slice.color);
-    const glow = arc(slice, x, y, radius + thickness / 2 + 2, 2, palette.accent);
-    return `${base}${animated ? `<g class="highlight language-${index}">${glow}</g>` : ''}`;
-  });
-  return `${slices.join('\n')}
+  const slices = summary.slices.map(slice => ({
+    ...slice, path: sectorPath(slice, x, y, radius - thickness / 2, radius + thickness / 2),
+  }));
+  // A same-color edge prevents the backdrop from showing through antialiased joins.
+  const wedges = slices.map(({ path, color }) => `<path d="${path}" fill="${color}" fill-rule="evenodd" stroke="${color}" stroke-width=".65" stroke-linejoin="round"/>`);
+  if (animated) {
+    wedges.push(...slices.map(({ path }, index) => `<path class="highlight language-${index}" d="${path}" fill="${palette.accent}" fill-rule="evenodd" fill-opacity=".52"/>`));
+  }
+  return `${wedges.join('\n')}
 ${text(x, y + 6, summary.classified, mobile ? 33 : 43, { align: 'middle', color: palette.heading, family: 'serif', weight: 600 })}
 ${text(x, y + (mobile ? 26 : 31), 'repositories', mobile ? 13 : 15, { align: 'middle' })}`;
 }
