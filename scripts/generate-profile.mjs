@@ -3,8 +3,10 @@ import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {buildGitHubActivity} from './activity.mjs';
+import {characterPortraitAlt, renderCharacterPortrait} from './character-portrait.mjs';
 import {advancedCompositions} from './design-v2.mjs';
 import {generateCyberTheme} from './generate-cyber-theme.mjs';
+import {buildLanguageChart} from './language-chart.mjs';
 import {renderTerminalCard, terminalAlt} from './profile-terminal.mjs';
 
 const root = fileURLToPath(new URL('../', import.meta.url));
@@ -115,16 +117,20 @@ for(const [name,draw] of Object.entries(compositions)) for(const mobile of [fals
   outputs.set(`assets/static/${filename}`,svg(name,w,h,b,{light,staticAsset:true}));
 }
 for(const mobile of [false,true]) {
-  const filename=`terminal-card${mobile?'-mobile':''}.svg`;
-  outputs.set(`assets/${filename}`,renderTerminalCard(c,{mobile}));
-  outputs.set(`assets/static/${filename}`,renderTerminalCard(c,{mobile,staticAsset:true}));
+  const suffix=mobile?'-mobile':'';
+  outputs.set(`assets/terminal-card${suffix}.svg`,renderTerminalCard(c,{mobile}));
+  outputs.set(`assets/static/terminal-card${suffix}.svg`,renderTerminalCard(c,{mobile,staticAsset:true}));
+  outputs.set(`assets/character-portrait${suffix}.svg`,renderCharacterPortrait({mobile}));
+  outputs.set(`assets/static/character-portrait${suffix}.svg`,renderCharacterPortrait({mobile,staticAsset:true}));
 }
 
-const activity=await buildGitHubActivity();
-outputs.set('assets/github-activity.svg',activity.desktop);
-outputs.set('assets/github-activity-mobile.svg',activity.mobile);
-outputs.set('assets/static/github-activity.svg',activity.desktopStatic);
-outputs.set('assets/static/github-activity-mobile.svg',activity.mobileStatic);
+const [activity,languages]=await Promise.all([buildGitHubActivity(),buildLanguageChart()]);
+for(const [name,chart] of [['github-activity',activity],['github-languages',languages]]) {
+  outputs.set(`assets/${name}.svg`,chart.desktop);
+  outputs.set(`assets/${name}-mobile.svg`,chart.mobile);
+  outputs.set(`assets/static/${name}.svg`,chart.desktopStatic);
+  outputs.set(`assets/static/${name}-mobile.svg`,chart.mobileStatic);
+}
 
 outputs.set('assets/worldgyan-wordmark.svg',`<?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" width="360" height="144" viewBox="0 0 360 144" role="img" aria-labelledby="title desc"><title id="title">WorldGyan</title><desc id="desc">World in black, Gyan in saffron. Next-Gen AI and Engineering.</desc><rect width="360" height="144" rx="12" fill="#FFFFFF"/><text x="180" y="79" font-family="Arial,Helvetica,sans-serif" font-size="54" font-weight="700" text-anchor="middle"><tspan fill="${esc(c.worldgyan.wordmark.world)}">World</tspan><tspan fill="${esc(c.worldgyan.wordmark.gyan)}">Gyan</tspan></text><text x="180" y="108" font-family="Arial,Helvetica,sans-serif" font-size="17" fill="#334155" text-anchor="middle">Next-Gen AI &amp; Engineering</text></svg>\n`);
 // GitHub's raw redirect can drop query strings. Version the path, not just the URL query.
@@ -136,9 +142,7 @@ const assetUrl=file=>{
   return `./${rendered}`;
 };
 const mobileMedia=`(max-width: ${c.presentation.mobileBreakpoint}px)`;
-const desktopMedia=`(min-width: ${c.presentation.mobileBreakpoint+1}px)`;
 const reducedMotion='(prefers-reduced-motion: reduce)';
-const allowMotion='(prefers-reduced-motion: no-preference)';
 const pictureSource=(media,srcset)=>`  <source media="${media}" srcset="${srcset}">`;
 function picture(name,alt=`${titles[name]}. ${descriptions[name]}`, {inline=false}={}) {
   const markup=[
@@ -151,21 +155,6 @@ function picture(name,alt=`${titles[name]}. ${descriptions[name]}`, {inline=fals
   ].join('\n');
   return inline?markup:`<p>\n${markup}\n</p>`;
 }
-
-const motionDirectory='./assets/profile-motion';
-const seatedGif=`${motionDirectory}/seated-reveal.gif`;
-const seatedPoster=`${motionDirectory}/seated-portrait.webp`;
-// The 672px poster and GIF occupy the terminal's 400px width on desktop.
-const seatedPicture=`<picture>
-${pictureSource(`${allowMotion} and ${mobileMedia}`,seatedGif)}
-${pictureSource(`${allowMotion} and ${desktopMedia}`,`${seatedGif} 1.68x`)}
-${pictureSource(desktopMedia,`${seatedPoster} 1.68x`)}
-  <img src="${seatedPoster}" alt="${esc(c.profileMotion.seatedAlt)}">
-</picture>`;
-const studioPicture=`<picture>
-${pictureSource(allowMotion,`${motionDirectory}/studio-walk.gif`)}
-  <img src="${motionDirectory}/studio-walk.webp" width="100%" alt="${esc(c.profileMotion.studioAlt)}">
-</picture>`;
 
 const readme=`<!-- Generated from profile.config.json. Edit the source, then run npm run generate. -->
 <a href="${c.links.portfolio}">
@@ -191,14 +180,10 @@ const readme=`<!-- Generated from profile.config.json. Edit the source, then run
 
 <p align="center">
 ${picture('terminal-card',terminalAlt(c),{inline:true})}
-${seatedPicture}
+${picture('character-portrait',characterPortraitAlt,{inline:true})}
 </p>
 
-### In the studio
-
-<p>
-${studioPicture}
-</p>
+[Personal portfolio](${c.links.portfolio})
 
 <img src="./themes/main/assets/title-part03.svg" width="100%" alt="Part 03 · Core Technology &amp; Reactive Foundations">
 <img src="./themes/main/assets/technology-core.svg" width="100%" alt="Core Technologies: Angular, TypeScript, RxJS, NgRx, and Supporting Systems.">
@@ -258,7 +243,9 @@ Public learning projects and code references, selected after reviewing their imp
 
 ${picture('github-activity',activity.summary.description)}
 
-Daily contributions and weekly totals from my GitHub profile. GitHub may include anonymized private contributions when enabled. [View activity on GitHub](${c.links.github}#contribution-activity).
+[View contribution activity on GitHub](${c.links.github}#contribution-activity).
+
+${picture('github-languages',languages.summary.description)}
 
 <img src="./themes/main/assets/github-jet.svg" width="100%" loading="lazy" alt="Animated jet flying over the GitHub contribution calendar.">
 <img src="./themes/main/assets/contribution-snake.svg" width="100%" loading="lazy" alt="Animated contribution snake for AshutoshChoubey.">

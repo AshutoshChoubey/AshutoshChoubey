@@ -11,7 +11,7 @@ const official = {
   worldgyan: 'https://worldgyan.com/',
   youtube: 'https://www.youtube.com/@WorldGyan',
 };
-const names = ['hero', 'expertise', 'technology', 'ai-systems', 'research', 'connect', 'terminal-card', 'github-activity'];
+const names = ['hero', 'expertise', 'technology', 'ai-systems', 'research', 'connect', 'terminal-card', 'character-portrait', 'github-activity', 'github-languages'];
 const config = JSON.parse(await readFile(path.join(root, 'profile.config.json'), 'utf8'));
 const readme = await readFile(path.join(root, 'README.md'), 'utf8');
 const required = (condition, message) => { if (!condition) problems.push(message); };
@@ -45,8 +45,7 @@ if (config.review?.date) {
 required(Boolean(config.review?.basis?.trim()), 'Review date requires its research basis');
 required(!/<(?:script|iframe|object|embed)\b|javascript:|data:image\//i.test(readme), 'README contains unsupported active/embedded content');
 const pictures = [...readme.matchAll(/<picture\b[^>]*>([\s\S]*?)<\/picture>/gi)];
-const motion = [['seated-portrait', 'seated-reveal'], ['studio-walk', 'studio-walk']];
-required(pictures.length === names.length + motion.length, 'Unexpected number of profile pictures');
+required(pictures.length === names.length, 'Unexpected number of profile pictures');
 for (const name of names) {
   const picture = pictures.find(match => new RegExp(`/${name}\\.svg`).test(match[1]));
   required(Boolean(picture), `Missing picture for ${name}`);
@@ -57,21 +56,11 @@ for (const name of names) {
   required(sources.some(source => new RegExp(`max-width:\\s*${config.presentation.mobileBreakpoint}px`).test(source.media || '') && source.srcset?.includes(`${name}-mobile.svg`)), `${name} needs its configured mobile source`);
   required(sources.some(source => /prefers-reduced-motion:\s*reduce/.test(source.media || '') && source.srcset?.includes('/static/')), `${name} needs a reduced-motion static source`);
 }
-for (const [poster, animation] of motion) {
-  const picture = pictures.find(match => match[1].includes(`/profile-motion/${poster}.webp`));
-  required(Boolean(picture), `Missing ${poster} motion poster`);
-  if (!picture) continue;
-  const sources = [...picture[1].matchAll(/<source\b([^>]+)>/gi)].map(match => attributes(match[1]));
-  const animated = sources.filter(source => source.srcset?.split(/\s+/)[0].endsWith(`/${animation}.gif`));
-  required(animated.length > 0 && animated.every(source => source.media?.includes('(prefers-reduced-motion: no-preference)')), `${animation} should animate only when the viewer has no reduced-motion preference`);
-  const image = attributes(picture[1].match(/<img\b([^>]+)>/i)?.[1] || '');
-  required(image.src?.endsWith(`/${poster}.webp`) && image.alt?.trim().length >= 16, `${poster} needs a static poster with descriptive alternative text`);
-}
 const visibleReadme = readme.replace(/<details\b[^>]*>[\s\S]*?<\/details>/gi, '');
 for (const name of ['github-jet', 'contribution-snake']) {
   required(visibleReadme.includes(`/themes/main/assets/${name}.svg`), `${name} must be visible in the activity section`);
 }
-required(!/\/(?:info-card\.svg|profile-motion\/(?:stage-motion\.gif|podcast-motion\.gif|profile-motion\.mp4))/i.test(readme), 'The About or studio section contains a retired asset');
+required(!/\bIn the studio\b|\/info-card\.svg|\/profile-motion\//i.test(readme), 'The README contains retired studio or About content');
 const refs = new Set([
   ...[...readme.matchAll(/\b(?:src|href)\s*=\s*(["'])(.*?)\1/gi)].map(match => match[2]),
   ...[...readme.matchAll(/\bsrcset\s*=\s*(["'])(.*?)\1/gi)].flatMap(match => match[2].split(',').map(candidate => candidate.trim().split(/\s+/)[0])),

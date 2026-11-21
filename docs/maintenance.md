@@ -31,9 +31,9 @@ Keep the public README concise. Technology research can evolve without rewriting
 
 ## About cards and GitHub activity
 
-Edit the engineering terminal copy in `profile.config.json` and its artwork in `scripts/profile-terminal.mjs`. The terminal and seated portrait sit side by side when there is room and stack at narrow widths. Media lives in `assets/profile-motion/` with still previews for reduced-motion viewers. The renderers are `scripts/render-seated-reveal.py`, which takes the original seated cutout as input, and `scripts/render-studio-walk.py`, which uses the standing portrait in `assets/`.
+Edit the engineering terminal copy in `profile.config.json` and its artwork in `scripts/profile-terminal.mjs`. `scripts/character-portrait.mjs` renders the seated portrait from `data/character-portrait.json`. The sampler in `scripts/sample-character-portrait.py` converts the original transparent cutout to glyphs. The two panels sit side by side when there is room and stack at narrow widths.
 
-Run `npm run refresh:activity` to fetch the contribution calendar from GitHub without credentials and regenerate the profile. A rejected or unavailable response leaves `data/github-activity.json` intact. `npm run generate` uses the saved data without a network request. The dashboard animates the dated calendar, weekly trend and totals. The stored totals can include anonymized private activity that GitHub shows on the public calendar.
+Run `npm run refresh:activity` to fetch the contribution calendar and regenerate the weekly chart. Run `npm run refresh:languages` to refresh the public repository language breakdown. `npm run generate` uses the saved snapshots without a network request. The weekly chart can include anonymized private activity that GitHub shows on the public contribution calendar.
 
 ## Dates and changing technology
 

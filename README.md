@@ -28,21 +28,14 @@
   <img src="./assets/rendered/922eb8ba3199/terminal-card.svg" alt="Ashutosh's engineering.ts. Focus areas include System design and Project architecture. Frontend stack includes Angular, TypeScript, RxJS, NgRx. Research includes AI orchestration.">
 </picture>
 <picture>
-  <source media="(prefers-reduced-motion: no-preference) and (max-width: 900px)" srcset="./assets/profile-motion/seated-reveal.gif">
-  <source media="(prefers-reduced-motion: no-preference) and (min-width: 901px)" srcset="./assets/profile-motion/seated-reveal.gif 1.68x">
-  <source media="(min-width: 901px)" srcset="./assets/profile-motion/seated-portrait.webp 1.68x">
-  <img src="./assets/profile-motion/seated-portrait.webp" alt="Ashutosh Kumar Choubey seated in a dark teal shirt.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/5e26be5c9360/character-portrait-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/3cd2086782ac/character-portrait.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/1a351ac4aab9/character-portrait-mobile.svg">
+  <img src="./assets/rendered/156bc097c1a7/character-portrait.svg" alt="ASCII character portrait of Ashutosh Kumar Choubey seated, drawn with asterisks, hash signs, and other coding symbols.">
 </picture>
 </p>
 
-### In the studio
-
-<p>
-<picture>
-  <source media="(prefers-reduced-motion: no-preference)" srcset="./assets/profile-motion/studio-walk.gif">
-  <img src="./assets/profile-motion/studio-walk.webp" width="100%" alt="Ashutosh Kumar Choubey in a charcoal suit and teal shirt in the studio.">
-</picture>
-</p>
+[Personal portfolio](https://me.worldgyan.com/)
 
 <img src="./themes/main/assets/title-part03.svg" width="100%" alt="Part 03 · Core Technology &amp; Reactive Foundations">
 <img src="./themes/main/assets/technology-core.svg" width="100%" alt="Core Technologies: Angular, TypeScript, RxJS, NgRx, and Supporting Systems.">
@@ -102,14 +95,23 @@ Public learning projects and code references, selected after reviewing their imp
 
 <p>
 <picture>
-  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/112b0d89179e/github-activity-mobile.svg">
-  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/b671acaa4ce0/github-activity.svg">
-  <source media="(max-width: 900px)" srcset="./assets/rendered/1759efedeba1/github-activity-mobile.svg">
-  <img src="./assets/rendered/0760fc4e5efe/github-activity.svg" width="100%" alt="From Nov 22, 2025 through Nov 21, 2026, GitHub displayed 757 contributions for @AshutoshChoubey across 32 active days. The longest streak was 11 days. The calendar shows daily counts and the trend shows the latest 12 completed weeks.">
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/7941401e25aa/github-activity-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/473de4dd6474/github-activity.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/de1698d08ae2/github-activity-mobile.svg">
+  <img src="./assets/rendered/346b8bce5084/github-activity.svg" width="100%" alt="Weekly GitHub contributions for @AshutoshChoubey from Aug 23, 2026 through Nov 14, 2026. 739 contributions across 12 completed weeks. Weekly counts in chronological order: 0, 0, 0, 0, 0, 18, 30, 32, 10, 17, 602, 30.">
 </picture>
 </p>
 
-Daily contributions and weekly totals from my GitHub profile. GitHub may include anonymized private contributions when enabled. [View activity on GitHub](https://github.com/AshutoshChoubey#contribution-activity).
+[View contribution activity on GitHub](https://github.com/AshutoshChoubey#contribution-activity).
+
+<p>
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 900px)" srcset="./assets/rendered/static/eced531ad0eb/github-languages-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="./assets/rendered/static/24e7302279c9/github-languages.svg">
+  <source media="(max-width: 900px)" srcset="./assets/rendered/cb85f18ea7d0/github-languages-mobile.svg">
+  <img src="./assets/rendered/e452fef8d94b/github-languages.svg" width="100%" alt="GitHub primary languages reported for 32 of 38 owned public repositories as of Nov 21, 2026. JavaScript 7, HTML 10, TypeScript 8, PHP 5, CSS 1, TSQL 1. Forks and archived repositories are excluded.">
+</picture>
+</p>
 
 <img src="./themes/main/assets/github-jet.svg" width="100%" loading="lazy" alt="Animated jet flying over the GitHub contribution calendar.">
 <img src="./themes/main/assets/contribution-snake.svg" width="100%" loading="lazy" alt="Animated contribution snake for AshutoshChoubey.">

@@ -22,7 +22,7 @@ for(const theme of ['dark','light']){
  // The preview lives one directory below the README.
  await writeFile(path.join(root,`previews/${theme}.html`),html.replace(/(\b(?:src|srcset|href)=")\.\//g,'$1../'));
 }
-const names=['hero','expertise','technology','ai-systems','research','connect','terminal-card','github-activity'];
+const names=['hero','expertise','technology','ai-systems','research','connect','terminal-card','character-portrait','github-activity','github-languages'];
 const embedded=await Promise.all(names.flatMap(n=>[n,n+'-mobile']).map(async n=>`<section data-asset="${n}">${(await readFile(path.join(root,`assets/${n}.svg`),'utf8')).replace(/<\?xml[^>]*\?>/,'').replace(/id="([^"]+)"/g,`id="${n}-$1"`).replace(/url\(#([^)]+)\)/g,`url(#${n}-$1)`).replace('aria-labelledby="title desc"',`aria-labelledby="${n}-title ${n}-desc"`)}</section>`));
 const inspect=`<!doctype html><html lang="en"><head><meta charset="utf-8"><title>SVG geometry inspection</title></head><body>${embedded.join('')}</body></html>`;
 await writeFile(path.join(root,'previews/inspect.html'),inspect);

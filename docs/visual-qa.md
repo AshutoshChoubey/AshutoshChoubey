@@ -68,3 +68,9 @@ The dashboard uses the anonymous GitHub calendar through 21 November 2026. Its c
 Local Chrome checks passed in both themes at 320, 375, 768, 1024, and 1440 pixels. The desktop terminal and seated photo align side by side, and the panels stack without horizontal overflow at narrower widths. In reduced-motion mode, both photos use still posters and the terminal and chart use their static SVGs. The two legacy contribution graphics are visible in the README without expanding a disclosure.
 
 The microphone-free portrait decodes across the 8.31-second loop, including a 5.5-second hold on the completed image. The 10-second studio loop moves the supplied standing portrait left to right with a hold in the center. It uses still-photo compositing. The 14-second dashboard cycle animates the plotted data and real totals. All 13 public links reached HTTP 200.
+
+### Character portrait and weekly chart
+
+The replacement About panel uses text glyphs sampled from the microphone-free seated portrait. The terminal and portrait align on desktop and stack on narrow screens. The studio section and its GIF were removed from the source tree.
+
+Chrome checks at 320, 375, 768, 1024, and 1440 pixels in light and dark surroundings found no horizontal overflow. Both embedded charts showed frame changes. Reduced-motion checks selected the static counterparts. The weekly plot draws 12 completed weeks from the saved calendar, and the language chart cycles through six primary languages from 32 classified public repositories. The anonymous GitHub response reported 38 eligible repositories, six without a classified language.

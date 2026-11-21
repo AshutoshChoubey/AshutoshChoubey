@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="302" viewBox="0 0 420 302" role="img" aria-labelledby="title desc">
+<title id="title">Weekly GitHub contributions for @AshutoshChoubey</title>
+<desc id="desc">Weekly GitHub contributions for @AshutoshChoubey from Aug 23, 2026 through Nov 14, 2026. 739 contributions across 12 completed weeks. Weekly counts in chronological order: 0, 0, 0, 0, 0, 18, 30, 32, 10, 17, 602, 30.</desc>
+<defs>
+  <linearGradient id="surface" x2="1" y2="1"><stop stop-color="#190B12"/><stop offset="1" stop-color="#10070C"/></linearGradient>
+  <linearGradient id="trend-area" x2="0" y2="1"><stop stop-color="#C77B9B" stop-opacity=".32"/><stop offset="1" stop-color="#C77B9B" stop-opacity=".04"/></linearGradient>
+  <linearGradient id="trend-line" x2="1" y2="0"><stop stop-color="#C77B9B"/><stop offset="1" stop-color="#E5B5C7"/></linearGradient>
+  <clipPath id="trend-reveal"><rect class="trend-window" x="48" y="92" width="352" height="161"/></clipPath>
+</defs>
+<style>
+  .sans { font-family: system-ui, -apple-system, 'Segoe UI', sans-serif; }
+  .serif { font-family: Georgia, 'Times New Roman', serif; }
+  .trend-window { transform-box: fill-box; transform-origin: left; animation: grow-trend 11s linear infinite; }
+  .trend-series { animation: hold-trend 11s linear infinite; }
+  @keyframes grow-trend {
+    0%, 5% { transform: scaleX(0); }
+    42%, 100% { transform: scaleX(1); }
+  }
+  @keyframes hold-trend {
+    0%, 90% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .trend-window, .trend-series { animation: none; }
+  }
+</style>
+<rect x=".5" y=".5" width="419" height="301" rx="16" fill="url(#surface)" stroke="#542039"/>
+<text x="24" y="43" class="serif" font-size="29" fill="#F8F0F3" text-anchor="start">Weekly contributions</text>
+<text x="25" y="67" class="sans" font-size="14" fill="#E5B5C7" text-anchor="start">12 completed weeks · Aug 23 – Nov 14, 2026</text>
+<path d="M54 247h340" stroke="#3F1B2D"/>
+<text x="42" y="251.29" class="sans" font-size="13" fill="#E5B5C7" text-anchor="end">0</text>
+<path d="M54 197.33333333333334h340" stroke="#3F1B2D"/>
+<text x="42" y="201.62333333333333" class="sans" font-size="13" fill="#E5B5C7" text-anchor="end">250</text>
+<path d="M54 147.66666666666669h340" stroke="#3F1B2D"/>
+<text x="42" y="151.95666666666668" class="sans" font-size="13" fill="#E5B5C7" text-anchor="end">500</text>
+<path d="M54 98h340" stroke="#3F1B2D"/>
+<text x="42" y="102.29" class="sans" font-size="13" fill="#E5B5C7" text-anchor="end">750</text>
+<text x="54" y="270" class="sans" font-size="13" fill="#E5B5C7" text-anchor="start">Aug 23</text>
+<text x="146.72727272727275" y="270" class="sans" font-size="13" fill="#E5B5C7" text-anchor="middle">Sep 13</text>
+<text x="239.45454545454547" y="270" class="sans" font-size="13" fill="#E5B5C7" text-anchor="middle">Oct 4</text>
+<text x="332.1818181818182" y="270" class="sans" font-size="13" fill="#E5B5C7" text-anchor="middle">Oct 25</text>
+<text x="394" y="270" class="sans" font-size="13" fill="#E5B5C7" text-anchor="end">Nov 8</text>
+<g class="trend-series" clip-path="url(#trend-reveal)">
+<path d="M54.00 247.00L84.91 247.00L115.82 247.00L146.73 247.00L177.64 247.00L208.55 243.42L239.45 241.04L270.36 240.64L301.27 245.01L332.18 243.62L363.09 127.40L394.00 241.04L394 247H54Z" fill="url(#trend-area)"/>
+<path d="M54.00 247.00L84.91 247.00L115.82 247.00L146.73 247.00L177.64 247.00L208.55 243.42L239.45 241.04L270.36 240.64L301.27 245.01L332.18 243.62L363.09 127.40L394.00 241.04" fill="none" stroke="url(#trend-line)" stroke-width="2.8" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="54.00" cy="247.00" r="3.6" fill="#F8F0F3" stroke="#190B12" stroke-width="1.2"><title>Aug 23 – Aug 29: 0 contributions</title></circle>
+<circle cx="84.91" cy="247.00" r="3.6" fill="#F8F0F3" stroke="#190B12" stroke-width="1.2"><title>Aug 30 – Sep 5: 0 contributions</title></circle>
+<circle cx="115.82" cy="247.00" r="3.6" fill="#F8F0F3" stroke="#190B12" stroke-width="1.2"><title>Sep 6 – Sep 12: 0 contributions</title></circle>
+<circle cx="146.73" cy="247.00" r="3.6" fill="#F8F0F3" stroke="#190B12" stroke-width="1.2"><title>Sep 13 – Sep 19: 0 contributions</title></circle>
+<circle cx="177.64" cy="247.00" r="3.6" fill="#F8F0F3" stroke="#190B12" stroke-width="1.2"><title>Sep 20 – Sep 26: 0 contributions</title></circle>
+<circle cx="208.55" cy="243.42" r="3.6" fill="#F8F0F3" stroke="#190B12" stroke-width="1.2"><title>Sep 27 – Oct 3: 18 contributions</title></circle>
+<circle cx="239.45" cy="241.04" r="3.6" fill="#F8F0F3" stroke="#190B12" stroke-width="1.2"><title>Oct 4 – Oct 10: 30 contributions</title></circle>
+<circle cx="270.36" cy="240.64" r="3.6" fill="#F8F0F3" stroke="#190B12" stroke-width="1.2"><title>Oct 11 – Oct 17: 32 contributions</title></circle>
+<circle cx="301.27" cy="245.01" r="3.6" fill="#F8F0F3" stroke="#190B12" stroke-width="1.2"><title>Oct 18 – Oct 24: 10 contributions</title></circle>
+<circle cx="332.18" cy="243.62" r="3.6" fill="#F8F0F3" stroke="#190B12" stroke-width="1.2"><title>Oct 25 – Oct 31: 17 contributions</title></circle>
+<circle cx="363.09" cy="127.40" r="3.6" fill="#F8F0F3" stroke="#190B12" stroke-width="1.2"><title>Nov 1 – Nov 7: 602 contributions</title></circle>
+<circle cx="394.00" cy="241.04" r="3.6" fill="#F8F0F3" stroke="#190B12" stroke-width="1.2"><title>Nov 8 – Nov 14: 30 contributions</title></circle>
+</g>
+</svg>
