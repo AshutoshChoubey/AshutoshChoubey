@@ -29,6 +29,12 @@ Keep the public README concise. Technology research can evolve without rewriting
 
 `npm run generate` is an equivalent regeneration shortcut. The preview script's runtime requirements and any unavailable browser checks must be reported honestly; a failed render cannot be replaced with a fabricated screenshot.
 
+## About cards and GitHub activity
+
+Edit About card copy in `profile.config.json` and its artwork in `scripts/profile-cards.mjs`. The profile uses a paired SVG on desktop and stacked cards on mobile. The separate terminal and info SVGs are also generated for reuse. Media lives in `assets/profile-motion/`, with still previews for reduced-motion viewers and direct links to the GIFs and silent MP4.
+
+Run `npm run refresh:activity` to fetch the contribution calendar from GitHub without credentials and regenerate the profile. A rejected or unavailable response leaves `data/github-activity.json` intact. `npm run generate` uses the saved data without a network request. The dashboard shows the calendar date range, groups the trend by completed weeks, and can include anonymized private activity that GitHub shows on the public calendar.
+
 ## Dates and changing technology
 
 `review.date` is an ISO calendar date for completed source review. The initial date reflects the research performed for this implementation; it is not a permanent “current date.” Future review dates must be set deliberately.

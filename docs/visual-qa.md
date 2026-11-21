@@ -54,3 +54,11 @@ Regenerated and passed SVG/README validation. Rechecked actual Chrome layouts at
 ## GitHub-specific design refinement and verification
 
 See [github-review.md](github-review.md) for actual hosted branch results on 17 October 2026. The latest source has 25 SVGs (24 primary desktop/mobile/static variants plus the brand wordmark), one unchanged supplied PNG, and eight images in the rendered README. Rounded clipping, compact identity text, aligned logo/wordmark and GitHub paragraph spacing were refined against the actual hosted result. All required widths/themes and hosted reduced-motion sources passed. The profile homepage remains pending approved merge.
+
+## About, studio media, and contribution dashboard
+
+Local review on 21 November 2026 used Chrome at 320, 375, 768, 1024, and 1440 pixels in light and dark surroundings. The new artwork loaded at each width with no horizontal overflow. Chrome selected the stacked cards on mobile and the poster images and static terminal at both reduced-motion test widths. The new SVG text fit within all four desktop and mobile frames. All 13 public links reached HTTP 200.
+
+The two GIFs decode as 48 frames each and play once over four seconds. The silent H.264 video decodes at 672 × 432 for 7.625 seconds. Both scenes animate the supplied still portraits with the original backgrounds removed. The movement is suggestive of an entrance and conversation. Full walking and speech synchronization require footage or a motion reference for those actions.
+
+The dashboard uses the anonymous GitHub calendar through 21 November 2026. Its counts were checked against GitHub's calendar fragment. Removing a day’s count from a test response preserved the previous snapshot. The additions were verified locally and await hosted verification.

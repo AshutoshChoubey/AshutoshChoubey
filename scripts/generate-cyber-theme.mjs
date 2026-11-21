@@ -1400,7 +1400,7 @@ export async function generateCyberTheme(customRoot) {
 
   const escXml = str => String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/'/g, '&apos;').replace(/"/g, '&quot;');
 
-  function generatePartTitleSvg(id, partNum, partLabel, mainTitle, italicWord = '', rightLabel = '') {
+  function generatePartTitleSvg(id, partNum, partLabel, mainTitle, italicWord = '', rightLabel = '', {ambientMotion = true} = {}) {
     return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="1200" height="120" role="img" aria-labelledby="t-title-${id}">
   <title id="t-title-${id}">${escXml(partNum)} ${escXml(partLabel)}: ${escXml(mainTitle)} ${escXml(italicWord)}</title>
@@ -1409,8 +1409,8 @@ export async function generateCyberTheme(customRoot) {
       <stop offset="0" stop-color="#C77B9B"/><stop offset=".6" stop-color="#701A3D"/><stop offset="1" stop-color="#701A3D" stop-opacity="0"/>
     </linearGradient>
     <linearGradient id="t-sheen-${id}" gradientUnits="userSpaceOnUse" x1="-300" y1="0" x2="0" y2="0">
-      <stop offset="0" stop-color="#E5B5C7"/><stop offset=".5" stop-color="#F8F0F3"/><stop offset="1" stop-color="#E5B5C7"/>
-      <animateTransform attributeName="gradientTransform" type="translate" values="0 0;1500 0;1500 0" keyTimes="0;.4;1" dur="7s" begin="1.5s" repeatCount="indefinite"/>
+      <stop offset="0" stop-color="#E5B5C7"/><stop offset=".5" stop-color="#F8F0F3"/><stop offset="1" stop-color="#E5B5C7"/>${ambientMotion ? `
+      <animateTransform attributeName="gradientTransform" type="translate" values="0 0;1500 0;1500 0" keyTimes="0;.4;1" dur="7s" begin="1.5s" repeatCount="indefinite"/>` : ''}
     </linearGradient>
     <radialGradient id="t-pulse-${id}"><stop offset="0" stop-color="#F8F0F3"/><stop offset=".5" stop-color="#E5B5C7" stop-opacity=".6"/><stop offset="1" stop-color="#C77B9B" stop-opacity="0"/></radialGradient>
   </defs>
@@ -1434,11 +1434,11 @@ export async function generateCyberTheme(customRoot) {
   <g class="tc-in tc-d3">
     <text class="tc-sans" x="1160" y="34" text-anchor="end" font-size="11.5" font-weight="500" letter-spacing="0.8" fill="#B6A3AC">${escXml(rightLabel)}</text>
   </g>
-  <path class="tc-draw" d="M40 106 H1160" stroke="url(#t-line-${id})" stroke-width="1"/>
+  <path class="tc-draw" d="M40 106 H1160" stroke="url(#t-line-${id})" stroke-width="1"/>${ambientMotion ? `
   <circle cx="40" cy="106" r="7" fill="url(#t-pulse-${id})" opacity="0">
     <animate attributeName="cx" values="40;1160" dur="6s" begin="2.3s" repeatCount="indefinite" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .55 1"/>
     <animate attributeName="opacity" values="0;1;0" keyTimes="0;.15;1" dur="6s" begin="2.3s" repeatCount="indefinite"/>
-  </circle>
+  </circle>` : ''}
 </svg>
 `;
   }
@@ -1463,7 +1463,7 @@ export async function generateCyberTheme(customRoot) {
   await writeFile(path.join(outDir, 'title-part03.svg'), generatePartTitleSvg('part03', 'PART 03', 'CORE TECHNOLOGY', 'Reactive Engineering &', 'Foundations.', 'Angular · TypeScript · RxJS · NgRx'));
   await writeFile(path.join(outDir, 'title-part04.svg'), generatePartTitleSvg('part04', 'PART 04', 'AI ORCHESTRATION', 'Autonomous Agent Workflows &', 'Execution Cycles.', 'Plan · Act · Reflect'));
   await writeFile(path.join(outDir, 'title-part05.svg'), generatePartTitleSvg('part05', 'PART 05', 'SELECTED ENGINEERING PROJECTS', 'Scalable Systems &', 'Open Source.', 'Verified Public Reference Implementations'));
-  await writeFile(path.join(outDir, 'title-part06.svg'), generatePartTitleSvg('part06', 'PART 06', 'COMMIT LOG & TELEMETRY', 'Years of', 'building.', 'Real GitHub Activity · Refreshed Daily'));
+  await writeFile(path.join(outDir, 'title-part06.svg'), generatePartTitleSvg('part06', 'PART 06', 'GITHUB ANALYTICS & OPEN SOURCE', 'Building in', 'public.', 'GitHub Contribution Calendar', {ambientMotion:false}));
   await writeFile(path.join(outDir, 'title-part07.svg'), generatePartTitleSvg('part07', 'PART 07', 'RESEARCH & KNOWLEDGE', 'Engineering,', 'shared.', 'Frontend Systems · AI Engineering'));
   await writeFile(path.join(outDir, 'title-part08.svg'), generatePartTitleSvg('part08', 'PART 08', 'CONNECT & COLLABORATE', "Let's build something", 'worth explaining.', 'Open Inbox & Direct Channels'));
 

@@ -11,7 +11,7 @@ const official = {
   worldgyan: 'https://worldgyan.com/',
   youtube: 'https://www.youtube.com/@WorldGyan',
 };
-const names = ['hero', 'expertise', 'technology', 'ai-systems', 'research', 'connect'];
+const names = ['hero', 'expertise', 'technology', 'ai-systems', 'research', 'connect', 'profile-cards', 'github-activity'];
 const config = JSON.parse(await readFile(path.join(root, 'profile.config.json'), 'utf8'));
 const readme = await readFile(path.join(root, 'README.md'), 'utf8');
 const required = (condition, message) => { if (!condition) problems.push(message); };
@@ -45,7 +45,9 @@ if (config.review?.date) {
 required(Boolean(config.review?.basis?.trim()), 'Review date requires its research basis');
 required(!/<(?:script|iframe|object|embed)\b|javascript:|data:image\//i.test(readme), 'README contains unsupported active/embedded content');
 const pictures = [...readme.matchAll(/<picture\b[^>]*>([\s\S]*?)<\/picture>/gi)];
-required(pictures.length === names.length, 'Expected six primary picture sections');
+const motion = config.profileMotion || [];
+required(motion.length === 2 && new Set(motion.map(({id}) => id)).size === 2, 'Expected two distinct studio portraits');
+required(pictures.length === names.length + motion.length, 'Unexpected number of profile pictures');
 for (const name of names) {
   const picture = pictures.find(match => new RegExp(`/${name}\\.svg`).test(match[1]));
   required(Boolean(picture), `Missing picture for ${name}`);
@@ -54,7 +56,18 @@ for (const name of names) {
   const sources = [...picture[1].matchAll(/<source\b([^>]+)>/gi)].map(match => attributes(match[1]));
   required(images.length === 1 && images[0].alt?.trim().length >= 16, `${name} needs one image with meaningful alternative text`);
   required(sources.some(source => new RegExp(`max-width:\\s*${config.presentation.mobileBreakpoint}px`).test(source.media || '') && source.srcset?.includes(`${name}-mobile.svg`)), `${name} needs its configured mobile source`);
-  required(sources.some(source => /prefers-reduced-motion:\s*reduce/.test(source.media || '') && source.srcset?.includes('/static/')), `${name} needs a reduced-motion static source`);
+  if (name !== 'github-activity') {
+    required(sources.some(source => /prefers-reduced-motion:\s*reduce/.test(source.media || '') && source.srcset?.includes('/static/')), `${name} needs a reduced-motion static source`);
+  }
+}
+for (const {id} of motion) {
+  const picture = pictures.find(match => match[1].includes(`/profile-motion/${id}-portrait.webp`));
+  required(Boolean(picture), `Missing ${id} motion poster`);
+  if (!picture) continue;
+  const sources = [...picture[1].matchAll(/<source\b([^>]+)>/gi)].map(match => attributes(match[1]));
+  required(sources.length === 1 && sources[0].media === '(prefers-reduced-motion: no-preference)' && sources[0].srcset?.endsWith(`/${id}-motion.gif`), `${id} should animate only when the viewer has no reduced-motion preference`);
+  const image = attributes(picture[1].match(/<img\b([^>]+)>/i)?.[1] || '');
+  required(image.src?.endsWith(`/${id}-portrait.webp`) && image.alt?.trim().length >= 16, `${id} needs a static poster with descriptive alternative text`);
 }
 const refs = new Set([
   ...[...readme.matchAll(/(?:src|href|srcset)\s*=\s*(["'])(.*?)\1/gi)].map(match => match[2]),
@@ -65,7 +78,10 @@ for (let reference of refs) {
   reference = decodeURIComponent(reference.replace(/&amp;/g, '&').split(/[?#]/)[0]);
   const target = path.resolve(root, reference);
   required(target.startsWith(`${root}${path.sep}`), `Local reference escapes project: ${reference}`);
-  try { required((await stat(target)).isFile(), `Local reference is not a file: ${reference}`); }
+  try {
+    const asset = await stat(target);
+    required(asset.isFile() && asset.size > 0, `Local reference must be a nonempty file: ${reference}`);
+  }
   catch { problems.push(`Broken local reference: ${reference}`); }
 }
 required(!/(?:github-readme-stats|streak-stats|readme-typing-svg|komarev\.com)/i.test(readme), 'Avoid external activity and typing widgets');
