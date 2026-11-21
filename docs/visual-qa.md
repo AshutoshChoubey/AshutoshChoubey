@@ -62,3 +62,9 @@ Local review on 21 November 2026 used Chrome at 320, 375, 768, 1024, and 1440 pi
 The two GIFs decode as 48 frames each and play once over four seconds. The silent H.264 video decodes at 672 × 432 for 7.625 seconds. Both scenes animate the supplied still portraits with the original backgrounds removed. The movement is suggestive of an entrance and conversation. Full walking and speech synchronization require footage or a motion reference for those actions.
 
 The dashboard uses the anonymous GitHub calendar through 21 November 2026. Its counts were checked against GitHub's calendar fragment. Removing a day’s count from a test response preserved the previous snapshot. The additions were verified locally and await hosted verification.
+
+### Revised portrait and activity motion
+
+Local Chrome checks passed in both themes at 320, 375, 768, 1024, and 1440 pixels. The desktop terminal and seated photo align side by side, and the panels stack without horizontal overflow at narrower widths. In reduced-motion mode, both photos use still posters and the terminal and chart use their static SVGs. The two legacy contribution graphics are visible in the README without expanding a disclosure.
+
+The microphone-free portrait decodes across the 8.31-second loop, including a 5.5-second hold on the completed image. The 10-second studio loop moves the supplied standing portrait left to right with a hold in the center. It uses still-photo compositing. The 14-second dashboard cycle animates the plotted data and real totals. All 13 public links reached HTTP 200.
