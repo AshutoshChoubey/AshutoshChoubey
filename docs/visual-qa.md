@@ -1,90 +1,23 @@
-# Local validation and visual review
+# Profile cleanup audit
 
-Actual review: 16 October 2026, Asia/Kolkata. This records local Chrome rendering, not a published GitHub result.
+## Artwork
 
-## Three refinement passes
+Content Credentials on the former hero image and the original standing and seated source images identify OpenAI and list `trainedAlgorithmicMedia` as the digital source type. The cleanup removes those media and the portrait SVG derived from a source image. The profile now identifies Ashutosh with a Markdown heading and role.
 
-1. **Composition:** inspected desktop and 375px Chrome previews. Established the centered white identity panel, oversized name, navy capability diagram, frontend-first technology hierarchy, qualified AI research diagram and small founder signature. Original vector primitives and live text replace the reference's portrait treatment. Initial screenshots are local `previews/pass1-desktop.jpg` and `previews/pass1-mobile.jpg`.
-2. **Sophistication:** changed mobile supporting technologies from a cramped horizontal row to a readable vertical list; added a human-review feedback path to the desktop conceptual agent diagram. Kept color, stroke weights, cards, white research panel and signature consistent. Inspected the revised mobile and desktop compositions.
-3. **Production quality:** added explicit reduced-motion static picture sources and deterministic content hashes to image URLs after detecting stale browser images. Recaptured with cache disabled; inspected final desktop/mobile and light surroundings. Checked actual browser dimensions rather than assuming a requested override had applied. Pinned validation Actions to the verified release commit SHAs. Restored temporary viewport, media and cache settings.
+## Activity
 
-## Actual checks
+The legacy contribution snapshot gave different counts from GitHub's public calendar on 227 of 368 overlapping dates. The cleanup removes the legacy graphics and uses the weekly chart generated from the verified GitHub snapshot.
 
-| Check | Result |
-| --- | --- |
-| `npm run generate` | PASS: 25 deterministic generated files, comprising README and 24 original SVG assets. |
-| `npm run validate` | PASS: generated-file drift, XML parsing, local resources, text alternatives, basic coordinates, finite motion, static fallbacks, configuration, README structure, projects and exact official clickable links. |
-| `npm run validate:links` | 11/12 HTTP reachable. LinkedIn HEAD returned 429; it is recorded as blocked rather than passed. Its public profile was accessible during source research. No changed or guessed official URL. |
-| `npm run preview` | PASS: dark/light previews generated from the actual README, plus SVG geometry inspector. |
-| Browser text geometry | PASS: all text in the 12 desktop/mobile compositions remained within SVG boundaries using rendered bounding rectangles. Static variants share identical geometry. This does not alone prove absence of every possible text-to-text collision; screenshots were also inspected. |
-| Browser image loading | PASS: all six sections loaded in every tested width/theme; mobile sources below the configured breakpoint, desktop sources above it. |
-| Reduced motion | PASS at 320 and 1440px: Chrome selected all six corresponding `assets/static/` sources. Static SVGs have no active animation. |
-| Workflow YAML | PASS: both workflow files parsed with the npm `yaml` package installed only in ignored local research tools. |
-| Monthly review workflow | Embedded Python syntax passed. Research agent exercised mocked new/reused/unexpected-change/existing-file paths. No live GitHub Actions execution or PR creation occurred. |
-| GitHub-specific hosting | PENDING: publication approval, actual GitHub sanitization/image proxy, hosted motion and real profile layout. |
+## Documentation
 
-### Responsive browser matrix
+Removed superseded design notes, publication checklists, and duplicate planning files. The professional and repository audits record the public evidence behind the profile.
 
-| Actual width | Dark surroundings | Light surroundings | Horizontal overflow | All six images |
-| --- | --- | --- | --- | --- |
-| 320px | Captured | Captured | None | Loaded |
-| 375px | Captured | Captured | None | Loaded |
-| 768px | Captured | Captured | None | Loaded |
-| 1024px | Captured | Captured | None | Loaded |
-| 1440px | Captured | Captured | None | Loaded |
+## Portfolio and theme copies
 
-Final captures: `previews/dark-{width}.jpg` and `previews/light-{width}.jpg`. Delivered desktop/mobile PNGs are lossless format conversions of the Chrome screenshots, not synthetic artwork or substitutes for vector assets. Canonical previews are `previews/desktop.png` (1440px desktop) and `previews/mobile.png` (375px mobile).
+A byte comparison with the separate portfolio checkout found 28 exact matches for the classic theme and 45 for the standalone theme. The cleanup removes the retired theme packages, the mirrored site, and unused generators from the profile repository. The active README links directly to the portfolio and published work.
 
-Machine-readable local evidence: `reports/responsive-browser.json`, `reports/reduced-motion-browser.json`, `reports/svg-browser-geometry.json` and `reports/link-report.json`. Research caches and screenshot intermediates are ignored by Git. The delivery archive includes final previews and reports for review, without third-party source caches or credentials.
+## Verification
 
-## Accessibility and performance boundaries
+The staged files passed generation and validation in a clean checkout. All 13 public links responded. Chrome showed the three current graphics at 320, 375, 768, 1024, and 1440 pixels in light and dark themes. Reduced-motion views selected the static graphics. Both chart SVGs animated when embedded as images.
 
-The static baseline contains all identity and capability text. Motion affects decorative connections and an orbit only, runs once within four seconds and disables under reduced-motion. Ordinary Markdown name, headline, positioning, evidence classifications, projects, resources and contacts accompany descriptive image alternatives. No external font, portrait, bitmap-in-SVG, active script, statistics widget or artificial contribution mechanism is used.
-
-This is an inspected profile composition, not a claim of complete WCAG conformance or real-user performance measurement. Accessibility text, local asset structure and browser screenshots cannot establish live GitHub behavior. Recheck the hosted result after approved merge.
-
-## User-requested AI architecture and WorldGyan branding revision
-
-Added AI architecture explicitly to the exploration classification, diagram title and alternatives. This remains an exploration direction; professional experience claims and the original research date are unchanged.
-
-WorldGyan wordmarks now use a black `World` and saffron `Gyan` (`#F59E0B`) on white research/signature panels. The original user-supplied circular logo is copied unchanged to `assets/worldgyan-logo.png`, rendered as an ordinary linked README image. It is deliberately separate from the original SVG compositions, which remain vector-only. The second supplied image was a visual brand reference, not a replacement asset.
-
-Regenerated and passed SVG/README validation. Rechecked actual Chrome layouts at 320, 375, 768, 1024 and 1440px in both themes: no horizontal overflow and all seven images (six SVG sections plus logo) loaded. Updated SVG text geometry has no text outside its boundaries. Refreshed desktop/mobile captures and source archive. The current screenshots replace earlier visual evidence; hosted verification still requires publication approval.
-
-## GitHub-specific design refinement and verification
-
-See [github-review.md](github-review.md) for actual hosted branch results on 17 October 2026. The latest source has 25 SVGs (24 primary desktop/mobile/static variants plus the brand wordmark), one unchanged supplied PNG, and eight images in the rendered README. Rounded clipping, compact identity text, aligned logo/wordmark and GitHub paragraph spacing were refined against the actual hosted result. All required widths/themes and hosted reduced-motion sources passed. The profile homepage remains pending approved merge.
-
-## About, studio media, and contribution dashboard
-
-Local review on 21 November 2026 used Chrome at 320, 375, 768, 1024, and 1440 pixels in light and dark surroundings. The new artwork loaded at each width with no horizontal overflow. Chrome selected the stacked cards on mobile and the poster images and static terminal at both reduced-motion test widths. The new SVG text fit within all four desktop and mobile frames. All 13 public links reached HTTP 200.
-
-The two GIFs decode as 48 frames each and play once over four seconds. The silent H.264 video decodes at 672 × 432 for 7.625 seconds. Both scenes animate the supplied still portraits with the original backgrounds removed. The movement is suggestive of an entrance and conversation. Full walking and speech synchronization require footage or a motion reference for those actions.
-
-The dashboard uses the anonymous GitHub calendar through 21 November 2026. Its counts were checked against GitHub's calendar fragment. Removing a day’s count from a test response preserved the previous snapshot. The additions were verified locally and await hosted verification.
-
-### Revised portrait and activity motion
-
-Local Chrome checks passed in both themes at 320, 375, 768, 1024, and 1440 pixels. The desktop terminal and seated photo align side by side, and the panels stack without horizontal overflow at narrower widths. In reduced-motion mode, both photos use still posters and the terminal and chart use their static SVGs. The two legacy contribution graphics are visible in the README without expanding a disclosure.
-
-The microphone-free portrait decodes across the 8.31-second loop, including a 5.5-second hold on the completed image. The 10-second studio loop moves the supplied standing portrait left to right with a hold in the center. It uses still-photo compositing. The 14-second dashboard cycle animates the plotted data and real totals. All 13 public links reached HTTP 200.
-
-### Character portrait and weekly chart
-
-The replacement About panel uses text glyphs sampled from the microphone-free seated portrait. The terminal and portrait align on desktop and stack on narrow screens. The studio section and its GIF were removed from the source tree.
-
-Chrome checks at 320, 375, 768, 1024, and 1440 pixels in light and dark surroundings found no horizontal overflow. Both embedded charts showed frame changes. Reduced-motion checks selected the static counterparts. The weekly plot draws 12 completed weeks from the saved calendar, and the language chart cycles through six primary languages from 32 classified public repositories. The anonymous GitHub response reported 38 eligible repositories, six without a classified language.
-
-### Terminal portrait refinement and T-SQL slice
-
-The denser portrait grid uses near-white terminal characters on burgundy and keeps the original seated photo as the source. Chrome verified the paired desktop and stacked mobile layouts. The language chart uses connected donut segments, and the active highlight stays within its segment. The six segments share their inner and outer endpoints in desktop, mobile, animated, and static SVGs. The short T-SQL segment was inspected at the 12 o’clock seam while highlighted.
-
-### Technology focus and repeating portrait redraw
-
-The focus chart gives JavaScript and TypeScript equal emphasis as the largest slices, followed by Angular, RxJS, Python, and Agentic AI. It labels the slice sizes as relative emphasis and Agentic AI as exploration. Desktop and mobile checks showed the labels fit and the highlight continued to cycle.
-
-Chrome displayed the full glyph portrait at 3, 9.5, and 14.5 seconds with identical frames. It restarted in the next 16-second cycle and completed again. The portrait takes about 2.3 seconds to draw, then holds for nearly 13 seconds before the fade. The profile selected the static artwork during reduced-motion checks.
-
-### Top-down portrait scan
-
-The portrait now reveals from the top in character-row steps. Each 20-second cycle finishes the scan at 3.2 seconds and holds the completed artwork for 16 seconds before fading. Chromium confirmed the top-first progression, the steady completed frame, and the restart in an embedded image. The reduced-motion picture displays the completed portrait.
+The audit used Content Credentials, Git history, file hashes, and reference checks. Authorship remains unverified for files without a provenance record.

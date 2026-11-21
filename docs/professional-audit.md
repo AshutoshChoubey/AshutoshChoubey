@@ -1,18 +1,10 @@
 # Professional and WorldGyan audit
 
-Reviewed 16 October 2026 (Asia/Kolkata). All findings below come from public pages fetched without authentication. The portfolio source in the existing local checkout was inspected as a cross-check, but the deployed public page was available and remains the evidence source. No private repositories or internal documents were used.
+Reviewed 16 October 2026 (Asia/Kolkata) using the public portfolio, LinkedIn profile, WorldGyan site and YouTube catalog.
 
-## Positioning decision
+## Professional identity
 
-Use **Senior Software Engineer** as the professional headline, followed by **Frontend Architecture · System Design**. The [professional portfolio](https://me.worldgyan.com/) gives the current employment title as Senior Software Engineer & Frontend Lead at GlobalLogic. Its main heading describes a Lead Frontend Developer. [LinkedIn](https://www.linkedin.com/in/ashutosh-kumar-choubey) describes frontend architecture and Angular leadership, while the [WorldGyan homepage](https://worldgyan.com/) uses Principal Frontend Engineer and Systems Architect in its founder biography. These are different kinds of descriptions; the latter is not sufficient evidence of an employer-assigned principal or architect title.
-
-Headline alternatives, in recommended order:
-
-1. Senior Software Engineer — Frontend Architecture · System Design
-2. Senior Software Engineer & Frontend Lead — Angular · TypeScript
-3. Frontend Engineer — Enterprise Architecture · Reactive Systems
-
-Use Ashutosh Kumar **Choubey**, the spelling supplied by the user and used on the deployed portfolio. One recent LinkedIn post contains a different surname; it should not override the official identity. AI and agentic systems belong in a clearly labeled exploration area, with wording such as “Building scalable frontend systems. Exploring intelligent, agent-powered software.”
+The portfolio spells the name Ashutosh Kumar Choubey and lists the GlobalLogic role as Senior Software Engineer & Frontend Lead. LinkedIn describes frontend architecture and Angular leadership. WorldGyan describes Ashutosh's founder work with a separate architecture-focused biography. [Professional portfolio](https://me.worldgyan.com/) · [LinkedIn](https://www.linkedin.com/in/ashutosh-kumar-choubey) · [WorldGyan](https://worldgyan.com/)
 
 ## Professional evidence
 
@@ -65,10 +57,6 @@ Useful verified choices:
 - [NgRx flow and state management](https://www.youtube.com/watch?v=ymq4rkZSJXI) — YouTube oEmbed independently returns WorldGyan as author.
 - [RxJS higher-order observables and mapping operators](https://www.youtube.com/watch?v=Ni3nbgbANcw) — YouTube oEmbed independently returns WorldGyan as author.
 
-Keep only two or three research links in the README. A good balance is the frontend architecture article, the AI engineering research article and Angular Testing playlist.
-
 ## Access and verification limits
 
-The general web browsing tool failed to open the four official destinations (site errors, YouTube throttling, LinkedIn 999), but ordinary public HTTP requests succeeded for all four. This is a tool-specific failure, not evidence of broken official links. The portfolio was also inspected in Chrome by the coordinating agent. Public HTTP checks confirm address accessibility and content, not browser appearance, historical truth or technical correctness of every claim. Browser and GitHub rendering verification are separate tasks.
-
-Unresolved exceptions: the Udemy issuer page returns 403; agentic-ai-roadmap returns an empty 200 body; LinkedIn employment details require sign-in. None prevents accurate conservative profile wording.
+Public HTTP requests reached all four official destinations. LinkedIn restricted detailed employment records to signed-in viewers. The Udemy issuer page returned HTTP 403, and the agentic roadmap returned an empty response.

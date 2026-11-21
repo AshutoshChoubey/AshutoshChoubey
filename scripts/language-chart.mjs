@@ -1,72 +1,18 @@
-import { readFile } from 'node:fs/promises';
-
-export const languageLogin = 'AshutoshChoubey';
-export const languageSnapshot = new URL('../data/github-languages.json', import.meta.url);
-export const languageSource = `https://api.github.com/users/${languageLogin}/repos?type=owner`;
-
 const palette = {
   dark: '#10070C', panel: '#190B12', inset: '#150910', border: '#542039',
   heading: '#F8F0F3', detail: '#E5B5C7', accent: '#FFC8DE', selected: '#381727',
   slices: ['#E9A6C2', '#9F648F', '#D25785', '#BD92C1', '#E17767', '#8369A5', '#6E475C'],
 };
-const dateFormat = new Intl.DateTimeFormat('en', {
-  day: 'numeric', month: 'short', year: 'numeric', timeZone: 'Asia/Kolkata',
-});
 const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;');
 
-export function validateLanguageSnapshot(snapshot) {
-  if (snapshot.login !== languageLogin || snapshot.source !== languageSource ||
-      !Number.isFinite(Date.parse(snapshot.fetchedAt))) {
-    throw new Error('Expected a public GitHub language snapshot for AshutoshChoubey.');
-  }
-  if (!Number.isSafeInteger(snapshot.repositoryCount) || snapshot.repositoryCount < 1 ||
-      !Array.isArray(snapshot.languages) || snapshot.languages.length < 1) {
-    throw new Error('Expected at least one active, owned public repository.');
-  }
-  const seen = new Set();
-  let total = 0;
-  for (const { name, count } of snapshot.languages) {
-    if ((name !== null && (typeof name !== 'string' || !name.trim() || name.trim() !== name)) ||
-        seen.has(name) || !Number.isSafeInteger(count) || count < 1) {
-      throw new Error('Invalid or duplicate primary-language count.');
-    }
-    seen.add(name);
-    total += count;
-  }
-  if (total !== snapshot.repositoryCount || (seen.size === 1 && seen.has(null))) {
-    throw new Error('Expected classified language counts and a complete repository total.');
-  }
-}
-
-function allocateSlices(entries, weightOf) {
-  const total = entries.reduce((sum, entry) => sum + weightOf(entry), 0);
+function allocateSlices(areas) {
+  const total = areas.reduce((sum, area) => sum + area.weight, 0);
   let offset = 0;
-  return entries.map((entry, index) => {
+  return areas.map((area, index) => {
     const start = offset / total;
-    offset += weightOf(entry);
-    return { ...entry, start, end: offset / total, color: palette.slices[index] };
+    offset += area.weight;
+    return { ...area, start, end: offset / total, color: palette.slices[index] };
   });
-}
-
-function summarize(snapshot) {
-  const languages = snapshot.languages.filter(({ name }) => name !== null).sort((first, second) => {
-    return Number(second.name === 'JavaScript') - Number(first.name === 'JavaScript') ||
-      second.count - first.count || first.name.localeCompare(second.name, 'en');
-  });
-  const unclassified = snapshot.languages.find(({ name }) => name === null)?.count ?? 0;
-  const classified = snapshot.repositoryCount - unclassified;
-  const slots = palette.slices.length;
-  if (languages.length > slots) {
-    const remaining = languages.splice(slots - 1);
-    languages.push({ name: 'Other languages', count: remaining.reduce((total, entry) => total + entry.count, 0) });
-  }
-  const slices = allocateSlices(languages.map(({ name, count }) => ({
-    name: name === 'TSQL' ? 'T-SQL' : name, count,
-  })), entry => entry.count);
-  const capturedDate = dateFormat.format(new Date(snapshot.fetchedAt));
-  const distribution = slices.map(({ name, count }) => `${name} ${count}`).join(', ');
-  const description = `GitHub primary languages reported for ${classified} of ${snapshot.repositoryCount} owned public repositories as of ${capturedDate}. ${distribution}. Forks and archived repositories are excluded.`;
-  return { classified, repositoryCount: snapshot.repositoryCount, capturedDate, slices, description };
 }
 
 function text(x, y, value, size, options = {}) {
@@ -79,10 +25,6 @@ function sectorPath({ start, end }, x, y, inner, outer) {
     const angle = (turn === 1 ? 0 : turn) * 2 * Math.PI;
     return `${(x + radius * Math.sin(angle)).toFixed(3)} ${(y - radius * Math.cos(angle)).toFixed(3)}`;
   };
-  if (start === 0 && end === 1) {
-    return `M${point(outer, 0)} A${outer} ${outer} 0 0 1 ${point(outer, 0.5)} A${outer} ${outer} 0 0 1 ${point(outer, 0)} Z ` +
-      `M${point(inner, 0)} A${inner} ${inner} 0 0 0 ${point(inner, 0.5)} A${inner} ${inner} 0 0 0 ${point(inner, 0)} Z`;
-  }
   const largeArc = end - start > 0.5 ? 1 : 0;
   return `M${point(outer, start)} A${outer} ${outer} 0 ${largeArc} 1 ${point(outer, end)} ` +
     `L${point(inner, end)} A${inner} ${inner} 0 ${largeArc} 0 ${point(inner, start)} Z`;
@@ -135,7 +77,7 @@ function legend(summary, mobile, animated) {
 ${selected}
 <circle cx="${x + 14}" cy="${y + height / 2}" r="${mobile ? 4 : 5}" fill="${slice.color}"/>
 ${text(x + 26, y + height / 2 + 5, slice.name, mobile ? 14 : 16, { color: palette.heading })}
-${text(x + width - 13, y + height / 2 + 5, slice.role ?? slice.count, mobile ? 13 : 16, { align: 'end', weight: 600 })}`;
+${text(x + width - 13, y + height / 2 + 5, slice.role, mobile ? 13 : 16, { align: 'end', weight: 600 })}`;
   }).join('\n');
 }
 
@@ -168,20 +110,6 @@ function chartVariants(summary, view) {
   };
 }
 
-export async function buildLanguageChart() {
-  const snapshot = JSON.parse(await readFile(languageSnapshot, 'utf8'));
-  validateLanguageSnapshot(snapshot);
-  const summary = summarize(snapshot);
-  return chartVariants(summary, {
-    title: 'Repository languages',
-    subtitle: `Primary languages in ${summary.classified} of ${summary.repositoryCount} owned public repositories`,
-    mobileSubtitle: `${summary.classified} of ${summary.repositoryCount} public repositories classified`,
-    centerTitle: summary.classified,
-    centerCaption: 'repositories',
-    footer: `GitHub · ${summary.capturedDate} · forks and archives excluded`,
-  });
-}
-
 export function buildTechnologyFocus(areas) {
   if (!Array.isArray(areas) || areas.length < 2 || areas.length > palette.slices.length ||
       areas.some(area => !area || typeof area.name !== 'string' || !area.name.trim() ||
@@ -189,7 +117,7 @@ export function buildTechnologyFocus(areas) {
       new Set(areas.map(area => area.name)).size !== areas.length) {
     throw new Error('Configure two to seven distinct technology focus areas with positive weights and nonempty labels.');
   }
-  const slices = allocateSlices(areas, area => area.weight);
+  const slices = allocateSlices(areas);
   const scope = slices.map(({ name, role }) => `${name} (${role.toLowerCase()})`).join(', ');
   const largestWeight = Math.max(...areas.map(area => area.weight));
   const primary = areas.filter(area => area.weight === largestWeight).map(area => area.name);

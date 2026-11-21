@@ -4,17 +4,11 @@ Reviewed: 2026-10-16 (Asia/Kolkata).
 
 ## Scope and method
 
-The unauthenticated GitHub public repository API returned 32 owned public repositories, matching the visible public profile. All 32 default-branch trees were inspected; none was reported truncated. Manifests, README files, representative application source and available test source were read. The local research cache contains 494 initial file samples plus targeted controller, business logic and Django supplements. Vendored dependencies and generated assets were excluded from engineering judgments. No private repository or private code was accessed for this audit. No sampled app was installed, executed or deployed; tests are characterized from source, and passing builds, test coverage and production readiness are not asserted.
+The October 2026 review covered all 32 repositories in the public listing at the time. It examined the default-branch file trees, manifests, representative source files and available test code. Build and deployment status were outside the scope of this source review.
 
-Sources: [GitHub profile](https://github.com/AshutoshChoubey), [public repository API](https://api.github.com/users/AshutoshChoubey/repos?per_page=100&type=owner&sort=full_name). Metadata/tree/source caches stay under ignored `research/` and must not be published as copied third-party source.
+Sources include the [GitHub profile](https://github.com/AshutoshChoubey) and [public repository API](https://api.github.com/users/AshutoshChoubey/repos?per_page=100&type=owner&sort=full_name).
 
-## Profile repository and account findings
-
-- `AshutoshChoubey/AshutoshChoubey` was absent from the public repository listing and returned HTTP 404 from the public repository endpoint and browser fetch. An authenticated check performed in the main task also returned 404. Creation therefore remains a user approval step.
-- Current pins include the frontend system design and NgRx interview repositories, whose current trees contain only a title README. Pin implemented references instead.
-- The current public display name uses “Chaubey”; the supplied official identity uses “Choubey”. Keep the requested official spelling in the new README; propose an account-level correction separately.
-- Public source supports Angular, TypeScript, RxJS, NgRx, forms, API integration and historical business applications. It does not establish a deployed AI/agent application, production micro-frontends or measured performance achievements.
-- No repository contains a project-owned GitHub Actions workflow in the inspected default-branch trees. Most project READMEs are generated templates. A test filename or inherited framework badge must not be described as verified quality.
+The inspected code documents Angular, TypeScript, RxJS, NgRx, forms and API integration. Claims about production infrastructure, performance or AI deployments need separate evidence.
 
 ## Selected public evidence
 
@@ -98,13 +92,3 @@ Every linked path below was inspected as implementation evidence. Placeholder ro
 | [tutorial](https://github.com/AshutoshChoubey/tutorial) | Laravel 5.8 / PHP | [blog/app/Http/Controllers/BookController.php](https://github.com/AshutoshChoubey/tutorial/blob/master/blog/app/Http/Controllers/BookController.php): Book/photo JSON CRUD with request validation and a CRUD generator command. Small tutorial implementation; title root README plus Laravel skeleton docs/tests. | Historical tutorial |
 | [typescript-interview-worldgyan.com](https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com) | TypeScript 5.9 | [src/generic.ts](https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com/blob/main/src/generic.ts): Generics, unions, mapped and utility types with compile/run scripts and a type-system reference. No automated tests; test script intentionally fails, lint/format tools absent from devDependencies. | Feature as language examples |
 | [yajaraDatatableExample](https://github.com/AshutoshChoubey/yajaraDatatableExample) | Laravel 5.6 / Yajra DataTables | [app/Http/Controllers/UserController.php](https://github.com/AshutoshChoubey/yajaraDatatableExample/blob/master/app/Http/Controllers/UserController.php): User table JSON, status formatting, queries and registration example. Real library integration; old framework, generic docs and Laravel scaffold tests. | Historical table integration |
-
-## Priority improvements before stronger promotion
-
-1. Replace placeholder pins with implemented sources; add concise repository descriptions and relevant topics after account-level approval.
-2. Add useful root documentation: scope, setup, example screenshots, limitations, license intent and an explicit educational status.
-3. Give the RxJS and NgRx examples focused behavior tests, deterministic timing, error paths, teardown and stronger state types. Upgrade the older NgRx demo before describing it as current practice.
-4. Review the Angular snippet collection against official release documentation, add missing supporting services and compile examples. Its current refresh queue does not emit an error to queued subscribers on refresh failure; its “security headers” example must not imply response security controls can be enforced from request headers.
-5. Modernize legacy business apps and review authorization, uploads, password hashing and raw SQL before offering them as reusable open source. These findings are code-review observations; exploitation or live service access was not attempted.
-6. Inspect licenses before reusing any code or template. Most project roots lack a dedicated license file, even where framework/package metadata contains a license field.
-7. Add AI work only after a real public implementation exists, with evaluation, failure handling, human approval boundaries and reproducible setup. Until then, keep AI/agents under exploration.
