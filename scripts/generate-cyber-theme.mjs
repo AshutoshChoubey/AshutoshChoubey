@@ -1,13 +1,11 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
-export async function generateCyberTheme(customRoot) {
-  const root = customRoot || path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+export async function generateCyberTheme(root, { presentation }) {
   const outDir = path.join(root, 'themes/main/assets');
   await mkdir(outDir, { recursive: true });
 
-  const photoBase64 = (await readFile(path.join(root, 'scripts/user_studio_creator_retina.base64.txt'), 'utf8')).trim();
+  const photoBase64 = await readFile(path.join(root, presentation.heroPortrait), 'base64');
   const standingPhotoBase64 = (await readFile(path.join(root, 'scripts/user_standing.base64.txt'), 'utf8')).trim();
   const logoBase64 = (await readFile(path.join(root, 'assets/worldgyan-logo-hero.base64.txt'), 'utf8')).trim();
 
@@ -94,7 +92,7 @@ export async function generateCyberTheme(customRoot) {
   const heroArchitectSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-labelledby="hero-t hero-d">
   <title id="hero-t">Ashutosh Kumar Choubey — Software Engineer | System Design | AI Orchestration</title>
-  <desc id="hero-d">Software Engineer, System Design and AI Orchestration. Agentic AI, AI Architecture, and enterprise systems.</desc>
+  <desc id="hero-d">Software Engineer, System Design and AI Orchestration. Agentic AI, AI Architecture, and enterprise systems. Ashutosh seated in a podcast studio with a microphone and laptop.</desc>
   <defs>
     ${commonDefs}
     <clipPath id="hero-clip"><rect width="1200" height="480" rx="20"/></clipPath>
@@ -1445,7 +1443,7 @@ export async function generateCyberTheme(customRoot) {
 
   // 11 Core Cards
   await writeFile(path.join(outDir, 'hero-architect.svg'), heroArchitectSvg);
-  await writeFile(path.join(outDir, 'hero-architect-v2.svg'), heroArchitectSvg);
+  await writeFile(path.join(outDir, 'hero-architect-podcast.svg'), heroArchitectSvg.replace(/[ \t]+$/gm, ''));
   await writeFile(path.join(outDir, 'terminal-system.svg'), terminalSystemSvg);
   await writeFile(path.join(outDir, 'architecture-leadership.svg'), architectureLeadershipSvg);
   await writeFile(path.join(outDir, 'engineering-systems.svg'), engineeringSystemsSvg);

@@ -160,7 +160,8 @@
     "basis": "Official public portfolio, public repository source audit and current primary documentation. See docs/research-audit.md."
   },
   "presentation": {
-    "mobileBreakpoint": 900
+    "mobileBreakpoint": 900,
+    "heroPortrait": "assets/ashutosh-podcast-studio-portrait-hero.jpg"
   },
   "engineeringTerminal": {
     "focus": ["System design", "Project architecture"],

@@ -159,7 +159,7 @@ function picture(name,alt=`${titles[name]}. ${descriptions[name]}`, {inline=fals
 
 const readme=`<!-- Generated from profile.config.json. Edit the source, then run npm run generate. -->
 <a href="${c.links.portfolio}">
-  <img src="./themes/main/assets/hero-architect-v2.svg" width="100%" alt="Ashutosh Kumar Choubey — Software Engineer | System Design | AI Orchestration. Building scalable software systems. Exploring intelligent, agent-powered software. Founder, WorldGyan.">
+  <img src="./themes/main/assets/hero-architect-podcast.svg" width="100%" alt="Ashutosh Kumar Choubey — Software Engineer | System Design | AI Orchestration. Building scalable software systems. Exploring intelligent, agent-powered software. Founder, WorldGyan. Seated in a podcast studio with a microphone and laptop.">
 </a>
 
 <p align="center">
@@ -315,7 +315,7 @@ if(!check){
     if(!outputs.has(file))await rm(path.join(root,file),{force:true});
   }
 }
-if(!check) await generateCyberTheme(root);
+if(!check) await generateCyberTheme(root, c);
 let stale=[];
 for(const [file,value] of outputs) {
   const dest=path.join(root,file);

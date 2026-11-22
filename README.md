@@ -1,6 +1,6 @@
 <!-- Generated from profile.config.json. Edit the source, then run npm run generate. -->
 <a href="https://me.worldgyan.com/">
-  <img src="./themes/main/assets/hero-architect-v2.svg" width="100%" alt="Ashutosh Kumar Choubey — Software Engineer | System Design | AI Orchestration. Building scalable software systems. Exploring intelligent, agent-powered software. Founder, WorldGyan.">
+  <img src="./themes/main/assets/hero-architect-podcast.svg" width="100%" alt="Ashutosh Kumar Choubey — Software Engineer | System Design | AI Orchestration. Building scalable software systems. Exploring intelligent, agent-powered software. Founder, WorldGyan. Seated in a podcast studio with a microphone and laptop.">
 </a>
 
 <p align="center">
