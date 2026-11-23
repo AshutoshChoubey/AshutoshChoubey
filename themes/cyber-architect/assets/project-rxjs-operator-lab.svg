@@ -96,7 +96,6 @@
       <text class="sans" x="56" y="62" font-size="12" font-weight="700" letter-spacing="1" fill="#38BDF8">02 · REACTIVE PROGRAMMING · RXJS · STREAMS</text>
       <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8FAFC">RxJS Operator Lab</text>
       <text class="sans" x="56" y="166" font-size="16.5" fill="#94A3B8">Comparing switchMap, mergeMap, concatMap and exhaustMap with reactive search.</text>
-      <text class="mono" x="56" y="200" font-size="12.5" fill="#E2E8F0"><tspan fill="#34D399">Built ›</tspan> Interactive visual demonstrations of concurrency &amp; stream lifecycle</text>
       <line x1="56" y1="226" x2="680" y2="226" stroke="#1E3A5F" stroke-opacity=".7"/>
 
       <!-- Metric Blocks -->

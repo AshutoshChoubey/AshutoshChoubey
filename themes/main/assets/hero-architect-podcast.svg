@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-labelledby="hero-t hero-d">
-  <title id="hero-t">Ashutosh Kumar Choubey — Software Engineer | System Design | AI Orchestration</title>
-  <desc id="hero-d">Software Engineer, System Design and AI Orchestration. Agentic AI, AI Architecture, and enterprise systems. Ashutosh seated in a podcast studio with a microphone and laptop.</desc>
+  <title id="hero-t">Ashutosh Kumar Choubey · Senior Software Engineer</title>
+  <desc id="hero-d">Frontend Architecture · System Design · AI Orchestration. Ashutosh seated in a podcast studio with a microphone and laptop.</desc>
   <defs>
 
     <linearGradient id="cyber-bg" x1="0" y1="0" x2="1" y2="1">
@@ -65,7 +65,7 @@
     .serif { font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif; }
     .trace-anim { stroke-dasharray: 620 2700; stroke-dashoffset: 3320; animation: trace 6.5s linear infinite; }
     @keyframes trace { to { stroke-dashoffset: 0; } }
-    @media (prefers-reduced-motion: reduce) { .trace-anim { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .trace-anim, .lava-sparks { display: none; } }
 
     .hero-rise { animation: hero-rise 1.2s cubic-bezier(.16,1,.3,1) both; }
     .hero-photo { animation: hero-photo 1.5s cubic-bezier(.16,1,.3,1) .35s both; }
@@ -136,7 +136,7 @@
         <circle cx="18" cy="17" r="4.5" fill="#E5B5C7" filter="url(#cyber-glow)">
           <animate attributeName="opacity" values="1;.4;1" dur="2s" repeatCount="indefinite"/>
         </circle>
-        <text class="mono" x="32" y="22" font-size="12" font-weight="600" fill="#B6A3AC"><tspan fill="#E5B5C7">~/ashutosh</tspan> $ build <tspan fill="#C77B9B">--scale-enterprise</tspan></text>
+        <text class="mono" x="32" y="22" font-size="12" font-weight="600" fill="#B6A3AC"><tspan fill="#E5B5C7">~/ashutosh</tspan> $ open <tspan fill="#C77B9B">engineering</tspan></text>
       </g>
 
       <!-- Main Name Heading -->
@@ -146,17 +146,10 @@
       <g transform="translate(56 166)">
         <rect width="660" height="44" rx="10" fill="url(#hero-pill-grad)" stroke="#C77B9B" stroke-opacity=".35" stroke-width="1.2"/>
         <path d="M16 43H644" stroke="#C77B9B" stroke-opacity=".4" stroke-width="1.2"/>
-        <text class="sans" x="22" y="28" font-size="17" font-weight="600" fill="#F8F0F3">Software Engineer <tspan fill="#E5B5C7">·</tspan> System Design <tspan fill="#C77B9B">·</tspan> AI Orchestration</text>
+        <text class="sans" x="22" y="28" font-size="18" font-weight="600" fill="#F8F0F3">Senior Software Engineer</text>
       </g>
 
-      <!-- Focused Architectural Badges -->
-      <g transform="translate(56 230)">
-        <g><rect width="144" height="30" rx="15" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#E5B5C7">Software Engineer</text></g>
-        <g transform="translate(154 0)"><rect width="130" height="30" rx="15" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="mono" x="65" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#C77B9B">System Design</text></g>
-        <g transform="translate(294 0)"><rect width="144" height="30" rx="15" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#F8F0F3">AI Architecture</text></g>
-        <g transform="translate(448 0)"><rect width="112" height="30" rx="15" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="mono" x="56" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#E5B5C7">Agentic AI</text></g>
-        <g transform="translate(570 0)"><rect width="144" height="30" rx="15" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#C77B9B">AI Orchestration</text></g>
-      </g>
+      <text class="sans" x="56" y="252" font-size="20" font-weight="550" fill="#E5B5C7">Frontend Architecture · System Design · AI Orchestration</text>
 
       <!-- Horizontal Divider -->
       <line x1="56" y1="288" x2="720" y2="288" stroke="#C77B9B" stroke-opacity=".25"/>
@@ -171,8 +164,8 @@
         <text class="sans" y="24" font-size="12" font-weight="600" fill="#C77B9B">STRICT TYPINGS</text>
       </g>
       <g transform="translate(510 342)">
-        <text class="serif" font-size="34" font-weight="300" fill="#F8F0F3">AI Systems</text>
-        <text class="sans" y="24" font-size="12" font-weight="600" fill="#E5B5C7">AGENT ORCHESTRATION</text>
+        <text class="serif" font-size="28" font-weight="300" fill="#F8F0F3">AI Orchestration</text>
+        <text class="sans" y="24" font-size="12" font-weight="600" fill="#E5B5C7">RESEARCH &amp; EXPLORATION</text>
       </g>
     </g>
 

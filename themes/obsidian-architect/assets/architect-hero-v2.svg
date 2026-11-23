@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-labelledby="hero-title hero-desc">
-  <title id="hero-title">Ashutosh Kumar Choubey — Frontend Architect | System Design | AI Orchestration</title>
-  <desc id="hero-desc">Building scalable frontend systems. Exploring intelligent, agent-powered software. Founder, WorldGyan.</desc>
+  <title id="hero-title">Ashutosh Kumar Choubey — Senior Software Engineer</title>
+  <desc id="hero-desc">Frontend Architecture · System Design · AI Orchestration. Founder, WorldGyan.</desc>
 
   <defs>
     <radialGradient id="hero-bg" cx="72%" cy="38%" r="80%">
@@ -226,14 +226,14 @@
     <path class="hero-draw" d="M72 346 C 220 340, 420 352, 600 342" fill="none" stroke="url(#hero-rule)" stroke-width="2" stroke-linecap="round" filter="url(#hero-glow)"/>
 
     <!-- Positioning -->
-    <text class="hero-sans hero-rise d5" x="72" y="384" font-size="13" font-weight="600" letter-spacing="1" fill="#F8F0F3">Frontend Architect  ·  System Design  ·  AI Orchestration</text>
-    <text class="hero-serif hero-rise d6" x="72" y="420" font-size="19" font-style="italic" fill="#B6A3AC">Building scalable frontend systems. Exploring intelligent, agent-powered software.</text>
+    <text class="hero-sans hero-rise d5" x="72" y="384" font-size="13" font-weight="600" letter-spacing="1" fill="#F8F0F3">Senior Software Engineer</text>
+    <text class="hero-serif hero-rise d6" x="72" y="420" font-size="19" font-style="italic" fill="#B6A3AC">Frontend systems and design systems. Researching tool-using AI.</text>
 
     <!-- Meta strip -->
     <g class="hero-fade d6">
       <line x1="72" y1="446" x2="1128" y2="446" stroke="#C77B9B" stroke-opacity=".14"/>
-      <text class="hero-sans" x="72" y="466" font-size="11" font-weight="400" letter-spacing="0.5" fill="#B6A3AC">Founder, WorldGyan · Enterprise Frontend Architecture · Research</text>
-      <text class="hero-sans" x="1128" y="466" text-anchor="end" font-size="11" font-weight="500" letter-spacing="0.5" fill="#E5B5C7">Angular Signals · RxJS Interop · System Design · AI Orchestration</text>
+      <text class="hero-sans" x="72" y="466" font-size="11" font-weight="400" letter-spacing="0.5" fill="#B6A3AC">Founder, WorldGyan · Engineering research &amp; education</text>
+      <text class="hero-sans" x="1128" y="466" text-anchor="end" font-size="11" font-weight="500" letter-spacing="0.5" fill="#E5B5C7">Angular · TypeScript · AI Orchestration</text>
     </g>
 
     <!-- Frame -->

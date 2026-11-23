@@ -39,7 +39,7 @@
     .serif { font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif; }
     .trace-anim { stroke-dasharray: 620 2700; stroke-dashoffset: 3320; animation: trace 6.5s linear infinite; }
     @keyframes trace { to { stroke-dashoffset: 0; } }
-    @media (prefers-reduced-motion: reduce) { .trace-anim { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .trace-anim, .lava-sparks { display: none; } }
 
     .p2-in { animation: p2-in 1.2s cubic-bezier(.16,1,.3,1) both; }
     .p2-chip { animation: p2-chip .7s cubic-bezier(.34,1.56,.64,1) both; }
@@ -96,7 +96,6 @@
       <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">PART 05.2 · REACTIVE LAB · RXJS · OPERATORS</text>
       <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8F0F3">RxJS Operator Lab</text>
       <text class="sans" x="56" y="166" font-size="16.5" fill="#B6A3AC">Comparing switchMap, mergeMap, concatMap and exhaustMap with reactive search.</text>
-      <text class="mono" x="56" y="200" font-size="12.5" fill="#F8F0F3"><tspan fill="#C77B9B">Built ›</tspan> Interactive visual demonstrations of concurrency &amp; stream lifecycle</text>
       <line x1="56" y1="226" x2="680" y2="226" stroke="#C77B9B" stroke-opacity=".25"/>
 
       <!-- Metric Blocks -->
@@ -105,12 +104,12 @@
         <text class="sans" y="24" font-size="12.5" fill="#E5B5C7">higher-order operators</text>
       </g>
       <g transform="translate(261 266)">
-        <text class="serif" font-size="34" font-weight="300" fill="#F8F0F3">100%</text>
-        <text class="sans" y="24" font-size="12.5" fill="#C77B9B">deterministic streams</text>
+        <text class="serif" font-size="34" font-weight="300" fill="#F8F0F3">Queues</text>
+        <text class="sans" y="24" font-size="12.5" fill="#C77B9B">concatMap ordering</text>
       </g>
       <g transform="translate(466 266)">
-        <text class="serif" font-size="34" font-weight="300" fill="#F8F0F3">Zero</text>
-        <text class="sans" y="24" font-size="12.5" fill="#E5B5C7">memory leaks · clean teardown</text>
+        <text class="serif" font-size="34" font-weight="300" fill="#F8F0F3">Cancel</text>
+        <text class="sans" y="24" font-size="12.5" fill="#E5B5C7">switchMap behavior</text>
       </g>
 
       <!-- Chips -->

@@ -46,7 +46,7 @@
   <g class="ce-tile" style="animation-delay:0.56s"><g transform="translate(895 40)">
     <rect width="265" height="170" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".24"/>
     <rect width="265" height="170" rx="14" fill="none" stroke="url(#ce-edge)" stroke-width="1.2" class="ce-edge" style="animation-delay:3.05s"/>
-    <text class="ce-sans" x="22" y="36" font-size="12" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">AI Orchestration</text>
+    <text class="ce-sans" x="22" y="36" font-size="12" font-weight="600" letter-spacing="0.8" fill="#E5B5C7">AI Research</text>
     <circle cx="238" cy="31" r="3.5" fill="#C77B9B"/><circle cx="227" cy="31" r="3.5" fill="#C77B9B"/>
     <line x1="22" y1="54" x2="243" y2="54" stroke="#C77B9B" stroke-opacity=".15"/>
     <text class="ce-sans" x="22" y="86" font-size="14" fill="#F8F0F3">Tool-using LLMs &amp; MCP</text><text class="ce-sans" x="22" y="108" font-size="14" fill="#F8F0F3">Agent Orchestration</text><text class="ce-sans" x="22" y="130" font-size="14" fill="#E5B5C7">Evaluation &amp; Human Review</text>

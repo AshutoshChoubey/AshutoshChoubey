@@ -95,8 +95,7 @@
     <g class="p4-in" style="animation-delay: 0.15s;">
       <text class="sans" x="56" y="62" font-size="12" font-weight="700" letter-spacing="1" fill="#38BDF8">04 · TYPE SYSTEM · TYPESCRIPT · COMPILER</text>
       <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8FAFC">TypeScript Type-System</text>
-      <text class="sans" x="56" y="166" font-size="16.5" fill="#94A3B8">Focused implementations of generics, unions, mapped types and utility types.</text>
-      <text class="mono" x="56" y="200" font-size="12.5" fill="#E2E8F0"><tspan fill="#34D399">Built ›</tspan> Comprehensive type-system reference with conditional types &amp; mapped inference</text>
+      <text class="sans" x="56" y="166" font-size="16.5" fill="#94A3B8">Generics, unions, mapped types, and utility types.</text>
       <line x1="56" y1="226" x2="680" y2="226" stroke="#1E3A5F" stroke-opacity=".7"/>
 
       <!-- Metric Blocks -->

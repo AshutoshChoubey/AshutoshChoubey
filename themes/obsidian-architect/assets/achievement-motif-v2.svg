@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 430" width="1200" height="430" role="img" aria-labelledby="ach-title ach-desc">
   <title id="ach-title">Architecture &amp; System Leadership</title>
-  <desc id="ach-desc">Founder &amp; Principal Architect at WorldGyan. High-scale frontend systems, Angular Signals architecture, enterprise state design, AI orchestration, and production engineering research.</desc>
+  <desc id="ach-desc">Founder of WorldGyan, a technical research and education initiative covering frontend systems, AI engineering and practical tutorials.</desc>
 
   <defs>
     <linearGradient id="ach-bg" x1="0" y1="0" x2="0" y2="1">
@@ -74,8 +74,8 @@
     <rect class="ach-trace-a" x=".5" y=".5" width="699" height="249" rx="15.5" fill="none" stroke="url(#ach-trace)" stroke-width="1.8" stroke-linecap="round"/>
     <rect x="40" y="0" width="300" height="1" fill="url(#ach-hair)"/>
     <text class="ach-sans" x="36" y="154" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">Founder · Technical Research &amp; Education</text>
-    <text class="ach-serif" x="34" y="204" font-size="46" font-weight="300" letter-spacing="-1" fill="#F8F0F3">Founder &amp; Architect</text>
-    <text class="ach-sans" x="36" y="230" font-size="14" fill="#B6A3AC">WorldGyan — Next-Gen AI &amp; Engineering Research</text>
+    <text class="ach-serif" x="34" y="204" font-size="46" font-weight="300" letter-spacing="-1" fill="#F8F0F3">Founder, WorldGyan</text>
+    <text class="ach-sans" x="36" y="230" font-size="14" fill="#B6A3AC">Frontend systems · AI engineering · Practical tutorials</text>
   </g></g>
 
   <!-- Principal Frontend Architecture -->

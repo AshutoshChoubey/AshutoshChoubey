@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="1200" height="120" role="img" aria-labelledby="t-title-part05">
-  <title id="t-title-part05">PART 05 SELECTED ENGINEERING PROJECTS: Scalable Systems &amp; Open Source.</title>
+  <title id="t-title-part05">PART 05 SELECTED ENGINEERING PROJECTS: Labs &amp; references.</title>
   <defs>
     <linearGradient id="t-line-part05" gradientUnits="userSpaceOnUse" x1="40" y1="0" x2="1160" y2="0">
       <stop offset="0" stop-color="#C77B9B"/><stop offset=".6" stop-color="#701A3D"/><stop offset="1" stop-color="#701A3D" stop-opacity="0"/>
@@ -26,10 +26,10 @@
     <text class="tc-sans" x="40" y="34" font-size="13" font-weight="600" letter-spacing="1" fill="#C77B9B"><tspan fill="#E5B5C7">PART 05</tspan>   SELECTED ENGINEERING PROJECTS</text>
   </g>
   <g class="tc-in tc-d2">
-    <text class="tc-serif" x="38" y="84" font-size="44" font-weight="300" letter-spacing="-1" fill="#F8F0F3">Scalable Systems &amp; <tspan font-style="italic" fill="url(#t-sheen-part05)">Open Source.</tspan></text>
+    <text class="tc-serif" x="38" y="84" font-size="44" font-weight="300" letter-spacing="-1" fill="#F8F0F3">Labs &amp; <tspan font-style="italic" fill="url(#t-sheen-part05)">references.</tspan></text>
   </g>
   <g class="tc-in tc-d3">
-    <text class="tc-sans" x="1160" y="34" text-anchor="end" font-size="11.5" font-weight="500" letter-spacing="0.8" fill="#B6A3AC">Verified Public Reference Implementations</text>
+    <text class="tc-sans" x="1160" y="34" text-anchor="end" font-size="11.5" font-weight="500" letter-spacing="0.8" fill="#B6A3AC">Public source and examples</text>
   </g>
   <path class="tc-draw" d="M40 106 H1160" stroke="url(#t-line-part05)" stroke-width="1"/>
   <circle cx="40" cy="106" r="7" fill="url(#t-pulse-part05)" opacity="0">
