@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-labelledby="res-t res-d">
   <title id="res-t">WorldGyan — Engineering Shared &amp; Research Systems</title>
-  <desc id="res-d">Published research in frontend system design, production AI engineering, and practical Angular testing tutorials.</desc>
+  <desc id="res-d">Frontend System Design — Micro-frontends. Agentic AI Engineering — AI orchestration, retrieval, and evaluations. Angular Testing Tutorials — Unit testing and integration testing.</desc>
   <defs>
     
     <linearGradient id="cyber-bg" x1="0" y1="0" x2="1" y2="1">
@@ -40,7 +40,7 @@
     .serif { font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif; }
     .trace-anim { stroke-dasharray: 620 2700; stroke-dashoffset: 3320; animation: trace 6.5s linear infinite; }
     @keyframes trace { to { stroke-dashoffset: 0; } }
-    @media (prefers-reduced-motion: reduce) { .trace-anim { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .trace-anim, .lava-sparks { display: none; } }
 
     .res-in { animation: res-in 1.2s cubic-bezier(.16,1,.3,1) both; }
     @keyframes res-in { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
@@ -94,36 +94,30 @@
     <g class="res-in" style="animation-delay: 0.1s;">
       <text class="sans" x="56" y="52" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">PART 07 · RESEARCH &amp; KNOWLEDGE · WORLDGYAN</text>
       <text class="serif" x="54" y="94" font-size="36" font-weight="300" fill="#F8F0F3">Engineering, Shared.</text>
-      <text class="sans" x="56" y="122" font-size="15" fill="#B6A3AC">Frontend systems, AI architecture &amp; practical enterprise tutorials.</text>
     </g>
 
-    <!-- 3 Interactive Research Modules -->
+    <!-- Research topics and corresponding README actions -->
     <g class="res-in" style="animation-delay: 0.25s;">
-      <!-- Module 1: Frontend System Design -->
       <g transform="translate(56 150)">
         <rect width="344" height="120" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".3"/>
         <line x1="16" y1="20" x2="16" y2="100" stroke="#E5B5C7" stroke-width="3" stroke-linecap="round"/>
         <text class="sans" x="32" y="38" font-size="15" font-weight="600" fill="#F8F0F3">Frontend System Design</text>
-        <text class="sans" x="32" y="62" font-size="12.5" fill="#B6A3AC">Micro-frontends, integration boundaries &amp; scaling tradeoffs.</text>
+        <text class="sans" x="32" y="62" font-size="12.5" fill="#B6A3AC">Micro-frontends</text>
         <text class="mono" x="32" y="92" font-size="11" font-weight="600" fill="#E5B5C7">Read research paper →</text>
       </g>
-
-      <!-- Module 2: AI Engineering Research -->
       <g transform="translate(428 150)">
         <rect width="344" height="120" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".3"/>
         <line x1="16" y1="20" x2="16" y2="100" stroke="#C77B9B" stroke-width="3" stroke-linecap="round"/>
-        <text class="sans" x="32" y="38" font-size="15" font-weight="600" fill="#F8F0F3">Production AI Engineering</text>
-        <text class="sans" x="32" y="62" font-size="12.5" fill="#B6A3AC">Architecture, retrieval, serving, orchestration &amp; evals.</text>
+        <text class="sans" x="32" y="38" font-size="15" font-weight="600" fill="#F8F0F3">Agentic AI Engineering</text>
+        <text class="sans" x="32" y="62" font-size="12.5" fill="#B6A3AC">AI orchestration, retrieval, and evaluations</text>
         <text class="mono" x="32" y="92" font-size="11" font-weight="600" fill="#E5B5C7">Read research paper →</text>
       </g>
-
-      <!-- Module 3: Angular Testing Tutorials -->
       <g transform="translate(800 150)">
         <rect width="344" height="120" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".3"/>
         <line x1="16" y1="20" x2="16" y2="100" stroke="#701A3D" stroke-width="3" stroke-linecap="round"/>
         <text class="sans" x="32" y="38" font-size="15" font-weight="600" fill="#F8F0F3">Angular Testing Tutorials</text>
-        <text class="sans" x="32" y="62" font-size="12.5" fill="#B6A3AC">Unit testing, integration testing &amp; enterprise test suites.</text>
-        <text class="mono" x="32" y="92" font-size="11" font-weight="600" fill="#C77B9B">Watch video series →</text>
+        <text class="sans" x="32" y="62" font-size="12.5" fill="#B6A3AC">Unit testing and integration testing</text>
+        <text class="mono" x="32" y="92" font-size="11" font-weight="600" fill="#E5B5C7">Watch video series →</text>
       </g>
     </g>
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="1200" height="120" role="img" aria-labelledby="t-title-part03">
-  <title id="t-title-part03">PART 03 CORE TECHNOLOGY: Reactive Engineering &amp; Foundations.</title>
+  <title id="t-title-part03">PART 03 CORE TECHNOLOGY: The frontend stack.</title>
   <defs>
     <linearGradient id="t-line-part03" gradientUnits="userSpaceOnUse" x1="40" y1="0" x2="1160" y2="0">
       <stop offset="0" stop-color="#C77B9B"/><stop offset=".6" stop-color="#701A3D"/><stop offset="1" stop-color="#701A3D" stop-opacity="0"/>
@@ -26,7 +26,7 @@
     <text class="tc-sans" x="40" y="34" font-size="13" font-weight="600" letter-spacing="1" fill="#C77B9B"><tspan fill="#E5B5C7">PART 03</tspan>   CORE TECHNOLOGY</text>
   </g>
   <g class="tc-in tc-d2">
-    <text class="tc-serif" x="38" y="84" font-size="44" font-weight="300" letter-spacing="-1" fill="#F8F0F3">Reactive Engineering &amp; <tspan font-style="italic" fill="url(#t-sheen-part03)">Foundations.</tspan></text>
+    <text class="tc-serif" x="38" y="84" font-size="44" font-weight="300" letter-spacing="-1" fill="#F8F0F3">The frontend <tspan font-style="italic" fill="url(#t-sheen-part03)">stack.</tspan></text>
   </g>
   <g class="tc-in tc-d3">
     <text class="tc-sans" x="1160" y="34" text-anchor="end" font-size="11.5" font-weight="500" letter-spacing="0.8" fill="#B6A3AC">Angular · TypeScript · RxJS · NgRx</text>

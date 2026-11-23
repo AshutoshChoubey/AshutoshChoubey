@@ -3,14 +3,13 @@
     "name": "Ashutosh Kumar Choubey",
     "givenName": "Ashutosh",
     "familyName": "Kumar Choubey",
-    "headline": "Software Engineer | System Design | AI Orchestration",
-    "specializations": "SOFTWARE ENGINEERING · FRONTEND ARCHITECTURE · SYSTEM DESIGN · AI ORCHESTRATION",
-    "positioning": "Building scalable frontend systems. Exploring intelligent, agent-powered software."
+    "headline": "Senior Software Engineer",
+    "specializations": "Frontend Architecture · System Design · AI Orchestration"
   },
   "classifications": {
     "established": "Frontend architecture, Angular, TypeScript, RxJS and NgRx; enterprise UI engineering, component systems and automated testing.",
-    "building": "Public engineering studies and teaching examples in Angular, reactive workflows, state management and TypeScript.",
-    "exploring": "AI architecture, Agentic AI, AI orchestration and LLM-powered applications; tool integration, evaluations and human review."
+    "building": "Public labs and reference implementations for frontend engineering.",
+    "exploring": "Researching how LLM applications use tools and retrieval, and where evaluation and human review fit in the workflow."
   },
   "capabilities": [
     {
@@ -64,8 +63,9 @@
     {
       "name": "Angular architecture study",
       "repository": "angular-interview-worldgyan.com",
+      "artwork": "project-angular-architecture",
       "url": "https://github.com/AshutoshChoubey/angular-interview-worldgyan.com",
-      "description": "Study guides and TypeScript examples for Angular signals, HTTP interceptors, authentication flows and application architecture.",
+      "description": "Angular signals, HTTP interceptors, and application structure.",
       "classification": "Educational reference and code examples",
       "evidence": [
         "signals/examples/computed-and-dynamic-deps.ts",
@@ -79,8 +79,9 @@
     {
       "name": "RxJS operator lab",
       "repository": "rxjs-interview-worldgyan.com",
+      "artwork": "project-rxjs-operator-lab",
       "url": "https://github.com/AshutoshChoubey/rxjs-interview-worldgyan.com",
-      "description": "Angular demonstrations comparing switchMap, mergeMap, concatMap and exhaustMap, with a reactive search example.",
+      "description": "Higher-order mapping operators and reactive search.",
       "classification": "Interactive educational implementation",
       "evidence": [
         "src/app/hoo/hoo.ts",
@@ -93,8 +94,9 @@
     {
       "name": "NgRx effects demo",
       "repository": "ngrxeffects",
+      "artwork": "project-ngrx-effects",
       "url": "https://github.com/AshutoshChoubey/ngrxeffects",
-      "description": "An Angular PokéAPI example connecting store actions, reducers and HTTP side effects to list and detail views.",
+      "description": "NgRx actions, reducers, and HTTP effects in a PokéAPI demo.",
       "classification": "Educational application example",
       "evidence": [
         "src/app/card.effects.ts",
@@ -108,8 +110,9 @@
     {
       "name": "TypeScript type-system examples",
       "repository": "typescript-interview-worldgyan.com",
+      "artwork": "project-typescript-types",
       "url": "https://github.com/AshutoshChoubey/typescript-interview-worldgyan.com",
-      "description": "Focused examples of generics, unions, mapped types and utility types, alongside a type-system study reference.",
+      "description": "Generics, unions, mapped types, and utility types.",
       "classification": "Educational language examples",
       "evidence": [
         "src/generic.ts",
@@ -124,19 +127,22 @@
   ],
   "resources": [
     {
-      "title": "Frontend system design",
+      "title": "Frontend System Design",
       "url": "https://worldgyan.com/technology/frontend-system-design/",
-      "description": "Micro-frontends, integration boundaries and enterprise scaling tradeoffs."
+      "description": "Micro-frontends",
+      "action": "Read research paper"
     },
     {
-      "title": "AI engineering research",
+      "title": "Agentic AI Engineering",
       "url": "https://worldgyan.com/technology/production-ai-engineering/",
-      "description": "Published research on architecture, retrieval, serving and evaluation."
+      "description": "AI orchestration, retrieval, and evaluations",
+      "action": "Read research paper"
     },
     {
-      "title": "Angular Testing — WorldGyan",
+      "title": "Angular Testing Tutorials",
       "url": "https://www.youtube.com/playlist?list=PLqQyE6QNucSfUIpucL_nx7vDuwAa1A_VH",
-      "description": "Practical testing tutorials on the official YouTube channel."
+      "description": "Unit testing and integration testing",
+      "action": "Watch video series"
     }
   ],
   "links": {
@@ -146,10 +152,21 @@
     "worldgyan": "https://worldgyan.com/",
     "youtube": "https://www.youtube.com/@WorldGyan"
   },
+  "editions": [
+    {
+      "name": "Cyber-Architect",
+      "theme": "cyber-architect"
+    }
+  ],
+  "architectureLeadership": {
+    "role": "Frontend Architecture",
+    "specialization": "Design Systems"
+  },
   "worldgyan": {
     "role": "Founder, WorldGyan",
-    "scope": "Technical research & education",
-    "logo": "assets/worldgyan-logo.png",
+    "tagline": "Engineering research & education",
+    "scope": "Frontend systems, AI engineering and practical tutorials",
+    "logo": "assets/worldgyan-logo-display.webp",
     "wordmark": {
       "world": "#000000",
       "gyan": "#C65A0A"

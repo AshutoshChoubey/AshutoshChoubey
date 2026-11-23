@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 290" width="1200" height="290" role="img" aria-labelledby="ai-title ai-desc">
-  <title id="ai-title">AI Architecture &amp; Orchestration: Agentic Workflows &amp; Execution Cycles.</title>
-  <desc id="ai-desc">Autonomous Plan-Act-Reflect cycles, tool integrations, and continuous feedback loop.</desc>
+  <title id="ai-title">AI Systems Lab: Planning, tool use and evaluation</title>
+  <desc id="ai-desc">Conceptual Plan–Act–Reflect cycle covering tool integration, evaluation and human review.</desc>
   <defs>
     
     <linearGradient id="cyber-bg" x1="0" y1="0" x2="1" y2="1">
@@ -119,7 +119,7 @@
 
     <!-- Top Section Header -->
     <g class="ai-in" style="animation-delay: 0.1s;">
-      <text class="mono" x="56" y="38" font-size="11.5" font-weight="700" letter-spacing="1.2" fill="#38BDF8">02 · AI ARCHITECTURE &amp; RESEARCH</text>
+      <text class="mono" x="56" y="38" font-size="11.5" font-weight="700" letter-spacing="1.2" fill="#38BDF8">02 · AI SYSTEMS / RESEARCH</text>
       <text class="sans" x="56" y="66" font-size="20" font-weight="700" fill="#F8FAFC">Intelligent Systems &amp; Agent Workflows</text>
       <line x1="56" y1="82" x2="1144" y2="82" stroke="#1E3A5F" stroke-opacity=".6"/>
     </g>

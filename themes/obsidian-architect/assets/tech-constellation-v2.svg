@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500" width="1200" height="500" role="img" aria-labelledby="tc-title tc-desc">
   <title id="tc-title">Architecture &amp; Technology Constellation</title>
-  <desc id="tc-desc">Primary Frontend: Angular (primary), TypeScript, JavaScript, RxJS, NgRx. Architecture &amp; AI: AI Architecture, LLM &amp; MCP Integration, Agent Orchestration, System Design. Supporting &amp; Quality: Node.js, REST APIs, Jasmine, Jest, Git, CI/CD, Automated Testing.</desc>
+  <desc id="tc-desc">Primary Frontend: Angular (primary), TypeScript, JavaScript, RxJS, NgRx. Exploration: AI Architecture, LLM &amp; MCP Integration, Agent Orchestration. System Design: Micro-frontends and state isolation. Supporting &amp; Quality: Node.js, REST APIs, Jasmine, Jest, Git, CI/CD, Automated Testing.</desc>
   <defs>
     <linearGradient id="tc-bg" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#190B12"/><stop offset="1" stop-color="#10070C"/>
@@ -71,7 +71,7 @@
   <g class="tc-panel tc-p3"><g transform="translate(808 32)">
     <rect width="360" height="200" rx="14" fill="#190B12" fill-opacity=".85" stroke="#C77B9B" stroke-opacity=".22"/>
     <rect class="tc-trace" style="animation-delay:-2.30s" width="360" height="200" rx="14" fill="none" stroke="url(#tc-trace)" stroke-width="1.4" stroke-linecap="round"/>
-    <text class="tc-sans" x="24" y="38" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">03  AI &amp; Agent Orchestration</text>
+    <text class="tc-sans" x="24" y="38" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">03  AI Systems Research</text>
     <text class="tc-serif" x="24" y="96" font-size="34" font-weight="300" fill="#F8F0F3">AI Architecture</text>
     <text class="tc-serif" x="24" y="140" font-size="26" font-weight="300" fill="#F8F0F3">Tool-using LLMs · MCP</text>
     <text class="tc-serif" x="24" y="176" font-size="22" font-weight="300" fill="#B6A3AC">Agent Orchestration &amp; Evals</text>

@@ -1,9 +1,12 @@
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 
-export async function generateCyberTheme(root, { presentation }) {
-  const outDir = path.join(root, 'themes/main/assets');
-  await mkdir(outDir, { recursive: true });
+export async function generateCyberTheme(root, { identity, architectureLeadership, presentation, worldgyan, resources }) {
+  const escXml = str => String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/'/g, '&apos;').replace(/"/g, '&quot;');
+  const outputs = new Map();
+  const add = (name, content) => outputs.set(`themes/main/assets/${name}.svg`, content);
+  const trimLineEnds = svg => svg.replace(/[ \t]+$/gm, '');
+  const withoutSmil = svg => trimLineEnds(svg.replace(/<animate(?:Motion|Transform)?\b[^>]*\/>/g, ''));
 
   const photoBase64 = await readFile(path.join(root, presentation.heroPortrait), 'base64');
   const standingPhotoBase64 = (await readFile(path.join(root, 'scripts/user_standing.base64.txt'), 'utf8')).trim();
@@ -45,7 +48,7 @@ export async function generateCyberTheme(root, { presentation }) {
     .serif { font-family: Georgia, "Iowan Old Style", "Palatino Linotype", "Times New Roman", serif; }
     .trace-anim { stroke-dasharray: 620 2700; stroke-dashoffset: 3320; animation: trace 6.5s linear infinite; }
     @keyframes trace { to { stroke-dashoffset: 0; } }
-    @media (prefers-reduced-motion: reduce) { .trace-anim { display: none; } }
+    @media (prefers-reduced-motion: reduce) { .trace-anim, .lava-sparks { display: none; } }
 `;
 
   function lavaSparks(w, h, seed = 0) {
@@ -91,8 +94,8 @@ export async function generateCyberTheme(root, { presentation }) {
   // 1. HERO ARCHITECT SVG (Minimal, Commanding, Obsidian Architect Aesthetic)
   const heroArchitectSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-labelledby="hero-t hero-d">
-  <title id="hero-t">Ashutosh Kumar Choubey — Software Engineer | System Design | AI Orchestration</title>
-  <desc id="hero-d">Software Engineer, System Design and AI Orchestration. Agentic AI, AI Architecture, and enterprise systems. Ashutosh seated in a podcast studio with a microphone and laptop.</desc>
+  <title id="hero-t">${escXml(identity.name)} · ${escXml(identity.headline)}</title>
+  <desc id="hero-d">${escXml(identity.specializations)}. Ashutosh seated in a podcast studio with a microphone and laptop.</desc>
   <defs>
     ${commonDefs}
     <clipPath id="hero-clip"><rect width="1200" height="480" rx="20"/></clipPath>
@@ -157,27 +160,20 @@ export async function generateCyberTheme(root, { presentation }) {
         <circle cx="18" cy="17" r="4.5" fill="#E5B5C7" filter="url(#cyber-glow)">
           <animate attributeName="opacity" values="1;.4;1" dur="2s" repeatCount="indefinite"/>
         </circle>
-        <text class="mono" x="32" y="22" font-size="12" font-weight="600" fill="#B6A3AC"><tspan fill="#E5B5C7">~/ashutosh</tspan> $ build <tspan fill="#C77B9B">--scale-enterprise</tspan></text>
+        <text class="mono" x="32" y="22" font-size="12" font-weight="600" fill="#B6A3AC"><tspan fill="#E5B5C7">~/ashutosh</tspan> $ open <tspan fill="#C77B9B">engineering</tspan></text>
       </g>
 
       <!-- Main Name Heading -->
-      <text class="sans" x="54" y="142" font-size="52" font-weight="800" letter-spacing="-0.5" fill="url(#hero-name-grad)">Ashutosh Kumar Choubey</text>
+      <text class="sans" x="54" y="142" font-size="52" font-weight="800" letter-spacing="-0.5" fill="url(#hero-name-grad)">${escXml(identity.name)}</text>
 
       <!-- Clean Rectangular Shape Container -->
       <g transform="translate(56 166)">
         <rect width="660" height="44" rx="10" fill="url(#hero-pill-grad)" stroke="#C77B9B" stroke-opacity=".35" stroke-width="1.2"/>
         <path d="M16 43H644" stroke="#C77B9B" stroke-opacity=".4" stroke-width="1.2"/>
-        <text class="sans" x="22" y="28" font-size="17" font-weight="600" fill="#F8F0F3">Software Engineer <tspan fill="#E5B5C7">·</tspan> System Design <tspan fill="#C77B9B">·</tspan> AI Orchestration</text>
+        <text class="sans" x="22" y="28" font-size="18" font-weight="600" fill="#F8F0F3">${escXml(identity.headline)}</text>
       </g>
 
-      <!-- Focused Architectural Badges -->
-      <g transform="translate(56 230)">
-        <g><rect width="144" height="30" rx="15" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#E5B5C7">Software Engineer</text></g>
-        <g transform="translate(154 0)"><rect width="130" height="30" rx="15" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="mono" x="65" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#C77B9B">System Design</text></g>
-        <g transform="translate(294 0)"><rect width="144" height="30" rx="15" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#F8F0F3">AI Architecture</text></g>
-        <g transform="translate(448 0)"><rect width="112" height="30" rx="15" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="mono" x="56" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#E5B5C7">Agentic AI</text></g>
-        <g transform="translate(570 0)"><rect width="144" height="30" rx="15" fill="#27101C" stroke="#C77B9B" stroke-opacity=".35"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#C77B9B">AI Orchestration</text></g>
-      </g>
+      <text class="sans" x="56" y="252" font-size="20" font-weight="550" fill="#E5B5C7">${escXml(identity.specializations)}</text>
 
       <!-- Horizontal Divider -->
       <line x1="56" y1="288" x2="720" y2="288" stroke="#C77B9B" stroke-opacity=".25"/>
@@ -192,8 +188,8 @@ export async function generateCyberTheme(root, { presentation }) {
         <text class="sans" y="24" font-size="12" font-weight="600" fill="#C77B9B">STRICT TYPINGS</text>
       </g>
       <g transform="translate(510 342)">
-        <text class="serif" font-size="34" font-weight="300" fill="#F8F0F3">AI Systems</text>
-        <text class="sans" y="24" font-size="12" font-weight="600" fill="#E5B5C7">AGENT ORCHESTRATION</text>
+        <text class="serif" font-size="28" font-weight="300" fill="#F8F0F3">AI Orchestration</text>
+        <text class="sans" y="24" font-size="12" font-weight="600" fill="#E5B5C7">RESEARCH &amp; EXPLORATION</text>
       </g>
     </g>
 
@@ -238,31 +234,63 @@ export async function generateCyberTheme(root, { presentation }) {
 </svg>
 `;
 
+  // Reflow the portrait and identity when the desktop composition would shrink too far.
+  const heroMobileSvg = `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 360" width="540" height="360" role="img" aria-labelledby="hero-t hero-d">
+  <title id="hero-t">${escXml(identity.name)} · ${escXml(identity.headline)}</title>
+  <desc id="hero-d">${escXml(identity.specializations)}. Ashutosh seated in a podcast studio.</desc>
+  <defs>
+    ${commonDefs}
+    <clipPath id="portrait"><path d="M343 275V166a82 82 0 0 1 164 0v109z"/></clipPath>
+  </defs>
+  <style>
+    ${commonStyles}
+    .orbit { transform-origin: 425px 188px; animation: orbit 24s linear infinite; }
+    @keyframes orbit { to { transform: rotate(360deg); } }
+    @media (prefers-reduced-motion: reduce) { .orbit { animation: none; } }
+  </style>
+  <rect x=".5" y=".5" width="539" height="359" rx="18" fill="url(#cyber-bg)" stroke="#54253A"/>
+  <rect x="1" y="1" width="538" height="358" rx="17" fill="url(#cyber-grid)"/>
+  <ellipse cx="425" cy="188" rx="112" ry="134" fill="url(#cyber-glow-rose)"/>
+  <circle cx="425" cy="188" r="101" fill="none" stroke="#C77B9B" stroke-opacity=".32" stroke-dasharray="4 6"/>
+  <circle class="orbit" cx="425" cy="87" r="3.5" fill="#E5B5C7"/>
+  <image href="data:image/jpeg;base64,${photoBase64}" x="343" y="84" width="164" height="191" preserveAspectRatio="xMidYMin slice" clip-path="url(#portrait)"/>
+  <path d="M343 275V166a82 82 0 0 1 164 0v109z" fill="none" stroke="#C77B9B"/>
+  <text class="mono" x="28" y="54" font-size="16" fill="#E5B5C7">~/ashutosh</text>
+  <text class="sans" x="27" y="118" font-size="42" font-weight="760" fill="#F8F0F3">${escXml(identity.givenName)}</text>
+  <text class="sans" x="27" y="163" font-size="39" font-weight="760" fill="#F8F0F3">${escXml(identity.familyName)}</text>
+  <text class="sans" x="28" y="215" font-size="22" font-weight="650" fill="#E5B5C7">${escXml(identity.headline)}</text>
+  <path d="M28 241H290M28 304H512" fill="none" stroke="#54253A"/>
+  <text class="sans" x="28" y="275" font-size="19" fill="#E5B5C7">Angular · TypeScript</text>
+  <text class="sans" x="28" y="332" font-size="17" fill="#E5B5C7">${escXml(identity.specializations)}</text>
+</svg>
+`;
+
   // 2. TERMINAL SYSTEM SVG (MacBook / Linux Terminal Window)
   const terminalSystemSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-labelledby="term-t term-d">
-  <title id="term-t">System Architecture CLI — Ashutosh Kumar Choubey</title>
-  <desc id="term-d">Developer terminal window with system diagnostics, whoami, focus, platform, shipped repositories, and architecture core.</desc>
+  <title id="term-t">Engineering Console · ${escXml(identity.name)}</title>
+  <desc id="term-d">Shell profile, public project references and AI research.</desc>
   <defs>
     ${commonDefs}
     <clipPath id="term-clip"><rect width="1200" height="420" rx="20"/></clipPath>
     <pattern id="term-scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#F8F0F3" opacity=".025"/></pattern>
-    <clipPath id="t-c0"><rect class="t-type" x="68" y="112" width="92" height="22" style="animation-delay:0.5s;animation-duration:0.4s;animation-timing-function:steps(6)"/></clipPath>
-    <clipPath id="t-c1"><rect class="t-type" x="68" y="137" width="560" height="22" style="animation-delay:1.0s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
-    <clipPath id="t-c2"><rect class="t-type" x="68" y="162" width="180" height="22" style="animation-delay:1.8s;animation-duration:0.5s;animation-timing-function:steps(16)"/></clipPath>
-    <clipPath id="t-c3"><rect class="t-type" x="68" y="187" width="560" height="22" style="animation-delay:2.4s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
-    <clipPath id="t-c4"><rect class="t-type" x="68" y="212" width="190" height="22" style="animation-delay:3.2s;animation-duration:0.5s;animation-timing-function:steps(18)"/></clipPath>
-    <clipPath id="t-c5"><rect class="t-type" x="68" y="237" width="560" height="22" style="animation-delay:3.8s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
-    <clipPath id="t-c6"><rect class="t-type" x="68" y="262" width="140" height="22" style="animation-delay:4.6s;animation-duration:0.4s;animation-timing-function:steps(12)"/></clipPath>
-    <clipPath id="t-c7"><rect class="t-type" x="68" y="287" width="560" height="22" style="animation-delay:5.1s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
-    <clipPath id="t-c8"><rect class="t-type" x="68" y="312" width="168" height="22" style="animation-delay:5.9s;animation-duration:0.4s;animation-timing-function:steps(15)"/></clipPath>
-    <clipPath id="t-c9"><rect class="t-type" x="68" y="337" width="560" height="22" style="animation-delay:6.4s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
+    <clipPath id="t-c0"><rect class="t-type" x="68" y="112" width="92" height="22" style="animation-delay:0.23s;animation-duration:0.4s;animation-timing-function:steps(6)"/></clipPath>
+    <clipPath id="t-c1"><rect class="t-type" x="68" y="137" width="560" height="22" style="animation-delay:0.45s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
+    <clipPath id="t-c2"><rect class="t-type" x="68" y="162" width="180" height="22" style="animation-delay:0.81s;animation-duration:0.5s;animation-timing-function:steps(16)"/></clipPath>
+    <clipPath id="t-c3"><rect class="t-type" x="68" y="187" width="560" height="22" style="animation-delay:1.08s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
+    <clipPath id="t-c4"><rect class="t-type" x="68" y="212" width="190" height="22" style="animation-delay:1.44s;animation-duration:0.5s;animation-timing-function:steps(18)"/></clipPath>
+    <clipPath id="t-c5"><rect class="t-type" x="68" y="237" width="560" height="22" style="animation-delay:1.71s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
+    <clipPath id="t-c6"><rect class="t-type" x="68" y="262" width="140" height="22" style="animation-delay:2.07s;animation-duration:0.4s;animation-timing-function:steps(12)"/></clipPath>
+    <clipPath id="t-c7"><rect class="t-type" x="68" y="287" width="560" height="22" style="animation-delay:2.29s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
+    <clipPath id="t-c8"><rect class="t-type" x="68" y="312" width="168" height="22" style="animation-delay:2.66s;animation-duration:0.4s;animation-timing-function:steps(15)"/></clipPath>
+    <clipPath id="t-c9"><rect class="t-type" x="68" y="337" width="560" height="22" style="animation-delay:2.88s;animation-duration:0.5s;animation-timing-function:steps(1)"/></clipPath>
   </defs>
   <style>
     ${commonStyles}
     .t-type { transform-box: fill-box; transform-origin: left center; animation-name: t-type; animation-fill-mode: both; }
     .t-card { animation: t-in 1s cubic-bezier(.16,1,.3,1) both; }
-    .t-fade { animation: t-fade 1s ease both; }
+    .t-fade { animation: t-fade .6s ease both; }
     @keyframes t-type { 0% { transform: scaleX(0); } 85%, 100% { transform: scaleX(1); } }
     @keyframes t-in { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
     @keyframes t-fade { from { opacity: 0; } to { opacity: 1; } }
@@ -294,32 +322,32 @@ export async function generateCyberTheme(root, { presentation }) {
     <g class="mono" font-size="13">
       <!-- 01 whoami -->
       <g clip-path="url(#t-c0)"><text x="72" y="128" fill="#C77B9B">$</text><text x="94" y="128" fill="#F8F0F3">whoami</text></g>
-      <g clip-path="url(#t-c1)"><text x="72" y="153" fill="#701A3D">→</text><text x="94" y="153" fill="#B6A3AC">Ashutosh Kumar Choubey · Software Engineer · Founder, WorldGyan</text></g>
+      <g clip-path="url(#t-c1)"><text x="72" y="153" fill="#701A3D">→</text><text x="94" y="153" fill="#B6A3AC">${escXml(identity.name)} · ${escXml(identity.headline)}</text></g>
 
       <!-- 02 focus.txt -->
       <g clip-path="url(#t-c2)"><text x="72" y="178" fill="#C77B9B">$</text><text x="94" y="178" fill="#F8F0F3">cat focus.txt</text></g>
-      <g clip-path="url(#t-c3)"><text x="72" y="203" fill="#701A3D">→</text><text x="94" y="203" fill="#B6A3AC">Software Engineering · System Design · AI Orchestration</text></g>
+      <g clip-path="url(#t-c3)"><text x="72" y="203" fill="#701A3D">→</text><text x="94" y="203" fill="#B6A3AC">${escXml(identity.specializations)}</text></g>
 
       <!-- 03 platform.txt -->
       <g clip-path="url(#t-c4)"><text x="72" y="228" fill="#C77B9B">$</text><text x="94" y="228" fill="#F8F0F3">cat platform.txt</text></g>
-      <g clip-path="url(#t-c5)"><text x="72" y="253" fill="#701A3D">→</text><text x="94" y="253" fill="#B6A3AC">WorldGyan (worldgyan.com) · Research, System Design &amp; AI Systems</text></g>
+      <g clip-path="url(#t-c5)"><text x="72" y="253" fill="#701A3D">→</text><text x="94" y="253" fill="#B6A3AC">WorldGyan · Engineering research &amp; education</text></g>
 
       <!-- 04 shipped -->
-      <g clip-path="url(#t-c6)"><text x="72" y="278" fill="#C77B9B">$</text><text x="94" y="278" fill="#F8F0F3">ls ./shipped</text></g>
-      <g clip-path="url(#t-c7)"><text x="72" y="303" fill="#701A3D">→</text><text x="94" y="303" fill="#B6A3AC">angular-architecture  rxjs-operator-lab  ngrx-effects  typescript-type-system</text></g>
+      <g clip-path="url(#t-c6)"><text x="72" y="278" fill="#C77B9B">$</text><text x="94" y="278" fill="#F8F0F3">ls ./labs</text></g>
+      <g clip-path="url(#t-c7)"><text x="72" y="303" fill="#701A3D">→</text><text x="94" y="303" fill="#B6A3AC">angular-arch  rxjs-lab  ngrx-effects  typescript-types</text></g>
 
       <!-- 05 principle -->
-      <g clip-path="url(#t-c8)"><text x="72" y="328" fill="#C77B9B">$</text><text x="94" y="328" fill="#F8F0F3">echo $PRINCIPLE</text></g>
-      <g clip-path="url(#t-c9)"><text x="72" y="353" fill="#701A3D">→</text><text x="94" y="353" fill="#B6A3AC">scalable software systems · deterministic AI orchestration</text></g>
+      <g clip-path="url(#t-c8)"><text x="72" y="328" fill="#C77B9B">$</text><text x="94" y="328" fill="#F8F0F3">cat research.txt</text></g>
+      <g clip-path="url(#t-c9)"><text x="72" y="353" fill="#701A3D">→</text><text x="94" y="353" fill="#B6A3AC">Tool-using LLMs · evaluation · human review</text></g>
     </g>
 
     <!-- Blinking Terminal Prompt Cursor -->
-    <rect x="72" y="364" width="8" height="16" fill="#E5B5C7" class="t-fade" style="animation-delay:7.2s">
+    <rect x="72" y="364" width="8" height="16" fill="#E5B5C7" class="t-fade" style="animation-delay:3.24s">
       <animate attributeName="opacity" values="1;1;0;0" keyTimes="0;.5;.5;1" dur="1s" repeatCount="indefinite"/>
     </rect>
 
     <!-- Right Column: Architecture Capability Cards -->
-    <g class="t-card" style="animation-delay:0.8s">
+    <g class="t-card" style="animation-delay:0.36s">
       <!-- Card 1: Frontend Architecture -->
       <g transform="translate(830 40)">
         <rect width="330" height="96" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".28"/>
@@ -333,7 +361,7 @@ export async function generateCyberTheme(root, { presentation }) {
       <g transform="translate(830 154)">
         <rect width="330" height="104" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".28"/>
         <line x1="16" y1="18" x2="16" y2="86" stroke="#701A3D" stroke-width="3" stroke-linecap="round"/>
-        <text class="sans" x="32" y="38" font-size="13" font-weight="600" letter-spacing="0.5" fill="#E5B5C7">Intelligent Systems</text>
+        <text class="sans" x="32" y="38" font-size="13" font-weight="600" letter-spacing="0.5" fill="#E5B5C7">AI Research</text>
         <text class="serif" x="32" y="60" font-size="16" font-weight="300" fill="#F8F0F3">AI Architecture</text>
         <text class="sans" x="32" y="80" font-size="12" fill="#B6A3AC">Agent workflows, tool execution &amp; MCP</text>
         <text class="sans" x="32" y="96" font-size="11" fill="#C77B9B">Evaluation telemetry &amp; human decisions</text>
@@ -344,9 +372,8 @@ export async function generateCyberTheme(root, { presentation }) {
         <rect width="330" height="104" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".28"/>
         <line x1="16" y1="18" x2="16" y2="86" stroke="#E5B5C7" stroke-width="3" stroke-linecap="round"/>
         <text class="sans" x="32" y="38" font-size="13" font-weight="600" letter-spacing="0.5" fill="#E5B5C7">Enterprise Engineering</text>
-        <text class="serif" x="32" y="60" font-size="16" font-weight="300" fill="#F8F0F3">Systems Design &amp; Quality</text>
+        <text class="serif" x="32" y="60" font-size="16" font-weight="300" fill="#F8F0F3">System Design</text>
         <text class="sans" x="32" y="80" font-size="12" fill="#B6A3AC">State management, HTTP interceptors &amp; APIs</text>
-        <text class="sans" x="32" y="96" font-size="11" fill="#C77B9B">Automated testing &amp; CI/CD delivery</text>
       </g>
     </g>
 
@@ -361,7 +388,7 @@ export async function generateCyberTheme(root, { presentation }) {
   const engineeringSystemsSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 540" width="1200" height="540" role="img" aria-labelledby="eng-t eng-d">
   <title id="eng-t">WorldGyan — Engineering Systems &amp; Architecture</title>
-  <desc id="eng-d">Founder Ashutosh Kumar Choubey, WorldGyan. Frontend architecture, enterprise engineering, system design, performance and scalability.</desc>
+  <desc id="eng-d">WorldGyan. ${escXml(worldgyan.tagline)}. ${escXml(identity.name)}, ${escXml(worldgyan.role)}. Frontend architecture, enterprise engineering, system design, performance and scalability.</desc>
   <defs>
     ${commonDefs}
     <clipPath id="eng-clip"><rect width="1200" height="540" rx="20"/></clipPath>
@@ -387,9 +414,9 @@ export async function generateCyberTheme(root, { presentation }) {
         <image x="0" y="0" width="48" height="48" href="data:image/png;base64,${logoBase64}"/>
         <text class="sans" x="62" y="24" font-size="22" font-weight="700">
           <tspan fill="#F8F0F3">World</tspan><tspan fill="#E5B5C7">Gyan</tspan>
-          <tspan font-size="14" font-weight="400" fill="#B6A3AC" dx="12">· Next-Gen AI &amp; Engineering</tspan>
+          <tspan font-size="14" font-weight="400" fill="#B6A3AC" dx="12">· ${escXml(worldgyan.tagline)}</tspan>
         </text>
-        <text class="sans" x="62" y="44" font-size="13" font-weight="600" fill="#E5B5C7">Founder &amp; Principal Architect: <tspan fill="#F8F0F3">Ashutosh Kumar Choubey</tspan></text>
+        <text class="sans" x="62" y="44" font-size="13" font-weight="600" fill="#E5B5C7">Founded by <tspan fill="#F8F0F3">Ashutosh Kumar Choubey</tspan></text>
       </g>
       <g transform="translate(1144 50)">
         <rect x="-210" y="-14" width="210" height="28" rx="14" fill="#190B12" stroke="#C77B9B" stroke-opacity=".4"/>
@@ -443,7 +470,7 @@ export async function generateCyberTheme(root, { presentation }) {
         <rect width="360" height="92" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".3"/>
         <text class="mono" x="20" y="28" font-size="11" font-weight="700" fill="#E5B5C7">01 · ARCHITECTURE</text>
         <text class="sans" x="20" y="54" font-size="19" font-weight="700" fill="#F8F0F3">Frontend Architecture</text>
-        <text class="sans" x="20" y="76" font-size="13" fill="#B6A3AC">Components · Design Systems · Signals Reactive State</text>
+        <text class="sans" x="20" y="76" font-size="13" fill="#B6A3AC">Components · design systems · reactive state</text>
       </g>
 
       <!-- Card 2: Enterprise Engineering (Top Right) -->
@@ -451,7 +478,7 @@ export async function generateCyberTheme(root, { presentation }) {
         <rect width="360" height="92" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".3"/>
         <text class="mono" x="20" y="28" font-size="11" font-weight="700" fill="#C77B9B">02 · ENTERPRISE</text>
         <text class="sans" x="20" y="54" font-size="19" font-weight="700" fill="#F8F0F3">Enterprise Engineering</text>
-        <text class="sans" x="20" y="76" font-size="13" fill="#B6A3AC">Enterprise Integration · REST APIs · Testing &amp; Quality</text>
+        <text class="sans" x="20" y="76" font-size="13" fill="#B6A3AC">Enterprise integration · REST APIs</text>
       </g>
 
       <!-- Card 3: System Design (Bottom Left) -->
@@ -467,7 +494,7 @@ export async function generateCyberTheme(root, { presentation }) {
         <rect width="360" height="92" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".3"/>
         <text class="mono" x="20" y="28" font-size="11" font-weight="700" fill="#C77B9B">04 · SCALABILITY</text>
         <text class="sans" x="20" y="54" font-size="19" font-weight="700" fill="#F8F0F3">Performance &amp; Scalability</text>
-        <text class="sans" x="20" y="76" font-size="13" fill="#B6A3AC">Signals Change Detection · Performance Optimization</text>
+        <text class="sans" x="20" y="76" font-size="13" fill="#B6A3AC">Change detection · rendering performance</text>
       </g>
     </g>
 
@@ -513,8 +540,8 @@ export async function generateCyberTheme(root, { presentation }) {
   // 3B. ARCHITECTURE LEADERSHIP & STANDING PORTRAIT SVG
   const architectureLeadershipSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" width="1200" height="560" role="img" aria-labelledby="ldr-t ldr-d">
-  <title id="ldr-t">Ashutosh Kumar Choubey — Architecture Leadership &amp; Scalability</title>
-  <desc id="ldr-d">Executive standing portrait and architecture leadership pillars. Principal Frontend Architect &amp; Systems Engineer. Founder of WorldGyan.</desc>
+  <title id="ldr-t">Ashutosh Kumar Choubey — Frontend Architecture &amp; Design Systems</title>
+  <desc id="ldr-d">Ashutosh Kumar Choubey, ${escXml(architectureLeadership.role)} and ${escXml(architectureLeadership.specialization)}. ${escXml(worldgyan.role)}. ${escXml(worldgyan.tagline)}.</desc>
   <defs>
     ${commonDefs}
     <clipPath id="ldr-clip"><rect width="1200" height="560" rx="20"/></clipPath>
@@ -566,12 +593,12 @@ export async function generateCyberTheme(root, { presentation }) {
         <circle cx="16" cy="16" r="4.5" fill="#E5B5C7" filter="url(#cyber-glow)">
           <animate attributeName="opacity" values="1;.35;1" dur="2.2s" repeatCount="indefinite"/>
         </circle>
-        <text class="mono" x="32" y="20.5" font-size="11.5" font-weight="700" letter-spacing="1.2" fill="#E5B5C7">ARCHITECTURE LEADERSHIP &amp; STRATEGY</text>
+        <text class="mono" x="32" y="20.5" font-size="11.5" font-weight="700" letter-spacing="1.2" fill="#E5B5C7">FRONTEND SYSTEMS &amp; DESIGN</text>
       </g>
 
       <!-- Headline -->
-      <text class="serif" x="56" y="112" font-size="34" font-weight="300" letter-spacing="-0.8" fill="#F8F0F3">Principal Frontend Architect <tspan font-style="italic" fill="url(#ldr-sheen)">&amp; Systems Engineer</tspan></text>
-      <text class="sans" x="56" y="142" font-size="14.5" font-weight="500" fill="#E5B5C7">Founder &amp; Research Lead at WorldGyan <tspan fill="#B6A3AC">· Next-Generation AI &amp; Software Systems</tspan></text>
+      <text class="serif" x="56" y="112" font-size="34" font-weight="300" letter-spacing="-0.8" fill="#F8F0F3">${escXml(architectureLeadership.role)} <tspan font-style="italic" fill="url(#ldr-sheen)">and ${escXml(architectureLeadership.specialization)}</tspan></text>
+      <text class="sans" x="56" y="142" font-size="14.5" font-weight="500" fill="#E5B5C7">${escXml(worldgyan.role)} <tspan fill="#B6A3AC">· ${escXml(worldgyan.tagline)}</tspan></text>
       
       <!-- Subtle Obsidian Divider -->
       <line x1="56" y1="164" x2="810" y2="164" stroke="#C77B9B" stroke-opacity=".25"/>
@@ -583,8 +610,8 @@ export async function generateCyberTheme(root, { presentation }) {
         <g transform="translate(20 18)">
           <circle cx="10" cy="10" r="10" fill="#27101C" stroke="#E5B5C7" stroke-width="1.2"/>
           <text class="mono" x="10" y="14" font-size="10.5" font-weight="700" text-anchor="middle" fill="#E5B5C7">01</text>
-          <text class="sans" x="30" y="14" font-size="15.5" font-weight="700" fill="#F8F0F3">Fine-Grained Reactive Systems</text>
-          <text class="sans" x="30" y="34" font-size="12.5" fill="#B6A3AC">Signals-driven reactive state, zoneless execution, O(1) change detection &amp; modular architecture.</text>
+          <text class="sans" x="30" y="14" font-size="15.5" font-weight="700" fill="#F8F0F3">Performance-Focused Angular Architecture</text>
+          <text class="sans" x="30" y="34" font-size="12.5" fill="#B6A3AC">Angular Signals for derived UI state, RxJS for asynchronous data flows.</text>
         </g>
       </g>
 
@@ -594,8 +621,8 @@ export async function generateCyberTheme(root, { presentation }) {
         <g transform="translate(20 18)">
           <circle cx="10" cy="10" r="10" fill="#27101C" stroke="#C77B9B" stroke-width="1.2"/>
           <text class="mono" x="10" y="14" font-size="10.5" font-weight="700" text-anchor="middle" fill="#C77B9B">02</text>
-          <text class="sans" x="30" y="14" font-size="15.5" font-weight="700" fill="#F8F0F3">Enterprise Interceptor &amp; Concurrency Pipelines</text>
-          <text class="sans" x="30" y="34" font-size="12.5" fill="#B6A3AC">Atomic token refresh mutex queues, resilient HTTP pipelines, circuit breakers &amp; contract safety.</text>
+          <text class="sans" x="30" y="14" font-size="15.5" font-weight="700" fill="#F8F0F3">HTTP Interceptors &amp; Request Coordination</text>
+          <text class="sans" x="30" y="34" font-size="12.5" fill="#B6A3AC">Token refresh coordination, request handling and cache strategies.</text>
         </g>
       </g>
 
@@ -605,7 +632,7 @@ export async function generateCyberTheme(root, { presentation }) {
         <g transform="translate(20 18)">
           <circle cx="10" cy="10" r="10" fill="#27101C" stroke="#E5B5C7" stroke-width="1.2"/>
           <text class="mono" x="10" y="14" font-size="10.5" font-weight="700" text-anchor="middle" fill="#E5B5C7">03</text>
-          <text class="sans" x="30" y="14" font-size="15.5" font-weight="700" fill="#F8F0F3">Autonomous Multi-Agent Orchestration</text>
+          <text class="sans" x="30" y="14" font-size="15.5" font-weight="700" fill="#F8F0F3">AI Workflow Research</text>
           <text class="sans" x="30" y="34" font-size="12.5" fill="#B6A3AC">Model Context Protocol (MCP), dynamic tool routing, evaluation gates &amp; Plan-Act-Reflect cycles.</text>
         </g>
       </g>
@@ -615,14 +642,14 @@ export async function generateCyberTheme(root, { presentation }) {
         <!-- Metric 1 -->
         <g transform="translate(0 0)">
           <rect width="180" height="54" rx="10" fill="#10070C" stroke="#C77B9B" stroke-opacity=".25"/>
-          <text class="mono" x="16" y="24" font-size="10.5" font-weight="700" fill="#E5B5C7">REACTIVITY</text>
-          <text class="sans" x="16" y="42" font-size="13" font-weight="700" fill="#F8F0F3">100% Signals Core</text>
+          <text class="mono" x="16" y="24" font-size="10.5" font-weight="700" fill="#E5B5C7">STATE MANAGEMENT</text>
+          <text class="sans" x="16" y="42" font-size="13" font-weight="700" fill="#F8F0F3">Angular Signals</text>
         </g>
         <!-- Metric 2 -->
         <g transform="translate(191 0)">
           <rect width="180" height="54" rx="10" fill="#10070C" stroke="#C77B9B" stroke-opacity=".25"/>
           <text class="mono" x="16" y="24" font-size="10.5" font-weight="700" fill="#C77B9B">PERFORMANCE</text>
-          <text class="sans" x="16" y="42" font-size="13" font-weight="700" fill="#F8F0F3">O(1) Change Detection</text>
+          <text class="sans" x="16" y="42" font-size="13" font-weight="700" fill="#F8F0F3">Change Detection</text>
         </g>
         <!-- Metric 3 -->
         <g transform="translate(382 0)">
@@ -677,7 +704,7 @@ export async function generateCyberTheme(root, { presentation }) {
           <circle cx="16" cy="14" r="3.5" fill="#E5B5C7" filter="url(#cyber-glow)">
             <animate attributeName="opacity" values="1;.4;1" dur="2s" repeatCount="indefinite"/>
           </circle>
-          <text class="mono" x="28" y="18" font-size="10.5" font-weight="600" fill="#E5B5C7">Ashutosh Kumar Choubey · Systems</text>
+          <text class="mono" x="28" y="18" font-size="10.5" font-weight="600" fill="#E5B5C7">${escXml(identity.name)}</text>
         </g>
       </g>
     </g>
@@ -718,7 +745,6 @@ export async function generateCyberTheme(root, { presentation }) {
       <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">PART 05.1 · ARCHITECTURE · ANGULAR · SIGNALS</text>
       <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8F0F3">Angular Architecture Study</text>
       <text class="sans" x="56" y="166" font-size="16.5" fill="#B6A3AC">Signals reactive state, HTTP interceptors, authentication flows and architecture patterns.</text>
-      <text class="mono" x="56" y="200" font-size="12.5" fill="#F8F0F3"><tspan fill="#C77B9B">Built ›</tspan> Signals reactive state, authentication interceptors &amp; modular app.config</text>
       <line x1="56" y1="226" x2="680" y2="226" stroke="#C77B9B" stroke-opacity=".25"/>
 
       <!-- Metric Blocks -->
@@ -822,7 +848,6 @@ export async function generateCyberTheme(root, { presentation }) {
       <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">PART 05.2 · REACTIVE LAB · RXJS · OPERATORS</text>
       <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8F0F3">RxJS Operator Lab</text>
       <text class="sans" x="56" y="166" font-size="16.5" fill="#B6A3AC">Comparing switchMap, mergeMap, concatMap and exhaustMap with reactive search.</text>
-      <text class="mono" x="56" y="200" font-size="12.5" fill="#F8F0F3"><tspan fill="#C77B9B">Built ›</tspan> Interactive visual demonstrations of concurrency &amp; stream lifecycle</text>
       <line x1="56" y1="226" x2="680" y2="226" stroke="#C77B9B" stroke-opacity=".25"/>
 
       <!-- Metric Blocks -->
@@ -831,12 +856,12 @@ export async function generateCyberTheme(root, { presentation }) {
         <text class="sans" y="24" font-size="12.5" fill="#E5B5C7">higher-order operators</text>
       </g>
       <g transform="translate(261 266)">
-        <text class="serif" font-size="34" font-weight="300" fill="#F8F0F3">100%</text>
-        <text class="sans" y="24" font-size="12.5" fill="#C77B9B">deterministic streams</text>
+        <text class="serif" font-size="34" font-weight="300" fill="#F8F0F3">Queues</text>
+        <text class="sans" y="24" font-size="12.5" fill="#C77B9B">concatMap ordering</text>
       </g>
       <g transform="translate(466 266)">
-        <text class="serif" font-size="34" font-weight="300" fill="#F8F0F3">Zero</text>
-        <text class="sans" y="24" font-size="12.5" fill="#E5B5C7">memory leaks · clean teardown</text>
+        <text class="serif" font-size="34" font-weight="300" fill="#F8F0F3">Cancel</text>
+        <text class="sans" y="24" font-size="12.5" fill="#E5B5C7">switchMap behavior</text>
       </g>
 
       <!-- Chips -->
@@ -909,7 +934,6 @@ export async function generateCyberTheme(root, { presentation }) {
       <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">PART 05.3 · STATE MANAGEMENT · NGRX · EFFECTS</text>
       <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8F0F3">NgRx Effects Demo</text>
       <text class="sans" x="56" y="166" font-size="16.5" fill="#B6A3AC">Connecting store actions, reducers and HTTP side effects to decoupled views.</text>
-      <text class="mono" x="56" y="200" font-size="12.5" fill="#F8F0F3"><tspan fill="#C77B9B">Built ›</tspan> clean action-reducer-effect separation with async HTTP side-effect dispatch</text>
       <line x1="56" y1="226" x2="680" y2="226" stroke="#C77B9B" stroke-opacity=".25"/>
 
       <!-- Metric Blocks -->
@@ -1031,7 +1055,6 @@ export async function generateCyberTheme(root, { presentation }) {
       <text class="sans" x="56" y="62" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">PART 05.4 · TYPE SYSTEM · TYPESCRIPT · COMPILER</text>
       <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8F0F3">TypeScript Type-System</text>
       <text class="sans" x="56" y="166" font-size="16.5" fill="#B6A3AC">Focused implementations of generics, unions, mapped types and utility types.</text>
-      <text class="mono" x="56" y="200" font-size="12.5" fill="#F8F0F3"><tspan fill="#C77B9B">Built ›</tspan> Comprehensive type-system reference with conditional types &amp; mapped inference</text>
       <line x1="56" y1="226" x2="680" y2="226" stroke="#C77B9B" stroke-opacity=".25"/>
 
       <!-- Metric Blocks -->
@@ -1088,7 +1111,7 @@ export async function generateCyberTheme(root, { presentation }) {
           <circle cx="18" cy="15" r="4" fill="#E5B5C7" filter="url(#cyber-glow)">
             <animate attributeName="opacity" values="1;.4;1" dur="2s" repeatCount="indefinite"/>
           </circle>
-          <text class="mono" x="32" y="19" font-size="10" fill="#B6A3AC">tsc --strict · Zero Any · Deterministic Compilation</text>
+          <text class="mono" x="32" y="19" font-size="10" fill="#B6A3AC">Conditional types · inference · mapped types</text>
         </g>
       </g>
     </g>
@@ -1100,11 +1123,26 @@ export async function generateCyberTheme(root, { presentation }) {
 </svg>
 `;
 
+  const researchGap = 28;
+  const researchCardWidth = (1088 - researchGap * (resources.length - 1)) / resources.length;
+  const researchAccents = ['#E5B5C7', '#C77B9B', '#701A3D'];
+  const researchCards = resources.map((resource, index) => {
+    const x = 56 + index * (researchCardWidth + researchGap);
+    const accent = researchAccents[index % researchAccents.length];
+    return `      <g transform="translate(${x} 150)">
+        <rect width="${researchCardWidth}" height="120" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".3"/>
+        <line x1="16" y1="20" x2="16" y2="100" stroke="${accent}" stroke-width="3" stroke-linecap="round"/>
+        <text class="sans" x="32" y="38" font-size="15" font-weight="600" fill="#F8F0F3">${escXml(resource.title)}</text>
+        <text class="sans" x="32" y="62" font-size="12.5" fill="#B6A3AC">${escXml(resource.description)}</text>
+        <text class="mono" x="32" y="92" font-size="11" font-weight="600" fill="#E5B5C7">${escXml(resource.action)} →</text>
+      </g>`;
+  }).join('\n');
+
   // 8. RESEARCH & KNOWLEDGE CARD (Engineering, Shared)
   const researchSystemsSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-labelledby="res-t res-d">
   <title id="res-t">WorldGyan — Engineering Shared &amp; Research Systems</title>
-  <desc id="res-d">Published research in frontend system design, production AI engineering, and practical Angular testing tutorials.</desc>
+  <desc id="res-d">${resources.map(resource => `${escXml(resource.title)} — ${escXml(resource.description)}`).join('. ')}.</desc>
   <defs>
     ${commonDefs}
     <clipPath id="res-clip"><rect width="1200" height="320" rx="20"/></clipPath>
@@ -1127,37 +1165,11 @@ export async function generateCyberTheme(root, { presentation }) {
     <g class="res-in" style="animation-delay: 0.1s;">
       <text class="sans" x="56" y="52" font-size="12" font-weight="600" letter-spacing="1" fill="#E5B5C7">PART 07 · RESEARCH &amp; KNOWLEDGE · WORLDGYAN</text>
       <text class="serif" x="54" y="94" font-size="36" font-weight="300" fill="#F8F0F3">Engineering, Shared.</text>
-      <text class="sans" x="56" y="122" font-size="15" fill="#B6A3AC">Frontend systems, AI architecture &amp; practical enterprise tutorials.</text>
     </g>
 
-    <!-- 3 Interactive Research Modules -->
+    <!-- Research topics and corresponding README actions -->
     <g class="res-in" style="animation-delay: 0.25s;">
-      <!-- Module 1: Frontend System Design -->
-      <g transform="translate(56 150)">
-        <rect width="344" height="120" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".3"/>
-        <line x1="16" y1="20" x2="16" y2="100" stroke="#E5B5C7" stroke-width="3" stroke-linecap="round"/>
-        <text class="sans" x="32" y="38" font-size="15" font-weight="600" fill="#F8F0F3">Frontend System Design</text>
-        <text class="sans" x="32" y="62" font-size="12.5" fill="#B6A3AC">Micro-frontends, integration boundaries &amp; scaling tradeoffs.</text>
-        <text class="mono" x="32" y="92" font-size="11" font-weight="600" fill="#E5B5C7">Read research paper →</text>
-      </g>
-
-      <!-- Module 2: AI Engineering Research -->
-      <g transform="translate(428 150)">
-        <rect width="344" height="120" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".3"/>
-        <line x1="16" y1="20" x2="16" y2="100" stroke="#C77B9B" stroke-width="3" stroke-linecap="round"/>
-        <text class="sans" x="32" y="38" font-size="15" font-weight="600" fill="#F8F0F3">Production AI Engineering</text>
-        <text class="sans" x="32" y="62" font-size="12.5" fill="#B6A3AC">Architecture, retrieval, serving, orchestration &amp; evals.</text>
-        <text class="mono" x="32" y="92" font-size="11" font-weight="600" fill="#E5B5C7">Read research paper →</text>
-      </g>
-
-      <!-- Module 3: Angular Testing Tutorials -->
-      <g transform="translate(800 150)">
-        <rect width="344" height="120" rx="12" fill="#190B12" stroke="#C77B9B" stroke-opacity=".3"/>
-        <line x1="16" y1="20" x2="16" y2="100" stroke="#701A3D" stroke-width="3" stroke-linecap="round"/>
-        <text class="sans" x="32" y="38" font-size="15" font-weight="600" fill="#F8F0F3">Angular Testing Tutorials</text>
-        <text class="sans" x="32" y="62" font-size="12.5" fill="#B6A3AC">Unit testing, integration testing &amp; enterprise test suites.</text>
-        <text class="mono" x="32" y="92" font-size="11" font-weight="600" fill="#C77B9B">Watch video series →</text>
-      </g>
+${researchCards}
     </g>
 
     <!-- Base Perimeter Border & Surrounding Corner Trace -->
@@ -1278,8 +1290,8 @@ export async function generateCyberTheme(root, { presentation }) {
   // 10. AI ARCHITECTURE & ORCHESTRATION WITH OBSIDIAN PALETTE & FLOWING FEEDBACK LOOP
   const aiOrchestrationSvg = `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 290" width="1200" height="290" role="img" aria-labelledby="ai-title ai-desc">
-  <title id="ai-title">AI Architecture &amp; Orchestration: Agentic Workflows &amp; Execution Cycles.</title>
-  <desc id="ai-desc">Autonomous Plan-Act-Reflect cycles, tool integrations, and continuous feedback loop.</desc>
+  <title id="ai-title">AI Systems Lab · Workflow Research</title>
+  <desc id="ai-desc">Conceptual Plan–Act–Reflect workflow, tool integration and evaluation feedback.</desc>
   <defs>
     ${commonDefs}
     <clipPath id="ai-clip"><rect width="1200" height="290" rx="18"/></clipPath>
@@ -1323,8 +1335,8 @@ export async function generateCyberTheme(root, { presentation }) {
 
     <!-- Top Section Header -->
     <g class="ai-in" style="animation-delay: 0.1s;">
-      <text class="mono" x="56" y="38" font-size="11.5" font-weight="700" letter-spacing="1.2" fill="#E5B5C7">PART 04 · AI ARCHITECTURE &amp; ORCHESTRATION</text>
-      <text class="serif" x="56" y="66" font-size="22" font-weight="300" fill="#F8F0F3">Intelligent Systems &amp; Agent Workflows</text>
+      <text class="mono" x="56" y="38" font-size="11.5" font-weight="700" letter-spacing="1.2" fill="#E5B5C7">PART 04 · AI SYSTEMS LAB</text>
+      <text class="serif" x="56" y="66" font-size="22" font-weight="300" fill="#F8F0F3">Plan–Act–Reflect Workflow</text>
       <line x1="56" y1="82" x2="1144" y2="82" stroke="#C77B9B" stroke-opacity=".25"/>
     </g>
 
@@ -1396,8 +1408,6 @@ export async function generateCyberTheme(root, { presentation }) {
 </svg>
 `;
 
-  const escXml = str => String(str).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/'/g, '&apos;').replace(/"/g, '&quot;');
-
   function generatePartTitleSvg(id, partNum, partLabel, mainTitle, italicWord = '', rightLabel = '', {ambientMotion = true} = {}) {
     return `<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" width="1200" height="120" role="img" aria-labelledby="t-title-${id}">
@@ -1442,39 +1452,47 @@ export async function generateCyberTheme(root, { presentation }) {
   }
 
   // 11 Core Cards
-  await writeFile(path.join(outDir, 'hero-architect.svg'), heroArchitectSvg);
-  await writeFile(path.join(outDir, 'hero-architect-podcast.svg'), heroArchitectSvg.replace(/[ \t]+$/gm, ''));
-  await writeFile(path.join(outDir, 'terminal-system.svg'), terminalSystemSvg);
-  await writeFile(path.join(outDir, 'architecture-leadership.svg'), architectureLeadershipSvg);
-  await writeFile(path.join(outDir, 'engineering-systems.svg'), engineeringSystemsSvg);
-  await writeFile(path.join(outDir, 'technology-core.svg'), technologyCoreSvg);
-  await writeFile(path.join(outDir, 'project-angular-architecture.svg'), projectAngularArchitectureSvg);
-  await writeFile(path.join(outDir, 'project-rxjs-operator-lab.svg'), projectRxjsOperatorLabSvg);
-  await writeFile(path.join(outDir, 'project-ngrx-effects.svg'), projectNgrxEffectsSvg);
-  await writeFile(path.join(outDir, 'project-typescript-types.svg'), projectTypescriptTypesSvg);
-  await writeFile(path.join(outDir, 'research-systems.svg'), researchSystemsSvg);
-  await writeFile(path.join(outDir, 'ai-orchestration.svg'), aiOrchestrationSvg);
+  add('hero-architect', heroArchitectSvg);
+  add('hero-architect-mobile', trimLineEnds(heroMobileSvg));
+  add('hero-architect-podcast', trimLineEnds(heroArchitectSvg));
+  add('hero-architect-static', withoutSmil(heroArchitectSvg));
+  add('terminal-system', terminalSystemSvg);
+  add('architecture-leadership', architectureLeadershipSvg);
+  add('engineering-systems', engineeringSystemsSvg);
+  add('technology-core', technologyCoreSvg);
+  add('project-angular-architecture', projectAngularArchitectureSvg);
+  add('project-rxjs-operator-lab', projectRxjsOperatorLabSvg);
+  add('project-ngrx-effects', projectNgrxEffectsSvg);
+  add('project-typescript-types', projectTypescriptTypesSvg);
+  add('research-systems', researchSystemsSvg);
+  add('ai-orchestration', aiOrchestrationSvg);
 
   // 8 Part Title SVGs
-  await writeFile(path.join(outDir, 'title-part01.svg'), generatePartTitleSvg('part01', 'PART 01', 'SYSTEM ARCHITECTURE CLI', 'Developer Environment &', 'Execution Core.', 'whoami · focus · platform'));
-  await writeFile(path.join(outDir, 'title-part02.svg'), generatePartTitleSvg('part02', 'PART 02', 'ENGINEERING SYSTEMS', 'Architecture Leadership &', 'Scalability.', 'WorldGyan Platform · 4 Core Pillars'));
-  await writeFile(path.join(outDir, 'title-part03.svg'), generatePartTitleSvg('part03', 'PART 03', 'CORE TECHNOLOGY', 'Reactive Engineering &', 'Foundations.', 'Angular · TypeScript · RxJS · NgRx'));
-  await writeFile(path.join(outDir, 'title-part04.svg'), generatePartTitleSvg('part04', 'PART 04', 'AI ORCHESTRATION', 'Autonomous Agent Workflows &', 'Execution Cycles.', 'Plan · Act · Reflect'));
-  await writeFile(path.join(outDir, 'title-part05.svg'), generatePartTitleSvg('part05', 'PART 05', 'SELECTED ENGINEERING PROJECTS', 'Scalable Systems &', 'Open Source.', 'Verified Public Reference Implementations'));
-  await writeFile(path.join(outDir, 'title-part06.svg'), generatePartTitleSvg('part06', 'PART 06', 'GITHUB ANALYTICS & OPEN SOURCE', 'Building in', 'public.', 'GitHub Contribution Calendar', {ambientMotion:false}));
-  await writeFile(path.join(outDir, 'title-part07.svg'), generatePartTitleSvg('part07', 'PART 07', 'RESEARCH & KNOWLEDGE', 'Engineering,', 'shared.', 'Frontend Systems · AI Engineering'));
-  await writeFile(path.join(outDir, 'title-part08.svg'), generatePartTitleSvg('part08', 'PART 08', 'CONNECT & COLLABORATE', "Let's build something", 'worth explaining.', 'Open Inbox & Direct Channels'));
+  add('title-part01', generatePartTitleSvg('part01', 'PART 01', 'ENGINEERING CONSOLE', 'Inside the', 'console.', 'Profile · focus · labs'));
+  add('title-part02', generatePartTitleSvg('part02', 'PART 02', 'ENGINEERING SYSTEMS', 'Architecture &', 'design systems.', 'Components · integration · scale'));
+  add('title-part03', generatePartTitleSvg('part03', 'PART 03', 'CORE TECHNOLOGY', 'The frontend', 'stack.', 'Angular · TypeScript · RxJS · NgRx'));
+  add('title-part04', generatePartTitleSvg('part04', 'PART 04', 'AI SYSTEMS LAB', 'Workflow', 'exploration.', 'Tools · evaluation · human review'));
+  add('title-part05', generatePartTitleSvg('part05', 'PART 05', 'SELECTED ENGINEERING PROJECTS', 'Labs &', 'references.', 'Public source and examples'));
+  add('title-part06', generatePartTitleSvg('part06', 'PART 06', 'ENGINEERING ACTIVITY', 'Building in', 'public.', 'GitHub contributions · technology focus', {ambientMotion:false}));
+  add('title-part07', generatePartTitleSvg('part07', 'PART 07', 'RESEARCH & WRITING', 'Engineering,', 'shared.', 'Frontend systems · AI engineering'));
+  add('title-part08', generatePartTitleSvg('part08', 'PART 08', 'CONNECT & COLLABORATE', 'Find me', 'online.', 'WorldGyan and social links'));
 
   // Telemetry & Connect Obsidian Assets
   let githubJet = await readFile(path.join(root, 'themes/obsidian-architect/dist/github-jet.svg'), 'utf8');
   githubJet = githubJet.replace('fill="#0d1117"', 'fill="#10070C" rx="14" stroke="#C77B9B" stroke-opacity=".25"');
-  await writeFile(path.join(outDir, 'github-jet.svg'), githubJet);
+  add('github-jet', githubJet);
+  const staticJet = withoutSmil(githubJet)
+    .replace('<g id="jet">', '<g id="jet" transform="translate(35 140)">');
+  add('github-jet-static', staticJet);
 
   const snake = await readFile(path.join(root, 'themes/obsidian-architect/assets/contribution-snake.svg'), 'utf8');
-  await writeFile(path.join(outDir, 'contribution-snake.svg'), snake);
+  add('contribution-snake', snake);
+  add('contribution-snake-static', withoutSmil(snake)
+    .replace(/\banimation:\s*[^;]+;/g, '')
+    .replace('<g class="hm-motion">', '<g class="hm-motion" display="none">'));
 
   const sig = await readFile(path.join(root, 'themes/obsidian-architect/assets/footer-signature-v2.svg'), 'utf8');
-  await writeFile(path.join(outDir, 'footer-signature-v2.svg'), sig);
+  add('footer-signature-v2', sig);
 
-  console.log('Successfully generated Obsidian-Architect SVGs & Part Titles in themes/main/assets/');
+  return outputs;
 }

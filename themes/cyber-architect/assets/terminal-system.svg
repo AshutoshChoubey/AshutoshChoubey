@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-labelledby="term-t term-d">
-  <title id="term-t">System Architecture CLI — Ashutosh Kumar Choubey</title>
-  <desc id="term-d">MacBook Linux developer terminal window with system diagnostics, whoami, focus, platform, shipped repositories, and architecture core.</desc>
+  <title id="term-t">Engineering Console — Ashutosh Kumar Choubey</title>
+  <desc id="term-d">Developer console with commands for identity, engineering interests, public examples and research.</desc>
   <defs>
     
     <linearGradient id="cyber-bg" x1="0" y1="0" x2="1" y2="1">
@@ -123,23 +123,23 @@
     <g class="mono" font-size="13">
       <!-- 01 whoami -->
       <g clip-path="url(#t-c0)"><text x="72" y="128" fill="#38BDF8">$</text><text x="94" y="128" fill="#F8FAFC">whoami</text></g>
-      <g clip-path="url(#t-c1)"><text x="72" y="153" fill="#34D399">→</text><text x="94" y="153" fill="#94A3B8">Ashutosh Kumar Choubey · Software Engineer · Founder, WorldGyan</text></g>
+      <g clip-path="url(#t-c1)"><text x="72" y="153" fill="#34D399">→</text><text x="94" y="153" fill="#94A3B8">Ashutosh Kumar Choubey · Senior Software Engineer</text></g>
 
       <!-- 02 focus.txt -->
       <g clip-path="url(#t-c2)"><text x="72" y="178" fill="#38BDF8">$</text><text x="94" y="178" fill="#F8FAFC">cat focus.txt</text></g>
-      <g clip-path="url(#t-c3)"><text x="72" y="203" fill="#34D399">→</text><text x="94" y="203" fill="#94A3B8">Software Engineering · System Design · AI Orchestration</text></g>
+      <g clip-path="url(#t-c3)"><text x="72" y="203" fill="#34D399">→</text><text x="94" y="203" fill="#94A3B8">Frontend Architecture · System Design · AI Orchestration</text></g>
 
       <!-- 03 platform.txt -->
       <g clip-path="url(#t-c4)"><text x="72" y="228" fill="#38BDF8">$</text><text x="94" y="228" fill="#F8FAFC">cat platform.txt</text></g>
-      <g clip-path="url(#t-c5)"><text x="72" y="253" fill="#34D399">→</text><text x="94" y="253" fill="#94A3B8">WorldGyan (worldgyan.com) · Research, System Design &amp; AI Systems</text></g>
+      <g clip-path="url(#t-c5)"><text x="72" y="253" fill="#34D399">→</text><text x="94" y="253" fill="#94A3B8">WorldGyan (worldgyan.com) · Engineering research &amp; education</text></g>
 
       <!-- 04 shipped -->
-      <g clip-path="url(#t-c6)"><text x="72" y="278" fill="#38BDF8">$</text><text x="94" y="278" fill="#F8FAFC">ls ./shipped</text></g>
-      <g clip-path="url(#t-c7)"><text x="72" y="303" fill="#34D399">→</text><text x="94" y="303" fill="#94A3B8">angular-architecture  rxjs-operator-lab  ngrx-effects  typescript-type-system</text></g>
+      <g clip-path="url(#t-c6)"><text x="72" y="278" fill="#38BDF8">$</text><text x="94" y="278" fill="#F8FAFC">ls ./examples</text></g>
+      <g clip-path="url(#t-c7)"><text x="72" y="303" fill="#34D399">→</text><text x="94" y="303" fill="#94A3B8">angular-arch  rxjs-lab  ngrx-effects  typescript-types</text></g>
 
       <!-- 05 principle -->
-      <g clip-path="url(#t-c8)"><text x="72" y="328" fill="#38BDF8">$</text><text x="94" y="328" fill="#F8FAFC">echo $PRINCIPLE</text></g>
-      <g clip-path="url(#t-c9)"><text x="72" y="353" fill="#34D399">→</text><text x="94" y="353" fill="#94A3B8">scalable software systems · deterministic AI orchestration</text></g>
+      <g clip-path="url(#t-c8)"><text x="72" y="328" fill="#38BDF8">$</text><text x="94" y="328" fill="#F8FAFC">echo $RESEARCH</text></g>
+      <g clip-path="url(#t-c9)"><text x="72" y="353" fill="#34D399">→</text><text x="94" y="353" fill="#94A3B8">Tool-using LLMs · Workflow evaluation · Human review</text></g>
     </g>
 
     <!-- Blinking Terminal Prompt Cursor -->
@@ -173,9 +173,8 @@
         <rect width="330" height="104" rx="12" fill="#0D1D33" stroke="#1E3A5F" stroke-opacity=".7"/>
         <line x1="16" y1="18" x2="16" y2="86" stroke="#F43F5E" stroke-width="3" stroke-linecap="round"/>
         <text class="sans" x="32" y="38" font-size="13" font-weight="700" letter-spacing="0.5" fill="#F43F5E">Enterprise Engineering</text>
-        <text class="sans" x="32" y="60" font-size="14.5" font-weight="600" fill="#F8FAFC">Systems Design &amp; Quality</text>
+        <text class="sans" x="32" y="60" font-size="14.5" font-weight="600" fill="#F8FAFC">System Design</text>
         <text class="sans" x="32" y="80" font-size="12" fill="#94A3B8">State management, HTTP interceptors &amp; APIs</text>
-        <text class="sans" x="32" y="96" font-size="11" fill="#34D399">Automated testing &amp; CI/CD delivery</text>
       </g>
     </g>
 

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="672" height="888" viewBox="0 0 672 888" role="img" aria-labelledby="title desc">
+  <title id="title">engineering.ts and portrait.sh</title>
+  <desc id="desc">Ashutosh's engineering.ts. Focus areas include System design and Project architecture. Frontend stack includes Angular, TypeScript, RxJS, NgRx. Research includes AI orchestration. ASCII character portrait of Ashutosh Kumar Choubey seated, drawn with asterisks, hash signs, and other coding symbols.</desc>
+<svg x="0" y="0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 288" width="672" height="432" aria-hidden="true">
+  <title id="terminal-card-title">engineering.ts</title>
+  <desc id="terminal-card-desc">Ashutosh's engineering.ts. Focus areas include System design and Project architecture. Frontend stack includes Angular, TypeScript, RxJS, NgRx. Research includes AI orchestration.</desc>
+  <defs><linearGradient id="terminal-card-surface" x2=".75" y2="1"><stop stop-color="#190B12"/><stop offset="1" stop-color="#10070C"/></linearGradient></defs>
+  <style>text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .source-1 { animation: type-line .32s steps(21) 0.10s both; }
+    .source-2 { animation: type-line .32s steps(10) 0.35s both; }
+    .source-3 { animation: type-line .32s steps(20) 0.60s both; }
+    .source-4 { animation: type-line .32s steps(27) 0.85s both; }
+    .source-5 { animation: type-line .32s steps(4) 1.10s both; }
+    .source-6 { animation: type-line .32s steps(32) 1.35s both; }
+    .source-7 { animation: type-line .32s steps(26) 1.60s both; }
+    .source-8 { animation: type-line .32s steps(31) 1.85s both; }
+    .source-9 { animation: type-line .32s steps(11) 2.10s both; }
+    @keyframes type-line { from { clip-path: inset(-3px 100% -4px 0); } to { clip-path: inset(-3px -3px -4px 0); } }
+    @media (prefers-reduced-motion: reduce) { .code-line { animation: none; } }</style>
+  <rect x=".5" y=".5" width="447" height="287" rx="12" fill="url(#terminal-card-surface)" stroke="#54253A"/>
+  <path d="M1 44 H447 M42 57 V271" stroke="#54253A"/>
+  <circle cx="20" cy="22" r="2.5" fill="#C77B9B" opacity="1"/><circle cx="30" cy="22" r="2.5" fill="#C77B9B" opacity="0.58"/><circle cx="40" cy="22" r="2.5" fill="#C77B9B" opacity="0.36"/>
+  <text x="57" y="26" fill="#E5B5C7" font-size="13">engineering.ts</text>
+  <text x="17" y="74" fill="#C77B9B" font-size="11">01</text>
+  <text x="51" y="74" class="code-line source-1" xml:space="preserve" font-size="17"><tspan fill="#C77B9B">const</tspan><tspan fill="#F8F0F3"> engineering = {</tspan></text>
+  <text x="17" y="97" fill="#C77B9B" font-size="11">02</text>
+  <text x="51" y="97" class="code-line source-2" xml:space="preserve" font-size="17"><tspan fill="#F8F0F3">  focus: [</tspan></text>
+  <text x="17" y="120" fill="#C77B9B" font-size="11">03</text>
+  <text x="51" y="120" class="code-line source-3" xml:space="preserve" font-size="17"><tspan fill="#F8F0F3">    </tspan><tspan fill="#E5B5C7">'system design'</tspan><tspan fill="#F8F0F3">,</tspan></text>
+  <text x="17" y="143" fill="#C77B9B" font-size="11">04</text>
+  <text x="51" y="143" class="code-line source-4" xml:space="preserve" font-size="17"><tspan fill="#F8F0F3">    </tspan><tspan fill="#E5B5C7">'project architecture'</tspan><tspan fill="#F8F0F3">,</tspan></text>
+  <text x="17" y="166" fill="#C77B9B" font-size="11">05</text>
+  <text x="51" y="166" class="code-line source-5" xml:space="preserve" font-size="17"><tspan fill="#F8F0F3">  ],</tspan></text>
+  <text x="17" y="189" fill="#C77B9B" font-size="11">06</text>
+  <text x="51" y="189" class="code-line source-6" xml:space="preserve" font-size="17"><tspan fill="#F8F0F3">  ui: [</tspan><tspan fill="#E5B5C7">'Angular', 'TypeScript'</tspan><tspan fill="#F8F0F3">],</tspan></text>
+  <text x="17" y="212" fill="#C77B9B" font-size="11">07</text>
+  <text x="51" y="212" class="code-line source-7" xml:space="preserve" font-size="17"><tspan fill="#F8F0F3">  state: [</tspan><tspan fill="#E5B5C7">'RxJS', 'NgRx'</tspan><tspan fill="#F8F0F3">],</tspan></text>
+  <text x="17" y="235" fill="#C77B9B" font-size="11">08</text>
+  <text x="51" y="235" class="code-line source-8" xml:space="preserve" font-size="17"><tspan fill="#F8F0F3">  research: </tspan><tspan fill="#E5B5C7">'AI orchestration'</tspan><tspan fill="#F8F0F3">,</tspan></text>
+  <text x="17" y="258" fill="#C77B9B" font-size="11">09</text>
+  <text x="51" y="258" class="code-line source-9" xml:space="preserve" font-size="17"><tspan fill="#F8F0F3">}</tspan><tspan fill="#C77B9B"> as const</tspan><tspan fill="#F8F0F3">;</tspan></text>
+</svg>
+
+<svg x="0" y="456" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 672 432" width="672" height="432" aria-hidden="true">
+  <title id="character-portrait-title">portrait.ascii</title>
+  <desc id="character-portrait-desc">ASCII character portrait of Ashutosh Kumar Choubey seated, drawn with asterisks, hash signs, and other coding symbols.</desc>
+  <defs>
+    <linearGradient id="character-portrait-surface" x2="0" y2="1"><stop stop-color="#190B12"/><stop offset="1" stop-color="#10070C"/></linearGradient>
+    <clipPath id="character-portrait-portrait-reveal"><rect class="portrait-window" x="18" y="62" width="636" height="330"/></clipPath>
+  </defs>
+  <style>text { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+    .characters { animation: clear-portrait 20s ease-in-out infinite; }
+    .portrait-window { transform-box: fill-box; transform-origin: top; animation: scan-portrait 20s steps(44) infinite; }
+    @keyframes scan-portrait {
+      0%, 2% { transform: scaleY(0); }
+      16%, 100% { transform: scaleY(1); }
+    }
+    @keyframes clear-portrait {
+      0%, 96% { opacity: 1; }
+      99.5%, 100% { opacity: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .characters, .portrait-window { animation: none; }
+    }</style>
+  <rect x=".5" y=".5" width="671" height="431" rx="18" fill="url(#character-portrait-surface)" stroke="#54253A"/>
+  <path d="M1 57 H671 M1 400 H671" stroke="#54253A"/>
+  <circle cx="36" cy="29" r="4" fill="#C77B9B"/>
+  <circle cx="52" cy="29" r="4" fill="#C77B9B" opacity=".58"/>
+  <circle cx="68" cy="29" r="4" fill="#C77B9B" opacity=".36"/>
+  <text x="336" y="35" fill="#E5B5C7" font-size="18" text-anchor="middle">./portrait.sh</text>
+  <g class="characters" fill="#F5EEF2" font-size="10.57" font-weight="500" aria-hidden="true" clip-path="url(#character-portrait-portrait-reveal)">
+    <text x="22" y="75.00" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">###################################################################################################</text>
+    <text x="22" y="82.23" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">###################################################################################################</text>
+    <text x="22" y="89.45" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#######################################-`-'`:;=####################################################</text>
+    <text x="22" y="96.68" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#####################################``  ..  .`;:##################################################</text>
+    <text x="22" y="103.91" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">###################################''`.'`. ..' .'-#################################################</text>
+    <text x="22" y="111.14" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">##################################. `'''``.'``'-'..'.##############################################</text>
+    <text x="22" y="118.36" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################################'.'...'. .`` ..-....:#############################################</text>
+    <text x="22" y="125.59" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################################'''.  ..    ' . ' '';#############################################</text>
+    <text x="22" y="132.82" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################################'''   . .         .-##############################################</text>
+    <text x="22" y="140.05" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################################...  .'  '`''   .  '##############################################</text>
+    <text x="22" y="147.27" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################################..  '. .`:++-`...  ###############################################</text>
+    <text x="22" y="154.50" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################################..';====+=**=+;:'. ###############################################</text>
+    <text x="22" y="161.73" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################################'';*********===+;;.*##############################################</text>
+    <text x="22" y="168.95" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">##################################;cccccscccsc**=++:@##############################################</text>
+    <text x="22" y="176.18" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################################++**=::;=cc=- '`;+:;##############################################</text>
+    <text x="22" y="183.41" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################################=*c*+:`-;=*;:-;:;++;##############################################</text>
+    <text x="22" y="190.64" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################################+sc*+=-+=;*;:;:;+*+;##############################################</text>
+    <text x="22" y="197.86" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################################+Ssscc==**c+=+*=**=+##############################################</text>
+    <text x="22" y="205.09" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################################+ssssssscss*ccccc*=###############################################</text>
+    <text x="22" y="212.32" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">##################################*ssSss**sSs**ccc*=###############################################</text>
+    <text x="22" y="219.55" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">##################################;ssssc*c*c===cc*=:###############################################</text>
+    <text x="22" y="226.77" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">##################################-+csc*s+'`.-**c*+`###############################################</text>
+    <text x="22" y="234.00" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">###################################:;*=-' .....`*=:'###############################################</text>
+    <text x="22" y="241.23" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">###################################`;;;':;==+::'=;'################################################</text>
+    <text x="22" y="248.45" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">###################################'--`+s*-`-=*='`.################################################</text>
+    <text x="22" y="255.68" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">####################################''.'=*;'-c+' .:;-`:*###########################################</text>
+    <text x="22" y="262.91" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">###################################-s:..``:-:-` .--:+=`:+===*==####################################</text>
+    <text x="22" y="270.14" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">################################=+::%s:...`'..  +=`;`;---::::;;;*##################################</text>
+    <text x="22" y="277.36" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">##############################;:+:`-Sss=-     `=*c.+-;;'-;:;:-:-:+=################################</text>
+    <text x="22" y="284.59" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#############################=:-;`.`Ssssc*+;+==*c=.;-:::':`:``:--::=###############################</text>
+    <text x="22" y="291.82" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">##########################++;--`:..'ssccsc*=*****-':--::-'`-`````-`+*##############################</text>
+    <text x="22" y="299.05" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">########################=+;:```'- `':Sc*ccccccc*= '---:--''-`''````-;*#############################</text>
+    <text x="22" y="306.27" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">######################=+:---::`'- -''*s****==**=`..-'-----'``''''''`-+#############################</text>
+    <text x="22" y="313.50" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#####################;-:---`--' - ``'.=sc****c*- '.` '-```'`'''..''``:+############################</text>
+    <text x="22" y="320.73" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">####################+;-'-``-`-..-.'``'.`=cc*==` '..'..-```''`.'...''``-+###########################</text>
+    <text x="22" y="327.95" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">####################:--`'--``-.'-'''`''. .`'.  '''.`'.`-``'''..  ..''``:###########################</text>
+    <text x="22" y="335.18" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">###################;:-``.```'-.'-` ''''''.  ..'.''.`'.'-`''''..  .'.''`:-##########################</text>
+    <text x="22" y="342.41" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">##################+:-``'`''''`'.'` '''''''''''..'.''..'`-`''...  ...''`--+#########################</text>
+    <text x="22" y="349.64" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">##################;--``'`''''''.'`'.'.''''''''..'.''.''''`''..  .....'`--;#########################</text>
+    <text x="22" y="356.86" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">##################:-``'''.'''''..`'.'..''''''..'..'''''''`''..  .....'```::########################</text>
+    <text x="22" y="364.09" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################;-``''''.''.''.'``'''.'''''......`'.''''`''..   . .'''`--:+#######################</text>
+    <text x="22" y="371.32" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################--``'''.' ' '..''`'''.'''''......''.'''''.'..   ....''``-:;#######################</text>
+    <text x="22" y="378.55" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">#################```''.... . ..''``''''.'''.......''.'''''.'..   ...'.'```-:+######################</text>
+    <text x="22" y="385.77" textLength="628" lengthAdjust="spacingAndGlyphs" xml:space="preserve">################```''''...  . .''''''''''''......'''.''.''...    .....```--:+######################</text>
+  </g>
+  <text x="22" y="420" fill="#D9AFBF" font-size="15" xml:space="preserve">$ whoami  <tspan fill="#F9EFF2">Ashutosh Kumar Choubey</tspan></text>
+</svg>
+
+</svg>

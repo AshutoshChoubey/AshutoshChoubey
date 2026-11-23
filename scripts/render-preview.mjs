@@ -3,13 +3,14 @@ import {fileURLToPath} from 'node:url';
 import path from 'node:path';
 const root=fileURLToPath(new URL('../',import.meta.url));
 const md=await readFile(path.join(root,'README.md'),'utf8');
-const inline=s=>s.replace(/\[([^\]]+)\]\(((?:https:|\.\/)[^\s)]+)\)/g,'<a href="$2">$1</a>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
+const inline=s=>s.replace(/\[([^\]]+)\]\(((?:https:|mailto:|\.\/|#)[^\s)]+)\)/g,'<a href="$2">$1</a>').replace(/\*\*([^*]+)\*\*/g,'<strong>$1</strong>');
 const blocks=md.split(/\n\s*\n/).map(s=>{
   if(s.startsWith('<'))return s;
   const heading=s.match(/^(#{1,3}) (.+)$/);
   if(heading){
     const tag=`h${heading[1].length}`;
-    return `<${tag}>${inline(heading[2])}</${tag}>`;
+    const id=heading[2].toLowerCase().replace(/[^\w\- ]/g,'').replace(/ /g,'-');
+    return `<${tag} id="${id}">${inline(heading[2])}</${tag}>`;
   }
   if(s.startsWith('- '))return `<ul>${s.split('\n').map(i=>`<li>${inline(i.slice(2))}</li>`).join('')}</ul>`;
   return `<p>${inline(s)}</p>`;

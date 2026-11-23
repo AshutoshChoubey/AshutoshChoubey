@@ -95,8 +95,7 @@
     <g class="p1-in" style="animation-delay: 0.15s;">
       <text class="sans" x="56" y="62" font-size="12" font-weight="700" letter-spacing="1" fill="#38BDF8">01 · ARCHITECTURE · ANGULAR · SIGNALS</text>
       <text class="serif" x="54" y="126" font-size="50" font-weight="300" letter-spacing="-1" fill="#F8FAFC">Angular Architecture Study</text>
-      <text class="sans" x="56" y="166" font-size="16.5" fill="#94A3B8">Signals reactive state, HTTP interceptors, authentication flows and architecture patterns.</text>
-      <text class="mono" x="56" y="200" font-size="12.5" fill="#E2E8F0"><tspan fill="#34D399">Built ›</tspan> Signals reactive state, authentication interceptors &amp; modular app.config</text>
+      <text class="sans" x="56" y="166" font-size="16.5" fill="#94A3B8">Reactive state, HTTP interceptors, and application structure.</text>
       <line x1="56" y1="226" x2="680" y2="226" stroke="#1E3A5F" stroke-opacity=".7"/>
 
       <!-- Metric Blocks -->

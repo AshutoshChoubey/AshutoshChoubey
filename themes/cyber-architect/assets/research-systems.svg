@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-labelledby="res-t res-d">
   <title id="res-t">WorldGyan — Engineering Shared &amp; Research Systems</title>
-  <desc id="res-d">Published research in frontend system design, production AI engineering, and practical Angular testing tutorials.</desc>
+  <desc id="res-d">WorldGyan research on micro-frontends and agentic AI engineering, with Angular unit and integration testing tutorials.</desc>
   <defs>
     
     <linearGradient id="cyber-bg" x1="0" y1="0" x2="1" y2="1">
@@ -104,16 +104,16 @@
         <rect width="344" height="120" rx="12" fill="#0D1D33" stroke="#1E3A5F"/>
         <line x1="16" y1="20" x2="16" y2="100" stroke="#34D399" stroke-width="3" stroke-linecap="round"/>
         <text class="sans" x="32" y="38" font-size="15" font-weight="700" fill="#F8FAFC">Frontend System Design</text>
-        <text class="sans" x="32" y="62" font-size="12.5" fill="#94A3B8">Micro-frontends, integration boundaries &amp; scaling tradeoffs.</text>
+        <text class="sans" x="32" y="62" font-size="12.5" fill="#94A3B8">Micro-frontends</text>
         <text class="mono" x="32" y="92" font-size="11" font-weight="600" fill="#34D399">Read research paper →</text>
       </g>
 
-      <!-- Module 2: AI Engineering Research -->
+      <!-- Module 2: Agentic AI Engineering -->
       <g transform="translate(428 150)">
         <rect width="344" height="120" rx="12" fill="#0D1D33" stroke="#1E3A5F"/>
         <line x1="16" y1="20" x2="16" y2="100" stroke="#00C9FF" stroke-width="3" stroke-linecap="round"/>
-        <text class="sans" x="32" y="38" font-size="15" font-weight="700" fill="#F8FAFC">Production AI Engineering</text>
-        <text class="sans" x="32" y="62" font-size="12.5" fill="#94A3B8">Architecture, retrieval, serving, orchestration &amp; evals.</text>
+        <text class="sans" x="32" y="38" font-size="15" font-weight="700" fill="#F8FAFC">Agentic AI Engineering</text>
+        <text class="sans" x="32" y="62" font-size="12.5" fill="#94A3B8">AI orchestration, retrieval, and evaluations</text>
         <text class="mono" x="32" y="92" font-size="11" font-weight="600" fill="#00C9FF">Read research paper →</text>
       </g>
 
@@ -122,7 +122,7 @@
         <rect width="344" height="120" rx="12" fill="#0D1D33" stroke="#1E3A5F"/>
         <line x1="16" y1="20" x2="16" y2="100" stroke="#F43F5E" stroke-width="3" stroke-linecap="round"/>
         <text class="sans" x="32" y="38" font-size="15" font-weight="700" fill="#F8FAFC">Angular Testing Tutorials</text>
-        <text class="sans" x="32" y="62" font-size="12.5" fill="#94A3B8">Unit testing, integration testing &amp; enterprise test suites.</text>
+        <text class="sans" x="32" y="62" font-size="12.5" fill="#94A3B8">Unit testing and integration testing</text>
         <text class="mono" x="32" y="92" font-size="11" font-weight="600" fill="#F43F5E">Watch video series →</text>
       </g>
     </g>

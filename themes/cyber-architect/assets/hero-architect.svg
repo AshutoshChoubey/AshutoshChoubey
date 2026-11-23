@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 480" width="1200" height="480" role="img" aria-labelledby="hero-t hero-d">
-  <title id="hero-t">Ashutosh Kumar Choubey — Software Engineer | System Design | AI Orchestration</title>
-  <desc id="hero-d">Software Engineer, System Design and AI Orchestration. Agentic AI, AI Architecture, and enterprise systems.</desc>
+  <title id="hero-t">Ashutosh Kumar Choubey — Senior Software Engineer</title>
+  <desc id="hero-d">Frontend Architecture · System Design · AI Orchestration. AI systems are a research interest.</desc>
   <defs>
     
     <linearGradient id="cyber-bg" x1="0" y1="0" x2="1" y2="1">
@@ -153,16 +153,17 @@
       <g transform="translate(56 166)">
         <rect width="660" height="44" rx="10" fill="url(#hero-pill-grad)" stroke="#1E3A5F" stroke-width="1.2"/>
         <path d="M16 43H644" stroke="#38BDF8" stroke-opacity=".5" stroke-width="1.2"/>
-        <text class="sans" x="22" y="28" font-size="17" font-weight="600" fill="#F8FAFC">Software Engineer <tspan fill="#34D399">·</tspan> System Design <tspan fill="#38BDF8">·</tspan> AI Orchestration</text>
+        <text class="sans" x="22" y="19" font-size="15" font-weight="700" fill="#F8FAFC">Senior Software Engineer</text>
+        <text class="sans" x="22" y="35" font-size="12.5" font-weight="500" fill="#C2D3E6">Frontend Architecture · System Design · AI Orchestration</text>
       </g>
 
-      <!-- Focused Architectural Badges: Software Engineer, System Design, AI Architecture, Agentic AI, AI Orchestration -->
+      <!-- Engineering and research badges -->
       <g transform="translate(56 230)">
-        <g><rect width="144" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#38BDF8">Software Engineer</text></g>
-        <g transform="translate(154 0)"><rect width="130" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="65" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#34D399">System Design</text></g>
-        <g transform="translate(294 0)"><rect width="144" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#F59E0B">AI Architecture</text></g>
-        <g transform="translate(448 0)"><rect width="112" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="56" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#73DEFF">Agentic AI</text></g>
-        <g transform="translate(570 0)"><rect width="144" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#F43F5E">AI Orchestration</text></g>
+        <g><rect width="144" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#38BDF8">Component Systems</text></g>
+        <g transform="translate(154 0)"><rect width="130" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="65" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#34D399">Design Systems</text></g>
+        <g transform="translate(294 0)"><rect width="144" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#F59E0B">Micro-frontends</text></g>
+        <g transform="translate(448 0)"><rect width="112" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="56" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#73DEFF">RxJS · NgRx</text></g>
+        <g transform="translate(570 0)"><rect width="144" height="30" rx="15" fill="#0D1D33" stroke="#1E3A5F"/><text class="mono" x="72" y="19" text-anchor="middle" font-size="11.5" font-weight="600" fill="#F43F5E">AI Research</text></g>
       </g>
 
       <!-- Horizontal Divider -->
@@ -178,8 +179,8 @@
         <text class="sans" y="24" font-size="12" font-weight="700" fill="#38BDF8">STRICT TYPINGS</text>
       </g>
       <g transform="translate(510 342)">
-        <text class="serif" font-size="34" font-weight="400" fill="#F8FAFC">AI Systems</text>
-        <text class="sans" y="24" font-size="12" font-weight="700" fill="#F43F5E">AGENT ORCHESTRATION</text>
+        <text class="serif" font-size="34" font-weight="400" fill="#F8FAFC">AI Orchestration</text>
+        <text class="sans" y="24" font-size="12" font-weight="700" fill="#F43F5E">TOOLS &amp; EVALUATION</text>
       </g>
     </g>
 
